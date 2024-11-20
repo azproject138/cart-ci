@@ -15,5 +15,19 @@
         <button type="submit">Login</button>
     </form>
     <a href="/register">Don't have an account? Register here</a>
+    
+    <script>
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const passwordToggle = document.getElementById('password-toggle');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                passwordToggle.textContent = 'Hide Password';
+            } else {
+                passwordField.type = 'password';
+                passwordToggle.textContent = 'Show Password';
+            }
+        }
+    </script>
 </body>
 </html>
