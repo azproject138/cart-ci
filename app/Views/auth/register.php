@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Register</title>
-    
     <script>
         function togglePasswordVisibility() {
             const passwordField = document.getElementById('password');
@@ -23,7 +22,8 @@
         <?= csrf_field() ?>
         <input type="text" name="username" placeholder="Username" required><br>
         <input type="email" name="email" placeholder="Email" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
+        <input type="password" id="password" name="password" placeholder="Password" required><br>
+        <button type="button" id="password-toggle" onclick="togglePasswordVisibility()">Show Password</button><br><br>
         <button type="submit">Register</button>
     </form>
     <a href="/login">Already have an account? Login here</a>
