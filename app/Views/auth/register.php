@@ -2,19 +2,14 @@
 <html>
 <head>
     <title>Register</title>
-    <script>
-        function togglePasswordVisibility() {
-            const passwordField = document.getElementById('password');
-            const passwordToggle = document.getElementById('password-toggle');
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
-                passwordToggle.textContent = 'Hide Password';
-            } else {
-                passwordField.type = 'password';
-                passwordToggle.textContent = 'Show Password';
-            }
+    <style>
+        .toggle-password {
+            cursor: pointer;
+            position: absolute;
+            margin-left: -30px;
+            margin-top: 5px;
         }
-    </script>
+    </style>
 </head>
 <body>
     <h2>Register</h2>
@@ -22,10 +17,32 @@
         <?= csrf_field() ?>
         <input type="text" name="username" placeholder="Username" required><br>
         <input type="email" name="email" placeholder="Email" required><br>
-        <input type="password" id="password" name="password" placeholder="Password" required><br>
-        <button type="button" id="password-toggle" onclick="togglePasswordVisibility()">Show Password</button><br><br>
+
+        <!-- Input password -->
+        <div style="position: relative;">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
+        </div><br>
+
+        <!-- Input confirm password -->
+        <div style="position: relative;">
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+            <span class="toggle-password" onclick="togglePassword('confirm_password')">&#128065;</span>
+        </div><br>
+
         <button type="submit">Register</button>
     </form>
-    <a href="/login">Already have an account? Login here</a>
+    <a href="/login">Sudah punya akun? Login disini.</a>
+
+    <script>
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            if (input.type === "password") {
+                input.type = "text";
+            } else {
+                input.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>
