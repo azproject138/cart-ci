@@ -7,7 +7,9 @@
 
     <link rel="stylesheet" href="/assets/style.css">
     <style>
-        
+        body {
+            background-color: #aaaaaa;
+        }
     </style>
 </head>
 <body>
@@ -21,7 +23,7 @@
 
             <form action="/login" method="post">
                 <?= csrf_field() ?>
-                <input type="email" name="email" placeholder="Email" required><br>
+                <input type="email" name="email" placeholder="Email" required><br><br>
 
                 <!-- Input password -->
                 <div style="position: relative;">
@@ -29,9 +31,10 @@
                     <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
                 </div><br>
 
-                <button type="submit">Login</button>
+                <button class="submit-btn-login" type="submit">Login</button>
             </form>
-            <a href="/register">Belum punya akun? Daftar disini.</a>
+            <br>
+            <a href="/register" class="register">Belum punya akun? Daftar disini.</a>
         </div>
     </section>
     <script src="/assets/togglePassword.js"></script>
