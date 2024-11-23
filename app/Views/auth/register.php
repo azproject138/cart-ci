@@ -2,13 +2,10 @@
 <html>
 <head>
     <title>Register</title>
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/register.css">
     <style>
-        .toggle-password {
-            cursor: pointer;
-            position: absolute;
-            margin-left: -30px;
-            margin-top: 5px;
+        body {
+            background-color: #ececec;
         }
     </style>
 </head>
@@ -19,21 +16,18 @@
             <form action="/register" method="post">
                 <?= csrf_field() ?>
                 <div class="form-username-register">
+                    <p>Username :</p>
                     <input type="text" name="username" placeholder="Username" required><br>
                 </div>
                 <div class="form-email-register">
+                    <p>Email :</p>
                     <input type="email" name="email" placeholder="Email" required><br>
                 </div>
                 <!-- Input password -->
                 <div style="position: relative;">
+                    <p>Password :</p>
                     <input type="password" id="password" name="password" placeholder="Password" required>
                     <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
-                </div>
-
-                <!-- Input confirm password -->
-                <div style="position: relative;">
-                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
-                    <span class="toggle-password" onclick="togglePassword('confirm_password')">&#128065;</span>
                 </div>
 
                 <button type="submit">Register</button>
