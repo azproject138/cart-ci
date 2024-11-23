@@ -1,10 +1,3 @@
-.toggle-password {
-    cursor: pointer;
-    position: absolute;
-    margin-left: -30px;
-    margin-top: 5px;
-}
-
 .form-login {
     position: relative;
     z-index: 1;
@@ -16,4 +9,12 @@
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.toggle-password { 
+    cursor: pointer;
+    color: #666;
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 0;
 }
