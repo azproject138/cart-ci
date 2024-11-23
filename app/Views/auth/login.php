@@ -1,46 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+    <link rel="stylesheet" href="/assets/style.css">
     <style>
-        .toggle-password {
-            cursor: pointer;
-            position: absolute;
-            margin-left: -30px;
-            margin-top: 5px;
-        }
+        
     </style>
 </head>
 <body>
-    <h2>Login</h2>
+    <section class="container form-login">
+        <div class="row">
+            <h2>Login</h2>
 
-    <?php if (session()->getFlashdata('error')): ?>
-        <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
-    <?php endif; ?>
-    
-    <form action="/login" method="post">
-        <?= csrf_field() ?>
-        <input type="email" name="email" placeholder="Email" required><br>
+            <?php if (session()->getFlashdata('error')): ?>
+                <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+            <?php endif; ?>
 
-        <!-- Input password -->
-        <div style="position: relative;">
-            <input type="password" id="password" name="password" placeholder="Password" required>
-            <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
-        </div><br>
+            <form action="/login" method="post">
+                <?= csrf_field() ?>
+                <input type="email" name="email" placeholder="Email" required><br>
 
-        <button type="submit">Login</button>
-    </form>
-    <a href="/register">Belum punya akun? Daftar disini.</a>
+                <!-- Input password -->
+                <div style="position: relative;">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
+                </div><br>
 
-    <script>
-        function togglePassword(inputId) {
-            const input = document.getElementById(inputId);
-            if (input.type === "password") {
-                input.type = "text";
-            } else {
-                input.type = "password";
-            }
-        }
-    </script>
+                <button type="submit">Login</button>
+            </form>
+            <a href="/register">Belum punya akun? Daftar disini.</a>
+        </div>
+    </section>
+    <script src="/assets/togglePassword.js"></script>
 </body>
 </html>
