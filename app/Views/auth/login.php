@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/assets/style.css">
     <style>
         body {
-            background-color: #aaaaaa;
+            background-color: #ececec;
         }
     </style>
 </head>
@@ -23,10 +23,14 @@
 
             <form action="/login" method="post">
                 <?= csrf_field() ?>
-                <input type="email" name="email" placeholder="Email" required><br><br>
+                <div class="form-email">
+                    <p>Email :</p>
+                    <input type="email" name="email" placeholder="Email" required><br><br>
+                </div>
 
                 <!-- Input password -->
-                <div style="position: relative;">
+                <div class="form-password" style="position: relative;">
+                    <p>Password :</p>
                     <input type="password" id="password" name="password" placeholder="Password" required>
                     <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
                 </div><br>

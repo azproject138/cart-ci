@@ -1,5 +1,5 @@
 section {
-    background-color: #aaaaaa;
+    background-color: #ececec;
 }
 
 .form-login {
@@ -7,9 +7,9 @@ section {
     z-index: 1;
     background: #FFFFFF;
     max-width: 250px;
-    height: 270px;
+    height: 340px;
     margin: 0 auto 100px;
-    margin-top: 125px;
+    margin-top: 100px;
     padding: 45px;
     text-align: center;
     border-radius: 10px;
@@ -20,7 +20,7 @@ section {
     margin: 0 0 15px;
     padding: 0;
     text-align: center;
-    font-size: 22px;
+    font-size: 30px;
     color: #000000;
 }
 
@@ -48,6 +48,22 @@ form input {
     font-size: 15px;
 }
 
+.form-email p {
+    margin: 0 0 5px;
+    padding: 0;
+    font-size: 15px;
+    color: #000000; 
+    margin-right: 200px;
+}
+
+.form-password p {
+    margin: 0 0 5px;
+    padding: 0;
+    font-size: 15px;
+    color: #000000;
+    margin-right: 180px;
+}
+
 .toggle-password { 
     cursor: pointer;
     color: #b3b3b3;
@@ -65,7 +81,7 @@ form input {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: #4c74af;
+    background: #4c8baf;
     width: 100%;
     border: 0;
     border-radius: 10px;
