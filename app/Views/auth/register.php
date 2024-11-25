@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+
+    <!-- Tambahkan Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Tambahkan Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/style.css">
     <style>
         body {
@@ -18,20 +23,22 @@
                 <form class="form-register" action="/register" method="post">
                     <?= csrf_field() ?>
                     
-                    <h2>Register</h2><br>
-                    <div class="form-username-register">
-                        <p>Username :</p>
-                        <input type="text" name="username" placeholder="Username" required><br>
+                    <h2>Register</h2>
+                    <div class="">
+                        <label for="username" class="form-label">Username :</label>
+                        <input type="text" name="username" placeholder="Username" required>
                     </div>
-                    <div class="form-email-register">
-                        <p>Email :</p>
-                        <input type="email" name="email" placeholder="Email" required><br>
+                    <div class="">
+                        <label for="email" class="form-label">Email :</label>
+                        <input type="email" name="email" placeholder="Email" required>
                     </div>
                     <!-- Input password -->
-                    <div class="form-password-register" style="position: relative;">
-                        <p>Password :</p>
+                    <div class="" style="position: relative;">
+                        <label for="password" class="form-label">Password :</label>
                         <input type="password" id="password" name="password" placeholder="Password" required>
-                        <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
+                        <span class="btn-togglePasswordIcon position-absolute end-0 translate-middle-y me-3">
+                            <i id="togglePasswordIcon" class="bi bi-eye" onclick="togglePassword('password', 'togglePasswordIcon')" style="cursor: pointer;"></i>
+                        </span>
                     </div>
 
                     <button class="submit-btn-register" type="submit">Register</button>
@@ -41,6 +48,8 @@
         </main>
     </section>
 
+    <!-- Tambahkan Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/togglePassword.js"></script>
 </body>
 </html>

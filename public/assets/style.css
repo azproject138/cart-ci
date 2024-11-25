@@ -47,8 +47,6 @@ body {
 
 section {
     position: relative; 
-    z-index: 1;
-    padding: 45px;
     text-align: center;
     justify-content: center;
     display: flex;
@@ -64,21 +62,34 @@ form {
     position: relative;
     z-index: 1;
     background: #FFFFFF;
-    width: 260px;
-    max-width: 360px;
-    margin: 0;
-    margin-top: 50px;
-    padding: 45px;
-    text-align: center;
-    justify-content: center;
+    max-width:100%;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
+.form-login {
+    width: 390px;
+    padding: 45px;
+    margin-top: 18px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
 .form-register {
-    margin-top: 6px;
+    width: 390px;
+    padding: 45px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    justify-content: center;
+    display: flex;
 }
 
 form input {
@@ -102,29 +113,37 @@ form h2 {
     color: #000000;
 }
 
-form p {
+.form-label {
     margin: 0 0 5px;
     padding: 0;
     font-size: 15px;
     color: #000000;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 0;
+    margin-right: 0;
     text-align: left;
+    justify-content: left;
+    display: flex;
 }
 
-.toggle-password {
-    cursor: pointer;
-    position: absolute;
-    font-size: 18px;
-    margin-left: -35px;
-    margin-top: 12px;
+.btn-togglePasswordIcon {
+    top: 60px;
 }
 
-.toggle-password:hover {
-    color: #4c8baf;
-}
-
-.error {
+.text-error {
+    margin: 0 0 0;
+    font-size: 15px;
     color: red;
-    font-size: 10px;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 .submit-btn-register {

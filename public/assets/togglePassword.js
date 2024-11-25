@@ -1,8 +1,13 @@
-function togglePassword(inputId) {
-    const input = document.getElementById(inputId);
-    if (input.type === "password") {
-        input.type = "text";
+function togglePassword(fieldId, iconId) {
+    const field = document.getElementById(fieldId);
+    const icon = document.getElementById(iconId);
+    if (field.type === "password") {
+        field.type = "text";
+        icon.classList.remove("bi-eye");
+        icon.classList.add("bi-eye-slash");
     } else {
-        input.type = "password";
+        field.type = "password";
+        icon.classList.remove("bi-eye-slash");
+        icon.classList.add("bi-eye");
     }
 }
