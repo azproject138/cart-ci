@@ -12,30 +12,19 @@ main {
     display: flex;
 }
 
-div .row {
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
-    background-color: #FFFFFF;
-}
-
 form {
     position: relative;
     z-index: 1;
     background: #FFFFFF;
     max-width: 250px;
     margin: 0 auto 100px;
-    margin-top: 50px;
     padding: 45px;
     text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
     border-radius: 10px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-
-.form-register {
-    margin-top: 20px;
 }
 
 form input {
@@ -70,8 +59,9 @@ form p {
 .toggle-password {
     cursor: pointer;
     position: absolute;
-    margin-left: -30px;
-    margin-top: 5px;
+    font-size: 18px;
+    margin-left: -35px;
+    margin-top: 12px;
 }
 
 .submit-btn-register {

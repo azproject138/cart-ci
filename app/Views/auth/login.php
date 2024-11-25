@@ -34,7 +34,7 @@
                         <p>Password :</p>
                         <input type="password" id="password" name="password" placeholder="Password" required>
                         <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
-                    </div><br>
+                    </div>
 
                     <button class="submit-btn-login" type="submit">Login</button><br><br>
                     <a href="/register" class="register">Belum punya akun? Daftar disini.</a>
@@ -42,6 +42,7 @@
             </div>
         </main>
     </section>
+
     <script src="/assets/togglePassword.js"></script>
 </body>
 </html>
