@@ -45,8 +45,6 @@ body {
     }
 }
 
-
-
 section {
     position: relative; 
     z-index: 1;
@@ -80,7 +78,7 @@ form {
 }
 
 .form-register {
-    margin-top: 8px;
+    margin-top: 6px;
 }
 
 form input {
