@@ -32,6 +32,7 @@
 
                 <button type="submit">Register</button>
             </form>
+            <br>
             <a href="/login">Sudah punya akun? Login disini.</a>
         </div>
     </section>

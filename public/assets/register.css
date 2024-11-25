@@ -31,6 +31,43 @@
     
 }
 
+form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.form-username-register p {
+    margin: 0 0 5px;
+    padding: 0;
+    font-size: 15px;
+    color: #000000; 
+    margin-right: 200px;
+}
+
+.form-email p {
+    margin: 0 0 5px;
+    padding: 0;
+    font-size: 15px;
+    color: #000000; 
+    margin-right: 200px;
+}
+
+.form-password p {
+    margin: 0 0 5px;
+    padding: 0;
+    font-size: 15px;
+    color: #000000;
+    margin-right: 180px;
+}
+
 .toggle-password {
     cursor: pointer;
     position: absolute;
