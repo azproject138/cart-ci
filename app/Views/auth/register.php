@@ -13,7 +13,7 @@
     <section class="container">
         <main class="form-register">
             <div class="row">
-                <form action="/register" method="post">
+                <form class="form-register" action="/register" method="post">
                     <?= csrf_field() ?>
                     
                     <h2>Register</h2>
