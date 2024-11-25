@@ -1,18 +1,27 @@
-.form-login {
-    position: relative;
-    z-index: 1;
-    background: #FFFFFF;
-    max-width: 250px;
-    height: 340px;
-    margin: 0 auto 100px;
-    margin-top: 100px;
-    padding: 45px;
+section {
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
 }
 
-.form-login h2 {
+main {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+div .row {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    background-color: #FFFFFF;
+}
+
+.form-register h2 {
     margin: 0 0 15px;
     padding: 0;
     text-align: center;
@@ -20,15 +29,17 @@
     color: #000000;
 }
 
-.form {
+form {
     position: relative;
     z-index: 1;
     background: #FFFFFF;
     max-width: 250px;
     margin: 0 auto 100px;
-    padding: 50px;
+    margin-top: 40px;
+    padding: 45px;
     text-align: center;
-    
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 form input {
@@ -44,7 +55,15 @@ form input {
     font-size: 15px;
 }
 
-.form-email p {
+.form-username-register p {
+    margin: 0 0 5px;
+    padding: 0;
+    font-size: 15px;
+    color: #000000; 
+    margin-right: 180px;
+}
+
+.form-email-register p {
     margin: 0 0 5px;
     padding: 0;
     font-size: 15px;
@@ -52,7 +71,7 @@ form input {
     margin-right: 200px;
 }
 
-.form-password p {
+.form-password-register p {
     margin: 0 0 5px;
     padding: 0;
     font-size: 15px;
@@ -60,20 +79,14 @@ form input {
     margin-right: 180px;
 }
 
-.toggle-password { 
+.toggle-password {
     cursor: pointer;
-    color: #b3b3b3;
     position: absolute;
     margin-left: -30px;
-    margin-top: 12px;
-    font-size: 18px;
+    margin-top: 5px;
 }
 
-.toggle-password:hover {
-    color: #000000;
-}
-
-.submit-btn-login {
+.submit-btn-register {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
