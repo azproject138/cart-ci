@@ -24,7 +24,7 @@
                     <input type="email" name="email" placeholder="Email" required><br>
                 </div>
                 <!-- Input password -->
-                <div style="position: relative;">
+                <div class="form-password-register" style="position: relative;">
                     <p>Password :</p>
                     <input type="password" id="password" name="password" placeholder="Password" required>
                     <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
