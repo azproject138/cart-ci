@@ -1,9 +1,21 @@
+body {
+    background: #f3f3f3;
+    background: -webkit-linear-gradient(right, #e0e0e0, #cacaca);
+    background: -moz-linear-gradient(right, #c9c9c9, #a1a1a1);
+    background: -o-linear-gradient(right, #949494, #7e7e7e);
+    background: linear-gradient(to left, #e4e4e4, #f3f3f3);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+}
+
 section {
+    position: relative; 
+    z-index: 1;
+    padding: 45px;
     text-align: center;
     justify-content: center;
     display: flex;
-    flex-direction: row;
-    margin-top: 30px;
 }
 
 main {
@@ -17,7 +29,8 @@ form {
     z-index: 1;
     background: #FFFFFF;
     max-width: 250px;
-    margin: 0 auto 100px;
+    margin: 0;
+    margin-top: 40px;
     padding: 45px;
     text-align: center;
     justify-content: center;
@@ -25,6 +38,10 @@ form {
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form-register {
+    margin-top: 5px;
 }
 
 form input {
@@ -64,6 +81,15 @@ form p {
     margin-top: 12px;
 }
 
+.toggle-password:hover {
+    color: #4c8baf;
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+}
+
 .submit-btn-register {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
@@ -78,6 +104,10 @@ form p {
     -webkit-transition: all 0.3 ease;
 }
 
+.submit-btn-register:hover, .submit-btn-register:active, .submit-btn-register:focus {
+    background: #2d6da4;
+}
+
 .submit-btn-login {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
@@ -90,4 +120,8 @@ form p {
     color: #FFFFFF;
     font-size: 14px;
     -webkit-transition: all 0.3 ease;
+}
+
+.submit-btn-login:hover, .submit-btn-login:active, .submit-btn-login:focus {
+    background: #2d6da4;
 }

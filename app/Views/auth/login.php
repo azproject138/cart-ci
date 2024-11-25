@@ -17,13 +17,16 @@
         <main class="form-login">
             <div class="row">
 
-                <?php if (session()->getFlashdata('error')): ?>
-                    <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
-                <?php endif; ?>
+                
 
                 <form action="/login" method="post">
                     <?= csrf_field() ?>
                     <h2>Login</h2>
+
+                    <?php if (session()->getFlashdata('error')): ?>
+                    <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+                    <?php endif; ?>
+
                     <div class="form-email">
                         <p>Email :</p>
                         <input type="email" name="email" placeholder="Email" required><br><br>
