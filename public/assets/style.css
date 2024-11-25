@@ -17,16 +17,11 @@ div .row {
     justify-content: center;
     display: flex;
     flex-direction: row;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
     margin-top: 30px;
     background-color: #FFFFFF;
-}
-
-.form-register h2 {
-    margin: 0 0 15px;
-    padding: 0;
-    text-align: center;
-    font-size: 30px;
-    color: #000000;
 }
 
 form {
@@ -55,28 +50,20 @@ form input {
     font-size: 15px;
 }
 
-.form-username-register p {
-    margin: 0 0 5px;
+form h2 {
+    margin: 0 0 15px;
     padding: 0;
-    font-size: 15px;
-    color: #000000; 
-    margin-right: 180px;
+    text-align: center;
+    font-size: 30px;
+    color: #000000;
 }
 
-.form-email-register p {
-    margin: 0 0 5px;
-    padding: 0;
-    font-size: 15px;
-    color: #000000; 
-    margin-right: 200px;
-}
-
-.form-password-register p {
+form p {
     margin: 0 0 5px;
     padding: 0;
     font-size: 15px;
     color: #000000;
-    margin-right: 180px;
+    text-align: left;
 }
 
 .toggle-password {
@@ -87,6 +74,20 @@ form input {
 }
 
 .submit-btn-register {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4c8baf;
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+}
+
+.submit-btn-login {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
