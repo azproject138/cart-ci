@@ -18,7 +18,7 @@
                 <form class="form-register" action="/register" method="post">
                     <?= csrf_field() ?>
                     
-                    <h2>Register</h2>
+                    <h2>Register</h2><br>
                     <div class="form-username-register">
                         <p>Username :</p>
                         <input type="text" name="username" placeholder="Username" required><br>
@@ -34,8 +34,8 @@
                         <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
                     </div>
 
-                    <button class="submit-btn-register" type="submit">Register</button><br><br>
-                    <a href="/login">Sudah punya akun? Login disini.</a>
+                    <button class="submit-btn-register" type="submit">Register</button>
+                    <p class="link-btn-login-register">Sudah punya akun?<a href="/login"> Login</a></p>
                 </form>
             </div>
         </main>

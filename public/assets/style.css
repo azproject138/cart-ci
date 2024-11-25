@@ -1,4 +1,6 @@
 body {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
     background: #f3f3f3;
     background: -webkit-linear-gradient(right, #e0e0e0, #cacaca);
     background: -moz-linear-gradient(right, #c9c9c9, #a1a1a1);
@@ -8,6 +10,42 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;  
 }
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 5px;
+    }
+}
+
+/* Responsif untuk perangkat sedang */
+@media (min-width: 601px) and (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        max-width: 90%;
+        margin: auto;
+    }
+}
+
+/* Responsif untuk perangkat besar */
+@media (min-width: 1201px) {
+    body {
+        font-size: 18px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+
+
 
 section {
     position: relative; 
@@ -28,9 +66,10 @@ form {
     position: relative;
     z-index: 1;
     background: #FFFFFF;
-    max-width: 250px;
+    width: 260px;
+    max-width: 360px;
     margin: 0;
-    margin-top: 40px;
+    margin-top: 50px;
     padding: 45px;
     text-align: center;
     justify-content: center;
@@ -41,7 +80,7 @@ form {
 }
 
 .form-register {
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 form input {
@@ -87,7 +126,7 @@ form p {
 
 .error {
     color: red;
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .submit-btn-register {
@@ -124,4 +163,11 @@ form p {
 
 .submit-btn-login:hover, .submit-btn-login:active, .submit-btn-login:focus {
     background: #2d6da4;
+}
+
+.link-btn-login-register {
+    margin: 10px 0 0;
+    text-align: center;
+    color: #757575;
+    font-size: 15px;
 }

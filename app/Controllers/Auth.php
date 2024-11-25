@@ -40,6 +40,11 @@ class Auth extends BaseController
 
         $user = $userModel->where('email', $email)->first();
 
+        if (!$user) {
+            // Jika email tidak ditemukan, kembalikan input email
+            return redirect()->back()->with('error', 'Email tidak terdaftar.')->withInput();
+        }
+
         if ($user) {
             if (password_verify($password, $user['password'])) {
                 session()->set([
@@ -50,7 +55,7 @@ class Auth extends BaseController
                 return redirect()->to('/dashboard');
             } else {
                 $this->sendWrongPasswordEmail($user['email']);
-                return redirect()->back()->with('error', 'Password salah.');
+                return redirect()->back()->with('error', 'Password salah silahkan cobalagi.')->withInput();
             }
         } else {
             return redirect()->back()->with('error', 'Email tidak terdaftar.');

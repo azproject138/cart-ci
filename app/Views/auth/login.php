@@ -17,30 +17,28 @@
         <main class="form-login">
             <div class="row">
 
-                
-
                 <form action="/login" method="post">
                     <?= csrf_field() ?>
-                    <h2>Login</h2>
+                    <h2>Login</h2><br>
 
                     <?php if (session()->getFlashdata('error')): ?>
-                    <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+                    <p style="color: red; font-size: 15px"><?= session()->getFlashdata('error') ?></p>
                     <?php endif; ?>
 
-                    <div class="form-email">
+                    <div class="form-input-login">
                         <p>Email :</p>
-                        <input type="email" name="email" placeholder="Email" required><br><br>
+                        <input type="email" name="email" placeholder="Email" value="<?= old('email') ?>" required><br>
                     </div>
 
                     <!-- Input password -->
-                    <div class="form-password" style="position: relative;">
+                    <div class="form-login" style="position: relative;">
                         <p>Password :</p>
                         <input type="password" id="password" name="password" placeholder="Password" required>
                         <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
                     </div>
 
-                    <button class="submit-btn-login" type="submit">Login</button><br><br>
-                    <a href="/register" class="register">Belum punya akun? Daftar disini.</a>
+                    <button class="submit-btn-login" type="submit">Login</button>
+                    <p class="link-btn-login-register">Belum punya akun?<a href="/register" class="register">Daftar</a></p>
                 </form>
             </div>
         </main>
