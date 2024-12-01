@@ -188,3 +188,87 @@ form h2 {
     color: #757575;
     font-size: 15px;
 }
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden initially */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    overflow-y: auto;
+    transition: left 0.3s ease; /* Smooth open/close animation */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+/* Close button inside sidebar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Main content styles */
+#main-content {
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Open button outside sidebar */
+.open-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* Sembunyikan tombol open-btn */
+.open-btn.hidden {
+    display: none;
+}
+
+
+.open-btn:hover, .close-btn:hover {
+    background-color: #575757;
+}
+
+/* Sidebar open state */
+.sidebar.open {
+    left: 0; /* Move sidebar into view */
+}
+
+#main-content.shift {
+    margin-left: 250px; /* Shift content when sidebar is open */
+}

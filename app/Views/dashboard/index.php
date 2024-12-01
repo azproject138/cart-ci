@@ -28,7 +28,6 @@
         <div id="sidebar" class="sidebar">
             <button id="close-btn" class="close-btn">×</button>
             <ul>
-                <h3 class="username">Welcome!</h3>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Services</a></li>
