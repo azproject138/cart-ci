@@ -27,7 +27,7 @@
     <nav>
         <!--sidebar-->
         <div id="sidebar" class="sidebar">
-            <button id="close-btn" class="close-btn">×</button>
+            <button id="close-btn" class="close-btn"><i class="bi bi-x"></i></button>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
