@@ -192,7 +192,7 @@ form h2 {
 /* Sidebar styles */
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 55px;
     left: -250px; /* Hidden initially */
     width: 250px;
     height: 100%;
@@ -244,8 +244,8 @@ form h2 {
 /* Open button outside sidebar */
 .open-btn {
     position: fixed;
-    top: 15px;
-    left: 15px;
+    top: 10px;
+    left: 250px;
     font-size: 10px;
     background-color: #333;
     color: white;
