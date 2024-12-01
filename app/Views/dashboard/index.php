@@ -29,11 +29,29 @@
         <div id="sidebar" class="sidebar">
             <button id="close-btn" class="close-btn"><i class="bi bi-x"></i></button>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-speedometer2"></i>Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-person-lines-fill"></i>Riwayat
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-flag"></i>Report
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="/logout">
+                        <i class="bi bi-box-arrow-left"></i>Logout
+                    </a>
+                </li>
             </ul>
         </div>
         <div id="main-content">
@@ -41,6 +59,10 @@
         </div>
     </nav>
 
+    <!--Footer-->
+    <footer>
+        <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+    </footer>
     <script src="/assets/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
