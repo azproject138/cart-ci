@@ -25,8 +25,6 @@
                     <?= csrf_field() ?>
                     <h2>Login</h2>
 
-                    
-
                     <div class="">
                         <label for="email" class="form-label">Email :</label>
                         <input type="email" name="email" placeholder="Email" value="<?= old('email') ?>" required>
