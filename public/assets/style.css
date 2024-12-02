@@ -237,7 +237,7 @@ form h2 {
     font-size: 25px;
     background: none;
     border: none;
-    color: rgb(192, 192, 192);
+    color: #ffffff;
     cursor: pointer;
 }
 
@@ -256,6 +256,7 @@ form h2 {
     background-color: #333;
     color: white;
     border: none;
+    border-radius: 10px;
     padding: 10px 15px;
     cursor: pointer;
 }
