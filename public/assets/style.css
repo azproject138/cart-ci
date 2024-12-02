@@ -224,6 +224,10 @@ form h2 {
     background-color: #575757;
 }
 
+.sidebar img {
+    margin-right: 10px;
+}
+
 /* Close button inside sidebar */
 .close-btn {
     position: absolute;

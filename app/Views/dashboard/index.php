@@ -19,7 +19,7 @@
             <div class="container-fluid">
                 Welcome, <?= $username ?>
                 <a class="navbar-brand" href="#">
-                    <img src="/assets/img/logo-profile.png" alt="Logo" width="25" height="25" class="d-inline-block align-text-top">
+                    <img src="/assets/img/profile.png" alt="Logo" width="25" height="25" class="d-inline-block align-text-top">
                 </a>
             </div>
         </div>
