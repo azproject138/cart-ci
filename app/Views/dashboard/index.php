@@ -31,25 +31,27 @@
             <ul>
                 <li>
                     <a href="#">
-                        <i class="bi bi-speedometer2"></i>Dashboard
+                        <img src="/assets/img/dashboard.png" alt="dashboard">Dashboard
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bi bi-person-lines-fill"></i>Riwayat
+                        <img src="/assets/img/history.png" alt="">Riwayat
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bi bi-flag"></i>Report
+                        <img src="/assets/img/immigration.png" alt="immigration">Report
                     </a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="#">
+                        <img src="/assets/img/operator.png" alt="operator" width="" height="" class="d-inline-block align-text-top">Contact
+                    </a>
                 </li>
                 <li>
                     <a href="/logout">
-                        <i class="bi bi-box-arrow-left"></i>Logout
+                        <img src="/assets/img/log-out.png" alt="">Logout
                     </a>
                 </li>
             </ul>
