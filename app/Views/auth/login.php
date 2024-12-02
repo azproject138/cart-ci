@@ -30,6 +30,10 @@
                         <input type="email" name="email" placeholder="Email" value="<?= old('email') ?>" required>
                     </div>
 
+                    <?php if (session()->getFlashdata('error')): ?>
+                    <p class="text-error" style="color: red; font-size: 15px"><?= session()->getFlashdata('error') ?></p>
+                    <?php endif; ?>
+
                     <!-- Input password -->
                     <div class="" style="position: relative;">
                         <label for="password" class="form-label">Password :</label>
@@ -37,9 +41,6 @@
                         <span class="btn-togglePasswordIcon position-absolute end-0 translate-middle-y me-3">
                             <i id="togglePasswordIcon" class="bi bi-eye" onclick="togglePassword('password', 'togglePasswordIcon')" style="cursor: pointer;"></i>
                         </span>
-                        <?php if (session()->getFlashdata('error')): ?>
-                        <p class="text-error" style="color: red; font-size: 15px"><?= session()->getFlashdata('error') ?></p>
-                        <?php endif; ?>
                     </div>
 
                     <button class="submit-btn-login" type="submit">Login</button>

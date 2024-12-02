@@ -36,30 +36,30 @@
                 </li>
                 <li>
                     <a href="#">
-                        <img src="/assets/img/history.png" alt="">Riwayat
+                        <img src="/assets/img/history.png" alt="history">Riwayat
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <img src="/assets/img/operator.png" alt="operator" width="" height="" class="d-inline-block align-text-top">Contact
+                        <img src="/assets/img/operator.png" alt="operator">Contact
                     </a>
                 </li>
                 <li>
                     <a href="/logout">
-                        <img src="/assets/img/log-out.png" alt="">Logout
+                        <img src="/assets/img/log-out.png" alt="log-out">Logout
                     </a>
                 </li>
             </ul>
-        </div>
-        <div id="main-content">
-            <button id="open-btn" class="open-btn">☰</button>
+            <!--Footer-->
+            <footer class="footer-sidebar">
+                <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+            </footer>
         </div>
     </nav>
+    <div id="main-content">
+        <button id="open-btn" class="open-btn"><i class="bi bi-list"></i></button>
+    </div>
 
-    <!--Footer-->
-    <footer>
-        <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
-    </footer>
     <script src="/assets/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
