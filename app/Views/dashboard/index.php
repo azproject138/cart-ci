@@ -41,11 +41,6 @@
                 </li>
                 <li>
                     <a href="#">
-                        <img src="/assets/img/immigration.png" alt="immigration">Report
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
                         <img src="/assets/img/operator.png" alt="operator" width="" height="" class="d-inline-block align-text-top">Contact
                     </a>
                 </li>

@@ -211,21 +211,22 @@ form h2 {
 
 .sidebar ul li {
     padding: 15px;
-    border-bottom: 1px solid #444;
+    
 }
 
 .sidebar ul li a {
-    color: white;
+    color: rgb(134, 134, 134);
     text-decoration: none;
+    font-size: 15px;
     display: block;
 }
 
 .sidebar ul li a:hover {
-    background-color: #575757;
+    color: #FFFFFF;
 }
 
 .sidebar img {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 /* Close button inside sidebar */
