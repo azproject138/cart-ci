@@ -187,6 +187,17 @@ form h2 {
     font-size: 15px;
 }
 
+.navbar-brand {
+    font-size: 16px;
+    font-weight: lighter;
+    margin-top: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
 /* Sidebar styles */
 .sidebar {
     position: fixed;
@@ -285,6 +296,7 @@ form h2 {
 /* Sidebar open state */
 .sidebar.open {
     left: 0; /* Move sidebar into view */
+    transition: left 0.3s ease;
 }
 
 #main-content.shift {
@@ -315,27 +327,52 @@ form h2 {
     position: relative;
 }
 
+.profile-dropdown {
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
 .dropdown-menu {
     display: none;
-    top: 50px;
-    right: 0;
+    position: absolute;
+    top: 53px;
+    right: 15px;
     background-color: white;
     border: none;
+    border-radius: 50px 0 50px 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+    max-width: 200px;
+    width: 50px;
     overflow: hidden;
     z-index: 1000;
 }
 
-.dropdown-menu a {
+.dropdown-menu .dropdown-btn {
     display: block;
-    padding: 15px 20px;
+    padding: 5px 10px;
     text-decoration: none;
-    color: #333;
+    border-radius: 0 50px 50px 0;
+    color: #868686;
 }
 
-.dropdown-menu a:hover {
-    background-color: #f0f0f0;
+.dropdown-menu .dropdown-btn:hover {
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #808080;
+}
+
+.logout-btn {
+    display: block;
+    padding: 5px 10px;
+    border-radius: 0 50px 50px 0;
+    text-decoration: none;
+    color: #868686;
+}
+
+.logout-btn:hover {
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ce6868;
 }
 
 .toggle-btn {
