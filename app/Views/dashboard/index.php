@@ -19,24 +19,19 @@
         <div class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 Welcome, <?= $username ?>
-                <div class="profile">
+                <div class="profile logo">
                     <img src="/assets/img/profile.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+                    <!--icon-open-dropdown-menu-->
                     <button class="toggle-btn" id="toggleBtn">
-                        <span class="icon">&#9660;</span>
+                        <i class="bi bi-chevron-down icon"></i>
                     </button>
+                    <!--dropdown-menu-->
                     <div class="dropdown-menu" id="dropdownMenu">
-                        <button id="closeMenu" class="close-menu">
-                            <i class="bi bi-x"></i>
-                        </button>
-                        <ul style="margin-top: -5px; margin-right: 0; padding: 0;">
-                            <li>Profile</li>
-                            <li>Settings</li>
-                            <li>
-                                <a href="/logout" style="text-decoration: none; color: black;">
-                                    <img src="/assets/img/log-out.png" alt="log-out" class="btn-log-out" style="width: auto; height: auto; margin-top: -3px; margin-right: 10px;">Logout
-                                </a>
-                            </li>
-                        </ul>
+                        <a href="#">Profile</a>
+                        <a href="#">Settings</a>
+                        <a href="/logout" style="text-decoration: none; color: black;">
+                            <img src="/assets/img/log-out.png" alt="log-out" class="btn-log-out" style="width: auto; height: auto; margin-top: -3px; margin-right: 10px;">Logout
+                        </a>
                     </div>
                 </div>
             </div>
