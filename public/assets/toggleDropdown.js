@@ -1,15 +1,16 @@
-const dropdownToggle = document.getElementById('dropdownToggle');
+const toggleBtn = document.getElementById('toggleBtn');
 const dropdownMenu = document.getElementById('dropdownMenu');
-const closeMenu = document.getElementById('closeMenu');
+const icon = document.querySelector('.icon');
 
-dropdownToggle.addEventListener('click', () => {
-    dropdownMenu.classList.add('active');
-    dropdownToggle.style.display = 'none';
-    closeMenu.style.display = 'inline';
+toggleBtn.addEventListener('click', () => {
+dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+icon.classList.toggle('rotate');
 });
 
-closeMenu.addEventListener('click', () => {
-    dropdownMenu.classList.remove('active');
-    dropdownToggle.style.display = 'inline';
-    closeMenu.style.display = 'none';
+// Close dropdown when clicking outside
+window.addEventListener('click', (e) => {
+if (!toggleBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+    dropdownMenu.style.display = 'none';
+    icon.classList.remove('rotate');
+}
 });

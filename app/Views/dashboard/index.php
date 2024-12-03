@@ -20,15 +20,15 @@
             <div class="container-fluid">
                 Welcome, <?= $username ?>
                 <div class="profile">
-                    <button  id="dropdownToggle" style="background: none; border: none;">
-                        <i class="bi bi-chevron-down"></i>
-                    </button>
                     <img src="/assets/img/profile.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+                    <button class="toggle-btn" id="toggleBtn">
+                        <span class="icon">&#9660;</span>
+                    </button>
                     <div class="dropdown-menu" id="dropdownMenu">
                         <button id="closeMenu" class="close-menu">
                             <i class="bi bi-x"></i>
                         </button>
-                        <ul style="margin-top: -10px; margin-right: 0; padding: 0;">
+                        <ul style="margin-top: -5px; margin-right: 0; padding: 0;">
                             <li>Profile</li>
                             <li>Settings</li>
                             <li>
