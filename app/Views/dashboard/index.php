@@ -25,13 +25,15 @@
                     </button>
                     <img src="/assets/img/profile.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
                     <div class="dropdown-menu" id="dropdownMenu">
-                        <button id="closeMenu" class="close-menu">&times;</button>
-                        <ul>
+                        <button id="closeMenu" class="close-menu">
+                            <i class="bi bi-x"></i>
+                        </button>
+                        <ul style="margin-top: -10px; margin-right: 0; padding: 0;">
                             <li>Profile</li>
                             <li>Settings</li>
                             <li>
-                                <a href="/logout">
-                                    <img src="/assets/img/log-out.png" alt="log-out" class="btn-log-out">Logout
+                                <a href="/logout" style="text-decoration: none; color: black;">
+                                    <img src="/assets/img/log-out.png" alt="log-out" class="btn-log-out" style="width: auto; height: auto; margin-top: -3px; margin-right: 10px;">Logout
                                 </a>
                             </li>
                         </ul>

@@ -319,22 +319,16 @@ form h2 {
     cursor: pointer;
 }
 
-.navbar .profile img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
 .dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: white;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.288);
     color: black;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+    border-radius: 0;
     overflow: hidden;
     animation: fadeIn 0.3s;
 }
@@ -345,17 +339,13 @@ form h2 {
 
 .dropdown-menu li {
     list-style: none;
-    padding: 10px 20px;
+    padding: 10px 10px;
     cursor: pointer;
+    right: 50px;
 }
 
 .dropdown-menu li:hover {
     background-color: #f0f0f0;
-}
-
-.icon {
-    font-size: 16px;
-    margin-left: 5px;
 }
 
 @keyframes fadeIn {
@@ -370,10 +360,10 @@ form h2 {
 }
 
 .close-menu {
+    margin-top: -15px;
     display: none;
     background: none;
     border: none;
-    cursor: pointer;
     font-size: 30px;
     color: rgb(129, 129, 129);
 }
