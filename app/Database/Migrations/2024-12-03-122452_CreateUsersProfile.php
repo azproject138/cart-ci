@@ -39,11 +39,11 @@ class CreateUsersProfile extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('users');
+        $this->forge->createTable('userProfile');
     }
 
     public function down()
     {
-        $this->forge->dropTable('users');
+        $this->forge->dropTable('userProfile');
     }
 }
