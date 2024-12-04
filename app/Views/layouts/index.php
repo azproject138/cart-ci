@@ -70,7 +70,7 @@
             
 
             <!--Footer-->
-            <div class="footer" style="width: 100%; text-align: center; padding: 10px; background-color: #333; color: white; font-size: 12px; margin-top: 150px;">
+            <div class="footer" style="width: 100%; text-align: center; padding: 10px; color: white; font-size: 12px; margin-top: 150px;">
                 <span>Copyright &copy; 2024</span>
             </div>
 
