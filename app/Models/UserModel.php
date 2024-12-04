@@ -8,7 +8,6 @@ class UserModel extends Model
 {
     protected $table      = 'users';
     protected $primaryKey = 'id';
-
-    protected $allowedFields = ['username', 'email', 'password'];
+    protected $allowedFields = ['username', 'email', 'password', 'created_at', 'updated_at', 'profile_picture', 'address', 'whatsapp',];
     protected $useTimestamps = true;
 }
