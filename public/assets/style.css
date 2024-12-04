@@ -303,13 +303,6 @@ form h2 {
     margin-left: 250px; /* Shift content when sidebar is open */
 }
 
-.footer-sidebar {
-    margin-top: 130px;
-    color: white;
-    text-align: center;
-    font-size: 13px;
-}
-
 .navbar {
     display: flex;
     align-items: center;
@@ -389,4 +382,11 @@ form h2 {
 
 .icon {
     transition: transform 0.5s;
+}
+
+.footer-sidebar {
+    margin-top: 0;
+    color: white;
+    text-align: center;
+    font-size: 13px;
 }

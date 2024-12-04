@@ -10,6 +10,6 @@ class Dashboard extends BaseController
             return redirect()->to('/login');
         }
 
-        return view('dashboard/index', ['username' => session()->get('username')]);
+        return view('layouts/index', ['username' => session()->get('username')]);
     }
 }
