@@ -42,7 +42,7 @@ class Auth extends BaseController
 
         if (!$user) {
             // Jika email tidak ditemukan, kembalikan input email
-            return redirect()->back()->with('error', 'Email tidak salah, silahkan cobalagi.')->withInput();
+            return redirect()->back()->with('error', 'Email belum terdaftar, silahkan cobalagi.')->withInput();
         }
 
         if ($user) {
