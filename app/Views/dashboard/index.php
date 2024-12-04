@@ -28,13 +28,16 @@
                     <!--dropdown-menu-->
                     <div class="dropdown-menu" id="dropdownMenu">
                         <a href="#" class="dropdown-btn">
-                            <i class="bi bi-person-fill" style="margin-right: 10px;"></i>Profile
+                            <i class="bi bi-person-fill" style="margin-right: 10px;"></i>
+                            <span class="dropdown-text">Profile</span>
                         </a>
                         <a href="#" class="dropdown-btn">
-                            <i class="bi bi-gear-wide" style="margin-right: 10px;"></i>Settings
+                            <i class="bi bi-gear-wide" style="margin-right: 10px;"></i>
+                            <span class="dropdown-text">Settings</span>
                         </a>
                         <a href="/logout" class="logout-btn">
-                            <i class="bi bi-box-arrow-left" style="margin-right: 10px;"></i>Logout
+                            <i class="bi bi-box-arrow-left" style="margin-right: 10px;"></i>
+                            <span class="dropdown-text">Logout</span>
                         </a>
                     </div>
                 </div>
@@ -65,10 +68,10 @@
             </ul>
 
             <!--Footer-->
-            <footer class="footer-sidebar">
+            <div class="footer-sidebar">
                 <hr>
                 <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
-            </footer>
+            </div>
         </div>
     </nav>
     <div id="main-content">

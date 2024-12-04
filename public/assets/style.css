@@ -339,19 +339,19 @@ form h2 {
     right: 15px;
     background-color: white;
     border: none;
-    border-radius: 50px 0 50px 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 200px;
-    width: 50px;
     overflow: hidden;
     z-index: 1000;
+}
+
+.profile:hover .dropdown-menu {
+    display: block;
 }
 
 .dropdown-menu .dropdown-btn {
     display: block;
     padding: 5px 10px;
     text-decoration: none;
-    border-radius: 0 50px 50px 0;
     color: #868686;
 }
 
@@ -364,7 +364,6 @@ form h2 {
 .logout-btn {
     display: block;
     padding: 5px 10px;
-    border-radius: 0 50px 50px 0;
     text-decoration: none;
     color: #868686;
 }
