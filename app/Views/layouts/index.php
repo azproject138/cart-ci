@@ -78,6 +78,11 @@
         <button id="open-btn" class="open-btn"><i class="bi bi-list"></i></button>
     </div>
 
+    <!--main content-->
+    <main>
+        <?= $this->renderSection('content') ?>
+    </main>
+
     <script src="/assets/sidebar.js"></script>
     <script src="/assets/toggleDropdown.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
