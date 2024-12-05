@@ -24,6 +24,17 @@
                     <?= csrf_field() ?>
                     
                     <h2>Register</h2>
+
+                    <!-- pesan error -->
+                    <?php if (session()->getFlashdata('error')): ?>
+                        <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+                    <?php endif; ?>
+
+                    <!-- pesan sukses -->
+                    <?php if (session()->getFlashdata('success')): ?>
+                        <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
+                    <?php endif; ?>
+
                     <div class="">
                         <label for="username" class="form-label">Username :</label>
                         <input type="text" name="username" placeholder="Username" required>
@@ -38,6 +49,13 @@
                         <input type="password" id="password" name="password" placeholder="Password" required>
                         <span class="btn-togglePasswordIcon position-absolute end-0 translate-middle-y me-3">
                             <i id="togglePasswordIcon" class="bi bi-eye" onclick="togglePassword('password', 'togglePasswordIcon')" style="cursor: pointer;"></i>
+                        </span>
+                    </div>
+                    <div class="" style="position: relative;">
+                        <label for="password_confirmation" class="form-label">Confirm Password :</label>
+                        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password" required>
+                        <span class="btn-togglePasswordIcon position-absolute end-0 translate-middle-y me-3">
+                            <i id="togglePasswordIcon" class="bi bi-eye" onclick="togglePassword('password_confirmation', 'togglePasswordIcon')" style="cursor: pointer;"></i>
                         </span>
                     </div>
 
