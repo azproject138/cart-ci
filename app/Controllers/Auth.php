@@ -16,6 +16,15 @@ class Auth extends BaseController
     {
         $userModel = new UserModel();
 
+        $username = $this->request->getPost('username');
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+        $confirmPassword = $this->request->getPost('confirm_password');
+
+        if ($password !== $confirmPassword) {
+            return redirect()->back()->with('error', 'Passwords tidak cocok, silahkan cobalagi.')->withInput();
+        }
+
         $data = [
             'username' => $this->request->getPost('username'),
             'email' => $this->request->getPost('email'),
@@ -24,7 +33,7 @@ class Auth extends BaseController
 
         $userModel->insert($data);
 
-        return redirect()->to('/login');
+        return redirect()->to('/login')->with('sukses', 'Selamat anda berhasil membuat akun! silahkan login.');
     }
 
     public function login()
