@@ -25,6 +25,10 @@
                     <?= csrf_field() ?>
                     <h2>Login</h2>
 
+                    <?php if (session()->getFlashdata('success')): ?>
+                        <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
+                    <?php endif; ?>
+
                     <div class="">
                         <label for="email" class="form-label">Email :</label>
                         <input type="email" name="email" placeholder="Email" value="<?= old('email') ?>" required>
@@ -34,7 +38,6 @@
                     <p class="text-error" style="color: red; font-size: 15px"><?= session()->getFlashdata('error') ?></p>
                     <?php endif; ?>
 
-                    <!-- Input password -->
                     <div class="" style="position: relative;">
                         <label for="password" class="form-label">Password :</label>
                         <input type="password" id="password" name="password" placeholder="Password" required>
