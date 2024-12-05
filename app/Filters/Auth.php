@@ -27,7 +27,7 @@ class Auth implements FilterInterface
     {
         //
         if (!session()->get('user')) {
-            return redirect()->to('/login')->with('error', 'Please login first.');
+            return redirect()->to('/login')->with('error', 'Silahkan login terlebih dahulu.');
         }
     }
 

@@ -38,11 +38,11 @@
 
                     <div class="">
                         <label for="username" class="form-label">Username :</label>
-                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="text" name="username" placeholder="Username" value="<?= old('username') ?>" required>
                     </div>
                     <div class="">
                         <label for="email" class="form-label">Email :</label>
-                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="email" name="email" placeholder="Email" value="<?= old('email') ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
