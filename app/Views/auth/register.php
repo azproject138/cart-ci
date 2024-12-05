@@ -14,6 +14,11 @@
         body {
             background-color: #ececec;
         }
+
+        .input-group {
+            margin-bottom: 10px;
+            padding: 45px;
+        }
     </style>
 </head>
 <body>
