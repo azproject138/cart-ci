@@ -36,3 +36,11 @@ in APPPATH\Config\Routes.php on line 12.
  2 SYSTEMPATH\Boot.php(351): CodeIgniter\CLI\Console->run()
  3 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
  4 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2024-12-05 14:30:01 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: CLI, Route: make:filter/Auth]
+in APPPATH\Config\Routes.php on line 12.
+ 1 SYSTEMPATH\Router\RouteCollection.php(340): require()
+ 2 SYSTEMPATH\CLI\Console.php(41): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\Boot.php(351): CodeIgniter\CLI\Console->run()
+ 4 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 5 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
