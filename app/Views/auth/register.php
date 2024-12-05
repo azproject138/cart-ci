@@ -15,9 +15,20 @@
             background-color: #ececec;
         }
 
-        .input-group {
-            margin-bottom: 10px;
-            padding: 45px;
+        .PassConfirPass {
+            width: 100px;
+            padding: 15px;
+            margin-left: 0;
+            margin-right: 0;
+            display: flex;
+            border-radius: 0;
+        }
+
+        .toggle-password {
+            height: 54px;
+            cursor: pointer;
+            color: #333;
+            border-radius: 0;
         }
     </style>
 </head>
@@ -52,7 +63,7 @@
                     <div class="">
                         <label for="password" class="form-label">Password</label>
                         <div class="input-group">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                            <input type="password" class="form-control PassConfirPass" id="password" name="password" placeholder="Enter password" required>
                             <span class="input-group-text toggle-password" data-target="password">
                                 <i class="bi bi-eye-slash"></i>
                             </span>
@@ -61,7 +72,7 @@
                     <div class="">
                         <label for="confirm_password" class="form-label">Confirm Password</label>
                         <div class="input-group">
-                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
+                            <input type="password" class="form-control PassConfirPass" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
                             <span class="input-group-text toggle-password" data-target="confirm_password">
                                 <i class="bi bi-eye-slash"></i>
                             </span>
