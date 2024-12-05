@@ -17,20 +17,18 @@
     </style>
 </head>
 <body>
+
     <section class="container">
         <main class="form-register">
             <div class="row">
                 <form class="form-register" action="/register" method="post">
                     <?= csrf_field() ?>
-                    
                     <h2>Register</h2>
-
-                    <!-- pesan error -->
+                    
                     <?php if (session()->getFlashdata('error')): ?>
                         <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
                     <?php endif; ?>
 
-                    <!-- pesan sukses -->
                     <?php if (session()->getFlashdata('success')): ?>
                         <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
                     <?php endif; ?>
@@ -43,7 +41,6 @@
                         <label for="email" class="form-label">Email :</label>
                         <input type="email" name="email" placeholder="Email" required>
                     </div>
-                    <!-- Input password -->
                     <div class="" style="position: relative;">
                         <label for="password" class="form-label">Password :</label>
                         <input type="password" id="password" name="password" placeholder="Password" required>
@@ -58,7 +55,6 @@
                             <i id="togglePasswordIcon" class="bi bi-eye" onclick="togglePassword('password_confirmation', 'togglePasswordIcon')" style="cursor: pointer;"></i>
                         </span>
                     </div>
-
                     <button class="submit-btn-register" type="submit">Register</button>
                     <p class="link-btn-login-register">Sudah punya akun?<a href="/login"> Login</a></p>
                 </form>
