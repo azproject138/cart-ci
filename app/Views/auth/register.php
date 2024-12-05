@@ -26,11 +26,14 @@
                     <h2>Register</h2>
                     
                     <?php if (session()->getFlashdata('error')): ?>
-                        <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+                        <div class="alert alert-danger">
+                            <?= session()->getFlashdata('error') ?>
+                        </div>
                     <?php endif; ?>
-
                     <?php if (session()->getFlashdata('success')): ?>
-                        <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
+                        <div class="alert alert-success">
+                            <?= session()->getFlashdata('success') ?>
+                        </div>
                     <?php endif; ?>
 
                     <div class="">
@@ -41,19 +44,23 @@
                         <label for="email" class="form-label">Email :</label>
                         <input type="email" name="email" placeholder="Email" required>
                     </div>
-                    <div class="" style="position: relative;">
-                        <label for="password" class="form-label">Password :</label>
-                        <input type="password" id="password" name="password" placeholder="Password" required>
-                        <span class="btn-togglePasswordIcon position-absolute end-0 translate-middle-y me-3">
-                            <i id="togglePasswordIcon" class="bi bi-eye" onclick="togglePassword('password', 'togglePasswordIcon')" style="cursor: pointer;"></i>
-                        </span>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                            <span class="input-group-text toggle-password" data-target="password">
+                                <i class="bi bi-eye-slash"></i>
+                            </span>
+                        </div>
                     </div>
-                    <div class="" style="position: relative;">
-                        <label for="password_confirmation" class="form-label">Confirm Password :</label>
-                        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password" required>
-                        <span class="btn-togglePasswordIcon position-absolute end-0 translate-middle-y me-3">
-                            <i id="togglePasswordIcon" class="bi bi-eye" onclick="togglePassword('password_confirmation', 'togglePasswordIcon')" style="cursor: pointer;"></i>
-                        </span>
+                    <div class="mb-3">
+                        <label for="confirm_password" class="form-label">Confirm Password</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
+                            <span class="input-group-text toggle-password" data-target="confirm_password">
+                                <i class="bi bi-eye-slash"></i>
+                            </span>
+                        </div>
                     </div>
                     <button class="submit-btn-register" type="submit">Register</button>
                     <p class="link-btn-login-register">Sudah punya akun?<a href="/login"> Login</a></p>
@@ -62,8 +69,8 @@
         </main>
     </section>
 
-    <!-- Tambahkan Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
     <script src="/assets/togglePassword.js"></script>
 </body>
 </html>
