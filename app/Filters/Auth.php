@@ -26,6 +26,9 @@ class Auth implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         //
+        if (!session()->get('user')) {
+            return redirect()->to('/login')->with('error', 'Please login first.');
+        }
     }
 
     /**
