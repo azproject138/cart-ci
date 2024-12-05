@@ -80,7 +80,7 @@ form {
     display: flex;
 }
 
-.form-register {
+.form-register .input-group{
     width: 350px;
     padding: 45px;
     margin-top: 8px;

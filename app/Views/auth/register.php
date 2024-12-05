@@ -44,7 +44,7 @@
                         <label for="email" class="form-label">Email :</label>
                         <input type="email" name="email" placeholder="Email" value="<?= old('email') ?>" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="">
                         <label for="password" class="form-label">Password</label>
                         <div class="input-group">
                             <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
@@ -53,7 +53,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="">
                         <label for="confirm_password" class="form-label">Confirm Password</label>
                         <div class="input-group">
                             <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
