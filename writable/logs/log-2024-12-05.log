@@ -22,3 +22,10 @@ INFO - 2024-12-05 06:07:44 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-12-05 06:07:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-12-05 06:11:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-12-05 06:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-05 14:22:57 --> ParseError: syntax error, unexpected identifier "redirect"
+[Method: CLI, Route: make:filter/Auth]
+in APPPATH\Config\Routes.php on line 12.
+ 1 SYSTEMPATH\CLI\Console.php(41): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\Boot.php(351): CodeIgniter\CLI\Console->run()
+ 3 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 4 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))

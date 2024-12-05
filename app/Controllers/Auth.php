@@ -16,8 +16,6 @@ class Auth extends BaseController
     {
         $userModel = new UserModel();
 
-        $username = $this->request->getPost('username');
-        $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
         $confirmPassword = $this->request->getPost('confirm_password');
 
@@ -33,7 +31,7 @@ class Auth extends BaseController
 
         $userModel->insert($data);
 
-        return redirect()->to('/login')->with('sukses', 'Selamat anda berhasil membuat akun! silahkan login.');
+        return redirect()->to('/login')->with('sukses', 'Selamat anda berhasil membuat Akun! silahkan login.');
     }
 
     public function login()
@@ -49,15 +47,17 @@ class Auth extends BaseController
 
         $user = $userModel->where('email', $email)->first();
 
-        if (!$user) {
-            return redirect()->back()->with('error', 'Email tidak terdaftar.')->withInput();
+        if (!$user || !password_verify($password, $user['password'])) {
+            return redirect()->back()->with('error', 'Email atau Password tidak valid.')->withInput();
         }
 
-        if (!password_verify($password, $user['password'])) {
-            return redirect()->back()->with('error', 'Password salah, silahkan cobalagi.')->withInput();
-        }
+        session()->set('user', [
+            'id'       => $user['id'],
+            'username' => $user['username'],
+            'email'    => $user['email'],
+        ]);
 
-        return redirect()->to('/dashboard')->with('success', 'Welcome back, ' . $user['username'] . '!');
+        return redirect()->to('/dashboard')->with('success', 'Selamat, Login berhasil, ' . $user['username']);
     }
 
     public function logout()
