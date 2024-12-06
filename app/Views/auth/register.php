@@ -14,22 +14,6 @@
         body {
             background-color: #ececec;
         }
-
-        .PassConfirPass {
-            width: 100px;
-            padding: 15px;
-            margin-left: 0;
-            margin-right: 0;
-            display: flex;
-            border-radius: 0;
-        }
-
-        .toggle-password {
-            height: 54px;
-            cursor: pointer;
-            color: #333;
-            border-radius: 0;
-        }
     </style>
 </head>
 <body>

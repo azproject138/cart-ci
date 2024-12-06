@@ -124,9 +124,20 @@ form h2 {
     justify-content: left;
     display: flex;
 }
+.PassConfirPass {
+    width: 100px;
+    padding: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    border-radius: 0;
+}
 
-.btn-togglePasswordIcon {
-    top: 60px;
+.toggle-password {
+    height: 54px;
+    cursor: pointer;
+    color: #333;
+    border-radius: 0;
 }
 
 .text-error {
