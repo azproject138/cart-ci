@@ -38,12 +38,14 @@
                     <p class="text-error" style="color: red; font-size: 15px"><?= session()->getFlashdata('error') ?></p>
                     <?php endif; ?>
 
-                    <div class="" style="position: relative;">
-                        <label for="password" class="form-label">Password :</label>
-                        <input type="password" id="password" name="password" placeholder="Password" required>
-                        <span class="btn-togglePasswordIcon position-absolute end-0 translate-middle-y me-3">
-                            <i id="togglePasswordIcon" class="bi bi-eye" onclick="togglePassword('password', 'togglePasswordIcon')" style="cursor: pointer;"></i>
-                        </span>
+                    <div class="">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control PassConfirPass" id="password" name="password" placeholder="Enter password" required>
+                            <span class="input-group-text toggle-password" data-target="password">
+                                <i class="bi bi-eye-slash"></i>
+                            </span>
+                        </div>
                     </div>
 
                     <button class="submit-btn-login" type="submit">Login</button>
