@@ -47,14 +47,14 @@
                     <div class="mb-3 position-relative">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" name="password" id="password" class="form-control" style="padding: 14px; border-radius: 0; border: none; background-color: #f2f2f2;" required>
-                        <span class="position-absolute top-50 end-0 translate-middle-y me-2" style="cursor: pointer;" onclick="togglePassword('password')">
+                        <span class="position-absolute top-50 end-0 translate-middle-y me-2" style="cursor: pointer; margin-top: 10px;" onclick="togglePassword('password')">
                             <i class="bi bi-eye-slash" style=" margin-right: 10px;" id="password-icon"></i>
                         </span>
                     </div>
                     <div class="mb-3 position-relative">
                         <label for="confirm_password" class="form-label">Confirm Password</label>
                         <input type="password" name="confirm_password" id="confirm_password" class="form-control" style="padding: 14px; border-radius: 0; border: none; background-color: #f2f2f2;" required>
-                        <span class="position-absolute top-50 end-0 translate-middle-y me-2" style="cursor: pointer;" onclick="togglePassword('confirm_password')">
+                        <span class="position-absolute top-50 end-0 translate-middle-y me-2" style="cursor: pointer; margin-top: 10px;" onclick="togglePassword('confirm_password')">
                             <i class="bi bi-eye-slash" style=" margin-right: 10px;" id="confirm_password-icon"></i>
                         </span>
                     </div>
