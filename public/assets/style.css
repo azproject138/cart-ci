@@ -91,6 +91,12 @@ form {
     display: flex;
 }
 
+.form-input-pass {
+    position: absolute;
+    left: 120%;
+    margin-top: -20px;
+}
+
 form input {
     font-family: "Roboto", sans-serif;
     outline: 0;
