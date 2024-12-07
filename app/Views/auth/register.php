@@ -14,6 +14,10 @@
         body {
             background-color: #ececec;
         }
+        
+        .form-reg {
+            margin-left: 50px;
+        }
     </style>
 </head>
 <body>
@@ -36,24 +40,24 @@
                         </div>
                     <?php endif; ?>
 
-                    <div class="">
+                    <div class="form-reg" style="width: 80%;">
                         <label for="username" class="form-label">Username :</label>
                         <input type="text" name="username" placeholder="Username" value="<?= old('username') ?>" required>
                     </div>
-                    <div class="">
+                    <div class="form-reg" style="width: 80%;">
                         <label for="email" class="form-label">Email :</label>
                         <input type="email" name="email" placeholder="Email" value="<?= old('email') ?>" required>
                     </div>
-                    <div class="form-input-pass position-relative">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" placeholder="Password" id="password" class="form-control" style="padding: 14px; border-radius: 0; border: none; background-color: #f2f2f2;" required>
+                    <div class="position-relative form-input-pass form-reg" style="width: 68%;">
+                        <label for="password" class="form-label">Password :</label>
+                        <input type="password" name="password" placeholder="Password" id="password" class="form-control" style="padding: 14px; border-radius: 5px; border: none; background-color: #f2f2f2;" required>
                         <span class="position-absolute top-50 end-0 translate-middle-y me-2" style="cursor: pointer; margin-top: 10px;" onclick="togglePassword('password')">
                             <i class="bi bi-eye-slash" style=" margin-right: 10px;" id="password-icon"></i>
                         </span>
                     </div>
-                    <div class="form-input-pass position-relative">
-                        <label for="confirm_password" class="form-label">Confirm Password</label>
-                        <input type="password" name="confirm_password" placeholder="Confirmasi Password" id="confirm_password" class="form-control" style="padding: 14px; border-radius: 0; border: none; background-color: #f2f2f2;" required>
+                    <div class="position-relative form-input-pass form-reg" style="width: 68%;">
+                        <label for="confirm_password" class="form-label">Confirm Password :</label>
+                        <input type="password" name="confirm_password" placeholder="Confirmasi Password" id="confirm_password" class="form-control " style="padding: 14px; border-radius: 5px; border: none; background-color: #f2f2f2;" required>
                         <span class="position-absolute top-50 end-0 translate-middle-y me-2" style="cursor: pointer; margin-top: 10px;" onclick="togglePassword('confirm_password')">
                             <i class="bi bi-eye-slash" style=" margin-right: 10px;" id="confirm_password-icon"></i>
                         </span>

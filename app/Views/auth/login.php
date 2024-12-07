@@ -14,6 +14,9 @@
         body {
             background-color: #ececec;
         }
+        form .form-input-log {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -31,7 +34,7 @@
 
                     <div class="">
                         <label for="email" class="form-label">Email :</label>
-                        <input type="email" name="email" placeholder="Email" value="<?= old('email') ?>" required>
+                        <input type="email" class="form-input-log" name="email" placeholder="Email" value="<?= old('email') ?>" required>
                     </div>
 
                     <?php if (session()->getFlashdata('error')): ?>
@@ -40,14 +43,14 @@
 
                     <div class="mb-3 position-relative">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" id="password" class="form-control" style="padding: 14px; border-radius: 0; border: none; background-color: #f2f2f2;" placeholder="Password" required>
+                        <input type="password" name="password" id="password" class="form-control" style="padding: 14px; border-radius: 0; border: none; border-radius: 5px; background-color: #f2f2f2;" placeholder="Password" required>
                         <span class="position-absolute top-50 end-0 translate-middle-y me-2" style="cursor: pointer; margin-top: 10px;" onclick="togglePassword('password')">
                             <i class="bi bi-eye-slash" style=" margin-right: 10px;" id="password-icon"></i>
                         </span>
                     </div>
 
                     <button class="submit-btn-login" type="submit">Login</button>
-                    <p class="link-btn-login-register">Belum punya akun?<a href="/register" class="register">Daftar</a></p>
+                    <p class="link-btn-login-register">Belum punya akun?<a href="/register" class="register">Register</a></p>
                 </form>
             </div>
         </main>
