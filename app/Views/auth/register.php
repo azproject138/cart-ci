@@ -14,6 +14,10 @@
         body {
             background-color: #ececec;
         }
+        
+        .form-reg {
+            margin-left: 50px;
+        }
     </style>
 </head>
 <body>
@@ -36,11 +40,11 @@
                         </div>
                     <?php endif; ?>
 
-                    <div class="">
+                    <div class="form-reg">
                         <label for="username" class="form-label">Username :</label>
                         <input type="text" name="username" placeholder="Username" value="<?= old('username') ?>" required>
                     </div>
-                    <div class="">
+                    <div class="form-reg">
                         <label for="email" class="form-label">Email :</label>
                         <input type="email" name="email" placeholder="Email" value="<?= old('email') ?>" required>
                     </div>
