@@ -146,12 +146,12 @@ form h2 {
     text-transform: uppercase;
     outline: 0;
     background: #4c8baf;
-    width: 80%;
+    width: 100%;
     border: 0;
     border-radius: 5px;
     padding: 15px;
     margin-top: 10px;
-    margin-left: 35px;
+    margin-left: 0;
     color: #ffffff;
     font-size: 14px;
     -webkit-transition: all 0.3 ease;
