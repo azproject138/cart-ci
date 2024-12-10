@@ -16,11 +16,11 @@
         }
         
         .form-reg {
-            left: 35px;
+            
         }
 
         .frm-inpt {
-            width: 80%;
+            width: 100%;
             justify-content: center;
             align-items: center;
             align-content: center;
