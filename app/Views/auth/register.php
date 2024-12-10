@@ -14,10 +14,6 @@
         body {
             background-color: #ececec;
         }
-        
-        .form-reg {
-            
-        }
 
         .frm-inpt {
             width: 100%;
