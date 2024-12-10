@@ -14,10 +14,6 @@
         body {
             background-color: #ececec;
         }
-        
-        .form-reg {
-            margin-left: 50px;
-        }
     </style>
 </head>
 <body>
