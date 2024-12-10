@@ -16,7 +16,7 @@
         }
         
         .form-reg {
-            left: 40px;
+            left: 35px;
         }
 
         .frm-inpt {
