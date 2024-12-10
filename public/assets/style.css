@@ -1,11 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     box-sizing: border-box;
-    background: #f3f3f3;
-    background: -webkit-linear-gradient(right, #e0e0e0, #cacaca);
-    background: -moz-linear-gradient(right, #c9c9c9, #a1a1a1);
-    background: -o-linear-gradient(right, #949494, #7e7e7e);
-    background: linear-gradient(to left, #e4e4e4, #f3f3f3);
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;  
