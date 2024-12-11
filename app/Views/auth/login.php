@@ -21,6 +21,7 @@
 </head>
 <body>
     <section class="container">
+        <?= $this->include('partials/alerts') ?>
         <main class="form-login">
             <div class="row">
 
