@@ -9,7 +9,21 @@ class Auth extends BaseController
 {
     public function register()
     {
-        return view('auth/register');
+        $validation = \Config\Services::validation();
+        $userModel = new UserModel();
+
+        $data = [
+            'username' => $this->request->getPost('username'),
+            'email'    => $this->request->getPost('email'),
+            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+        ];
+
+        if ($userModel->insert($data)) {
+            session()->setFlashdata('success', 'Registrasi berhasil! Silakan login untuk melanjutkan.');
+            return redirect()->to('/login');
+        }
+
+        return redirect()->back()->withInput()->with('errors', $validation->getErrors());
     }
 
     public function processRegister()
@@ -36,7 +50,28 @@ class Auth extends BaseController
 
     public function login()
     {
-        return view('auth/login');
+        $userModel = new UserModel();
+    $email = $this->request->getPost('email');
+    $password = $this->request->getPost('password');
+
+    $user = $userModel->where('email', $email)->first();
+
+    if ($user && password_verify($password, $user['password'])) {
+        session()->set([
+            'user' => [
+                'id'       => $user['id'],
+                'username' => $user['username'],
+                'email'    => $user['email'],
+            ],
+            'logged_in' => true,
+        ]);
+
+        session()->setFlashdata('success', 'Login berhasil! Selamat datang di dashboard.');
+        return redirect()->to('/dashboard');
+    }
+
+    session()->setFlashdata('error', 'Email atau password salah.');
+    return redirect()->back()->withInput();
     }
 
     public function processLogin()
