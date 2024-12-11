@@ -1,3 +1,17 @@
+:root {
+    --primary-color: #E06E3F;
+    --secondary-color: #F2F2F2;
+    --tertiary-color: #404040;
+    --quaternary-color: #F7F8F9;
+    --quinary-color: #F2F2F2;
+    --senary-color: #E5E5E5;
+    --septenary-color: #C7C7C7;
+    --octonary-color: #555555;
+    --nonary-color: #FFFFFF;
+    --decenary-color: #000000;
+    --danger-color: #FF0000;
+}
+
 body {
     font-family: Arial, sans-serif;
     box-sizing: border-box;
