@@ -14,6 +14,11 @@
 
 </head>
 <body>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Login berhasil! Selamat datang di dashboard.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
     <!--navbar-->
     <header>
         <div class="navbar bg-body-tertiary">
