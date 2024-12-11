@@ -9,6 +9,9 @@ class Auth extends BaseController
 {
     public function register()
     {
+
+        return view('auth/register');
+
         $validation = \Config\Services::validation();
         $userModel = new UserModel();
 
@@ -50,6 +53,9 @@ class Auth extends BaseController
 
     public function login()
     {
+
+        return view('auth/login');
+
         $userModel = new UserModel();
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
