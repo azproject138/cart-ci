@@ -10,6 +10,9 @@
     --nonary-color: #FFFFFF;
     --decenary-color: #000000;
     --danger-color: #FF0000;
+    --success-color: #00FF00;
+    --warning-color: #FFFF00;
+    --info-color: #0000FF;
 }
 
 body {
