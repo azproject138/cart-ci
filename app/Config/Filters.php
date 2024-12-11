@@ -12,8 +12,9 @@ use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\PageCache;
 use CodeIgniter\Filters\PerformanceMetrics;
 use CodeIgniter\Filters\SecureHeaders;
+use CodeIgniter\Config\BaseConfig;
 
-class Filters extends BaseFilters
+class Filters extends BaseConfig
 {
     /**
      * Configures aliases for Filter classes to
@@ -25,9 +26,9 @@ class Filters extends BaseFilters
      * or [filter_name => [classname1, classname2, ...]]
      */
     public array $aliases = [
-        'csrf' => \CodeIgniter\Filters\CSRF::class,
-        'toolbar' => \CodeIgniter\Filters\DebugToolbar::class,
-        'auth' => \App\Filters\AuthFilter::class, // Tambahkan alias auth
+        'csrf'          => \CodeIgniter\Filters\CSRF::class,
+        'toolbar'       => \CodeIgniter\Filters\DebugToolbar::class,
+        'auth'          => \App\Filters\AuthFilter::class,
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
@@ -75,7 +76,7 @@ class Filters extends BaseFilters
             // 'invalidchars',
         ],
         'after' => [
-            'auth' => \App\Filters\AuthFilter::class, // Tambahkan alias auth
+            'toolbar',
             // 'honeypot',
             // 'secureheaders',
         ],
