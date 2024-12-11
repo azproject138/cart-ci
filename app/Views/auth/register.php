@@ -24,6 +24,16 @@
             flex-direction: column;
         }
 
+        .alert-success {
+            background: none;
+            border: none;
+            color: #00FF00;
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
         .alert-danger {
             background: none;
             border: none;
