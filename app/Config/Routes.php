@@ -9,5 +9,5 @@ $routes->get('/register', 'Auth::register');
 $routes->post('/register', 'Auth::processRegister');
 $routes->get('/login', 'Auth::login');
 $routes->post('/login', 'Auth::processLogin');
-$routes->get('/dashboard', 'Auth::dashboard', ['filter' => 'auth']);
+$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
 $routes->get('/logout', 'Auth::logout');
