@@ -89,6 +89,7 @@
 
     <!--main content-->
     <main>
+        <?= $this->include('partials/alerts') ?>
         <?= $this->renderSection('content') ?>
     </main>
 
