@@ -23,6 +23,15 @@
             display: flex;
             flex-direction: column;
         }
+
+        .alert-danger {
+            background: none;
+            border: none;
+            color: #FF0000;
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
