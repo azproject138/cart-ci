@@ -25,8 +25,9 @@ class Filters extends BaseFilters
      * or [filter_name => [classname1, classname2, ...]]
      */
     public array $aliases = [
-        'csrf'          => CSRF::class,
-        'toolbar'       => DebugToolbar::class,
+        'csrf' => \CodeIgniter\Filters\CSRF::class,
+        'toolbar' => \CodeIgniter\Filters\DebugToolbar::class,
+        'auth' => \App\Filters\AuthFilter::class, // Tambahkan alias auth
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
@@ -74,6 +75,7 @@ class Filters extends BaseFilters
             // 'invalidchars',
         ],
         'after' => [
+            'auth' => \App\Filters\AuthFilter::class, // Tambahkan alias auth
             // 'honeypot',
             // 'secureheaders',
         ],
