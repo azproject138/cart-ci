@@ -20,7 +20,7 @@ class Auth extends BaseController
         $confirmPassword = $this->request->getPost('confirm_password');
 
         if ($password !== $confirmPassword) {
-            return redirect()->back()->with('error', 'Passwords tidak cocok, silahkan cobalagi.')->withInput();
+            return redirect()->back()->with('error', 'Passwords tidak cocok.')->withInput();
         }
 
         $data = [
