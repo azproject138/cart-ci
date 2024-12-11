@@ -48,6 +48,7 @@
 <body>
 
     <section class="container">
+        <?= $this->include('partials/alerts') ?>
         <main class="form-register">
             <div class="row">
                 <form class="form-register" action="/register" method="post">
