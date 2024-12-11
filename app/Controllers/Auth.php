@@ -51,27 +51,27 @@ class Auth extends BaseController
     public function login()
     {
         $userModel = new UserModel();
-    $email = $this->request->getPost('email');
-    $password = $this->request->getPost('password');
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
 
-    $user = $userModel->where('email', $email)->first();
+        $user = $userModel->where('email', $email)->first();
 
-    if ($user && password_verify($password, $user['password'])) {
-        session()->set([
-            'user' => [
-                'id'       => $user['id'],
-                'username' => $user['username'],
-                'email'    => $user['email'],
-            ],
-            'logged_in' => true,
-        ]);
+        if ($user && password_verify($password, $user['password'])) {
+            session()->set([
+                'user' => [
+                    'id'       => $user['id'],
+                    'username' => $user['username'],
+                    'email'    => $user['email'],
+                ],
+                'logged_in' => true,
+            ]);
 
-        session()->setFlashdata('success', 'Login berhasil! Selamat datang di dashboard.');
-        return redirect()->to('/dashboard');
-    }
+            session()->setFlashdata('success', 'Login berhasil! Selamat datang di dashboard.');
+            return redirect()->to('/dashboard');
+        }
 
-    session()->setFlashdata('error', 'Email atau password salah.');
-    return redirect()->back()->withInput();
+        session()->setFlashdata('error', 'Email atau password salah.');
+        return redirect()->back()->withInput();
     }
 
     public function processLogin()
