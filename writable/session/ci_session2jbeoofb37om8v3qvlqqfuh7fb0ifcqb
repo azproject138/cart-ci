@@ -1,1 +1,1 @@
-__ci_last_regenerate|i:1733894747;_ci_previous_url|s:37:"http://localhost:8080/index.php/login";error|s:26:"Email atau password salah.";__ci_vars|a:2:{s:5:"error";s:3:"new";s:13:"_ci_old_input";s:3:"new";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:0:{}}
+__ci_last_regenerate|i:1733894747;_ci_previous_url|s:40:"http://localhost:8080/index.php/register";

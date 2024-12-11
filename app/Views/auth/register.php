@@ -47,11 +47,6 @@
 </head>
 <body>
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        Registrasi berhasil! Silakan login untuk melanjutkan.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-
     <section class="container">
         <?= $this->include('partials/alerts') ?>
         <main class="form-register">
