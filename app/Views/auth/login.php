@@ -35,14 +35,13 @@
     <section class="container">
         <?= $this->include('partials/alerts') ?>
         <main>
-
-            <?php if (session()->getFlashdata('success')): ?>
-                <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
-            <?php endif; ?>
-
             <div class="row">
-
                 <form class="form-login" action="/login" method="post">
+
+                    <?php if (session()->getFlashdata('success')): ?>
+                        <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
+                    <?php endif; ?>
+
                     <?= csrf_field() ?>
                     <h2>Login</h2>
 
