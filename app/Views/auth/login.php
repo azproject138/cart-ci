@@ -63,6 +63,7 @@
                         <p class="text-error" style="color: red; font-size: 15px; text-align: center;"><?= session()->getFlashdata('error') ?></p>
                     <?php endif; ?>
 
+                    <br>
                     <button class="submit-btn-login" type="submit">Login</button>
                     <p class="link-btn-login-register">Belum punya akun?<a href="/register" class="register">Register</a></p>
                 </form>
