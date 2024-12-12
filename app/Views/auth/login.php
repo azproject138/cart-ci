@@ -61,7 +61,7 @@
 
                     
                     <?php if (session()->getFlashdata('error')): ?>
-                        <p class="text-error" style="color: red; font-size: 15px"><?= session()->getFlashdata('error') ?></p>
+                        <p class="text-error" style="color: red; font-size: 15px; text-align: center;"><?= session()->getFlashdata('error') ?></p>
                     <?php endif; ?>
 
                     <button class="submit-btn-login" type="submit">Login</button>
