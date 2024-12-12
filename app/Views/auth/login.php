@@ -52,7 +52,7 @@
 
                     <div class="mb-3 position-relative">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" id="password" class="form-control" style="padding: 14px; border-radius: 0; border: none; border-radius: 5px; background-color: #f2f2f2;" placeholder="Password" required>
+                        <input type="password" name="password" id="password" class="form-control" style="padding: 14px; border-radius: 0; border: none; border-radius: 5px; background-color:rgb(255, 255, 255);" placeholder="Password" required>
                         <span class="position-absolute top-50 end-0 translate-middle-y me-2" style="cursor: pointer; margin-top: 10px;" onclick="togglePassword('password')">
                             <i class="bi bi-eye-slash" style=" margin-right: 10px;" id="password-icon"></i>
                         </span>
