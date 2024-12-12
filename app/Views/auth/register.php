@@ -34,12 +34,6 @@
                 <form class="form-register" action="/register" method="post">
                     <?= csrf_field() ?>
                     <h2>Register</h2>
-                    <?php if (session()->getFlashdata('success')): ?>
-                        <div class="alert alert-success">
-                            <?= session()->getFlashdata('success') ?>
-                        </div>
-                    <?php endif; ?>
-
                     <div class="position-relative form-reg">
                         <label for="username" class="form-label">Username :</label>
                         <input type="text" name="username" class="frm-inpt" placeholder="Username" value="<?= old('username') ?>" required>
