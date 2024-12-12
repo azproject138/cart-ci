@@ -39,7 +39,7 @@
                 <form class="form-login" action="/login" method="post">
 
                     <?php if (session()->getFlashdata('success')): ?>
-                        <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
+                        <p style="color: green; text-align: left"><?= session()->getFlashdata('success') ?></p>
                     <?php endif; ?>
 
                     <?= csrf_field() ?>
