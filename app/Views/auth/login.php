@@ -29,15 +29,16 @@
                 <p class="text-error" style="color: red; font-size: 15px"><?= session()->getFlashdata('error') ?></p>
             <?php endif; ?>
 
+            
+            <?php if (session()->getFlashdata('success')): ?>
+                <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
+            <?php endif; ?>
+
             <div class="row">
 
                 <form class="form-login" action="/login" method="post">
                     <?= csrf_field() ?>
                     <h2>Login</h2>
-
-                    <?php if (session()->getFlashdata('success')): ?>
-                        <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
-                    <?php endif; ?>
 
                     <div class="">
                         <label for="email" class="form-label">Email :</label>
