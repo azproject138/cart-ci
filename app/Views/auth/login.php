@@ -14,6 +14,14 @@
         body {
             background-color: #ececec;
         }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
         form .form-input-log {
             width: 100%;
         }
