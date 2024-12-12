@@ -22,6 +22,12 @@
             height: 100vh;
         }
 
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         form .form-input-log {
             width: 100%;
         }
