@@ -24,6 +24,11 @@
     <section class="container">
         <?= $this->include('partials/alerts') ?>
         <main class="form-login">
+
+            <?php if (session()->getFlashdata('error')): ?>
+                <p class="text-error" style="color: red; font-size: 15px"><?= session()->getFlashdata('error') ?></p>
+            <?php endif; ?>
+
             <div class="row">
 
                 <form class="form-login" action="/login" method="post">
@@ -38,10 +43,6 @@
                         <label for="email" class="form-label">Email :</label>
                         <input type="email" class="form-input-log" name="email" placeholder="Email" value="<?= old('email') ?>" required>
                     </div>
-
-                    <?php if (session()->getFlashdata('error')): ?>
-                    <p class="text-error" style="color: red; font-size: 15px"><?= session()->getFlashdata('error') ?></p>
-                    <?php endif; ?>
 
                     <div class="mb-3 position-relative">
                         <label for="password" class="form-label">Password</label>
