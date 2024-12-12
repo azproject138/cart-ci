@@ -96,6 +96,7 @@ form {
 .alert-danger {
     margin: 0 0 0;
     font-size: 15px;
+    height: 50%;
     color: red;
     background: none;
     border: none;
