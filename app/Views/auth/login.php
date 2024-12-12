@@ -36,11 +36,6 @@
         <?= $this->include('partials/alerts') ?>
         <main>
 
-            <?php if (session()->getFlashdata('error')): ?>
-                <p class="text-error" style="color: red; font-size: 15px"><?= session()->getFlashdata('error') ?></p>
-            <?php endif; ?>
-
-            
             <?php if (session()->getFlashdata('success')): ?>
                 <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
             <?php endif; ?>
@@ -63,6 +58,11 @@
                             <i class="bi bi-eye-slash" style=" margin-right: 10px;" id="password-icon"></i>
                         </span>
                     </div>
+
+                    
+            <?php if (session()->getFlashdata('error')): ?>
+                <p class="text-error" style="color: red; font-size: 15px"><?= session()->getFlashdata('error') ?></p>
+            <?php endif; ?>
 
                     <button class="submit-btn-login" type="submit">Login</button>
                     <p class="link-btn-login-register">Belum punya akun?<a href="/register" class="register">Register</a></p>
