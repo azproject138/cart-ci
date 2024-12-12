@@ -48,13 +48,6 @@
                         <label for="email" class="form-label">Email :</label>
                         <input type="email" name="email" class="frm-inpt" placeholder="Email" value="<?= old('email') ?>" required>
                     </div>
-
-                    <?php if (session()->getFlashdata('error')): ?>
-                        <div class="alert alert-danger">
-                            <?= session()->getFlashdata('error') ?>
-                        </div>
-                    <?php endif; ?>
-
                     <div class="position-relative form-reg">
                         <label for="password" class="form-label">Password :</label>
                         <input type="password" name="password" placeholder="Password" id="password" class="form-control frm-inpt" style="padding: 14px; border-radius: 5px; border: none; background-color:rgb(255, 255, 255);" required>
