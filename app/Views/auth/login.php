@@ -28,9 +28,6 @@
             align-items: center;
         }
 
-        form .form-input-log {
-            width: 100%;
-        }
     </style>
 </head>
 <body>
