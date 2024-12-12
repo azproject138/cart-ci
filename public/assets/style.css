@@ -156,10 +156,6 @@ form h2 {
     display: flex;
 }
 
-.btn-togglePasswordIcon {
-    top: 60px;
-}
-
 .text-error {
     margin: 0 0 0;
     font-size: 15px;
