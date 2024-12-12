@@ -37,11 +37,6 @@
         <main>
             <div class="row">
                 <form class="form-login" action="/login" method="post">
-
-                    <?php if (session()->getFlashdata('success')): ?>
-                        <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
-                    <?php endif; ?>
-
                     <?= csrf_field() ?>
                     <h2>Login</h2>
 
@@ -57,13 +52,6 @@
                             <i class="bi bi-eye-slash" style=" margin-right: 10px;" id="password-icon"></i>
                         </span>
                     </div>
-
-                    
-                    <?php if (session()->getFlashdata('error')): ?>
-                        <p class="text-error" style="color: red; font-size: 15px; text-align: center;"><?= session()->getFlashdata('error') ?></p>
-                    <?php endif; ?>
-
-                    <br>
                     <button class="submit-btn-login" type="submit">Login</button>
                     <p class="link-btn-login-register">Belum punya akun?<a href="/register" class="register">Register</a></p>
                 </form>
