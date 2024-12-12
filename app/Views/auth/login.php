@@ -32,8 +32,8 @@
 </head>
 <body>
 
+    <?= $this->include('partials/alerts') ?>
     <section class="container">
-        <?= $this->include('partials/alerts') ?>
         <main>
             <div class="row">
                 <form class="form-login" action="/login" method="post">
