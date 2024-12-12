@@ -23,7 +23,7 @@
 
     <section class="container">
         <?= $this->include('partials/alerts') ?>
-        <main class="form-login">
+        <main>
 
             <?php if (session()->getFlashdata('error')): ?>
                 <p class="text-error" style="color: red; font-size: 15px"><?= session()->getFlashdata('error') ?></p>
