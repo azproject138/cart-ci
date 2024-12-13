@@ -14,18 +14,18 @@
 
 </head>
 <body>
-    <!--navbar-->
+    <!--
     <header>
         <div class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <span class="navbar-brand"><?= session('user')['username'] ?></span>
                 <div class="profile logo">
                     <img src="/assets/img/profile.png" alt="Logo" width="40" height="40" class="profile-dropdown">
-                    <!--icon-open-dropdown-menu-->
+                    
                     <button class="toggle-btn" id="toggleBtn">
                         <i class="bi bi-chevron-down icon"></i>
                     </button>
-                    <!--dropdown-menu-->
+                    
                     <div class="dropdown-menu" id="dropdownMenu">
                         <a href="#" class="dropdown-btn">
                             <i class="bi bi-person-fill" style="margin-right: 10px;"></i>
@@ -44,6 +44,7 @@
             </div>
         </div>
     </header>
+    -->
 
     <nav>
         <!--sidebar-->
