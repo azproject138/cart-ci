@@ -32,7 +32,7 @@
 </head>
 <body>
 
-    <?= $this->include('partials/alerts') ?>
+    <?= $this->include('components/alerts') ?>
     <section class="container">
         <main>
             <div class="row">
