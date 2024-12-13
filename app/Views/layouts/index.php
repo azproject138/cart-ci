@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <?= $this->include('components/navbar') ?>
+    <?= $this->include('partials/navbar') ?>
     <!--
     <header>
         <div class="navbar bg-body-tertiary">
