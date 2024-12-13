@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <?= $this->include('partials/navbar') ?>
+    <?= $this->include('components/navbar') ?>
     <!--
     <header>
         <div class="navbar bg-body-tertiary">
@@ -88,7 +88,7 @@
 
     <!--main content-->
     <main>
-        <?= $this->include('partials/alerts') ?>
+        <?= $this->include('components/alerts') ?>
         <?= $this->renderSection('content') ?>
     </main>
 
