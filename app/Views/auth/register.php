@@ -27,7 +27,7 @@
 </head>
 <body>
 
-    <?= $this->include('partials/alerts') ?>
+    <?= $this->include('components/alerts') ?>
     <section class="container">
         <main class="form-register">
             <div class="row">
