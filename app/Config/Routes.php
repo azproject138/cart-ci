@@ -11,3 +11,9 @@ $routes->get('/login', 'Auth::login');
 $routes->post('/login', 'Auth::processLogin');
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
 $routes->get('/logout', 'Auth::logout');
+
+$routes->get('/profile', 'ProfileController::index');
+$routes->post('/profile/update-picture', 'ProfileController::updateProfilePicture');
+$routes->post('/profile/update-address', 'ProfileController::updateAddress');
+$routes->post('/profile/update-whatsapp', 'ProfileController::updateWhatsApp');
+$routes->post('/profile/verify-otp', 'ProfileController::verifyOtp');
