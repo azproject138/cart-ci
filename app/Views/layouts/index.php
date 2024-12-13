@@ -18,9 +18,6 @@
     <header>
         <div class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <?php if (session()->getFlashdata('success')): ?>
-                    <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
-                <?php endif; ?>
                 <span class="navbar-brand"><?= $username ?></span>
                 <div class="profile logo">
                     <img src="/assets/img/profile.png" alt="Logo" width="40" height="40" class="profile-dropdown">
