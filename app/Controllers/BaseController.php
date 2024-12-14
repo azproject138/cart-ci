@@ -8,6 +8,7 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use App\Models\UserModel;
 
 /**
  * Class BaseController
@@ -19,7 +20,7 @@ use Psr\Log\LoggerInterface;
  *
  * For security be sure to declare any new methods as protected or private.
  */
-abstract class BaseController extends Controller
+class BaseController extends Controller
 {
     /**
      * Instance of the main Request object.
@@ -46,13 +47,20 @@ abstract class BaseController extends Controller
     /**
      * @return void
      */
-    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
+    public function initController(\CodeIgniter\HTTP\RequestInterface $request, \CodeIgniter\HTTP\ResponseInterface $response, \Psr\Log\LoggerInterface $logger)
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
-        // Preload any models, libraries, etc, here.
+        // Pastikan helper di-load
+        helper(['url', 'form', 'session']);
 
-        // E.g.: $this->session = \Config\Services::session();
+        // Kirimkan data user ke semua view
+        if (session()->has('user_id')) {
+            $userModel = new UserModel();
+            $user = $userModel->find(session('user_id'));
+            $this->data['user'] = $user; // Tersedia untuk semua controller
+            view()->setVar('user', $user); // Tersedia untuk semua view
+        }
     }
 }
