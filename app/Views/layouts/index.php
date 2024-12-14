@@ -15,37 +15,7 @@
 </head>
 <body>
     <?= $this->include('components/navbar') ?>
-    <!--
-    <header>
-        <div class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-                <span class="navbar-brand"><?= session('user')['username'] ?></span>
-                <div class="profile logo">
-                    <img src="/assets/img/profile.png" alt="Logo" width="40" height="40" class="profile-dropdown">
-                    
-                    <button class="toggle-btn" id="toggleBtn">
-                        <i class="bi bi-chevron-down icon"></i>
-                    </button>
-                    
-                    <div class="dropdown-menu" id="dropdownMenu">
-                        <a href="#" class="dropdown-btn">
-                            <i class="bi bi-person-fill" style="margin-right: 10px;"></i>
-                            <span class="dropdown-text">Profile</span>
-                        </a>
-                        <a href="#" class="dropdown-btn">
-                            <i class="bi bi-gear-wide" style="margin-right: 10px;"></i>
-                            <span class="dropdown-text">Settings</span>
-                        </a>
-                        <a href="/logout" class="logout-btn">
-                            <i class="bi bi-box-arrow-left" style="margin-right: 10px;"></i>
-                            <span class="dropdown-text">Logout</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    -->
+    
 
     <nav>
         <!--sidebar-->
