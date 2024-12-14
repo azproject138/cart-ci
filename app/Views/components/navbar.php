@@ -1,7 +1,7 @@
 <?php $user = $user ?? null; ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-    <?= session('user')['username'] ?>
+        <span class="navbar-brand" href="#"><?= session('user')['username'] ?></span>
         <div class="dropdown">
             <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'default.png')) ?>" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px;">
