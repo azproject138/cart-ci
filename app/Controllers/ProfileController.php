@@ -10,7 +10,6 @@ class ProfilController extends BaseController
     {
         $userModel = new UserModel();
         $user = $userModel->find(session('user')['id']);
-
         return view('profile/index', ['user' => $user]);
     }
 
@@ -33,40 +32,35 @@ class ProfilController extends BaseController
     {
         $address = $this->request->getPost('address');
         $userModel = new UserModel();
-
-        $userModel->update(session('user')['id'], ['address' => $address]);
+        $userModel->update(session('user_id'), ['address' => $address]);
         return redirect()->to('/profile')->with('success', 'Alamat berhasil diperbarui.');
     }
 
     public function updateWhatsApp()
     {
-        $whatsappNumber = $this->request->getPost('whatsapp_number');
-        $otpCode = rand(100000, 999999);
+        $whatsapp = $this->request->getPost('whatsapp');
+        $otp = rand(100000, 999999);
+        $expiration = date('Y-m-d H:i:s', strtotime('+5 minutes'));
 
-        // Simpan OTP ke database
         $userModel = new UserModel();
-        $userModel->update(session('user')['id'], [
-            'whatsapp_number' => $whatsappNumber,
-            'otp_code' => $otpCode,
-        ]);
+        $userModel->update(session('user_id'), ['whatsapp' => $whatsapp, 'otp' => $otp, 'otp_expiration' => $expiration]);
 
-        // Kirim OTP ke nomor WhatsApp
-        // NB: Tambahkan integrasi SMS/WhatsApp Gateway di sini
+        // Simulate sending OTP
+        log_message('info', "OTP: $otp sent to WhatsApp $whatsapp.");
 
-        return redirect()->to('/profile')->with('success', 'Kode OTP telah dikirim. Harap verifikasi nomor Anda.');
+        return redirect()->to('/profile')->with('info', 'OTP telah dikirim ke nomor WhatsApp Anda.');
     }
 
     public function verifyOtp()
     {
-        $otpCode = $this->request->getPost('otp_code');
+        $inputOtp = $this->request->getPost('otp');
         $userModel = new UserModel();
-        $user = $userModel->find(session('user')['id']);
+        $user = $userModel->find(session('user_id'));
 
-        if ($user['otp_code'] === $otpCode) {
-            $userModel->update($user['id'], ['otp_code' => null]);
+        if ($user['otp'] === $inputOtp && strtotime($user['otp_expiration']) > time()) {
+            $userModel->update(session('user_id'), ['otp' => null, 'otp_expiration' => null]);
             return redirect()->to('/profile')->with('success', 'Nomor WhatsApp berhasil diverifikasi.');
         }
-
-        return redirect()->to('/profile')->with('error', 'Kode OTP salah.');
+        return redirect()->back()->with('error', 'OTP tidak valid atau telah kedaluwarsa.');
     }
 }
