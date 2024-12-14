@@ -29,12 +29,17 @@ class AddProfileFieldsToUsers extends Migration
                 'constraint' => '6',
                 'null' => true,
             ],
+            'otp_expires_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+                'after' => 'otp_code',
+            ],
         ]);
     }
 
     public function down()
     {
         //
-        $this->forge->dropColumn('users', ['profile_picture', 'address', 'whatsapp_number', 'otp_code']);
+        $this->forge->dropColumn('users', ['profile_picture', 'address', 'whatsapp_number', 'otp_code', 'otp_expires_at']);
     }
 }

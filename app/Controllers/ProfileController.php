@@ -25,20 +25,7 @@ class ProfilController extends BaseController
         return view('profile/index', ['user' => $user]);
     }
 
-    public function uploadPicture()
-    {
-        $file = $this->request->getFile('profile_picture');
-        if ($file->isValid() && !$file->hasMoved()) {
-            $fileName = $file->getRandomName();
-            $file->move('uploads/profile_pictures', $fileName);
-
-            $userModel = new UserModel();
-            $userModel->update(session('user_id'), ['profile_picture' => $fileName]);
-
-            return redirect()->to('/profile')->with('success', 'Foto profil berhasil diperbarui.');
-        }
-        return redirect()->back()->with('error', 'Gagal mengunggah foto profil.');
-    }
+    
 
     public function updateAddress()
     {
