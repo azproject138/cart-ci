@@ -238,7 +238,7 @@ form h2 {
     font-size: 15px;
     font-weight: lighter;
     margin-top: 0;
-    margin-left: -50px;
+    margin-left: 0;
     margin-right: 0;
     text-align: center;
     justify-content: center;
@@ -317,7 +317,7 @@ form h2 {
 .open-btn {
     position: fixed;
     top: 10px;
-    left: 200px;
+    left: 250px;
     font-size: 25px;
     font-style: bold;
     color: #7c7c7c;
