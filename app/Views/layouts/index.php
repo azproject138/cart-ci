@@ -15,7 +15,6 @@
 </head>
 <body>
     <?= $this->include('components/navbar') ?>
-    
 
     <nav>
         <!--sidebar-->
