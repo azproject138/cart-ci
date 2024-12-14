@@ -6,10 +6,22 @@ use App\Models\UserModel;
 
 class ProfilController extends BaseController
 {
+    public function __construct()
+    {
+        helper('session'); // Pastikan helper session aktif
+
+        if (!session('user_id')) {
+            return redirect()->to('/login')->with('error', 'Silakan login terlebih dahulu.');
+        }
+    }
+    
     public function index()
     {
         $userModel = new UserModel();
         $user = $userModel->find(session('user')['id']);
+        if (!$user) {
+            return redirect()->to('/login')->with('error', 'Pengguna tidak ditemukan. Harap login kembali.');
+        }    
         return view('profile/index', ['user' => $user]);
     }
 
