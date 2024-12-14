@@ -5,7 +5,7 @@
         <div class="dropdown">
             <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'default.png')) ?>" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px;">
-                <?= $user['username'] ?>
+                <?= session('user')['username'] ?>
                 <?php if (!$user['profile_picture']): ?>
                     <span class="badge bg-danger">•</span>
                 <?php endif; ?>
