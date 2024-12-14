@@ -1,11 +1,10 @@
 <?php $user = $user ?? null; ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">MyApp</a>
+    <?= session('user')['username'] ?>
         <div class="dropdown">
             <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'default.png')) ?>" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px;">
-                <?= session('user')['username'] ?>
                 <?php if (empty($user['profile_picture'])): ?>
                     <span class="badge bg-danger">•</span>
                 <?php endif; ?>
