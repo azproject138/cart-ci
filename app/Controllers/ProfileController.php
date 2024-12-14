@@ -18,9 +18,9 @@ class ProfilController extends BaseController
     public function index()
     {
         $userModel = new UserModel();
-        $user = $userModel->find(session('user')['id']);
+        $user = $userModel->find(session('user_id'));
         if (!$user) {
-            return redirect()->to('/login')->with('error', 'Pengguna tidak ditemukan. Harap login kembali.');
+            return redirect()->to('/login')->with('error', 'Silakan login terlebih dahulu.');
         }    
         return view('profile/index', ['user' => $user]);
     }
