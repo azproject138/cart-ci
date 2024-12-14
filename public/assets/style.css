@@ -238,8 +238,8 @@ form h2 {
     font-size: 15px;
     font-weight: lighter;
     margin-top: 0;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: -50px;
+    margin-right: 0;
     text-align: center;
     justify-content: center;
     display: flex;
