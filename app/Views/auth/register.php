@@ -38,7 +38,7 @@
                         <label for="username" class="form-label">Username :</label>
                         <input type="text" name="username" class="frm-inpt" placeholder="Username" value="<?= old('username') ?>" required>
                     </div>
-                    <span style="font-size: 12px;align-self: flex-start;color: #757575;">username maximal 20 karakter</span>
+                    <span style="font-size: 12px;align-self: flex-start;color: #757575;">username maximal 20 karakter.</span>
                     <div class="position-relative form-reg">
                         <label for="email" class="form-label">Email :</label>
                         <input type="email" name="email" class="frm-inpt" placeholder="Email" value="<?= old('email') ?>" required>
