@@ -13,7 +13,7 @@ $routes->get('/dashboard', 'Dashboard::main', ['filter' => 'auth']);
 $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/profile', 'Dashboard::index');
-$routes->post('/profile/update-picture', 'ProfileController::updateProfilePicture');
+$routes->post('/profile/update-picture', 'ProfileController::updatePicture');
 $routes->post('/profile/update-address', 'ProfileController::updateAddress');
 $routes->post('/profile/update-whatsapp', 'ProfileController::updateWhatsApp');
 $routes->post('/profile/verify-otp', 'ProfileController::verifyOtp');
