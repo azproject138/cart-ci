@@ -1,9 +1,9 @@
 <?php $user = $user ?? null; ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <span class="navbar-brand" href="#"><?= session('user')['username'] ?></span>
+        <span class="navbar-brand" href="#" style="margin-left: -80px;"><?= session('user')['username'] ?></span>
         <div class="dropdown">
-            <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
                 <img src="<?= base_url('assets/img/' . ($user['profile_picture'] ?? 'profile.png')) ?>" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px;">
                 <?php if (empty($user['profile_picture'])): ?>
                     <span class="badge bg-danger">•</span>
