@@ -8,7 +8,7 @@ class ProfilController extends BaseController
 {
     public function __construct()
     {
-        helper('session'); // Pastikan helper session aktif
+        helper('session');
 
         if (!session('user_id')) {
             return redirect()->to('/login')->with('error', 'Silakan login terlebih dahulu.');
