@@ -4,7 +4,7 @@
         <span class="navbar-brand" href="#"><?= session('user')['username'] ?></span>
         <div class="dropdown">
             <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
-                <img src="<?= base_url('assets/img/' . ($user['profile_picture'] ?? 'profile.png')) ?>" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px;">
+                <img src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'profile.png')) ?>" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px;">
                 <?php if (empty($user['profile_picture'])): ?>
                     <span class="badge bg-danger">•</span>
                 <?php endif; ?>
