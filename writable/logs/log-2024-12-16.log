@@ -1594,3 +1594,218 @@ in APPPATH\Views\components\foto_profile.php on line 10.
 14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-16 03:26:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-16 03:26:35 --> ErrorException: Undefined array key "profile_picture"
+[Method: GET, Route: profile]
+in APPPATH\Views\components\foto_profile.php on line 10.
+ 1 APPPATH\Views\components\foto_profile.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "profile_picture"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php', 10)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/foto_profile', [], true)
+ 5 APPPATH\Views\profile\index.php(19): view('components/foto_profile', [...])
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\Dashboard.php(25): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-16 03:27:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:27:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:27:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:27:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-16 03:27:44 --> ErrorException: Undefined array key "profile_picture"
+[Method: GET, Route: profile]
+in APPPATH\Views\components\foto_profile.php on line 10.
+ 1 APPPATH\Views\components\foto_profile.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "profile_picture"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php', 10)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/foto_profile', [], true)
+ 5 APPPATH\Views\profile\index.php(19): view('components/foto_profile', [...])
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\Dashboard.php(25): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-16 03:28:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-16 03:28:28 --> ErrorException: Undefined array key "profile_picture"
+[Method: GET, Route: profile]
+in APPPATH\Views\components\foto_profile.php on line 10.
+ 1 APPPATH\Views\components\foto_profile.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "profile_picture"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php', 10)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/foto_profile', [], true)
+ 5 APPPATH\Views\profile\index.php(19): view('components/foto_profile', [...])
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\Dashboard.php(25): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-16 03:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-16 03:28:30 --> ErrorException: Undefined array key "profile_picture"
+[Method: GET, Route: profile]
+in APPPATH\Views\components\foto_profile.php on line 10.
+ 1 APPPATH\Views\components\foto_profile.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "profile_picture"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php', 10)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/foto_profile', [], true)
+ 5 APPPATH\Views\profile\index.php(19): view('components/foto_profile', [...])
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\Dashboard.php(25): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-16 03:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-16 03:28:30 --> ErrorException: Undefined array key "profile_picture"
+[Method: GET, Route: profile]
+in APPPATH\Views\components\foto_profile.php on line 10.
+ 1 APPPATH\Views\components\foto_profile.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "profile_picture"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php', 10)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/foto_profile', [], true)
+ 5 APPPATH\Views\profile\index.php(19): view('components/foto_profile', [...])
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\Dashboard.php(25): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-16 03:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-16 03:28:30 --> ErrorException: Undefined array key "profile_picture"
+[Method: GET, Route: profile]
+in APPPATH\Views\components\foto_profile.php on line 10.
+ 1 APPPATH\Views\components\foto_profile.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "profile_picture"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php', 10)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/foto_profile', [], true)
+ 5 APPPATH\Views\profile\index.php(19): view('components/foto_profile', [...])
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\Dashboard.php(25): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-16 03:28:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-16 03:28:31 --> ErrorException: Undefined array key "profile_picture"
+[Method: GET, Route: profile]
+in APPPATH\Views\components\foto_profile.php on line 10.
+ 1 APPPATH\Views\components\foto_profile.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "profile_picture"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php', 10)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/foto_profile', [], true)
+ 5 APPPATH\Views\profile\index.php(19): view('components/foto_profile', [...])
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\Dashboard.php(25): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-16 03:28:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-16 03:28:31 --> ErrorException: Undefined array key "profile_picture"
+[Method: GET, Route: profile]
+in APPPATH\Views\components\foto_profile.php on line 10.
+ 1 APPPATH\Views\components\foto_profile.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "profile_picture"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php', 10)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/foto_profile', [], true)
+ 5 APPPATH\Views\profile\index.php(19): view('components/foto_profile', [...])
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\Dashboard.php(25): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-16 03:28:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-16 03:28:31 --> ErrorException: Undefined array key "profile_picture"
+[Method: GET, Route: profile]
+in APPPATH\Views\components\foto_profile.php on line 10.
+ 1 APPPATH\Views\components\foto_profile.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "profile_picture"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php', 10)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/foto_profile', [], true)
+ 5 APPPATH\Views\profile\index.php(19): view('components/foto_profile', [...])
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\Dashboard.php(25): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-16 03:28:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:28:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:28:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:28:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:29:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:29:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-16 03:29:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-16 03:29:25 --> ErrorException: Undefined array key "profile_picture"
+[Method: GET, Route: profile]
+in APPPATH\Views\components\foto_profile.php on line 10.
+ 1 APPPATH\Views\components\foto_profile.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "profile_picture"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php', 10)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/foto_profile', [], true)
+ 5 APPPATH\Views\profile\index.php(19): view('components/foto_profile', [...])
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\Dashboard.php(25): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')

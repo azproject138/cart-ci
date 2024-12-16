@@ -36,7 +36,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="text-center">
-                        <img src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'default.png')) ?>" 
+                        <img src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'profile.png')) ?>" 
                             alt="Profile" 
                             class="rounded-circle mb-3" 
                             style="width: 100px; height: 100px; object-fit: cover; border: 2px solid #ccc;">
