@@ -19,9 +19,10 @@ class Dashboard extends BaseController
     {
         $userModel = new UserModel();
         $user = $userModel->find(session('user_id'));
-        if (!$user) {
-            return redirect()->to('/login')->with('error', 'Pengguna tidak ditemukan. Silakan login kembali.');
-        }
+        $data = [
+            'user' => $user,
+            'profile_picture' => $user['profile_picture'] ?? 'default.png', // Menambahkan fallback default
+        ];
         return view('profile/index', ['user' => $user]);
     }
 

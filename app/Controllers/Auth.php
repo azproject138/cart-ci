@@ -72,6 +72,13 @@ class Auth extends BaseController
                 'logged_in' => true,
             ]);
 
+            $session = session();
+
+            $userModel = new UserModel();
+            $user = $userModel->find($session->get('user_id'));
+
+            $session->set('profile_picture', $user['profile_picture'] ?? 'default.png');
+
             session()->setFlashdata('success', 'Login berhasil! Selamat datang di dashboard.');
             return redirect()->to('/dashboard');
         }
