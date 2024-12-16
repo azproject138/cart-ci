@@ -4,9 +4,9 @@
     <div class="dropdown">
         <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'profile.png')) ?>" 
-                alt="Profile" 
-                class="rounded-circle" 
-                style="width: 80px; height: 80px; object-fit: cover; border: 2px solid #ccc;">
+            alt="Profile" 
+            class="rounded-circle" 
+            style="width: 80px; height: 80px; object-fit: cover; border: 2px solid #ccc;">
             <?php if (!$user['profile_picture']): ?>
                 <span class="badge bg-danger">•</span>
             <?php endif; ?>
