@@ -28,10 +28,8 @@ class Dashboard extends BaseController
         if ($file->isValid() && !$file->hasMoved()) {
             $fileName = $file->getRandomName();
             $file->move('uploads/profile_pictures', $fileName);
-
             $userModel = new UserModel();
             $userModel->where('id', session('user_id'))->set(['profile_picture' => $fileName])->update();
-
             return redirect()->to('/profile')->with('success', 'Foto profil berhasil diperbarui.');
         }
         return redirect()->back()->with('error', 'Gagal mengunggah foto profil.');
