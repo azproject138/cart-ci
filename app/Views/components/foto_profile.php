@@ -1,6 +1,4 @@
 <div class="container mt-4">
-    <h2>Profile</h2>
-
     <!-- Foto Profil dengan Icon Edit -->
     <div class="d-flex justify-content-center">
         <div class="position-relative">
@@ -36,5 +34,4 @@
             </div>
         </div>
     </div>
-
 </div>
