@@ -437,3 +437,12 @@ form h2 {
     text-align: center;
     font-size: 13px;
 }
+
+.rounded-circle {
+    border: 2px solid #ddd;
+    transition: 0.3s;
+}
+
+.rounded-circle:hover {
+    border-color: #007bff;
+}
