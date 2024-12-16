@@ -10,7 +10,7 @@
     </div>
 
     <!-- Notifikasi jika foto profil belum diubah -->
-    <?php if (!$user['profile_picture']): ?>
+    <?php if (empty($user['profile_picture'])): ?>
         <div class="alert alert-warning mt-3" role="alert">
             <i class="bi bi-exclamation-circle"></i> Anda belum mengubah foto profil. Klik foto untuk memperbarui.
         </div>
