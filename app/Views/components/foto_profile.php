@@ -7,7 +7,9 @@
     <div class="d-flex justify-content-center">
         <div class="position-relative">
             <img src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'default.png')) ?>" alt="Profile Picture" class="rounded-circle" style="width: 100px; height: 100px;">
-            <i class="bi bi-pencil-fill position-absolute top-0 end-0 translate-middle p-1 bg-light rounded-circle" style="cursor: pointer;"></i>
+            <button class="btn mt-3" data-bs-toggle="modal" data-bs-target="#uploadModal">
+                <i class="bi bi-pencil-fill position-absolute top-0 end-0 translate-middle p-1 bg-light rounded-circle" style="cursor: pointer;"></i>
+            </button>
         </div>
     </div>
 
@@ -38,4 +40,5 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </div>
