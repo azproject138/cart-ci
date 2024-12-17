@@ -6,7 +6,13 @@
     <!-- Foto Profil dengan Icon Edit -->
     <div class="d-flex justify-content-center">
         <div class="position-relative">
-            <img src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'default.png')) ?>" alt="Profile Picture" class="rounded-circle" style="width: 100px; height: 100px;">
+            <?php if (empty($user['profile_picture'])): ?>
+                <img src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'default.png')) ?>" alt="Profile Picture" class="rounded-circle" style="width: 100px; height: 100px;">
+            <?php else: ?>
+                <img src="<?= base_url('profile_pictures/default.png') ?>" 
+                    alt="Foto Default" class="rounded-circle" style="width: 100px; height: 100px;">
+            <?php endif; ?>
+            <!--<img src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'default.png')) ?>" alt="Profile Picture" class="rounded-circle" style="width: 100px; height: 100px;">-->
             <i class="bi bi-pencil-fill position-absolute top-0 end-0 translate-middle p-2 bg-primary rounded-circle" data-bs-toggle="modal" data-bs-target="#uploadModal" style="cursor: pointer; margin-top: 83px; margin-right: 20px; color: white;"></i>
         </div>
     </div>
