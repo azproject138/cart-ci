@@ -9,4 +9,13 @@ class UserModel extends Model
     protected $table = 'users';
     protected $primaryKey = 'id';
     protected $allowedFields = ['username', 'email', 'password', 'profile_picture', 'address', 'whatsapp', 'otp', 'otp_expiration'];
+
+    public function updateUser($id, $data)
+    {
+        if ($id) {
+            return $this->update($id, $data);
+        }
+
+        throw new \Exception("ID pengguna tidak valid untuk pembaruan.");
+    }
 }
