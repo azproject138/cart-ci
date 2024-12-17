@@ -28,18 +28,24 @@ class Dashboard extends BaseController
 
     public function uploadPicture()
     {
-        $userModel = new UserModel();
-
-        $file = $this->request->getFile('profile_picture');
-        if ($file->isValid() && !$file->hasMoved()) {
-            $newName = $file->getRandomName();
-            $file->move('uploads/profile_pictures', $newName);
-
-            $userModel->update(session('user_id'), ['profile_picture' => $newName]);
-
-            return redirect()->to('/profile')->with('success', 'Foto profil berhasil diubah.');
+        $session = session();
+        $userId = $session->get('user_id');
+        if ($this->request->getFile('profile_picture')) {
+            $profilePicture = $this->request->getFile('profile_picture');
+            if ($profilePicture->isValid() && !$profilePicture->hasMoved()) {
+                $path = 'uploads/profile_pictures/';
+                $newName = $profilePicture->getRandomName();
+                $profilePicture->move($path, $newName);
+                $db = db_connect();
+                $builder = $db->table('users');
+                $builder->where('id', $userId);
+                $builder->update(['profile_picture' => $newName]);
+                $session->set('user.profile_picture', $newName);
+                return redirect()->to('/profile')->with('success', 'Foto profil berhasil diperbarui.');
+            }
         }
-        return redirect()->to('/profile')->with('error', 'Gagal mengupload foto profil.');
+
+        return redirect()->to('/profile')->with('error', 'Gagal mengunggah foto profil.');
     }
 
     public function updateAddress()
