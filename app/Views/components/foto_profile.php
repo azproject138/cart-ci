@@ -7,7 +7,7 @@
     <div class="d-flex justify-content-center">
         <div class="position-relative">
             <img src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'default.png')) ?>" alt="Profile Picture" class="rounded-circle" style="width: 100px; height: 100px;">
-            <i class="bi bi-pencil-fill position-absolute top-0 end-0 translate-middle p-1 bg-light rounded-circle" data-bs-toggle="modal" data-bs-target="#uploadModal" style="cursor: pointer;"></i>
+            <i class="bi bi-pencil-fill position-absolute top-0 end-0 translate-middle p-2 bg-primary rounded-circle" data-bs-toggle="modal" data-bs-target="#uploadModal" style="cursor: pointer; margin-top: 83px; margin-right: 20px; color: white;"></i>
         </div>
     </div>
 
