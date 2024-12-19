@@ -30,18 +30,19 @@ class Dashboard extends BaseController
     {
         $session = session();
         $userId = $session->get('user_id');
-        if ($this->request->getFile('profile_picture')) {
-            $profilePicture = $this->request->getFile('profile_picture');
-            if ($profilePicture->isValid() && !$profilePicture->hasMoved()) {
-                $path = 'uploads/profile_pictures/';
-                $newName = $profilePicture->getRandomName();
-                $profilePicture->move($path, $newName);
-                $db = db_connect();
-                $builder = $db->table('users');
-                $builder->where('id', $userId);
-                $builder->update(['profile_picture' => $newName]);
+        $profilePicture = $this->request->getFile('profile_picture');
+        if ($profilePicture && $profilePicture->isValid() && !$profilePicture->hasMoved()) {
+            $newName = $profilePicture->getRandomName();
+            $profilePicture->move('uploads/profile_pictures', $newName);
+            $db = db_connect();
+            $builder = $db->table('users');
+            $builder->where('id', $userId);
+            $update = $builder->update(['profile_picture' => $newName]);
+            if ($update) {
                 $session->set('user.profile_picture', $newName);
                 return redirect()->to('/profile')->with('success', 'Foto profil berhasil diperbarui.');
+            } else {
+                return redirect()->to('/profile')->with('error', 'Gagal memperbarui data di database.');
             }
         }
 
