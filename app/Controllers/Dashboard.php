@@ -17,27 +17,13 @@ class Dashboard extends BaseController
 
     public function index()
     {
-        $userModel = new UserModel();
-        $user = $userModel->find(session('user_id'));
-        $data = [
-            'user' => $user,
-            'profile_picture' => $user['profile_picture'] ?? 'default.png', // Menambahkan fallback default
-        ];
-        return view('profile/index', ['user' => $user]);
-    }
-
-    public function profile()
-    {
         $session = session();
-        $userId = $session->get('user_id'); // Ambil user_id dari session
-
+        $userId = $session->get('user_id');
         $db = db_connect();
         $builder = $db->table('users');
         $user = $builder->where('id', $userId)->get()->getRowArray();
-
-        return view('profile/profile_picture', ['user' => $user]);
+        return view('profile/index', ['user' => $user]);
     }
-
 
     public function uploadPicture()
     {
@@ -53,13 +39,13 @@ class Dashboard extends BaseController
             $update = $builder->update(['profile_picture' => $newName]);
             if ($update) {
                 $session->set('user.profile_picture', $newName);
-                return redirect()->to('/profile/pengguna')->with('success', 'Foto profil berhasil diperbarui.');
+                return redirect()->to('/profile')->with('success', 'Foto profil berhasil diperbarui.');
             } else {
-                return redirect()->to('/profile/pengguna')->with('error', 'Gagal memperbarui data di database.');
+                return redirect()->to('/profile')->with('error', 'Gagal memperbarui data di database.');
             }
         }
 
-        return redirect()->to('/profile/pengguna')->with('error', 'Gagal mengunggah foto profil.');
+        return redirect()->to('/profile')->with('error', 'Gagal mengunggah foto profil.');
     }
 
     public function updateAddress()
@@ -67,7 +53,7 @@ class Dashboard extends BaseController
         $address = $this->request->getPost('address');
         $userModel = new UserModel();
         $userModel->update(session('user_id'), ['address' => $address]);
-        return redirect()->to('/profile/pengguna')->with('success', 'Alamat berhasil diperbarui.');
+        return redirect()->to('/profile')->with('success', 'Alamat berhasil diperbarui.');
     }
 
     public function updateWhatsapp()
@@ -82,7 +68,7 @@ class Dashboard extends BaseController
         // Simulate sending OTP
         log_message('info', "OTP: $otp sent to WhatsApp $whatsapp.");
 
-        return redirect()->to('/profile/pengguna')->with('info', 'OTP telah dikirim ke nomor WhatsApp Anda.');
+        return redirect()->to('/profile')->with('info', 'OTP telah dikirim ke nomor WhatsApp Anda.');
     }
 
     public function verifyOtp()
@@ -93,7 +79,7 @@ class Dashboard extends BaseController
 
         if ($user['otp'] === $inputOtp && strtotime($user['otp_expiration']) > time()) {
             $userModel->update(session('user_id'), ['otp' => null, 'otp_expiration' => null]);
-            return redirect()->to('/profile/pengguna')->with('success', 'Nomor WhatsApp berhasil diverifikasi.');
+            return redirect()->to('/profile')->with('success', 'Nomor WhatsApp berhasil diverifikasi.');
         }
         return redirect()->back()->with('error', 'OTP tidak valid atau telah kedaluwarsa.');
     }

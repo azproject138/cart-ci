@@ -12,8 +12,7 @@ $routes->post('/login', 'Auth::processLogin');
 $routes->get('/dashboard', 'Dashboard::main', ['filter' => 'auth']);
 $routes->get('/logout', 'Auth::logout');
 
-$routes->get('/profile/pengguna', 'Dashboard::index');
-$routes->get('/profile', 'Dashboard::profile');
+$routes->get('/profile', 'Dashboard::index');
 $routes->post('/profile/upload-picture', 'Dashboard::uploadPicture');
 $routes->post('/profile/update-address', 'Dashboard::updateAddress');
 $routes->post('/profile/update-whatsapp', 'Dashboard::updateWhatsApp');
