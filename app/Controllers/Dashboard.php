@@ -17,13 +17,27 @@ class Dashboard extends BaseController
 
     public function index()
     {
+        $userModel = new UserModel();
+        $user = $userModel->find(session('user_id'));
+        $data = [
+            'user' => $user,
+            'profile_picture' => $user['profile_picture'] ?? 'default.png', // Menambahkan fallback default
+        ];
+        return view('profile/index', ['user' => $user]);
+    }
+
+    public function profile()
+    {
         $session = session();
-        $userId = $session->get('user_id');
+        $userId = $session->get('user_id'); // Ambil user_id dari session
+
         $db = db_connect();
         $builder = $db->table('users');
         $user = $builder->where('id', $userId)->get()->getRowArray();
-        return view('profile/index', ['user' => $user]);
+
+        return view('profile/profile_picture', ['user' => $user]);
     }
+
 
     public function uploadPicture()
     {
