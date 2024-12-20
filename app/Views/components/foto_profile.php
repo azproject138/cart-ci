@@ -1,5 +1,3 @@
-<?= $this->include('components/alerts') ?>
-
 <div class="text-center">
     <!-- Lingkaran foto profil -->
     <div class="position-relative" style="width: 120px; height: 120px;">
