@@ -75,4 +75,3 @@
         </div>
     </div>
 </div>
-<script src="assets/opsi_alamat_pengguna.js"></script>
