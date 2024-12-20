@@ -69,10 +69,23 @@ class Dashboard extends BaseController
 
     public function updateAddress()
     {
-        $address = $this->request->getPost('address');
-        $userModel = new UserModel();
-        $userModel->update(session('user_id'), ['address' => $address]);
-        return redirect()->to('/profile')->with('success', 'Alamat berhasil diperbarui.');
+        $session = session();
+        $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
+
+        if ($this->request->getMethod() === 'post') {
+            $addressType = $this->request->getPost('address_type');
+            $address = $this->request->getPost('address');
+
+            $column = $addressType === 'home' ? 'home_address' : 'office_address';
+
+            // Update alamat di database
+            $db = \Config\Database::connect();
+            $builder = $db->table('users');
+            $builder->where('id', $userId);
+            $builder->update([$column => $address]);
+
+            return redirect()->to('/dashboard')->with('success', 'Alamat berhasil diperbarui!');
+        }
     }
 
     public function updateWhatsapp()
