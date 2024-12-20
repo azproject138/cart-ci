@@ -1,31 +1,25 @@
-// Durasi waktu OTP (misalnya 2 menit)
-let otpTimer = 120;
-const timerElement = document.getElementById('timer');
+let countdown = 60; // Durasi waktu 60 detik
 const resendButton = document.getElementById('resendOtp');
 
-// Fungsi untuk menghitung waktu mundur
-function updateTimer() {
-    let minutes = Math.floor(otpTimer / 60);
-    let seconds = otpTimer % 60;
-    timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    otpTimer--;
-    if (otpTimer < 0) {
-        clearInterval(otpInterval);
+function updateCountdown() {
+    if (countdown > 0) {
+        resendButton.disabled = true;
+        resendButton.innerText = `Kirim Ulang (${countdown}s)`;
+        countdown--;
+        setTimeout(updateCountdown, 1000);
+    } else {
         resendButton.disabled = false;
-        resendButton.textContent = 'Kirim Ulang';
+        resendButton.innerText = 'Kirim Ulang';
     }
 }
 
-// Mulai timer ketika halaman dimuat
-let otpInterval = setInterval(updateTimer, 1000);
-
-// Event listener untuk tombol kirim ulang
-resendButton.addEventListener('click', function() {
-    resendButton.disabled = true;
-    resendButton.textContent = 'Mengirim...';
-    otpTimer = 120; // Reset timer
-    updateTimer();
-    // Kirim ulang OTP ke WhatsApp
-    // Misalnya, panggil API untuk mengirim OTP kembali
-    // window.location.href = '<?= base_url('whatsapp/sendOtp') ?>';
+resendButton.addEventListener('click', () => {
+    countdown = 60;
+    updateCountdown();
+    // Kirim ulang OTP melalui AJAX atau redirect ke action pengiriman ulang OTP
+    alert('Kode OTP telah dikirim ulang!');
 });
+
+// Mulai countdown saat modal OTP dibuka
+const otpModal = document.getElementById('otpModal');
+otpModal.addEventListener('show.bs.modal', updateCountdown);
