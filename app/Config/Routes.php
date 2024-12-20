@@ -17,5 +17,5 @@ $routes->post('/profile/upload-picture', 'Dashboard::uploadPicture');
 $routes->post('/profile/update-alamat-pengguna', 'Dashboard::updateAlamatPengguna');
 
 $routes->get('whatsapp/update', 'Dashboard::uploadNomorWhatsApp');
-$routes->post('whatsapp/send-otp', 'Dashboard::sendKodeOTP');
-$routes->post('whatsapp/verify-otp', 'Dashboard::verifyKodeOtp');
+$routes->post('whatsapp/send-kode-otp', 'Dashboard::sendKodeOTP');
+$routes->post('whatsapp/verify-kode-otp', 'Dashboard::verifyKodeOtp');
