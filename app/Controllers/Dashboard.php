@@ -60,10 +60,10 @@ class Dashboard extends BaseController
                 $builder->where('id', $userId);
                 $builder->update(['profile_picture' => $fileName]);
 
-                return redirect()->to('/dashboard')->with('success', 'Foto profil berhasil diunggah!');
+                return redirect()->to('/profile')->with('success', 'Foto profil berhasil diunggah!');
             }
 
-            return redirect()->to('/dashboard')->with('error', 'Gagal mengunggah foto profil.');
+            return redirect()->to('/profile')->with('error', 'Gagal mengunggah foto profil.');
         }
     }
 
