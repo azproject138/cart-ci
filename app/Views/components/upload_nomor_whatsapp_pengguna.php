@@ -1,4 +1,3 @@
-<!-- Form untuk input nomor WhatsApp -->
 <div class="container mt-4">
     <h4>Masukkan Nomor WhatsApp</h4>
     <form action="<?= base_url('whatsapp/sendOtp') ?>" method="post">
@@ -18,14 +17,7 @@
     </form>
 </div>
 
-<!-- Form untuk input OTP -->
-<?php if (session()->getFlashdata('success')): ?>
-    <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
-<?php endif; ?>
-
-<?php if (session()->getFlashdata('error')): ?>
-    <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
-<?php endif; ?>
+<?= $this->include('components/alerts')?>
 
 <div class="container mt-4">
     <h4>Verifikasi OTP</h4>
