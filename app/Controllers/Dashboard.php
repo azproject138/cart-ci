@@ -67,7 +67,7 @@ class Dashboard extends BaseController
         }
     }
 
-    public function updateAddress()
+    public function updateAlamatPengguna()
     {
         $session = session();
         $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
