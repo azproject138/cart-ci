@@ -53,7 +53,7 @@ class CreateUsersTable extends Migration
                 'constraint' => '6',
                 'null' => true,
             ],
-            'otp_expires_at' => [
+            'otp_expiry' => [
                 'type' => 'DATETIME',
                 'null' => true,
                 'after' => 'otp_code',
