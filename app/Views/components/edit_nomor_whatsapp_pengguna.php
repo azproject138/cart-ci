@@ -1,5 +1,5 @@
 <div class="container mt-4">
-    <form action="<?= base_url('whatsapp/send-otp') ?>" method="post">
+    <form action="<?= base_url('whatsapp/send-kode-otp') ?>" method="post">
         <div class="mb-3">
             <label class="form-label">Nomor WhatsApp Lama</label>
             <input 
