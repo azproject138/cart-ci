@@ -22,4 +22,3 @@
         <button type="submit" class="btn btn-primary">Kirim OTP</button>
     </form>
 </div>
-<?= $this->include('components/modal_kode_otp_pengguna')?>
