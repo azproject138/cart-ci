@@ -86,7 +86,6 @@ class Dashboard extends BaseController
 
             return redirect()->to('/profile')->with('success', 'Alamat berhasil diperbarui!');
         }
-        return redirect()->back()->with('error', 'Alamat gagal diperbarui.');
     }
 
     public function sendKodeOTP()
