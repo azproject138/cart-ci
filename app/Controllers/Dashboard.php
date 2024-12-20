@@ -86,7 +86,7 @@ class Dashboard extends BaseController
                 'address' => $address,
             ]);
 
-            return redirect()->to('/upload-address')->with('success', 'Alamat berhasil disimpan!');
+            return redirect()->to('/upload-alamat-pengguna')->with('success', 'Alamat berhasil disimpan!');
         }
     }
 
