@@ -67,7 +67,7 @@ class Dashboard extends BaseController
         }
     }
 
-    public function updateAlamatPengguna()
+    public function saveAlamatPengguna()
     {
         $session = session();
         $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
@@ -76,16 +76,31 @@ class Dashboard extends BaseController
             $addressType = $this->request->getPost('address_type');
             $address = $this->request->getPost('address');
 
-            $column = $addressType === 'home' ? 'home_address' : 'office_address';
-
-            // Update alamat di database
             $db = \Config\Database::connect();
-            $builder = $db->table('users');
-            $builder->where('id', $userId);
-            $builder->update([$column => $address]);
+            $builder = $db->table('user_addresses');
 
-            return redirect()->to('/profile')->with('success', 'Alamat berhasil diperbarui!');
+            // Simpan atau update alamat
+            $builder->replace([
+                'user_id' => $userId,
+                'address_type' => $addressType,
+                'address' => $address,
+            ]);
+
+            return redirect()->to('/upload-address')->with('success', 'Alamat berhasil disimpan!');
         }
+    }
+
+    public function viewAlamatPengguna()
+    {
+        $session = session();
+        $userId = $session->get('user_id');
+
+        $db = \Config\Database::connect();
+        $builder = $db->table('user_addresses');
+
+        $addresses = $builder->where('user_id', $userId)->get()->getResult();
+
+        return view('upload_address', ['addresses' => $addresses]);
     }
 
     public function uploadNomorWhatsApp()
