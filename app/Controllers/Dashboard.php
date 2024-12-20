@@ -42,24 +42,29 @@ class Dashboard extends BaseController
     public function uploadPicture()
     {
         $session = session();
-        $userId = $session->get('user_id');
-        $profilePicture = $this->request->getFile('profile_picture');
-        if ($profilePicture && $profilePicture->isValid() && !$profilePicture->hasMoved()) {
-            $newName = $profilePicture->getRandomName();
-            $profilePicture->move('uploads/profile_pictures', $newName);
-            $db = db_connect();
-            $builder = $db->table('users');
-            $builder->where('id', $userId);
-            $update = $builder->update(['profile_picture' => $newName]);
-            if ($update) {
-                $session->set('user.profile_picture', $newName);
-                return redirect()->to('/profile')->with('success', 'Foto profil berhasil diperbarui.');
-            } else {
-                return redirect()->to('/profile')->with('error', 'Gagal memperbarui data di database.');
-            }
-        }
+        $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
 
-        return redirect()->to('/profile')->with('error', 'Gagal mengunggah foto profil.');
+        if ($this->request->getMethod() === 'post') {
+            $file = $this->request->getFile('profile_picture');
+
+            if ($file->isValid() && !$file->hasMoved()) {
+                // Nama file unik untuk menghindari konflik
+                $fileName = $file->getRandomName();
+
+                // Pindahkan file ke folder uploads
+                $file->move(WRITEPATH . 'uploads/profile_pictures/', $fileName);
+
+                // Simpan ke database
+                $db = \Config\Database::connect();
+                $builder = $db->table('users');
+                $builder->where('id', $userId);
+                $builder->update(['profile_picture' => $fileName]);
+
+                return redirect()->to('/dashboard')->with('success', 'Foto profil berhasil diunggah!');
+            }
+
+            return redirect()->to('/dashboard')->with('error', 'Gagal mengunggah foto profil.');
+        }
     }
 
     public function updateAddress()
