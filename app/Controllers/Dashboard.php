@@ -88,54 +88,63 @@ class Dashboard extends BaseController
         }
     }
 
-    public function sendKodeOTP()
+    public function uploadNomorWhatsApp()
     {
         $session = session();
         $userId = $session->get('user_id');
 
-        $newNumber = $this->request->getPost('new_whatsapp_number');
-        $otp = random_int(100000, 999999); // OTP 6 digit
-        $otpExpiration = date('Y-m-d H:i:s', strtotime('+5 minutes')); // OTP berlaku 5 menit
+        // Ambil data pengguna
+        $db = \Config\Database::connect();
+        $builder = $db->table('users');
+        $user = $builder->where('id', $userId)->get()->getRowArray();
 
-        // Simpan OTP dan waktu kedaluwarsa di database
+        return view('update_whatsapp', ['user' => $user]);
+    }
+
+    public function sendKodeOTP()
+    {
+        $session = session();
+        $userId = $session->get('user_id');
+        $newNumber = $this->request->getPost('new_whatsapp_number');
+
+        $otp = random_int(100000, 999999);
+        $expiry = date('Y-m-d H:i:s', strtotime('+5 minutes')); // OTP berlaku 5 menit
+
+        // Simpan OTP ke database
         $db = \Config\Database::connect();
         $builder = $db->table('users');
         $builder->where('id', $userId);
         $builder->update([
             'otp_code' => $otp,
-            'otp_expiration' => $otpExpiration,
+            'otp_expiry' => $expiry,
         ]);
 
-        // Simulasikan pengiriman OTP (sesungguhnya gunakan API WhatsApp)
-        log_message('info', "OTP untuk nomor $newNumber: $otp");
+        // Kirim OTP ke nomor WhatsApp baru (disimulasikan di sini)
+        // NB: Integrasikan dengan API WhatsApp atau SMS Gateway
+        log_message('info', "OTP untuk nomor $newNumber adalah $otp");
 
-        return redirect()->back()->with('success', 'Kode OTP telah dikirim ke nomor WhatsApp baru.');
+        return redirect()->back()->with('success', 'OTP telah dikirim ke nomor WhatsApp baru.');
     }
 
     public function verifyKodeOTP()
     {
         $session = session();
         $userId = $session->get('user_id');
-
         $inputOtp = $this->request->getPost('otp_code');
-        $newNumber = $this->request->getPost('new_whatsapp_number');
 
         $db = \Config\Database::connect();
         $builder = $db->table('users');
-        $user = $builder->getWhere(['id' => $userId])->getRow();
+        $user = $builder->where('id', $userId)->get()->getRowArray();
 
-        if ($user && $user->otp_code === $inputOtp && strtotime($user->otp_expiration) > time()) {
-            // Verifikasi berhasil, simpan nomor WhatsApp baru
+        if ($user && $user['otp_code'] === $inputOtp && strtotime($user['otp_expiry']) > time()) {
+
+            $newNumber = $this->request->getPost('new_whatsapp_number');
             $builder->where('id', $userId);
-            $builder->update([
-                'whatsapp_number' => $newNumber,
-                'otp_code' => null,
-                'otp_expiration' => null,
-            ]);
+            $builder->update(['whatsapp_number' => $newNumber, 'otp_code' => null, 'otp_expiry' => null]);
 
-            return redirect()->to('/profile')->with('success', 'Nomor WhatsApp berhasil diperbarui.');
+            return redirect()->to('/dashboard')->with('success', 'Nomor WhatsApp berhasil diperbarui!');
         }
 
-        return redirect()->back()->with('error', 'Kode OTP salah atau telah kedaluwarsa.');
+        return redirect()->back()->with('error', 'Kode OTP salah atau telah kadaluarsa.');
     }
 }
