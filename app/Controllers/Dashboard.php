@@ -88,68 +88,54 @@ class Dashboard extends BaseController
         }
     }
 
-    public function showForm()
-    {
-        // Tampilkan form nomor WhatsApp
-        return view('components/upload_nomor_whatsapp_pengguna');
-    }
-
-    public function sendOtp()
+    public function sendOTP()
     {
         $session = session();
         $userId = $session->get('user_id');
-        $whatsappNumber = $this->request->getPost('whatsapp_number');
 
-        // Cek apakah nomor valid
-        if (!preg_match('/^\+?[0-9]{10,15}$/', $whatsappNumber)) {
-            return redirect()->back()->with('error', 'Nomor WhatsApp tidak valid!');
-        }
+        $newNumber = $this->request->getPost('new_whatsapp_number');
+        $otp = random_int(100000, 999999); // OTP 6 digit
+        $otpExpiration = date('Y-m-d H:i:s', strtotime('+5 minutes')); // OTP berlaku 5 menit
 
-        // Generate OTP (6 digit)
-        $otp = rand(100000, 999999);
-
-        // Simpan nomor WhatsApp dan OTP di database
+        // Simpan OTP dan waktu kedaluwarsa di database
         $db = \Config\Database::connect();
         $builder = $db->table('users');
         $builder->where('id', $userId);
         $builder->update([
-            'whatsapp_number' => $whatsappNumber,
             'otp_code' => $otp,
-            'otp_verified' => 0 // OTP belum diverifikasi
+            'otp_expiration' => $otpExpiration,
         ]);
 
-        // Kirim OTP ke WhatsApp menggunakan layanan pihak ketiga (contoh)
-        // $this->sendOtpToWhatsApp($whatsappNumber, $otp);
+        // Simulasikan pengiriman OTP (sesungguhnya gunakan API WhatsApp)
+        log_message('info', "OTP untuk nomor $newNumber: $otp");
 
-        // Kirim OTP berhasil, tampilkan notifikasi
-        return redirect()->to('/verify-otp')->with('success', 'OTP telah dikirim!');
+        return redirect()->back()->with('success', 'Kode OTP telah dikirim ke nomor WhatsApp baru.');
     }
 
-    public function verifyOtp()
+    public function verifyOTP()
     {
         $session = session();
         $userId = $session->get('user_id');
-        $otpCode = $this->request->getPost('otp_code');
 
-        // Cek apakah OTP cocok
+        $inputOtp = $this->request->getPost('otp_code');
+        $newNumber = $this->request->getPost('new_whatsapp_number');
+
         $db = \Config\Database::connect();
         $builder = $db->table('users');
-        $builder->where('id', $userId);
-        $user = $builder->get()->getRow();
+        $user = $builder->getWhere(['id' => $userId])->getRow();
 
-        if ($user && $user->otp_code === $otpCode) {
-            // Verifikasi OTP berhasil
-            $builder->update(['otp_verified' => 1]);
+        if ($user && $user->otp_code === $inputOtp && strtotime($user->otp_expiration) > time()) {
+            // Verifikasi berhasil, simpan nomor WhatsApp baru
+            $builder->where('id', $userId);
+            $builder->update([
+                'whatsapp_number' => $newNumber,
+                'otp_code' => null,
+                'otp_expiration' => null,
+            ]);
 
-            return redirect()->to('/profile')->with('success', 'Nomor WhatsApp berhasil diverifikasi!');
+            return redirect()->to('/profile')->with('success', 'Nomor WhatsApp berhasil diperbarui.');
         }
 
-        return redirect()->back()->with('error', 'OTP tidak valid!');
-    }
-
-    private function sendOtpToWhatsApp($number, $otp)
-    {
-        // Implementasikan integrasi dengan API layanan WhatsApp (contoh: Twilio, Nexmo, dll.)
-        // Kirim pesan OTP ke nomor WhatsApp yang diberikan
+        return redirect()->back()->with('error', 'Kode OTP salah atau telah kedaluwarsa.');
     }
 }
