@@ -39,3 +39,4 @@
         <span id="timer" class="text-muted ms-3"></span>
     </form>
 </div>
+<script src="assets/durasi_waktu_kode_otp_pengguna.js"></script>
