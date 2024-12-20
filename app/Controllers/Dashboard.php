@@ -98,7 +98,7 @@ class Dashboard extends BaseController
         $builder = $db->table('users');
         $user = $builder->where('id', $userId)->get()->getRowArray();
 
-        return view('update_whatsapp', ['user' => $user]);
+        return view('components/edit_nomor_whatsapp_pengguna', ['user' => $user]);
     }
 
     public function sendKodeOTP()
