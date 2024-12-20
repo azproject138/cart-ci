@@ -1,3 +1,5 @@
+<?= $this->include('components/alerts') ?>
+
 <div class="container mt-4">
     <div class="mb-3">
         <label class="form-label">Alamat Rumah</label>
