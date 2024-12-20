@@ -142,7 +142,7 @@ class Dashboard extends BaseController
             $builder->where('id', $userId);
             $builder->update(['whatsapp_number' => $newNumber, 'otp_code' => null, 'otp_expiry' => null]);
 
-            return redirect()->to('/dashboard')->with('success', 'Nomor WhatsApp berhasil diperbarui!');
+            return redirect()->to('/profile')->with('success', 'Nomor WhatsApp berhasil diperbarui!');
         }
 
         return redirect()->back()->with('error', 'Kode OTP salah atau telah kadaluarsa.');
