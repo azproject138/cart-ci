@@ -5,7 +5,7 @@
                 <h5 class="modal-title" id="otpModalLabel">Verifikasi OTP</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('whatsapp/verify-otp') ?>" method="post">
+            <form action="<?= base_url('whatsapp/verify-kode-otp') ?>" method="post">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="otp_code" class="form-label">Kode OTP</label>
