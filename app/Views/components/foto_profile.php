@@ -33,7 +33,7 @@
                 <h5 class="modal-title" id="uploadModalLabel">Upload Foto Profil</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('profile/upload') ?>" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url('profile/upload-picture') ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body text-center">
                     <img 
                         src="<?= base_url('uploads/profile_pictures/' . ($user['profile_picture'] ?? 'default.png')) ?>" 
