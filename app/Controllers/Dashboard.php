@@ -88,7 +88,7 @@ class Dashboard extends BaseController
         }
     }
 
-    public function sendOTP()
+    public function sendKodeOTP()
     {
         $session = session();
         $userId = $session->get('user_id');
@@ -112,7 +112,7 @@ class Dashboard extends BaseController
         return redirect()->back()->with('success', 'Kode OTP telah dikirim ke nomor WhatsApp baru.');
     }
 
-    public function verifyOTP()
+    public function verifyKodeOTP()
     {
         $session = session();
         $userId = $session->get('user_id');
