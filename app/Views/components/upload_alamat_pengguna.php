@@ -46,7 +46,7 @@
                 <h5 class="modal-title" id="addressModalLabel">Edit Alamat</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('address/update') ?>" method="post">
+            <form action="<?= base_url('profile/update-alamat-pengguna') ?>" method="post">
                 <div class="modal-body">
                     <input type="hidden" name="address_type" id="addressType" value="">
                     <div class="mb-3">
