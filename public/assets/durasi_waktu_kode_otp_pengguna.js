@@ -1,25 +1,22 @@
-let countdown = 60; // Durasi waktu 60 detik
-const resendButton = document.getElementById('resendOtp');
+let timeLeft = 300; // 5 menit
 
-function updateCountdown() {
-    if (countdown > 0) {
-        resendButton.disabled = true;
-        resendButton.innerText = `Kirim Ulang (${countdown}s)`;
-        countdown--;
-        setTimeout(updateCountdown, 1000);
+const timerElement = document.getElementById('timer');
+function updateTimer() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    timerElement.textContent = `Kode OTP akan kadaluarsa dalam ${minutes}:${seconds.toString().padStart(2, '0')} menit`;
+    if (timeLeft > 0) {
+        timeLeft--;
+        setTimeout(updateTimer, 1000);
     } else {
-        resendButton.disabled = false;
-        resendButton.innerText = 'Kirim Ulang';
+        timerElement.textContent = 'Kode OTP telah kadaluarsa. Kirim ulang untuk mendapatkan kode baru.';
     }
 }
 
-resendButton.addEventListener('click', () => {
-    countdown = 60;
-    updateCountdown();
-    // Kirim ulang OTP melalui AJAX atau redirect ke action pengiriman ulang OTP
-    alert('Kode OTP telah dikirim ulang!');
-});
+function resendOtp() {
+    alert('Kode OTP baru telah dikirim!');
+    timeLeft = 300; // Reset timer
+    updateTimer();
+}
 
-// Mulai countdown saat modal OTP dibuka
-const otpModal = document.getElementById('otpModal');
-otpModal.addEventListener('show.bs.modal', updateCountdown);
+updateTimer();
