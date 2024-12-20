@@ -91,7 +91,7 @@ class Dashboard extends BaseController
     public function showForm()
     {
         // Tampilkan form nomor WhatsApp
-        return view('whatsapp_form');
+        return view('components/upload_nomor_whatsapp_pengguna');
     }
 
     public function sendOtp()
