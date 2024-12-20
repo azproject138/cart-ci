@@ -1,3 +1,11 @@
+<?php if (session()->getFlashdata('success')): ?>
+    <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
+<?php endif; ?>
+
+<?php if (session()->getFlashdata('error')): ?>
+    <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+<?php endif; ?>
+
 <div class="text-center">
     <!-- Lingkaran foto profil -->
     <div class="position-relative" style="width: 120px; height: 120px;">
