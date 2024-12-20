@@ -14,6 +14,6 @@ $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/profile', 'Dashboard::index');
 $routes->post('/profile/upload-picture', 'Dashboard::uploadPicture');
-$routes->post('/profile/update-address', 'Dashboard::updateAddress');
+$routes->post('/profile/update-address', 'Dashboard::updateAlamatPengguna');
 $routes->post('/profile/update-whatsapp', 'Dashboard::updateWhatsApp');
 $routes->post('/profile/verify-otp', 'Dashboard::verifyOtp');
