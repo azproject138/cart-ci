@@ -28,23 +28,30 @@ class ProfilController extends BaseController
     
     public function uploadPicture()
     {
-        $file = $this->request->getFile('profile_picture');
-        if ($file->isValid() && !$file->hasMoved()) {
-            $fileName = $file->getRandomName();
-            $file->move('uploads/profile_pictures', $fileName);
+        $session = session();
+        $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
 
-            $userModel = new UserModel();
-            $userId = session('user_id');
+        if ($this->request->getMethod() === 'post') {
+            $file = $this->request->getFile('profile_picture');
 
-            if (!$userId) {
-                return redirect()->to('/login')->with('error', 'Anda harus login terlebih dahulu.');
+            if ($file->isValid() && !$file->hasMoved()) {
+                // Nama file unik untuk menghindari konflik
+                $fileName = $file->getRandomName();
+
+                // Pindahkan file ke folder uploads
+                $file->move(WRITEPATH . 'uploads/profile_pictures/', $fileName);
+
+                // Simpan ke database
+                $db = \Config\Database::connect();
+                $builder = $db->table('users');
+                $builder->where('id', $userId);
+                $builder->update(['profile_picture' => $fileName]);
+
+                return redirect()->to('/profile')->with('success', 'Foto profil berhasil diunggah!');
             }
 
-            $userModel->update($userId, ['profile_picture' => $fileName]);
-
-            return redirect()->to('/profile')->with('success', 'Foto profil berhasil diperbarui.');
+            return redirect()->to('/profile')->with('error', 'Gagal mengunggah foto profil.');
         }
-        return redirect()->back()->with('error', 'Gagal mengunggah foto profil.');
     }
 
     public function updateAddress()
