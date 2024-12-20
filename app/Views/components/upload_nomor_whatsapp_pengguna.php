@@ -27,7 +27,7 @@
                 <h5 class="modal-title" id="whatsappModalLabel">Edit Nomor WhatsApp</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('whatsapp/sendOTP') ?>" method="post">
+            <form action="<?= base_url('profile/kirim-kode-otp-pengguna') ?>" method="post">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="current_whatsapp_number" class="form-label">Nomor WhatsApp Lama</label>
@@ -67,7 +67,7 @@
                 <h5 class="modal-title" id="otpModalLabel">Verifikasi Nomor WhatsApp</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('whatsapp/verifyOTP') ?>" method="post">
+            <form action="<?= base_url('profile/verify-kode-otp-pengguna') ?>" method="post">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="otp_code" class="form-label">Kode OTP</label>
