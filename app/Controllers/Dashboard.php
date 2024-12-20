@@ -84,7 +84,7 @@ class Dashboard extends BaseController
             $builder->where('id', $userId);
             $builder->update([$column => $address]);
 
-            return redirect()->to('/dashboard')->with('success', 'Alamat berhasil diperbarui!');
+            return redirect()->to('/profile')->with('success', 'Alamat berhasil diperbarui!');
         }
     }
 
