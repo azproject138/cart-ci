@@ -141,7 +141,7 @@ class Dashboard extends BaseController
             // Verifikasi OTP berhasil
             $builder->update(['otp_verified' => 1]);
 
-            return redirect()->to('/dashboard')->with('success', 'Nomor WhatsApp berhasil diverifikasi!');
+            return redirect()->to('/profile')->with('success', 'Nomor WhatsApp berhasil diverifikasi!');
         }
 
         return redirect()->back()->with('error', 'OTP tidak valid!');
