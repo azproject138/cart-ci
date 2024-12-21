@@ -34,18 +34,33 @@ class SettingController extends BaseController
     public function updateUsernamePengguna()
     {
         $session = session();
-        $userId = $session->get('user_id');
 
-        // Validate input
-        $newUsername = $this->request->getPost('username');
-        if (!$newUsername) {
-            return redirect()->back()->with('error', 'Username cannot be empty');
-        }
+    // Periksa apakah pengguna login
+    if (!$session->get('logged_in')) {
+        return redirect()->to('/login')->with('error', 'Harap login terlebih dahulu.');
+    }
 
-        // Update username
-        $userModel = new UserModel();
-        $userModel->update($userId, ['username' => $newUsername]);
+    $userId = $session->get('user_id');
+    $username = $this->request->getPost('username');
 
-        return redirect()->to('/settings')->with('success', 'Username updated successfully');
+    // Validasi input
+    if (empty($username) || strlen($username) < 3) {
+        return redirect()->to('/settings')->with('error', 'Username harus minimal 3 karakter.');
+    }
+
+    $db = \Config\Database::connect();
+    $builder = $db->table('users');
+
+    // Pastikan username unik
+    $existing = $builder->where('username', $username)->where('id !=', $userId)->countAllResults();
+    if ($existing > 0) {
+        return redirect()->to('/settings')->with('error', 'Username sudah digunakan.');
+    }
+
+    // Perbarui username
+    $builder->where('id', $userId);
+    $builder->update(['username' => $username]);
+
+    return redirect()->to('/settings')->with('success', 'Username berhasil diperbarui.');
     }
 }
