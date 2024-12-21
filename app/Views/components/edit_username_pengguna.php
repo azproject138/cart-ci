@@ -1,11 +1,11 @@
 <?= $this->include('components/alerts')?>
 <h3>Edit Username</h3>
-<form method="post" action="<?= site_url('settings/update-username') ?>">
+<form method="post" action="<?= site_url('settings/update-username-pengguna') ?>">
     <?= csrf_field() ?>
     <div class="mb-3">
         <label for="username" class="form-label">Username saat ini</label>
         <div class="input-group">
-            <input type="text" class="form-control" id="username" name="username" value="<?= $username ?>" disabled>
+            <input type="text" class="form-control" id="username" name="username" value="<?= esc($user['username']) ?>" disabled>
             <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editUsernameModal">
                 <i class="bi bi-pencil-square"></i> Edit
             </button>
@@ -19,7 +19,7 @@
                 <h5 class="modal-title" id="editUsernameModalLabel">Edit Username</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" action="<?= site_url('settings/update-username') ?>">
+            <form method="post" action="<?= site_url('settings/update-username-pengguna') ?>">
                 <?= csrf_field() ?>
                 <div class="modal-body">
                     <div class="mb-3">

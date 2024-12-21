@@ -12,14 +12,10 @@ class SettingController extends BaseController
     {
         $session = session();
         $userModel = new UserModel();
-        $user = $userModel->find($session->get('user_id'));
-        if (!$user) {
-            throw new \Exception("User not found in database.");
-        }
+        $userId = $session->get('user_id');
 
-        dd($user);
-
-        return view('setting/index.php', ['username' => $user['username']]);
+        $user = $userModel->find($userId);
+        return view('setting/index', ['user' => $user]);
     }
 
     public function updateUsernamePengguna()

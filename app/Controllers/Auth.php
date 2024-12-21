@@ -61,7 +61,6 @@ class Auth extends BaseController
         $password = $this->request->getPost('password');
 
         $user = $userModel->where('email', $email)->first();
-        dd($session->get('user_id'));
 
         if ($user && password_verify($password, $user['password'])) {
             session()->set([
@@ -74,6 +73,7 @@ class Auth extends BaseController
             ]);
 
             $session = session();
+            $session->set('user_id', $user['id']);
 
             $userModel = new UserModel();
             $user = $userModel->find($session->get('user_id'));
