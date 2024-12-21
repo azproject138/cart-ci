@@ -176,7 +176,7 @@ class Dashboard extends BaseController
             return redirect()->to('/dashboard')->with('error', 'Pengguna tidak ditemukan.');
         }
 
-        return view('components/edit_username_pengguna', ['user' => $user]);
+        return view('setting/index', ['user' => $user]);
     }
 
     public function uploadUsernamePengguna()
@@ -198,7 +198,7 @@ class Dashboard extends BaseController
             $builder->where('id', $userId);
             $builder->update(['username' => $newUsername]);
 
-            return redirect()->to('/settings')->with('success', 'Username berhasil diperbarui!');
+            return redirect()->to('/settings/upload-username-pengguna')->with('success', 'Username berhasil diperbarui!');
         }
     }
 }
