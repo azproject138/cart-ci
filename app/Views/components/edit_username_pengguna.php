@@ -1,21 +1,14 @@
 <?= $this->include('components/alerts')?>
-<div class="d-flex align-items-center mt-3">
-    <label for="username" class="form-label me-3">Username:</label>
-    <input 
-        type="text" 
-        id="username" 
-        class="form-control w-50" 
-        value="<?= esc($user['username']) ?>" 
-        disabled>
-    <button 
-        class="btn btn-primary ms-3" 
-        data-bs-toggle="modal" 
-        data-bs-target="#editUsernameModal">
+<!-- Tampilkan Username -->
+<div class="d-flex align-items-center">
+    <strong class="me-3">Username:</strong>
+    <span><?= $user['username'] ?? 'Belum diatur' ?></span>
+    <button class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#editUsernameModal">
         <i class="bi bi-pencil"></i> Edit
     </button>
 </div>
 
-<!-- Modal Edit Username -->
+<!-- Modal -->
 <div class="modal fade" id="editUsernameModal" tabindex="-1" aria-labelledby="editUsernameModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -23,17 +16,17 @@
                 <h5 class="modal-title" id="editUsernameModalLabel">Edit Username</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('settings/upload-username-pengguna') ?>" method="post">
+            <form action="<?= base_url('user/update-username') ?>" method="post">
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="new_username" class="form-label">Username Baru</label>
+                        <label for="username" class="form-label">Username Baru</label>
                         <input 
                             type="text" 
-                            id="new_username" 
-                            name="new_username" 
                             class="form-control" 
+                            id="username" 
+                            name="username" 
                             placeholder="Masukkan username baru" 
-                            value="<?= esc($user['username']) ?>" 
+                            value="<?= $user['username'] ?? '' ?>" 
                             required>
                     </div>
                 </div>
