@@ -163,6 +163,11 @@ class Dashboard extends BaseController
         return redirect()->back()->with('error', 'Kode OTP salah atau telah kadaluarsa.');
     }
 
+    public function Setting()
+    {
+        return view('setting/index');
+    }
+
     public function uploadUsernamePengguna()
     {
         $session = session();
