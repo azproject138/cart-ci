@@ -5,7 +5,7 @@
         type="text" 
         id="username" 
         class="form-control w-50" 
-        value="<?= $user['username'] ?>" 
+        value="<?= esc($user['username']) ?>" 
         disabled>
     <button 
         class="btn btn-primary ms-3" 
@@ -33,7 +33,7 @@
                             name="new_username" 
                             class="form-control" 
                             placeholder="Masukkan username baru" 
-                            value="<?= $user['username'] ?>" 
+                            value="<?= esc($user['username']) ?>" 
                             required>
                     </div>
                 </div>
