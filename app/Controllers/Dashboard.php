@@ -165,7 +165,18 @@ class Dashboard extends BaseController
 
     public function Setting()
     {
-        return view('setting/index');
+        $session = session();
+        $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
+
+        $db = \Config\Database::connect();
+        $builder = $db->table('users');
+        $user = $builder->where('id', $userId)->get()->getRowArray(); // Ambil data pengguna
+
+        if (!$user) {
+            return redirect()->to('/dashboard')->with('error', 'Pengguna tidak ditemukan.');
+        }
+
+        return view('components/edit_username_pengguna', ['user' => $user]);
     }
 
     public function uploadUsernamePengguna()
