@@ -163,7 +163,7 @@ class Dashboard extends BaseController
         return redirect()->back()->with('error', 'Kode OTP salah atau telah kadaluarsa.');
     }
 
-    public function updateUsername()
+    public function uploadUsernamePengguna()
     {
         $session = session();
         $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
