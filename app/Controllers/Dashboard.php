@@ -165,18 +165,7 @@ class Dashboard extends BaseController
 
     public function Setting()
     {
-        $session = session();
-        $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
-
-        $db = \Config\Database::connect();
-        $builder = $db->table('users');
-        $user = $builder->where('id', $userId)->get()->getRowArray(); // Ambil data pengguna
-
-        if (!$user) {
-            return redirect()->to('/dashboard')->with('error', 'Pengguna tidak ditemukan.');
-        }
-
-        return view('setting/index', ['user' => $user]);
+        return view('setting/index');
     }
 
     public function uploadUsernamePengguna()
@@ -198,7 +187,7 @@ class Dashboard extends BaseController
             $builder->where('id', $userId);
             $builder->update(['username' => $newUsername]);
 
-            return redirect()->to('/settings/upload-username-pengguna')->with('success', 'Username berhasil diperbarui!');
+            return redirect()->to('/settings')->with('success', 'Username berhasil diperbarui!');
         }
     }
 }
