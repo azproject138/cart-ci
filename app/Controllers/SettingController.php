@@ -15,18 +15,19 @@ class SettingController extends BaseController
     public function updateUsernamePengguna()
     {
         $session = session();
-        $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
+        $userId = $session->get('user_id');
 
         if ($this->request->getMethod() === 'post') {
             $username = $this->request->getPost('username');
 
-            // Validasi username
-            if (empty($username) || strlen($username) < 3) {
-                return redirect()->to('/settings')->with('error', 'Username harus minimal 3 karakter.');
-            }
-
             $db = \Config\Database::connect();
             $builder = $db->table('users');
+
+            // Pastikan username unik
+            $existing = $builder->where('username', $username)->where('id !=', $userId)->countAllResults();
+            if ($existing > 0) {
+                return redirect()->to('/settings')->with('error', 'Username sudah digunakan.');
+            }
 
             // Perbarui username
             $builder->where('id', $userId);
