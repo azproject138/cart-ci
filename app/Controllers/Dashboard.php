@@ -162,4 +162,27 @@ class Dashboard extends BaseController
 
         return redirect()->back()->with('error', 'Kode OTP salah atau telah kadaluarsa.');
     }
+
+    public function updateUsername()
+    {
+        $session = session();
+        $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
+
+        if ($this->request->getMethod() === 'post') {
+            $newUsername = $this->request->getPost('new_username');
+
+            // Validasi username (optional)
+            if (strlen($newUsername) < 3) {
+                return redirect()->back()->with('error', 'Username harus memiliki setidaknya 3 karakter.');
+            }
+
+            // Simpan username baru ke database
+            $db = \Config\Database::connect();
+            $builder = $db->table('users');
+            $builder->where('id', $userId);
+            $builder->update(['username' => $newUsername]);
+
+            return redirect()->to('/settings')->with('success', 'Username berhasil diperbarui!');
+        }
+    }
 }
