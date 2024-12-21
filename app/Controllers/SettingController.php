@@ -9,6 +9,11 @@ class SettingController extends BaseController
 {
     public function index()
     {
+        return view('setting/index');
+    }
+
+    public function updateUsernamePengguna()
+    {
         $session = session();
         $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
 
