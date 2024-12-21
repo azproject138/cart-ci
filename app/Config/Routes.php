@@ -22,5 +22,5 @@ $routes->get('whatsapp/upload-nomor-whatsapp', 'Dashboard::uploadNomorWhatsApp')
 $routes->post('whatsapp/send-kode-otp', 'Dashboard::sendKodeOTP');
 $routes->post('whatsapp/verify-kode-otp', 'Dashboard::verifyKodeOtp');
 
-$routes->post('/settings', 'SettingController::index');
+$routes->get('/settings', 'SettingController::index');
 $routes->post('settings/upload-username-pengguna', 'Dashboard::uploadUsernamePengguna');
