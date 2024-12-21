@@ -1,4 +1,26 @@
 <?= $this->include('components/alerts'); ?>
+
+<div class="container mt-5">
+    <h3>Alamat Pengguna</h3>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Tipe Alamat</th>
+                <th>Alamat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($addresses as $address): ?>
+                <tr>
+                    <td><?= $address->address_type ?></td>
+                    <td><?= $address->address ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
 <div class="text-center">
     <!-- Tombol Edit Alamat -->
     <div>
