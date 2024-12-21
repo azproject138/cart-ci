@@ -11,18 +11,10 @@ class SettingController extends BaseController
     public function index()
     {
         $session = session();
-        $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
+        $userModel = new UserModel();
+        $user = $userModel->find($session->get('user_id'));
 
-        $db = \Config\Database::connect();
-        $builder = $db->table('users');
-
-        $user = $builder->where('id', $userId)->get()->getRowArray();
-
-        if (!$user) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('Pengguna tidak ditemukan.');
-        }
-
-    return view('components/edit_username_pengguna', ['user' => $user]);
+        return view('settings/index.php', ['username' => $user['username']]);
     }
 
     public function updateUsernamePengguna()
