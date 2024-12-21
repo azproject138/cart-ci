@@ -73,7 +73,10 @@ class Auth extends BaseController
             ]);
 
             $session = session();
-            $session->set('user_id', $user['id']);
+            $session->set([
+                'user_id' => $user['id'], // Pastikan ID pengguna valid
+                'logged_in' => true,
+            ]);
 
             $userModel = new UserModel();
             $user = $userModel->find($session->get('user_id'));
@@ -104,6 +107,7 @@ class Auth extends BaseController
             'id'       => $user['id'],
             'username' => $user['username'],
             'email'    => $user['email'],
+            'logged_in' => true,
         ]);
 
         return redirect()->to('/dashboard')->with('success', 'Selamat, Login berhasil, ' . $user['username']);
