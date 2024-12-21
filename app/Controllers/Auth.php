@@ -61,6 +61,7 @@ class Auth extends BaseController
         $password = $this->request->getPost('password');
 
         $user = $userModel->where('email', $email)->first();
+        dd($session->get('user_id'));
 
         if ($user && password_verify($password, $user['password'])) {
             session()->set([
