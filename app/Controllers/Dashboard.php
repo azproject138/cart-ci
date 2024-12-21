@@ -173,21 +173,14 @@ class Dashboard extends BaseController
         $session = session();
         $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
 
-        if ($this->request->getMethod() === 'post') {
-            $newUsername = $this->request->getPost('new_username');
+        $db = \Config\Database::connect();
+        $builder = $db->table('users');
+        $user = $builder->where('id', $userId)->get()->getRowArray(); // Ambil data pengguna
 
-            // Validasi username (optional)
-            if (strlen($newUsername) < 3) {
-                return redirect()->back()->with('error', 'Username harus memiliki setidaknya 3 karakter.');
-            }
-
-            // Simpan username baru ke database
-            $db = \Config\Database::connect();
-            $builder = $db->table('users');
-            $builder->where('id', $userId);
-            $builder->update(['username' => $newUsername]);
-
-            return redirect()->to('/settings')->with('success', 'Username berhasil diperbarui!');
+        if (!$user) {
+            return redirect()->to('/dashboard')->with('error', 'Pengguna tidak ditemukan.');
         }
+
+        return view('/settings', ['user' => $user]);
     }
 }
