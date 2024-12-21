@@ -1,14 +1,17 @@
 <?= $this->include('components/alerts')?>
-<!-- Tampilkan Username -->
-<div class="d-flex align-items-center">
-    <strong class="me-3">Username:</strong>
-    <span><?= $user['username'] ?? 'Belum diatur' ?></span>
-    <button class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#editUsernameModal">
-        <i class="bi bi-pencil"></i> Edit
-    </button>
-</div>
-
-<!-- Modal -->
+<h3>Edit Username</h3>
+<form method="post" action="<?= site_url('settings/update-username') ?>">
+    <?= csrf_field() ?>
+    <div class="mb-3">
+        <label for="username" class="form-label">Username saat ini</label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="username" name="username" value="<?= $username ?>" disabled>
+            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editUsernameModal">
+                <i class="bi bi-pencil-square"></i> Edit
+            </button>
+        </div>
+    </div>
+</form>
 <div class="modal fade" id="editUsernameModal" tabindex="-1" aria-labelledby="editUsernameModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -16,22 +19,17 @@
                 <h5 class="modal-title" id="editUsernameModalLabel">Edit Username</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('settings/upload-username-pengguna') ?>" method="post">
+            <form method="post" action="<?= site_url('settings/update-username') ?>">
+                <?= csrf_field() ?>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="username" class="form-label">Username Baru</label>
-                        <input 
-                            type="text" 
-                            class="form-control" 
-                            id="username" 
-                            name="username" 
-                            placeholder="Masukkan username baru" 
-                            value="<?= $user['username'] ?? '' ?>" 
-                            required>
+                        <label for="newUsername" class="form-label">New Username</label>
+                        <input type="text" class="form-control" id="newUsername" name="username" placeholder="Enter new username" required>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
                 </div>
             </form>
         </div>
