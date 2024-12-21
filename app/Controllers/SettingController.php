@@ -11,10 +11,24 @@ class SettingController extends BaseController
     public function index()
     {
         $session = session();
-        $userModel = new UserModel();
-        $user = $userModel->find($session->get('user_id'));
 
-        return view('settings/index.php', ['username' => $user['username']]);
+        // Periksa apakah pengguna login
+        if (!$session->get('logged_in')) {
+            return redirect()->to('/login')->with('error', 'Harap login terlebih dahulu.');
+        }
+
+        $userId = $session->get('user_id');
+        $db = \Config\Database::connect();
+        $builder = $db->table('users');
+
+        // Ambil data pengguna
+        $user = $builder->where('id', $userId)->get()->getRowArray();
+
+        if (!$user) {
+            return redirect()->to('/dashboard')->with('error', 'Pengguna tidak ditemukan.');
+        }
+
+        return view('setting/index', ['user' => $user]);
     }
 
     public function updateUsernamePengguna()
