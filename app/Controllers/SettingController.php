@@ -12,16 +12,22 @@ class SettingController extends BaseController
         $session = session();
         $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
 
-        // Ambil data pengguna dari database
-        $db = \Config\Database::connect();
-        $builder = $db->table('users');
-        $user = $builder->where('id', $userId)->get()->getRowArray();
+        if ($this->request->getMethod() === 'post') {
+            $username = $this->request->getPost('username');
 
-        // Pastikan $user tidak null sebelum dikirim ke view
-        if (!$user) {
-            return redirect()->to('/login')->with('error', 'Pengguna tidak ditemukan.');
+            // Validasi username
+            if (empty($username) || strlen($username) < 3) {
+                return redirect()->to('/settings')->with('error', 'Username harus minimal 3 karakter.');
+            }
+
+            $db = \Config\Database::connect();
+            $builder = $db->table('users');
+
+            // Perbarui username
+            $builder->where('id', $userId);
+            $builder->update(['username' => $username]);
+
+            return redirect()->to('/settings')->with('success', 'Username berhasil diperbarui.');
         }
-
-        return view('setting/index', ['user' => $user]);
     }
 }
