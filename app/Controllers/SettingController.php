@@ -11,22 +11,13 @@ class SettingController extends BaseController
     public function index()
     {
         $session = session();
+        $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
 
-        // Periksa apakah pengguna login
-        if (!$session->get('logged_in')) {
-            return redirect()->to('/login')->with('error', 'Harap login terlebih dahulu.');
-        }
-
-        $userId = $session->get('user_id');
         $db = \Config\Database::connect();
         $builder = $db->table('users');
 
         // Ambil data pengguna
         $user = $builder->where('id', $userId)->get()->getRowArray();
-
-        if (!$user) {
-            return redirect()->to('/dashboard')->with('error', 'Pengguna tidak ditemukan.');
-        }
 
         return view('setting/index', ['user' => $user]);
     }
@@ -34,33 +25,18 @@ class SettingController extends BaseController
     public function updateUsernamePengguna()
     {
         $session = session();
-
-        // Periksa apakah pengguna login
-        if (!$session->get('logged_in')) {
-            return redirect()->to('/login')->with('error', 'Harap login terlebih dahulu.');
-        }
-
         $userId = $session->get('user_id');
-        $username = $this->request->getPost('username');
 
-        // Validasi input
-        if (empty($username) || strlen($username) < 3) {
-            return redirect()->to('/settings')->with('error', 'Username harus minimal 3 karakter.');
+        // Validate input
+        $newUsername = $this->request->getPost('username');
+        if (!$newUsername) {
+            return redirect()->back()->with('error', 'Username cannot be empty');
         }
 
-        $db = \Config\Database::connect();
-        $builder = $db->table('users');
+        // Update username
+        $userModel = new UserModel();
+        $userModel->update($userId, ['username' => $newUsername]);
 
-        // Pastikan username unik
-        $existing = $builder->where('username', $username)->where('id !=', $userId)->countAllResults();
-        if ($existing > 0) {
-            return redirect()->to('/settings')->with('error', 'Username sudah digunakan.');
-        }
-
-        // Perbarui username
-        $builder->where('id', $userId);
-        $builder->update(['username' => $username]);
-
-        return redirect()->to('/settings')->with('success', 'Username berhasil diperbarui.');
+        return redirect()->to('/settings')->with('success', 'Username updated successfully');
     }
 }
