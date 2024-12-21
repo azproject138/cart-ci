@@ -1,3 +1,4 @@
+<?= $this->include('components/alerts')?>
 <div class="d-flex align-items-center mt-3">
     <label for="username" class="form-label me-3">Username:</label>
     <input 
