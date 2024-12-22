@@ -24,61 +24,72 @@ class SettingController extends BaseController
 
     public function updateUsernamePengguna()
     {
-        $userId = session()->get('user')['id'];
-        $newUsername = $this->request->getPost('username');
-        
-        $model = new UserModel();
-        $existingUser = $model->where('username', $newUsername)->first();
+        $data = $this->request->getPost();
+        $userId = session()->get('user');
 
-        if ($existingUser) {
-            return redirect()->back()->with('error', 'Username already exists.');
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'username' => 'required|is_unique[users.username,id,' . $userId . ']',
+        ]);
+
+        if (!$validation->run($data)) {
+            return redirect()->back()->withInput()->with('errors', $validation->getErrors());
         }
 
-        $model->update($userId, ['username' => $newUsername]);
+        $this->userModel->update($userId, ['username' => $data['username']]);
         return redirect()->back()->with('success', 'Username updated successfully.');
     }
 
     public function updateEmailPengguna()
     {
-        $userId = session()->get('user')['id'];
-        $newEmail = $this->request->getPost('email');
+        $data = $this->request->getPost();
+        $userId = session()->get('user');
 
-        $model = new UserModel();
-        $existingUser = $model->where('email', $newEmail)->first();
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'email' => 'required|valid_email|is_unique[users.email,id,' . $userId . ']',
+        ]);
 
-        if ($existingUser) {
-            return redirect()->back()->with('error', 'Email already exists.');
+        if (!$validation->run($data)) {
+            return redirect()->back()->withInput()->with('errors', $validation->getErrors());
         }
 
-        $model->update($userId, ['email' => $newEmail, 'email_verified' => 0]); // Reset email verification status
-        return redirect()->back()->with('success', 'Email updated successfully. Please verify your new email.');
+        $this->userModel->update($userId, ['email' => $data['email']]);
+        return redirect()->back()->with('success', 'Email updated successfully.');
     }
 
     public function verifyEmailPengguna()
     {
-        $userId = session()->get('user')['id'];
-        $model = new UserModel();
-        $user = $model->find($userId);
+        // Logic for sending verification email
+        $userId = session()->get('user');
+        $user = $this->userModel->find($userId);
 
-        // Simulate sending a verification email
-        $email = \Config\Services::email();
-        $email->setTo($user['email']);
-        $email->setSubject('Email Verification');
-        $email->setMessage('Please click the link to verify your email.');
-        $email->send();
+        if ($user['email_verified'] == 1) {
+            return redirect()->back()->with('info', 'Email already verified.');
+        }
 
-        return redirect()->back()->with('success', 'Verification email sent.');
+        // Simulate sending an email
+        // You can implement real email sending logic here using a library like PHPMailer or CodeIgniter's Email class.
+        $this->userModel->update($userId, ['email_verified' => 1]);
+
+        return redirect()->back()->with('success', 'Verification email sent successfully.');
     }
 
     public function updatePasswordPengguna()
     {
-        $userId = session()->get('user')['id'];
-        $newPassword = $this->request->getPost('new_password');
-        $hashedPassword = password_hash($newPassword, PASSWORD_BCRYPT);
+        $data = $this->request->getPost();
+        $userId = session()->get('user');
+        $user = $this->userModel->find($userId);
 
-        $model = new UserModel();
-        $model->update($userId, ['password' => $hashedPassword]);
+        if (!password_verify($data['old_password'], $user['password'])) {
+            return redirect()->back()->with('error', 'Old password is incorrect.');
+        }
 
+        if ($data['new_password'] !== $data['confirm_password']) {
+            return redirect()->back()->with('error', 'New passwords do not match.');
+        }
+
+        $this->userModel->update($userId, ['password' => password_hash($data['new_password'], PASSWORD_BCRYPT)]);
         return redirect()->back()->with('success', 'Password updated successfully.');
     }
 }
