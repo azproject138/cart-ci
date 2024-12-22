@@ -5,12 +5,7 @@
         <label for="username">Username</label>
         <div class="input-group">
             <input type="text" class="form-control" name="username" value="<?= isset($user['username']) ?>" disabled>
-            <button 
-                type="button" 
-                class="btn btn-secondary" 
-                data-bs-toggle="modal" 
-                data-bs-target="#editUsernameModal"
-            >
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editUsernameModal">
                 <i class="bi bi-pencil"></i> Edit
             </button>
         </div>
