@@ -22,30 +22,40 @@ class CreateUsersTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
+            'is_email_verified' => [
+                'type'       => 'TINYINT',
+                'constraint' => '1',
+            ],
             'password' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
+            ],
+            'created_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
             ],
             'profile_picture' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
                 'null' => true,
             ],
-            'created_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            'address' => [
-                'type' => 'TEXT',
+            'home_address' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'null' => true,
+            ],
+            'office_address' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
                 'null' => true,
             ],
             'whatsapp_number' => [
                 'type' => 'VARCHAR',
-                'constraint' => '15',
+                'constraint' => '20',
                 'null' => true,
             ],
             'otp_code' => [
