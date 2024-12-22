@@ -7,7 +7,7 @@
         <label for="email">Email</label>
         <input type="email" name="email" id="email" class="form-control" value="<?= isset($user['username']) ?>" disabled>
     </div>
-    <button type="submit" class="btn btn-primary">Update Email</button>
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateEmailModal">Update Email</button>
 </form>
 
 <!-- Modal Edit Email -->
