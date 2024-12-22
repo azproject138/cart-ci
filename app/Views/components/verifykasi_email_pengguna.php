@@ -1,3 +1,4 @@
+<?= $this->include('components/alerts')?>
 <!-- Modal Verify Email -->
 <?php if ($user['email_verified'] == 0): ?>
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#verifyEmailModal">Verify Email</button>
