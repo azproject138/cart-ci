@@ -19,7 +19,7 @@ class SettingController extends BaseController
     {
         $userId = session()->get('user');
         $user = $this->userModel->find($userId);
-        return view('settings', ['user' => $user]);
+        return view('setting/index', ['user' => $user]);
     }
 
     public function updateUsernamePengguna()
