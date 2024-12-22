@@ -10,9 +10,9 @@
 <body>
     <div class="container mt-4">
         <h2>Setting</h2>
-    
         <?= $this->include('components/edit_username_pengguna')?>
         <?= $this->include('components/update_email_pengguna')?>
+        <?= $this->include('components/verifykasi_email_pengguna')?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
