@@ -9,7 +9,7 @@
         <i class="bi bi-pencil"></i> Edit
     </button>
     <?php if (!$user['is_email_verified']): ?>
-        <a href="<?= base_url('user/verify-email?email=' . urlencode($user['email'])) ?>" class="btn btn-warning ms-3">
+        <a href="<?= base_url('user/verify-email-pengguna?email=' . urlencode($user['email'])) ?>" class="btn btn-warning ms-3">
             Verifikasi Email
         </a>
     <?php endif; ?>
@@ -23,7 +23,7 @@
                 <h5 class="modal-title" id="editEmailModalLabel">Edit Email</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('user/update-email') ?>" method="post">
+            <form action="<?= base_url('user/update-email-pengguna') ?>" method="post">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email Baru</label>
