@@ -23,4 +23,7 @@ $routes->post('whatsapp/send-kode-otp', 'Dashboard::sendKodeOTP');
 $routes->post('whatsapp/verify-kode-otp', 'Dashboard::verifyKodeOtp');
 
 $routes->get('/settings', 'SettingController::index', ['filter' => 'auth']);
-$routes->post('settings/upload-username-pengguna', 'Dashboard::uploadUsernamePengguna');
+$routes->post('settings/upload-username-pengguna', 'SettingController::uploadUsernamePengguna');
+
+$routes->post('user/update-email-pengguna', 'SettingController::updateEmailPengguna');
+$routes->get('user/verify-email-pengguna', 'SettingController::verifyEmailPengguna');
