@@ -4,9 +4,7 @@
 <div class="d-flex align-items-center mb-3">
     <strong class="me-3">Email:</strong>
     <span><?= $user['email'] ?? 'Belum diatur' ?></span>
-    <span class="ms-3 <?= $user['is_email_verified'] ? 'text-success' : 'text-danger' ?>">
-        <?= $user['is_email_verified'] ? 'Terverifikasi' : 'Belum Diverifikasi' ?>
-    </span>
+        <input type="email" class="form-control" id="email" name="email" value="<?= isset($user['email']) ? $user['email'] : '' ?>" required>
     <button class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#editEmailModal">
         <i class="bi bi-pencil"></i> Edit
     </button>
