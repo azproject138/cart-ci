@@ -85,7 +85,7 @@ class SettingController extends BaseController
 
     public function sendVerificationEmail($email)
     {
-        $verificationLink = base_url('user/verify-email?email=' . urlencode($email));
+        $verificationLink = base_url('user/verify-email-pengguna?email=' . urlencode($email));
 
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
