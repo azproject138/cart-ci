@@ -13,20 +13,46 @@ class Auth extends BaseController
         return view('auth/register');
 
         $validation = \Config\Services::validation();
-        $userModel = new UserModel();
+
+        $validation->setRules([
+            'username' => [
+                'label' => 'Username',
+                'rules' => 'required',
+            ],
+            'email' => [
+                'label' => 'Email',
+                'rules' => 'required|valid_email',
+            ],
+            'password' => [
+                'label' => 'Password',
+                'rules' => 'required',
+            ],
+            'confirm_password' => [
+                'label' => 'Confirm Password',
+                'rules' => 'required|matches[password]',
+            ],
+        ]);
 
         $data = [
             'username' => $this->request->getPost('username'),
-            'email'    => $this->request->getPost('email'),
+            'email' => $this->request->getPost('email'),
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
         ];
 
-        if ($userModel->insert($data)) {
-            session()->setFlashdata('success', 'Registrasi berhasil! Silakan login untuk melanjutkan.');
-            return redirect()->to('/login');
-        }
+        $userModel = new UserModel();
 
-        return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+        if ($userModel->insert($data)) {
+            // Simpan ke session
+            $session = session();
+            $session->set([
+                'user_id' => $userModel->getInsertID(),
+                'username' => $data['username']
+            ]);
+
+            return redirect()->to('/login')->with('success', 'Registrasi berhasil');
+        } else {
+            return redirect()->back()->with('errors', $userModel->errors());
+        }
     }
 
     public function processRegister()
