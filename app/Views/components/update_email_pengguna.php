@@ -5,7 +5,7 @@
     <?= csrf_field() ?>
     <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" class="form-control" value="<?= esc($user['email']) ?>" disabled>
+        <input type="email" name="email" id="email" class="form-control" value="<?= isset($user['username']) ?>" disabled>
     </div>
     <button type="submit" class="btn btn-primary">Update Email</button>
 </form>
@@ -22,7 +22,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="email" class="form-control" name="email" value="<?= $user['email'] ?>" required>
+                    <input type="email" class="form-control" name="email" value="<?= isset($user['username']) ?>" required>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
