@@ -1,44 +1,32 @@
 <?= $this->include('components/alerts')?>
 <?php $session = session(); ?>
 <!-- Email -->
-<div class="d-flex align-items-center mb-3">
-    <strong class="me-3">Email:</strong>
-    <span><?= $user['email'] ?? 'Belum diatur' ?></span>
-        <input type="email" class="form-control" id="email" name="email" value="<?= isset($user['email']) ? $user['email'] : '' ?>" required>
-    <button class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#editEmailModal">
-        <i class="bi bi-pencil"></i> Edit
-    </button>
-    <?php if (!$user['is_email_verified']): ?>
-        <a href="<?= base_url('user/verify-email-pengguna?email=' . urlencode($user['email'])) ?>" class="btn btn-warning ms-3">
-            Verifikasi Email
-        </a>
-    <?php endif; ?>
-</div>
+<form action="/settings/update-email" method="post">
+    <?= csrf_field() ?>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control" value="<?= esc($user['email']) ?>" disabled>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Email</button>
+</form>
 
 <!-- Modal Edit Email -->
-<div class="modal fade" id="editEmailModal" tabindex="-1" aria-labelledby="editEmailModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="editEmailModal" tabindex="-1" role="dialog" aria-labelledby="editEmailModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editEmailModalLabel">Edit Email</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="<?= base_url('user/update-email-pengguna') ?>" method="post">
+            <form action="/settings/update-email" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editEmailModalLabel">Edit Email</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email Baru</label>
-                        <input 
-                            type="email" 
-                            class="form-control" 
-                            id="email" 
-                            name="email" 
-                            placeholder="Masukkan email baru" 
-                            value="<?= $user['email'] ?? '' ?>" 
-                            required>
-                    </div>
+                    <input type="email" class="form-control" name="email" value="<?= $user['email'] ?>" required>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </form>
         </div>
