@@ -8,7 +8,6 @@
     <title>Setting</title>
 </head>
 <body>
-    <?php $session = session(); ?>
     <div class="container mt-4">
         <h2>Setting</h2>
     
