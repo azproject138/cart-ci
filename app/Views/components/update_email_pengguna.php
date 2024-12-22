@@ -1,7 +1,7 @@
 <?= $this->include('components/alerts')?>
 <?php $session = session(); ?>
 <!-- Email -->
-<form action="/settings/update-email" method="post">
+<form action="/settings/update-email-pengguna" method="post">
     <?= csrf_field() ?>
     <div class="form-group">
         <label for="email">Email</label>
@@ -14,7 +14,7 @@
 <div class="modal fade" id="editEmailModal" tabindex="-1" role="dialog" aria-labelledby="editEmailModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="/settings/update-email" method="post">
+            <form action="/settings/update-email-pengguna" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editEmailModalLabel">Edit Email</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
