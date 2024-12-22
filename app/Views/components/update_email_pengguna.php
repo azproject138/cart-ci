@@ -5,10 +5,12 @@
     <?= csrf_field() ?>
     <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" class="form-control" value="<?= isset($user['username']) ?>" disabled>
-        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateEmailModal">
-            <i class="bi bi-pencil"></i> Edit
-        </button>
+        <div class="input-group">
+            <input type="email" name="email" id="email" class="form-control" value="<?= isset($user['username']) ?>" disabled>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateEmailModal">
+                <i class="bi bi-pencil"></i> Edit
+            </button>
+        </div>
     </div>
 </form>
 
