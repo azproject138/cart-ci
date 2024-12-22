@@ -1,6 +1,6 @@
 <?= $this->include('components/alerts')?>
 <?php $session = session(); ?>
-<form action="/settings/updateUsername" method="post">
+<form action="/settings/updateUsernamePengguna" method="post">
     <div class="form-group">
         <label for="username">Username</label>
         <div class="input-group">
@@ -20,7 +20,7 @@
 <div class="modal fade" id="editUsernameModal" tabindex="-1" role="dialog" aria-labelledby="editUsernameModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="/settings/update-username" method="post">
+            <form action="/settings/update-username-pengguna" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editUsernameModalLabel">Edit Username</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
