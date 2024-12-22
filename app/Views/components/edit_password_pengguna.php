@@ -1,3 +1,4 @@
+<?= $this->include('components/alerts')?>
 <div class="form-group">
     <label>Password</label>
     <input type="password" class="form-control" name="password">
