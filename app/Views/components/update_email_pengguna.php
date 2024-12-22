@@ -1,3 +1,5 @@
+<?= $this->include('components/alerts')?>
+<?php $session = session(); ?>
 <!-- Email -->
 <div class="d-flex align-items-center mb-3">
     <strong class="me-3">Email:</strong>
