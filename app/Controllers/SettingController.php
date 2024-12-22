@@ -11,9 +11,6 @@ class SettingController extends BaseController
     public function index()
     {
         $session = session();
-        if (!$session->get('is_logged_in')) {
-            return redirect()->to('/login');
-        }
         $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
         $db = \Config\Database::connect();
         $builder = $db->table('users');
