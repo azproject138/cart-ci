@@ -17,7 +17,8 @@ class SettingController extends BaseController
 
     public function index()
     {
-        $user = $this->userModel->find(session()->get('user')['id']);
+        $userId = session()->get('user');
+        $user = $this->userModel->find($userId);
         return view('settings', ['user' => $user]);
     }
 
