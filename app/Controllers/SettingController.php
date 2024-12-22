@@ -27,21 +27,29 @@ class SettingController extends BaseController
         $session = session();
         $userModel = new UserModel();
 
-        $newUsername = $this->request->getPost('new_username');
         $userId = $session->get('user_id');
+        $newUsername = $this->request->getPost('new_username');
 
         if (!$userId) {
             return redirect()->to('/login')->with('error', 'Anda harus login terlebih dahulu.');
         }
 
-        // Update username di database
-        if ($userModel->update($userId, ['username' => $newUsername])) {
-            // Update session
-            $session->set('username', $newUsername);
-
-            return redirect()->to('/settings')->with('success', 'Username berhasil diperbarui');
-        } else {
-            return redirect()->to('/settings')->with('error', 'Gagal memperbarui username');
+        // Validasi jika username kosong
+        if (empty($newUsername)) {
+            return redirect()->to('/settings')->with('error', 'Username tidak boleh kosong.');
         }
+
+        // Update username di database
+        $updateResult = $userModel->update($userId, ['username' => $newUsername]);
+
+        if (!$updateResult) {
+            // Debugging untuk query gagal
+            return redirect()->to('/settings')->with('error', 'Gagal memperbarui username. Pengguna tidak ditemukan.');
+        }
+
+        // Update session
+        $session->set('username', $newUsername);
+
+        return redirect()->to('/settings')->with('success', 'Username berhasil diperbarui.');
     }
 }
