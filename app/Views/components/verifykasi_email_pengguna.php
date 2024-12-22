@@ -1,6 +1,6 @@
 <?= $this->include('components/alerts')?>
 <!-- Modal Verify Email -->
-<?php if ($user['email_verified'] == 0): ?>
+<?php if (isset($user['email_verified']) == 0): ?>
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#verifyEmailModal">Verify Email</button>
     <div class="modal fade" id="verifyEmailModal" tabindex="-1" role="dialog" aria-labelledby="verifyEmailModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
