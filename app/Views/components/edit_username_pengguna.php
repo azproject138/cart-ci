@@ -4,7 +4,7 @@
     <div class="form-group">
         <label for="username">Username</label>
         <div class="input-group">
-            <input type="text" class="form-control" name="username" value="<?= $user['username'] ?>" disabled>
+            <input type="text" class="form-control" name="username" value="<?= isset($user['username']) ?>" disabled>
             <button 
                 type="button" 
                 class="btn btn-secondary" 
@@ -28,7 +28,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" class="form-control" name="username" value="<?= $user['username'] ?>" required>
+                    <input type="text" class="form-control" name="username" value="<?= isset($user['username']) ?>" required>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
