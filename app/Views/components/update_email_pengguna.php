@@ -15,7 +15,7 @@
 </form>
 
 <!-- Modal Edit Email -->
-<div class="modal fade" id="editEmailModal" tabindex="-1" role="dialog" aria-labelledby="editEmailModalLabel" aria-hidden="true">
+<div class="modal fade" id="editEmailModal" tabindex="-1" role="dialog" aria-labelledby="updateEmailModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form action="/settings/update-email-pengguna" method="post">
