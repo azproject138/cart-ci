@@ -49,7 +49,7 @@ class ProfilePenggunaController extends BaseController
         $newName = $file->getRandomName();
         
         // Pindahkan file ke folder 'uploads/profiles/'
-        $file->move(WRITEPATH . 'uploads/profiles', $newName);
+        $file->move(ROOTPATH . 'public/uploads/profiles', $newName);
 
         // Simpan nama file di database
         $db = \Config\Database::connect();
