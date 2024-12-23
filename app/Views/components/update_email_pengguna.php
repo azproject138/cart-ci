@@ -21,7 +21,7 @@
             <form action="/settings/update-email-pengguna" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editEmailModalLabel">Edit Email</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <input type="email" class="form-control" name="email" value="<?= isset($user['username']) ?>" required>
