@@ -3,7 +3,9 @@
     <div class="form-group">
         <label>Password</label>
         <input type="password" class="form-control" name="password">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPasswordModal">Change Password</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPasswordModal">
+            <i class="bi bi-pencil"></i> Edit
+        </button>
     </div>
 </form>
 <div class="modal fade" id="editPasswordModal" tabindex="-1" role="dialog" aria-labelledby="editPasswordModalLabel" aria-hidden="true">
