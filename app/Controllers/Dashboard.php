@@ -92,17 +92,17 @@ class Dashboard extends BaseController
         return redirect()->to('/profile')->with('error', 'Gagal menyimpan alamat.');
     }
 
-    public function viewAlamatPengguna()
+    public function uploadAlamatPengguna()
     {
         $session = session();
         $userId = $session->get('user_id');
 
         $db = \Config\Database::connect();
-        $builder = $db->table('user_addresses');
+        $builder = $db->table('addresses');
 
         $addresses = $builder->where('user_id', $userId)->get()->getResult();
 
-        return view('upload_address', ['addresses' => $addresses]);
+        return view('components/upload_alamat_pengguna', ['addresses' => $addresses]);
     }
 
     public function uploadNomorWhatsApp()

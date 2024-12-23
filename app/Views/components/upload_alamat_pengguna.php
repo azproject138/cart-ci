@@ -9,13 +9,20 @@
             </tr>
         </thead>
         <tbody>
-            <?php if (isset($addresses) && !empty($addresses)): ?>
-                <?php foreach ($addresses as $address): ?>
-                    <p><?= $address ?></p>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>Tidak ada alamat yang tersedia.</p>
-            <?php endif; ?>
+            <tr>
+                <?php if (isset($addresses) && !empty($addresses)): ?>
+                    <td>
+                        <?php foreach ($addresses as $address): ?>
+                            <p><?= $address ?></p>
+                            <p>Tidak ada alamat yang tersedia.</p>
+                        <?php endforeach; ?>
+                    </td>
+                <?php else: ?>
+                    <td>
+                        <p>Tidak ada alamat yang tersedia.</p>
+                    </td>
+                <?php endif; ?>
+            </tr>
         </tbody>
     </table>
 </div>
