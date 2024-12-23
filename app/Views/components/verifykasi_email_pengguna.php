@@ -2,13 +2,13 @@
 <!-- Modal Verify Email -->
 <?php if (isset($user['email_verified']) == 0): ?>
 <button type="button" class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#verifyEmailModal">
-    <i class="bi bi-pencil"></i>Verify Email
+    <i class="bi bi-pencil"></i>Email
 </button>
 <div class="modal fade" id="verifyEmailModal" data-bs-backdrop="verivyemail" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="verifyEmailModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="verifyEmailModalLabel">Verify</h5>
+                <h5 class="modal-title" id="verifyEmailModalLabel">Verify Email</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
