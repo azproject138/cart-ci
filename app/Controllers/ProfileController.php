@@ -17,76 +17,71 @@ class ProfilController extends BaseController
     
     public function index()
     {
-        $userModel = new UserModel();
-        $user = $userModel->find(session('user_id'));
-        if (!$user) {
-            return redirect()->to('/login')->with('error', 'Silakan login terlebih dahulu.');
-        }    
+        $session = session();
+        $userId = $session->get('user_id');
+
+        // Ambil data pengguna
+        $db = \Config\Database::connect();
+        $builder = $db->table('users');
+        $user = $builder->where('id', $userId)->get()->getRowArray();
+
+        // Jika foto profil tidak ada, gunakan foto default
+        if (empty($user['profile_picture'])) {
+            $user['profile_picture'] = 'default.png'; // Foto default
+        }
+
         return view('profile/index', ['user' => $user]);
     }
 
-    
-    public function uploadPicture()
+    public function upload()
     {
         $session = session();
-        $userId = $session->get('user_id'); // Ambil ID pengguna dari sesi login
-
-        if ($this->request->getMethod() === 'post') {
-            $file = $this->request->getFile('profile_picture');
-
-            if ($file->isValid() && !$file->hasMoved()) {
-                // Nama file unik untuk menghindari konflik
-                $fileName = $file->getRandomName();
-
-                // Pindahkan file ke folder uploads
-                $file->move(WRITEPATH . 'uploads/profile_pictures/', $fileName);
-
-                // Simpan ke database
-                $db = \Config\Database::connect();
-                $builder = $db->table('users');
-                $builder->where('id', $userId);
-                $builder->update(['profile_picture' => $fileName]);
-
-                return redirect()->to('/profile')->with('success', 'Foto profil berhasil diunggah!');
-            }
-
-            return redirect()->to('/profile')->with('error', 'Gagal mengunggah foto profil.');
+        $userId = $session->get('user_id');
+        
+        // Validasi file upload
+        if (!$this->validate([
+            'profile_picture' => 'uploaded[profile_picture]|is_image[profile_picture]|mime_in[profile_picture,image/jpg,image/jpeg,image/png]|max_size[profile_picture,2048]'
+        ])) {
+            return redirect()->back()->withInput()->with('error', 'Upload foto gagal, pastikan format file valid.');
         }
+
+        $file = $this->request->getFile('profile_picture');
+
+        // Generate nama file yang unik
+        $newName = $file->getRandomName();
+        
+        // Pindahkan file ke folder 'uploads/profiles/'
+        $file->move(WRITEPATH . 'uploads/profiles', $newName);
+
+        // Simpan nama file di database
+        $db = \Config\Database::connect();
+        $builder = $db->table('users');
+        $builder->where('id', $userId)->update([
+            'profile_picture' => $newName,
+        ]);
+
+        return redirect()->to('/profile')->with('success', 'Foto profil berhasil diunggah.');
     }
 
-    public function updateAddress()
+    public function delete()
     {
-        $address = $this->request->getPost('address');
-        $userModel = new UserModel();
-        $userModel->update(session('user_id'), ['address' => $address]);
-        return redirect()->to('/profile')->with('success', 'Alamat berhasil diperbarui.');
-    }
+        $session = session();
+        $userId = $session->get('user_id');
 
-    public function updateWhatsApp()
-    {
-        $whatsapp = $this->request->getPost('whatsapp');
-        $otp = rand(100000, 999999);
-        $expiration = date('Y-m-d H:i:s', strtotime('+5 minutes'));
+        $db = \Config\Database::connect();
+        $builder = $db->table('users');
+        $user = $builder->where('id', $userId)->get()->getRowArray();
 
-        $userModel = new UserModel();
-        $userModel->update(session('user_id'), ['whatsapp' => $whatsapp, 'otp' => $otp, 'otp_expiration' => $expiration]);
+        if ($user && !empty($user['profile_picture']) && $user['profile_picture'] !== 'default-profile.jpg') {
+            // Hapus foto profil yang ada di folder
+            unlink(WRITEPATH . 'uploads/profiles/' . $user['profile_picture']);
 
-        // Simulate sending OTP
-        log_message('info', "OTP: $otp sent to WhatsApp $whatsapp.");
-
-        return redirect()->to('/profile')->with('info', 'OTP telah dikirim ke nomor WhatsApp Anda.');
-    }
-
-    public function verifyOtp()
-    {
-        $inputOtp = $this->request->getPost('otp');
-        $userModel = new UserModel();
-        $user = $userModel->find(session('user_id'));
-
-        if ($user['otp'] === $inputOtp && strtotime($user['otp_expiration']) > time()) {
-            $userModel->update(session('user_id'), ['otp' => null, 'otp_expiration' => null]);
-            return redirect()->to('/profile')->with('success', 'Nomor WhatsApp berhasil diverifikasi.');
+            // Set foto profil ke null
+            $builder->where('id', $userId)->update([
+                'profile_picture' => null,
+            ]);
         }
-        return redirect()->back()->with('error', 'OTP tidak valid atau telah kedaluwarsa.');
+
+        return redirect()->to('/profile')->with('success', 'Foto profil berhasil dihapus.');
     }
 }
