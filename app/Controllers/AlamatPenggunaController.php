@@ -28,13 +28,17 @@ class AlamatPenggunaController extends BaseController
     public function store()
     {
         $session = session();
-        $userId = $session->get('user_id');
+        $userId = $session->get('user_id');  // Ambil user_id dari session
+
+        // Pastikan user_id ada
+        if (!$userId) {
+            return redirect()->to('/login')->with('error', 'Silakan login terlebih dahulu.');
+        }
 
         // Ambil data alamat dari form
         $homeAddress = $this->request->getPost('home_address');
         $officeAddress = $this->request->getPost('office_address');
 
-        // Validasi alamat rumah dan kantor
         if (empty($homeAddress) && empty($officeAddress)) {
             return redirect()->back()->with('error', 'Alamat rumah dan kantor tidak boleh kosong.');
         }
@@ -42,18 +46,19 @@ class AlamatPenggunaController extends BaseController
         $db = \Config\Database::connect();
         $builder = $db->table('users');
 
-        // Periksa apakah pengguna ada di database
-        $userExists = $builder->where('id', $userId)->countAllResults() > 0;
-        if ($userExists) {
-            // Update alamat pengguna
-            $builder->where('id', $userId)->update([
-                'home_address' => $homeAddress,
-                'office_address' => $officeAddress,
-            ]);
-            return redirect()->to('/alamat-pengguna')->with('success', 'Alamat berhasil disimpan.');
-        } else {
-            return redirect()->to('/alamat-pengguna')->with('error', 'Pengguna tidak ditemukan.');
+        // Cek apakah pengguna ada di database
+        $user = $builder->where('id', $userId)->get()->getRowArray();
+        if (!$user) {
+            return redirect()->to('/settings')->with('error', 'Pengguna tidak ditemukan.');
         }
+
+        // Simpan data alamat
+        $builder->where('id', $userId)->update([
+            'home_address' => $homeAddress,
+            'office_address' => $officeAddress,
+        ]);
+
+        return redirect()->to('/alamat-pengguna')->with('success', 'Alamat berhasil disimpan.');
     }
 
 
