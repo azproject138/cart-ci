@@ -30,20 +30,32 @@ class AlamatPenggunaController extends BaseController
         $session = session();
         $userId = $session->get('user_id');
 
+        // Ambil data alamat dari form
         $homeAddress = $this->request->getPost('home_address');
         $officeAddress = $this->request->getPost('office_address');
+
+        // Validasi alamat rumah dan kantor
+        if (empty($homeAddress) && empty($officeAddress)) {
+            return redirect()->back()->with('error', 'Alamat rumah dan kantor tidak boleh kosong.');
+        }
 
         $db = \Config\Database::connect();
         $builder = $db->table('users');
 
-        // Update alamat pengguna
-        $builder->where('id', $userId)->update([
-            'home_address' => $homeAddress,
-            'office_address' => $officeAddress,
-        ]);
-
-        return redirect()->to('/alamat-pengguna')->with('success', 'Alamat berhasil disimpan.');
+        // Periksa apakah pengguna ada di database
+        $userExists = $builder->where('id', $userId)->countAllResults() > 0;
+        if ($userExists) {
+            // Update alamat pengguna
+            $builder->where('id', $userId)->update([
+                'home_address' => $homeAddress,
+                'office_address' => $officeAddress,
+            ]);
+            return redirect()->to('/alamat-pengguna')->with('success', 'Alamat berhasil disimpan.');
+        } else {
+            return redirect()->to('/alamat-pengguna')->with('error', 'Pengguna tidak ditemukan.');
+        }
     }
+
 
     public function edit($id)
     {
