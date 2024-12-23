@@ -12,21 +12,19 @@
     </div>
 </form>
 
-<div class="modal fade" id="editUsernameModal" tabindex="-1" role="dialog" aria-labelledby="editUsernameModalLabel" aria-hidden="true">
+<div class="modal fade" id="editUsernameModal" data-bs-backdrop="username" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editUsernameModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form action="/settings/update-username-pengguna" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editUsernameModalLabel">Edit Username</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <input type="text" class="form-control" name="username" value="<?= isset($user['username']) ?>" required>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </form>
