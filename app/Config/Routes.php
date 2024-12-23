@@ -15,12 +15,12 @@ $routes->get('/logout', 'Auth::logout');
 $routes->get('/profile', 'Dashboard::index');
 $routes->post('/profile/upload-picture', 'Dashboard::uploadPicture');
 
-$routes->get('alamat-pengguna', 'AddressController::index');
-$routes->get('profile/create-alamat-pengguna', 'AddressController::create');
-$routes->post('profile/store-alamat-pengguna', 'AddressController::store');
-$routes->get('profile/edit-alamat-pengguna/(:num)', 'AddressController::edit/$1');
-$routes->post('profile/update-alamat-pengguna', 'AddressController::update');
-$routes->get('profile/delete-alamat-pengguna/(:num)', 'AddressController::delete/$1');
+$routes->get('alamat-pengguna', 'AlamatPenggunaController::index');
+$routes->get('profile/create-alamat-pengguna', 'AlamatPenggunaController::create');
+$routes->post('profile/store-alamat-pengguna', 'AlamatPenggunaController::store');
+$routes->get('profile/edit-alamat-pengguna/(:num)', 'AlamatPenggunaController::edit/$1');
+$routes->post('profile/update-alamat-pengguna', 'AlamatPenggunaController::update');
+$routes->get('profile/delete-alamat-pengguna/(:num)', 'AlamatPenggunaController::delete/$1');
 
 $routes->get('whatsapp/upload-nomor-whatsapp', 'Dashboard::uploadNomorWhatsApp');
 $routes->post('whatsapp/send-kode-otp', 'Dashboard::sendKodeOTP');
