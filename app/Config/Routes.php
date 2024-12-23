@@ -12,9 +12,9 @@ $routes->post('/login', 'Auth::processLogin');
 $routes->get('/dashboard', 'Dashboard::main', ['filter' => 'auth']);
 $routes->get('/logout', 'Auth::logout');
 
-$routes->get('/profile', 'ProfileController::index');
-$routes->post('/profile/upload-profile', 'ProfileController::uploadProfilePengguna');
-$routes->post('/profile/delete-profile', 'ProfileController::deleteProfilePengguna');
+$routes->get('/profile', 'ProfilePenggunaController::index');
+$routes->post('/profile/upload-profile', 'ProfilePenggunaController::uploadProfilePengguna');
+$routes->post('/profile/delete-profile', 'ProfilePenggunaController::deleteProfilePengguna');
 
 $routes->get('alamat-pengguna', 'AlamatPenggunaController::index');
 $routes->get('profile/create-alamat-pengguna', 'AlamatPenggunaController::create');
