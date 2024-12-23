@@ -11,19 +11,9 @@
     <div class="container mt-4">
         <h2>Profile</h2>
         <?= $this->include('components/alerts')?>
-        <?= view('components/foto_profile', ['user' => $user]) ?>
-
-        <div class="mb-4">
-            <strong>Alamat Rumah:</strong>
-            <p><?= $user['home_address'] ?? 'Belum diatur' ?></p>
-            <strong>Alamat Kantor:</strong>
-            <p><?= $user['office_address'] ?? 'Belum diatur' ?></p>
-        </div>
-
-        <a href="<?= base_url('components/create_alamat_pengguna') ?>" class="btn btn-primary">Tambah Alamat</a>
-        <a href="<?= base_url('components/edit_alamat_pengguna/' . session()->get('user_id')) ?>" class="btn btn-warning">Edit Alamat</a>
-
-        <?= view('components/upload_nomor_whatsapp_pengguna', ['user' => $user]) ?>
+        <?= view('components/foto_profile_pengguna')?>
+        <?= view('components/alamat_pengguna')?>
+        <?= view('components/upload_nomor_whatsapp_pengguna') ?>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
