@@ -120,18 +120,25 @@ class Auth extends BaseController
     public function processLogin()
     {
         $session = session();
-        $userModel = new \App\Models\UserModel();
-        $user = $userModel->where('email', $this->request->getPost('email'))
-                        ->first();
+        $userModel = new UserModel();
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
 
-        if ($user && password_verify($this->request->getPost('password'), $user['password'])) {
-            // Set session data
-            $session->set('is_logged_in', true);
-            $session->set('user_id', $user['id']); // Pastikan 'user_id' disimpan di session
-            return redirect()->to('/dashboard')->with('success', 'Selamat, Login berhasil, ' . $user['username']);
-        } else {
-            return redirect()->back()->with('error', 'Kredensial tidak valid');
+        $user = $userModel->where('email', $email)->first();
+
+        if (!$user || !password_verify($password, $user['password'])) {
+            return redirect()->back()->with('error', 'Email atau Password tidak valid.')->withInput();
         }
+
+        session()->set('user', [
+            'id'       => $user['id'],
+            'username' => $user['username'],
+            'email'    => $user['email'],
+            'logged_in' => true,
+        ]);
+        $session->set('user_id', $user['id']);
+
+        return redirect()->to('/dashboard')->with('success', 'Selamat, Login berhasil, ' . $user['username']);
     }
 
     public function logout()

@@ -12,18 +12,22 @@ class ProfilePenggunaController extends BaseController
         return view('profile/index');
 
         $session = session();
-        $userId = $session->get('user_id');
+        $userId = $session->get('user_id'); // Ambil ID pengguna dari session
 
-        // Ambil data pengguna
+        if (!$userId) {
+            return redirect()->to('/login')->with('error', 'Silakan login terlebih dahulu.');
+        }
+
+        // Ambil data pengguna dari database
         $db = \Config\Database::connect();
         $builder = $db->table('users');
         $user = $builder->where('id', $userId)->get()->getRowArray();
 
-        // Jika foto profil tidak ada, gunakan foto default
-        if (empty($user['profile_picture'])) {
-            $user['profile_picture'] = 'default.png'; // Foto default
+        if (!$user) {
+            return redirect()->to('/login')->with('error', 'Pengguna tidak ditemukan.');
         }
 
+        // Tampilkan view dan kirimkan data pengguna
         return view('profile/index', ['user' => $user]);
     }
 
