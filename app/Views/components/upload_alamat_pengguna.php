@@ -11,21 +11,30 @@
         <tbody>
             <tr>
                 <?php if (isset($addresses) && !empty($addresses)): ?>
-                    <td>
-                        <?php foreach ($addresses as $address): ?>
-                            <p><?= $address ?></p>
-                            <p>Tidak ada alamat yang tersedia.</p>
-                        <?php endforeach; ?>
-                    </td>
+                    <?php foreach ($addresses as $address): ?>
+                        <p><?= $address ?></p>
+                    <?php endforeach; ?>
                 <?php else: ?>
-                    <td>
-                        <p>Tidak ada alamat yang tersedia.</p>
-                    </td>
+                    <p>Tidak ada alamat yang tersedia.</p>
                 <?php endif; ?>
             </tr>
         </tbody>
     </table>
 </div>
+<br>
+<h3>Alamat Pengguna</h3>
+<?php if (!empty($addresses)): ?>
+    <ul>
+        <?php foreach ($addresses as $address): ?>
+            <li>
+                <strong><?= ucfirst($address['address_type']) ?>:</strong> <?= $address['address_text'] ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+    <p>Tidak ada alamat yang tersedia.</p>
+<?php endif; ?>
+
 
 <div class="text-center">
     <!-- Tombol Edit Alamat -->
@@ -47,7 +56,7 @@
                 <h5 class="modal-title" id="addressModalLabel">Edit Alamat</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('simpan/alamat-pengguna') ?>" method="post">
+            <form action="<?= base_url('profile/simpan-alamat-pengguna') ?>" method="post">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="address_type" class="form-label">Tipe Alamat</label>
