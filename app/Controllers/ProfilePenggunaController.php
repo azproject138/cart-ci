@@ -4,10 +4,13 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 
-class ProfilController extends BaseController
+class ProfilePenggunaController extends BaseController
 {
     public function index()
     {
+
+        return view('profile/index');
+
         $session = session();
         $userId = $session->get('user_id');
 
