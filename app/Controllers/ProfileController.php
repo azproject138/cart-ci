@@ -6,15 +6,6 @@ use App\Models\UserModel;
 
 class ProfilController extends BaseController
 {
-    public function __construct()
-    {
-        helper('session');
-
-        if (!session('user_id')) {
-            return redirect()->to('/login')->with('error', 'Silakan login terlebih dahulu.');
-        }
-    }
-    
     public function index()
     {
         $session = session();
