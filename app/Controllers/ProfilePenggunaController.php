@@ -57,6 +57,35 @@ class ProfilePenggunaController extends BaseController
         return redirect()->to('/profile')->with('success', 'Foto profil berhasil diunggah.');
     }
 
+    public function showFotoProfilePengguna()
+    {
+        $session = session();
+        $userId = $session->get('user_id');
+
+        // Periksa apakah pengguna sudah login
+        if (!$userId) {
+            return redirect()->to('/login')->with('error', 'Anda harus login untuk melihat profil.');
+        }
+
+        // Ambil data pengguna
+        $db = \Config\Database::connect();
+        $builder = $db->table('users');
+        $user = $builder->where('id', $userId)->get()->getRowArray();
+
+        // Jika pengguna tidak ditemukan, redirect ke halaman sebelumnya
+        if (!$user) {
+            return redirect()->back()->with('error', 'Pengguna tidak ditemukan.');
+        }
+
+        // Jika foto profil tidak ada, gunakan foto default
+        $profilePicture = !empty($user['profile_picture']) 
+            ? base_url('uploads/profiles/' . $user['profile_picture']) 
+            : base_url('uploads/profiles/default-profile.jpg');
+
+        // Kirim data ke view
+        return view('profile/show', ['user' => $user, 'profilePicture' => $profilePicture]);
+    }
+
     public function deleteProfilePengguna()
     {
         $session = session();
