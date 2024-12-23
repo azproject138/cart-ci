@@ -88,6 +88,8 @@ class Dashboard extends BaseController
 
             return redirect()->to('/profile')->with('success', 'Alamat berhasil disimpan!');
         }
+
+        return redirect()->to('/profile')->with('error', 'Gagal menyimpan alamat.');
     }
 
     public function viewAlamatPengguna()
