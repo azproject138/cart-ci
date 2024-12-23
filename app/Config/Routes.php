@@ -15,6 +15,13 @@ $routes->get('/logout', 'Auth::logout');
 $routes->get('/profile', 'Dashboard::index');
 $routes->post('/profile/upload-picture', 'Dashboard::uploadPicture');
 
+$routes->get('alamat-pengguna', 'AddressController::index');
+$routes->get('addresses/create', 'AddressController::create');
+$routes->post('addresses/store', 'AddressController::store');
+$routes->get('profile/edit-alamat-pengguna/(:num)', 'AddressController::edit/$1');
+$routes->post('profile/update-alamat-pengguna', 'AddressController::update');
+$routes->get('profile/delete-alamat-pengguna/(:num)', 'AddressController::delete/$1');
+
 $routes->get('whatsapp/upload-nomor-whatsapp', 'Dashboard::uploadNomorWhatsApp');
 $routes->post('whatsapp/send-kode-otp', 'Dashboard::sendKodeOTP');
 $routes->post('whatsapp/verify-kode-otp', 'Dashboard::verifyKodeOtp');
