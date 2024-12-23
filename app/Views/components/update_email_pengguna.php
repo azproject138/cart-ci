@@ -15,21 +15,19 @@
 </form>
 
 <!-- Modal Edit Email -->
-<div class="modal fade" id="updateEmailModal" tabindex="-1" role="dialog" aria-labelledby="updateEmailModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateEmailModal" data-bs-backdrop="email" data-bs-keyboard="false" tabindex="-1" aria-labelledby="updateEmailModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form action="/settings/update-email-pengguna" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editEmailModalLabel">Edit Email</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <input type="email" class="form-control" name="email" value="<?= isset($user['username']) ?>" required>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </form>
