@@ -27,5 +27,5 @@ $routes->post('settings/update-username-pengguna', 'SettingController::updateUse
 
 $routes->post('settings/update-email-pengguna', 'SettingController::updateEmailPengguna');
 $routes->get('/settings/verify-email-pengguna', 'SettingController::verifyEmailPengguna');
-$routes->post('/settings/update-email-pengguna', 'SettingController::updateEmailPengguna');
-$routes->post('/settings/update-password-pengguna', 'SettingController::updatePasswordPengguna');
+$routes->post('settings/update-email-pengguna', 'SettingController::updateEmailPengguna');
+$routes->post('settings/update-password-pengguna', 'SettingController::updatePasswordPengguna');
