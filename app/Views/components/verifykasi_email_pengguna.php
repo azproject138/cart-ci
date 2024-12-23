@@ -12,7 +12,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Please verify your email by clicking on the verification link sent to your email address.</p>
+                <p>Harap verifikasi email Anda dengan mengklik link verifikasi yang dikirimkan ke alamat email Anda.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
