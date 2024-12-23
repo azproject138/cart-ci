@@ -128,7 +128,7 @@ class Auth extends BaseController
             // Set session data
             $session->set('is_logged_in', true);
             $session->set('user_id', $user['id']); // Pastikan 'user_id' disimpan di session
-            return redirect()->to('/dashboard');
+            return redirect()->to('/dashboard')->with('success', 'Selamat, Login berhasil, ' . $user['username']);
         } else {
             return redirect()->back()->with('error', 'Kredensial tidak valid');
         }
