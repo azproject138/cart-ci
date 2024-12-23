@@ -1,9 +1,11 @@
 <?= $this->include('components/alerts')?>
-<div class="form-group">
-    <label>Password</label>
-    <input type="password" class="form-control" name="password">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPasswordModal">Change Password</button>
-</div>
+<form action="" method="get">
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPasswordModal">Change Password</button>
+    </div>
+</form>
 <div class="modal fade" id="editPasswordModal" tabindex="-1" role="dialog" aria-labelledby="editPasswordModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
