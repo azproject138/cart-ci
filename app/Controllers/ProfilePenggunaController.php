@@ -8,14 +8,12 @@ class ProfilePenggunaController extends BaseController
 {
     public function index()
     {
-
-        return view('profile/index');
-
         $session = session();
-        $userId = $session->get('user_id'); // Ambil ID pengguna dari session
+        $userId = $session->get('user_id');
 
+        // Pastikan user sudah login
         if (!$userId) {
-            return redirect()->to('/login')->with('error', 'Silakan login terlebih dahulu.');
+            return redirect()->to('/login')->with('error', 'Anda harus login terlebih dahulu.');
         }
 
         // Ambil data pengguna dari database
@@ -23,11 +21,12 @@ class ProfilePenggunaController extends BaseController
         $builder = $db->table('users');
         $user = $builder->where('id', $userId)->get()->getRowArray();
 
+        // Jika data pengguna tidak ditemukan, arahkan ke login
         if (!$user) {
             return redirect()->to('/login')->with('error', 'Pengguna tidak ditemukan.');
         }
 
-        // Tampilkan view dan kirimkan data pengguna
+        // Kirim variabel $user ke view
         return view('profile/index', ['user' => $user]);
     }
 
@@ -61,33 +60,17 @@ class ProfilePenggunaController extends BaseController
         return redirect()->to('/profile')->with('success', 'Foto profil berhasil diunggah.');
     }
 
-    public function showFotoProfilePengguna()
+    public function showFotoProfilePengguna($filename)
     {
-        $session = session();
-        $userId = $session->get('user_id');
+        $filePath = WRITEPATH . 'uploads/profiles/' . $filename;
 
-        // Periksa apakah pengguna sudah login
-        if (!$userId) {
-            return redirect()->to('/login')->with('error', 'Anda harus login untuk melihat profil.');
+        // Cek apakah file ada
+        if (file_exists($filePath)) {
+            return $this->response->download($filePath, null);
+        } else {
+            // Gambar tidak ditemukan, kembalikan gambar default
+            return $this->response->download(WRITEPATH . 'uploads/profiles/default-profile.jpg', null);
         }
-
-        // Ambil data pengguna
-        $db = \Config\Database::connect();
-        $builder = $db->table('users');
-        $user = $builder->where('id', $userId)->get()->getRowArray();
-
-        // Jika pengguna tidak ditemukan, redirect ke halaman sebelumnya
-        if (!$user) {
-            return redirect()->back()->with('error', 'Pengguna tidak ditemukan.');
-        }
-
-        // Jika foto profil tidak ada, gunakan foto default
-        $profilePicture = !empty($user['profile_picture']) 
-            ? base_url('uploads/profiles/' . $user['profile_picture']) 
-            : base_url('uploads/profiles/default.jpg');
-
-        // Kirim data ke view
-        return view('profile/show-profile', ['user' => $user, 'profilePicture' => $profilePicture]);
     }
 
     public function deleteProfilePengguna()

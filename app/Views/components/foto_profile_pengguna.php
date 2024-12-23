@@ -1,12 +1,11 @@
 <h3>Foto Profil Pengguna</h3>
-<?php
-    $profilePicture = !empty($user['profile_picture']) ? $user['profile_picture'] : 'default-profile.jpg';
-?>
 <div class="mb-4">
-    <img src="<?= base_url('uploads/profiles/' . (!empty($user['profile_picture']) ? $user['profile_picture'] : 'default-profile.jpg')) ?>" 
-            alt="Foto Profil" 
-            class="img-thumbnail" 
-            width="150">
+    <p>URL Gambar: <?= base_url('profile/show-profile/' . $user['profile_picture']) ?></p>
+    <img 
+        src="<?= base_url('profile/show-profile/' . $user['profile_picture'] ? $user['profile_picture'] : 'default-profile.jpg') ?>" 
+        alt="Foto Profil" 
+        class="img-thumbnail" 
+        width="150">
 </div>
 
 <!-- Form Upload Foto -->
