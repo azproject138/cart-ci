@@ -80,10 +80,10 @@ class ProfilePenggunaController extends BaseController
         // Jika foto profil tidak ada, gunakan foto default
         $profilePicture = !empty($user['profile_picture']) 
             ? base_url('uploads/profiles/' . $user['profile_picture']) 
-            : base_url('uploads/profiles/default-profile.jpg');
+            : base_url('uploads/profiles/default.jpg');
 
         // Kirim data ke view
-        return view('profile/show', ['user' => $user, 'profilePicture' => $profilePicture]);
+        return view('profile/show-profile', ['user' => $user, 'profilePicture' => $profilePicture]);
     }
 
     public function deleteProfilePengguna()
