@@ -1,7 +1,7 @@
 <?= $this->include('components/alerts')?>
 <?php $session = session(); ?>
 <!-- Email -->
-<form action="/settings/update-email-pengguna" method="post">
+<form action="/settings/updateEmailPengguna" method="post">
     <?= csrf_field() ?>
     <div class="form-group">
         <label for="email">Email</label>
