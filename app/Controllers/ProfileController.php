@@ -33,7 +33,7 @@ class ProfilController extends BaseController
         return view('profile/index', ['user' => $user]);
     }
 
-    public function upload()
+    public function uploadProfilePengguna()
     {
         $session = session();
         $userId = $session->get('user_id');
@@ -63,7 +63,7 @@ class ProfilController extends BaseController
         return redirect()->to('/profile')->with('success', 'Foto profil berhasil diunggah.');
     }
 
-    public function delete()
+    public function deleteProfilePengguna()
     {
         $session = session();
         $userId = $session->get('user_id');
