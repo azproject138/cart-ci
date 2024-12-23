@@ -1,7 +1,7 @@
 <?= $this->include('components/alerts')?>
 <!-- Modal Verify Email -->
 <?php if (isset($user['email_verified']) == 0): ?>
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#verifyEmailModal">
+<button type="button" class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#verifyEmailModal">
     <i class="bi bi-pencil"></i>Verify Email
 </button>
 <div class="modal fade" id="verifyEmailModal" data-bs-backdrop="verivyemail" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="verifyEmailModalLabel" aria-hidden="true">
