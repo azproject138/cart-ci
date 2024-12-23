@@ -25,7 +25,14 @@
                         <label for="office_address" class="form-label">Alamat Kantor</label>
                         <textarea class="form-control" id="office_address" name="office_address" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <div class="text-center">
+                        <a 
+                            href="https://www.google.com/maps" 
+                            target="_blank" 
+                            class="btn btn-outline-secondary">
+                            <i class="bi bi-map"></i> Cari di Google Map
+                        </a>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -57,12 +64,19 @@
                     <label for="office_address" class="form-label">Alamat Kantor</label>
                     <textarea class="form-control" id="office_address" name="office_address" rows="3"><?= $user['office_address'] ?? '' ?></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Perbarui</button>
+                <div class="text-center">
+                    <a 
+                        href="https://www.google.com/maps" 
+                        target="_blank" 
+                        class="btn btn-outline-secondary">
+                        <i class="bi bi-map"></i> Cari di Google Map
+                    </a>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Simpan</button>
+            <button type="button" class="btn btn-primary"></button>
         </div>
         </div>
     </div>
