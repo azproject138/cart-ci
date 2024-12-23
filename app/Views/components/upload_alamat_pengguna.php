@@ -11,12 +11,13 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($addresses as $address): ?>
-                <tr>
-                    <td><?= $address->address_type ?></td>
-                    <td><?= $address->address ?></td>
-                </tr>
-            <?php endforeach; ?>
+            <?php if (isset($addresses) && !empty($addresses)): ?>
+                <?php foreach ($addresses as $address): ?>
+                    <p><?= $address ?></p>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Tidak ada alamat yang tersedia.</p>
+            <?php endif; ?>
         </tbody>
     </table>
 </div>
