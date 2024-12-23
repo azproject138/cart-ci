@@ -1,5 +1,3 @@
-<?= $this->include('components/alerts'); ?>
-
 <div class="container mt-5">
     <h3>Alamat Pengguna</h3>
 
