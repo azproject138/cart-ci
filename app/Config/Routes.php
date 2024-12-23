@@ -16,8 +16,8 @@ $routes->get('/profile', 'Dashboard::index');
 $routes->post('/profile/upload-picture', 'Dashboard::uploadPicture');
 
 $routes->get('alamat-pengguna', 'AddressController::index');
-$routes->get('addresses/create', 'AddressController::create');
-$routes->post('addresses/store', 'AddressController::store');
+$routes->get('profile/create-alamat-pengguna', 'AddressController::create');
+$routes->post('profile/store-alamat-pengguna', 'AddressController::store');
 $routes->get('profile/edit-alamat-pengguna/(:num)', 'AddressController::edit/$1');
 $routes->post('profile/update-alamat-pengguna', 'AddressController::update');
 $routes->get('profile/delete-alamat-pengguna/(:num)', 'AddressController::delete/$1');
