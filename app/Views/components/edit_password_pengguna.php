@@ -1,11 +1,14 @@
 <?= $this->include('components/alerts')?>
-<form action="" method="get">
+<?php $session = session(); ?>
+<form action="/settings/updatePasswordPengguna" method="post">
     <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" name="password">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPasswordModal">
-            <i class="bi bi-pencil"></i> Edit
-        </button>
+        <label for="password">Password</label>
+        <div class="input-group">
+            <input type="password" class="form-control" name="password" value=" <?= isset($user['password']) ?>" disabled>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPasswordModal">
+                <i class="bi bi-pencil"></i> Edit
+            </button>
+        </div>
     </div>
 </form>
 <div class="modal fade" id="editPasswordModal" tabindex="-1" role="dialog" aria-labelledby="editPasswordModalLabel" aria-hidden="true">
