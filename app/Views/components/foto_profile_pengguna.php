@@ -2,7 +2,7 @@
 <div class="mb-4">
     <p>URL Gambar: <?= base_url('profile/show-profile/' . $user['profile_picture']) ?></p>
     <img 
-        src="<?= base_url('profile/show-profile/' . $user['profile_picture'] ? $user['profile_picture'] : 'default-profile.jpg') ?>" 
+        src="<?= base_url('writable/uploads/profiles/' . $user['profile_picture'] ? $user['profile_picture'] : 'default.png') ?>" 
         alt="Foto Profil" 
         class="img-thumbnail" 
         width="150">
@@ -18,6 +18,6 @@
 </form>
 
 <!-- Hapus Foto Profil -->
-<form action="<?= base_url('profile/delete-profile-pengguna') ?>" method="POST" class="mt-3">
-    <button type="submit" class="btn btn-danger">Hapus Foto Profil</button>
+<form action="<?= base_url('profile/delete-profile-pengguna/' . $user['id']) ?>" method="get" onsubmit="return confirm('Apakah Anda yakin ingin menghapus foto profil?');">
+    <button type="submit" class="btn btn-danger mt-2">Hapus Foto Profil</button>
 </form>

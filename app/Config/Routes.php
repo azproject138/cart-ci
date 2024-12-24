@@ -14,7 +14,7 @@ $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/profile', 'ProfilePenggunaController::index');
 $routes->post('profile/upload-profile-pengguna', 'ProfilePenggunaController::uploadProfilePengguna');
-$routes->post('profile/delete-profile-pengguna', 'ProfilePenggunaController::deleteProfilePengguna');
+$routes->get('profile/delete-profile-pengguna/(:num)', 'ProfilePenggunaController::deleteProfilePengguna/$1');
 
 $routes->get('alamat-pengguna', 'AlamatPenggunaController::index');
 $routes->get('profile/create-alamat-pengguna', 'AlamatPenggunaController::create');

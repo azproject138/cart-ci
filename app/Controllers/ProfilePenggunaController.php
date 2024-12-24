@@ -69,7 +69,7 @@ class ProfilePenggunaController extends BaseController
             return $this->response->download($filePath, null);
         } else {
             // Gambar tidak ditemukan, kembalikan gambar default
-            return $this->response->download(WRITEPATH . 'uploads/profiles/default-profile.jpg', null);
+            return $this->response->download(WRITEPATH . 'uploads/profiles/default.png', null);
         }
     }
 
@@ -77,21 +77,42 @@ class ProfilePenggunaController extends BaseController
     {
         $session = session();
         $userId = $session->get('user_id');
-
         $db = \Config\Database::connect();
         $builder = $db->table('users');
+
+        // Cari data user berdasarkan ID
         $user = $builder->where('id', $userId)->get()->getRowArray();
 
-        if ($user && !empty($user['profile_picture']) && $user['profile_picture'] !== 'default-profile.jpg') {
-            // Hapus foto profil yang ada di folder
-            unlink(WRITEPATH . 'uploads/profiles/' . $user['profile_picture']);
+        // Jika pengguna ditemukan
+        if ($user && !empty($user['profile_picture'])) {
+            // Path ke file gambar profil
+            $filePath = WRITEPATH . 'uploads/profiles/' . $user['profile_picture'];
 
-            // Set foto profil ke null
-            $builder->where('id', $userId)->update([
-                'profile_picture' => null,
-            ]);
+            // Cek apakah file gambar profil ada
+            if (file_exists($filePath)) {
+                // Hapus file gambar
+                if (unlink($filePath)) {
+                    // Berhasil menghapus file
+                    log_message('info', 'Foto profil berhasil dihapus: ' . $filePath);
+                    
+                    // Update database untuk menghapus foto profil
+                    $builder->where('id', $userId)->update(['profile_picture' => null]);
+
+                    // Redirect atau beri pesan sukses
+                    return redirect()->to('/profile')->with('success', 'Foto profil berhasil dihapus.');
+                } else {
+                    // Gagal menghapus file
+                    log_message('error', 'Gagal menghapus foto profil: ' . $filePath);
+                    return redirect()->back()->with('error', 'Gagal menghapus foto profil.');
+                }
+            } else {
+                // Jika file tidak ditemukan
+                log_message('warning', 'File foto profil tidak ditemukan: ' . $filePath);
+                return redirect()->back()->with('error', 'Foto profil tidak ditemukan.');
+            }
+        } else {
+            // Jika pengguna tidak ditemukan
+            return redirect()->back()->with('error', 'Pengguna tidak ditemukan atau foto profil tidak ada.');
         }
-
-        return redirect()->to('/profile')->with('success', 'Foto profil berhasil dihapus.');
     }
 }
