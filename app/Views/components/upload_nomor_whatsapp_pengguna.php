@@ -1,17 +1,13 @@
-<div class="container mt-4">
-    <!-- Form Nomor WhatsApp -->
-    <div class="mb-3">
-        <label class="form-label">Nomor WhatsApp</label>
-        <div class="d-flex align-items-center">
-            <input 
-                type="text" 
-                class="form-control me-2" 
-                value="<?= $user['whatsapp_number'] ?? 'Belum diatur' ?>" 
-                disabled 
-            />
-            <a href="<?= base_url('whatsapp/upload-nomor-whatsapp') ?>" class="btn btn-primary">
-                <i class="bi bi-pencil"></i> Edit
-            </a>
-        </div>
-    </div>
+<div class="mt-4">
+    <h3>Nomor WhatsApp</h3>
+
+    <?php if (isset($whatsapp)): ?>
+        <p>Nomor WhatsApp: <?= $whatsapp['whatsapp_number'] ?></p>
+        <a href="/whatsapp/edit-whatsapp-pengguna/<?= $whatsapp['id'] ?>">Edit</a>
+        <a href="/whatsapp/delete-whatsapp-pengguna/<?= $whatsapp['id'] ?>">Delete</a>
+    <?php else: ?>
+        <p>Tidak ditemukan nomor WhatsApp.</p>
+    <?php endif; ?>
+
+    <a href="/whatsapp/add-whatsapp-pengguna">Tambah Nomor WhatsApp</a>
 </div>

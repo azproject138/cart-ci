@@ -4,85 +4,59 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
-use App\Models\UserModel;
+use App\Models\WhatsappModel;
 
 class NomorWhatsappController extends BaseController
 {
-    protected $userModel;
-
-    public function __construct()
-    {
-        $this->userModel = new UserModel();
-    }
-
     public function index()
     {
-        $userModel = new UserModel();
+        $whatsappModel = new WhatsappModel();
+        $data['whatsapp'] = $whatsappModel->where('user_id', session()->get('user_id'))->first();
+        return view('profile/index', $data);
+    }
+
+    public function addNomorWhatsappPengguna()
+    {
+        return view('whatsapp/add-whatsapp-pengguna');
+    }
+
+    public function saveNomorWhatsappPengguna()
+    {
+        $whatsappNumber = $this->request->getPost('whatsapp_number');
         $userId = session()->get('user_id');
-        $whatsappNumbers = $userModel->where('user_id', $userId)->findAll();
+        
+        $whatsappModel = new WhatsappModel();
+        $whatsappModel->save([
+            'user_id' => $userId,
+            'whatsapp_number' => $whatsappNumber,
+        ]);
 
-        return view('profile/index', ['whatsappNumbers' => $whatsappNumbers]);
-    }
-
-    public function createNomorWhatsappPengguna()
-    {
-        return view('whatsapp/create-whatsapp-pengguna');
-    }
-
-    public function storeNomorWhatsappPengguna()
-    {
-        if ($this->request->getMethod() === 'post') {
-            $validationRules = [
-                'whatsapp_number' => 'required|regex_match[/^[0-9]{10,15}$/]',
-            ];
-
-            if ($this->validate($validationRules)) {
-                $userModel = new userModel();
-                $userModel->save([
-                    'user_id' => session()->get('user_id'),
-                    'whatsapp_number' => $this->request->getPost('whatsapp_number'),
-                ]);
-
-                return redirect()->to('/whatsapp')->with('message', 'Nomor WhatsApp berhasil ditambahkan.');
-            } else {
-                return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-            }
-        }
+        return redirect()->to('/whatsapp-whatsapp-pengguna');
     }
 
     public function editNomorWhatsappPengguna($id)
     {
-        $userModel = new userModel();
-        $whatsapp = $userModel->find($id);
-
-        return view('whatsapp/edit-whatsapp-pengguna', ['whatsapp' => $whatsapp]);
+        $whatsappModel = new WhatsappModel();
+        $data['whatsapp'] = $whatsappModel->find($id);
+        return view('whatsapp/edit-whatsapp-pengguna', $data);
     }
 
     public function updateNomorWhatsappPengguna($id)
     {
-        if ($this->request->getMethod() === 'post') {
-            $validationRules = [
-                'whatsapp_number' => 'required|regex_match[/^[0-9]{10,15}$/]',
-            ];
+        $whatsappNumber = $this->request->getPost('whatsapp_number');
 
-            if ($this->validate($validationRules)) {
-                $userModel = new userModel();
-                $userModel->update($id, [
-                    'whatsapp_number' => $this->request->getPost('whatsapp_number'),
-                ]);
+        $whatsappModel = new WhatsappModel();
+        $whatsappModel->update($id, [
+            'whatsapp_number' => $whatsappNumber,
+        ]);
 
-                return redirect()->to('/whatsapp')->with('message', 'Nomor WhatsApp berhasil diperbarui.');
-            } else {
-                return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-            }
-        }
+        return redirect()->to('/whatsapp-whatsapp-pengguna');
     }
 
     public function deleteNomorWhatsappPengguna($id)
     {
-        $whatsappModel = new userModel();
+        $whatsappModel = new WhatsappModel();
         $whatsappModel->delete($id);
-
-        return redirect()->to('/whatsapp')->with('message', 'Nomor WhatsApp berhasil dihapus.');
+        return redirect()->to('/whatsapp-whatsapp-pengguna');
     }
 }

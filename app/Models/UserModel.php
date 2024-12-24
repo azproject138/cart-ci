@@ -8,7 +8,7 @@ class UserModel extends Model
 {
     protected $table = 'users';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['username', 'email', 'password', 'profile_picture', 'address', 'whatsapp', 'otp', 'otp_expiration'];
+    protected $allowedFields = ['username', 'email', 'password', 'profile_picture', 'address'];
 
     public function updateUser($id, $data)
     {
