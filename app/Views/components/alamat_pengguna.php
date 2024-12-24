@@ -6,7 +6,7 @@
 </div>
 
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahAlamat">
-    <i class="bi bi-plus"></i>Tambah Alamat
+    <i class="bi bi-plus-lg"></i>Tambah Alamat
 </button>
 <div class="modal fade" id="tambahAlamat" data-bs-backdrop="alamat" data-bs-keyboard="false" tabindex="-1" aria-labelledby="tambahAlamatLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -43,7 +43,6 @@
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editAlamat">
     <i class="bi bi-pencil"></i> Edit Alamat
 </button>
-
 <div class="modal fade" id="editAlamat" data-bs-backdrop="alamat" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editAlamatLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

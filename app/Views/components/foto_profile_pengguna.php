@@ -14,10 +14,13 @@
         <label for="profile_picture" class="form-label">Pilih Foto Profil</label>
         <input type="file" class="form-control" id="profile_picture" name="profile_picture" accept="image/*">
     </div>
-    <button type="submit" class="btn btn-primary">Unggah Foto</button>
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-cloud-upload-fill"></i> Unggah Foto
+    </button>
 </form>
-
 <!-- Hapus Foto Profil -->
 <form action="<?= base_url('profile/delete-profile-pengguna/' . $user['id']) ?>" method="get" onsubmit="return confirm('Apakah Anda yakin ingin menghapus foto profil?');">
-    <button type="submit" class="btn btn-danger mt-2">Hapus Foto Profil</button>
+    <button type="submit" class="btn btn-danger mt-2">
+        <i class="bi bi-trash-fill"></i> Hapus Foto
+    </button>
 </form>
