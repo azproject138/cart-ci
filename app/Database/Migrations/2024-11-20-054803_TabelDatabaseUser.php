@@ -53,20 +53,9 @@ class CreateUsersTable extends Migration
                 'constraint' => '255',
                 'null' => true,
             ],
-            'whatsapp_number' => [
+            'nomor_whatsapp' => [
                 'type' => 'VARCHAR',
-                'constraint' => '20',
-                'null' => true,
-            ],
-            'otp_code' => [
-                'type' => 'VARCHAR',
-                'constraint' => '6',
-                'null' => true,
-            ],
-            'otp_expiry' => [
-                'type' => 'DATETIME',
-                'null' => true,
-                'after' => 'otp_code',
+                'constraint' => 15,
             ],
         ]);
         $this->forge->addKey('id', true);
