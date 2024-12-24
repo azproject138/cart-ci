@@ -27,7 +27,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="/whatsapp/save-whatsapp-pengguna" method="post">
+                    <form action="/whatsapp/store-whatsapp-pengguna" method="post">
                         <label for="whatsapp_number">Nomor WhatsApp:</label>
                         <input type="text" name="whatsapp_number" id="whatsapp_number" required>
                         <button type="submit" class="btn btn-primary">Simpan</button>

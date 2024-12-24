@@ -53,10 +53,6 @@ class CreateUsersTable extends Migration
                 'constraint' => '255',
                 'null' => true,
             ],
-            'nomor_whatsapp' => [
-                'type' => 'VARCHAR',
-                'constraint' => 15,
-            ],
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('users');
