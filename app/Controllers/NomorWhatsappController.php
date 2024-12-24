@@ -3,21 +3,20 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\WhatsappModel;
 
 class NomorWhatsappController extends BaseController
 {
     public function index()
     {
-        $whatsappModel = new WhatsappModel();
-        $data['whatsapp'] = $whatsappModel->where('user_id', session()->get('user_id'))->first();
-        return view('profile/index', $data);
-    }
+        $whatsappModel = new \App\Models\WhatsappModel();
+        $userId = session()->get('user_id');  // Ambil user_id dari session
 
-    public function addNomorWhatsappPengguna()
-    {
-        return view('whatsapp/add-whatsapp-pengguna');
+        // Ambil data berdasarkan user_id
+        $data['whatsapp'] = $whatsappModel->where('user_id', $userId)->findAll();
+
+        // Kirim ke view
+        return view('profile/index', $data);
     }
 
     public function saveNomorWhatsappPengguna()
@@ -31,7 +30,7 @@ class NomorWhatsappController extends BaseController
             'whatsapp_number' => $whatsappNumber,
         ]);
 
-        return redirect()->to('/whatsapp-whatsapp-pengguna');
+        return redirect()->to('/profile')->with('success', 'Nomor WhatsApp berhasil ditambahkan.');
     }
 
     public function editNomorWhatsappPengguna($id)
