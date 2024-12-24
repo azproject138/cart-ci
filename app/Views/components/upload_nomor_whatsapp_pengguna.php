@@ -1,19 +1,37 @@
 <div class="mt-4">
     <h3>Nomor WhatsApp</h3>
 
-    <?php if (!empty($whatsapp)): ?>
-        <ul>
-            <?php foreach ($whatsapp as $item): ?>
-                <li>
-                    Nomor: <?= esc($item['whatsapp_number']) ?>
-                    <a href="/whatsapp/edit/<?= $item['id'] ?>">Edit</a>
-                    <a href="/whatsapp/delete/<?= $item['id'] ?>">Delete</a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    <?php else: ?>
-        <p>Tidak ditemukan nomor WhatsApp.</p>
+    <?php if (session()->getFlashdata('success')): ?>
+        <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
     <?php endif; ?>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nomor WhatsApp</th>
+                <th>Opsi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if (!empty($numbers)): ?>
+                <?php foreach ($numbers as $number): ?>
+                <tr>
+                    <td><?= $number['id'] ?></td>
+                    <td><?= $number['whatsapp_number'] ?></td>
+                    <td>
+                        <a href="/whatsapp/edit/<?= $number['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="/whatsapp/delete/<?= $number['id'] ?>" class="btn btn-danger btn-sm">Hapus</a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr>
+                    <td colspan="3" class="text-center">Belum ada nomor WhatsApp.</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
 
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#TambahNomorWhattsapp">
         <i class="bi bi-plus-lg"></i> Tambah Nomor WhatsApp

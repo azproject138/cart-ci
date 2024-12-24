@@ -31,7 +31,7 @@ class WhatsappPenggunaController extends BaseController
             'whatsapp_number' => $this->request->getPost('whatsapp_number'),
         ]);
 
-        return redirect()->to('/profile')->with('success', 'Nomor WhatsApp berhasil ditambahkan.');
+        return redirect()->to('/whatsapp-pengguna')->with('success', 'Nomor WhatsApp berhasil ditambahkan.');
     }
 
     public function editNomorWhatsappPengguna($id)
@@ -50,12 +50,12 @@ class WhatsappPenggunaController extends BaseController
             'whatsapp_number' => $this->request->getPost('whatsapp_number'),
         ]);
 
-        return redirect()->to('/profile')->with('success', 'Nomor WhatsApp berhasil diperbarui.');
+        return redirect()->to('/whatsapp-pengguna')->with('success', 'Nomor WhatsApp berhasil diperbarui.');
     }
 
     public function deleteNomorWhatsappPengguna($id)
     {
         $this->whatsappModel->delete($id);
-        return redirect()->to('/profile')->with('success', 'Nomor WhatsApp berhasil dihapus.');
+        return redirect()->to('/whatsapp-pengguna')->with('success', 'Nomor WhatsApp berhasil dihapus.');
     }
 }
