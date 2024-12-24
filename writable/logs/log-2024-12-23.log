@@ -3240,3 +3240,18 @@ INFO - 2024-12-23 11:17:55 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-12-23 11:18:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-12-23 11:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-12-23 11:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-23 11:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-23 11:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-23 11:21:48 --> ErrorException: unlink(C:\xampp\htdocs\cart-ci\writable\uploads/profiles/1734952619_62ea03e2f77fd82551f2.jpg): No such file or directory
+[Method: POST, Route: profile/delete-profile]
+in APPPATH\Controllers\ProfilePenggunaController.php on line 87.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\cart-ci\\writable\\uploads/profiles/1734952619_62ea03e2f77fd82551f2.jpg): No such file or directory', 'C:\\xampp\\htdocs\\cart-ci\\app\\Controllers\\ProfilePenggunaController.php', 87)
+ 2 APPPATH\Controllers\ProfilePenggunaController.php(87): unlink('C:\\xampp\\htdocs\\cart-ci\\writable\\uploads/profiles/1734952619_62ea03e2f77fd82551f2.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfilePenggunaController->deleteProfilePengguna()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfilePenggunaController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-23 11:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
