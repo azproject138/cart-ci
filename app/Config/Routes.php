@@ -20,7 +20,7 @@ $routes->get('profile/show-profile/(:segment)', 'ProfileController::showFotoProf
 $routes->get('alamat-pengguna', 'AlamatPenggunaController::index');
 $routes->get('profile/create-alamat-pengguna', 'AlamatPenggunaController::create');
 $routes->post('profile/store-alamat-pengguna', 'AlamatPenggunaController::store');
-$routes->get('profile/edit-alamat-pengguna/(:num)', 'AlamatPenggunaController::edit/$1');
+$routes->post('profile/edit-alamat-pengguna/(:num)', 'AlamatPenggunaController::edit/$1');
 $routes->post('profile/update-alamat-pengguna', 'AlamatPenggunaController::update');
 $routes->get('profile/delete-alamat-pengguna/(:num)', 'AlamatPenggunaController::delete/$1');
 
