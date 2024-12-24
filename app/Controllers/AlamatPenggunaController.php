@@ -74,7 +74,7 @@ class AlamatPenggunaController extends BaseController
         $builder = $db->table('users');
         $user = $builder->where('id', $id)->get()->getRowArray();
 
-        return view('profile/edit-alamat-pengguna', ['user' => $user]);
+        return view('profile/index', ['user' => $user]);
     }
 
     public function update()

@@ -493,3 +493,23 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
  8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-24 03:46:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-24 03:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-24 03:46:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/profile.php"
+[Method: POST, Route: profile/edit-alamat-pengguna/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/profile.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/profile', [], true)
+ 3 APPPATH\Controllers\AlamatPenggunaController.php(77): view('/profile', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AlamatPenggunaController->edit('1')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlamatPenggunaController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-24 03:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-24 03:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-24 03:47:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-24 03:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-24 03:48:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
