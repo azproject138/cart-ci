@@ -13,9 +13,8 @@ $routes->get('/dashboard', 'Dashboard::main', ['filter' => 'auth']);
 $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/profile', 'ProfilePenggunaController::index');
-$routes->post('profile/upload-profile', 'ProfilePenggunaController::uploadProfilePengguna');
-$routes->post('profile/delete-profile', 'ProfilePenggunaController::deleteProfilePengguna');
-$routes->get('profile/show-profile/(:segment)', 'ProfileController::showFotoProfilePengguna/$1');
+$routes->post('profile/upload-profile-pengguna', 'ProfilePenggunaController::uploadProfilePengguna');
+$routes->get('profile/delete-profile-pengguna', 'ProfilePenggunaController::deleteProfilePengguna');
 
 $routes->get('alamat-pengguna', 'AlamatPenggunaController::index');
 $routes->get('profile/create-alamat-pengguna', 'AlamatPenggunaController::create');
