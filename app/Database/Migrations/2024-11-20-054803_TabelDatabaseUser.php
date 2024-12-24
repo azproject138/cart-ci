@@ -30,13 +30,13 @@ class CreateUsersTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'created_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
             'profile_picture' => [
                 'type' => 'VARCHAR',
-                'constraint' => '255',
+                'constraint' => 255,
+                'default' => 'default.jpg', // Foto default
+            ],
+            'created_at' => [
+                'type' => 'DATETIME',
                 'null' => true,
             ],
             'updated_at' => [
