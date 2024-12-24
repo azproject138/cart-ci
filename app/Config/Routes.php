@@ -23,9 +23,12 @@ $routes->post('profile/edit-alamat-pengguna/(:num)', 'AlamatPenggunaController::
 $routes->post('profile/update-alamat-pengguna', 'AlamatPenggunaController::update');
 $routes->get('profile/delete-alamat-pengguna/(:num)', 'AlamatPenggunaController::delete/$1');
 
-$routes->get('whatsapp/upload-nomor-whatsapp', 'Dashboard::uploadNomorWhatsApp');
-$routes->post('whatsapp/send-kode-otp', 'Dashboard::sendKodeOTP');
-$routes->post('whatsapp/verify-kode-otp', 'Dashboard::verifyKodeOtp');
+$routes->get('/whatsapp', 'WhatsappController::index');
+$routes->get('/whatsapp/create-whatsapp-pengguna', 'WhatsappController::createNomorWhatsappPengguna');
+$routes->post('/whatsapp/store-whatsapp-pengguna', 'WhatsappController::storeNomorWhatsappPengguna');
+$routes->get('/whatsapp/edit-whatsapp-pengguna/(:num)', 'WhatsappController::editNomorWhatsappPengguna/$1');
+$routes->post('/whatsapp/update-whatsapp-pengguna/(:num)', 'WhatsappController::updateNomorWhatsappPengguna/$1');
+$routes->get('/whatsapp/delete-whatsapp-pengguna/(:num)', 'WhatsappController::deleteNomorWhatsappPengguna/$1');
 
 $routes->get('/settings', 'SettingController::index', ['filter' => 'auth']);
 $routes->post('settings/update-username-pengguna', 'SettingController::updateUsernamePengguna');
