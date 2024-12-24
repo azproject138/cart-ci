@@ -25,6 +25,10 @@ class ProfilePenggunaController extends BaseController
         if (!$user) {
             return redirect()->to('/login')->with('error', 'Pengguna tidak ditemukan.');
         }
+        
+        if (!$user['profile_picture']) {
+            $user['profile_picture'] = 'default-profile.jpg'; // Gambar default
+        }
 
         // Kirim variabel $user ke view
         return view('profile/index', ['user' => $user]);
