@@ -4,22 +4,26 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddProfilePictureToUsers extends Migration
+class AddWhatsappNumberToUsers extends Migration
 {
     public function up()
     {
         $this->forge->addColumn('users', [
-            'profile_picture' => [
+            'whatsapp_number' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255,
+                'constraint' => '20',
                 'null' => true,
-                'default' => 'default-profile.jpg', // Foto default jika belum ada upload
+            ],
+            'is_main_whatsapp' => [
+                'type' => 'TINYINT',
+                'constraint' => '1',
+                'default' => 0,
             ],
         ]);
     }
 
     public function down()
     {
-        $this->forge->dropColumn('users', 'profile_picture');
+        $this->forge->dropColumn('users', 'whatsapp_number');
     }
 }

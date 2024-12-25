@@ -23,14 +23,10 @@ $routes->post('profile/edit-alamat-pengguna/(:num)', 'AlamatPenggunaController::
 $routes->post('profile/update-alamat-pengguna', 'AlamatPenggunaController::update');
 $routes->get('profile/delete-alamat-pengguna/(:num)', 'AlamatPenggunaController::delete/$1');
 
-//$routes->group('/pengguna-whatsapp', ['filter' => 'auth'], function ($routes) {
-//});
-
-$routes->get('/whatsapp', 'UserWhatsAppController::index', ['filter' => 'auth']);
-$routes->post('/whatsapp/tambah-whatsapp-pengguna', 'UserWhatsAppController::tambahWhatsappPengguna');
-$routes->get('/whatsapp/edit-whatsapp-pengguna/(:num)', 'UserWhatsAppController::editWhatsappPengguna/$1');
-$routes->post('/whatsapp/update-whatsapp-pengguna/(:num)', 'UserWhatsAppController::updateWhatsappPengguna/$1');
-$routes->get('/whatsapp/delete-whatsapp-pengguna/(:num)', 'UserWhatsAppController::deleteWhatsappPengguna/$1');
+$routes->get('/whatsapp', 'UserWhatsappController::index');
+$routes->post('/whatsapp/tambah-whatsapp-pengguna', 'UserWhatsappController::tambahWhatsAppPengguna');
+$routes->post('/whatsapp/edit-whatsapp-pengguna', 'UserWhatsappController::editWhatsAppPengguna');
+$routes->get('/whatsapp/hapus-whatsapp-pengguna', 'UserWhatsappController::hapusWhatsAppPengguna');
 
 $routes->get('/settings', 'SettingController::index', ['filter' => 'auth']);
 $routes->post('settings/update-username-pengguna', 'SettingController::updateUsernamePengguna');

@@ -3,53 +3,67 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\UserWhatsAppModel;
+use App\Models\UserModel;
 
 class UserWhatsAppController extends BaseController
 {
-    protected $userWhatsAppModel;
+    protected $userModel;
 
     public function __construct()
     {
-        $this->userWhatsAppModel = new UserWhatsAppModel();
+        $this->userModel = new UserModel();
     }
 
+    // Menampilkan halaman daftar nomor WhatsApp
     public function index()
     {
-        $data['whatsapp_numbers'] = $this->userWhatsAppModel->where('user_id', session('user_id'))->findAll();
-        return view('profile/index', $data);
+        $userId = session()->get('user_id'); // Ambil user_id dari session
+        $user = $this->userModel->find($userId);
+
+        return view('profile/index', ['user' => $user]);
     }
 
-    public function tambahWhatsappPengguna()
+    // Menambahkan nomor WhatsApp
+    public function tambahWhatsAppPengguna()
     {
-        $this->userWhatsAppModel->save([
-            'user_id' => session('user_id'),
-            'whatsapp_number' => $this->request->getPost('whatsapp_number'),
-            'is_primary' => $this->request->getPost('is_primary') ?? false,
-        ]);
+        $userId = session()->get('user_id'); // Ambil user_id dari session
+        $whatsappNumber = $this->request->getPost('whatsapp_number');
+        $isMain = $this->request->getPost('is_main') ? 1 : 0;
 
-        return redirect()->to('/whatsapp')->with('success', 'Nomor WhatsApp berhasil ditambahkan');
+        $data = [
+            'whatsapp_number' => $whatsappNumber,
+            'is_main_whatsapp' => $isMain
+        ];
+
+        // Menambahkan atau mengupdate data nomor WhatsApp
+        $this->userModel->update($userId, $data);
+
+        return redirect()->to('/whatsapp');
     }
 
-    public function editWhatsappPengguna($id)
+    // Mengedit nomor WhatsApp
+    public function editWhatsAppPengguna()
     {
-        $data['whatsapp'] = $this->userWhatsAppModel->find($id);
-        return view('user_whatsapp/edit', $data);
+        $userId = session()->get('user_id'); // Ambil user_id dari session
+        $whatsappNumber = $this->request->getPost('whatsapp_number');
+        $isMain = $this->request->getPost('is_main') ? 1 : 0;
+
+        $data = [
+            'whatsapp_number' => $whatsappNumber,
+            'is_main_whatsapp' => $isMain
+        ];
+
+        $this->userModel->update($userId, $data);
+
+        return redirect()->to('/whatsapp');
     }
 
-    public function updateWhatsappPengguna($id)
+    // Menghapus nomor WhatsApp
+    public function hapuseWhatsAppPengguna()
     {
-        $this->userWhatsAppModel->update($id, [
-            'whatsapp_number' => $this->request->getPost('whatsapp_number'),
-            'is_primary' => $this->request->getPost('is_primary') ?? false,
-        ]);
+        $userId = session()->get('user_id'); // Ambil user_id dari session
+        $this->userModel->update($userId, ['whatsapp_number' => null, 'is_main_whatsapp' => 0]);
 
-        return redirect()->to('/user-whatsapp')->with('success', 'Nomor WhatsApp berhasil diubah');
-    }
-
-    public function deleteWhatsappPengguna($id)
-    {
-        $this->userWhatsAppModel->delete($id);
-        return redirect()->to('/user-whatsapp')->with('success', 'Nomor WhatsApp berhasil dihapus');
+        return redirect()->to('/whatsapp');
     }
 }

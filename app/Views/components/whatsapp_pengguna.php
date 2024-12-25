@@ -1,26 +1,29 @@
-<h1>Daftar Nomor WhatsApp</h1>
-<a href="/user-whatsapp/create" class="btn btn-primary">Tambah Nomor</a>
+<div class="mt-4">
+    <h4>Daftar Nomor WhatsApp</h4>
+    <?php if (!empty($user['whatsapp_number'])): ?>
+        <div class="alert alert-info">
+            Nomor WhatsApp Anda: <?= esc($user['whatsapp_number']) ?>
+            <br>
+            <strong>Status:</strong> <?= $user['is_main_whatsapp'] ? 'Nomor Utama' : 'Nomor Cadangan' ?>
+        </div>
+    <?php endif; ?>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Nomor WhatsApp</th>
-            <th>Utama</th>
-            <th>Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($whatsapp_numbers as $key => $whatsapp): ?>
-            <tr>
-                <td><?= $key + 1 ?></td>
-                <td><?= $whatsapp['whatsapp_number'] ?></td>
-                <td><?= $whatsapp['is_primary'] ? 'Ya' : 'Tidak' ?></td>
-                <td>
-                    <a href="/user-whatsapp/edit/<?= $whatsapp['id'] ?>" class="btn btn-warning">Edit</a>
-                    <a href="/user-whatsapp/delete/<?= $whatsapp['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+    <form action="<?= site_url('/whatsapp/tambah-whatsapp-pengguna') ?>" method="post">
+        <div class="form-group">
+            <label for="whatsapp_number">Nomor WhatsApp</label>
+            <input type="text" class="form-control" name="whatsapp_number" id="whatsapp_number" value="<?= esc($user['whatsapp_number']) ?>" required>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="is_main" <?= $user['is_main_whatsapp'] ? 'checked' : '' ?>> Jadikan nomor utama
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Simpan Nomor WhatsApp</button>
+    </form>
+
+    <?php if (!empty($user['whatsapp_number'])): ?>
+        <form action="<?= site_url('/whatsapp/hapus-whatsapp-pengguna') ?>" method="get" class="mt-3">
+            <button type="submit" class="btn btn-danger">Hapus Nomor WhatsApp</button>
+        </form>
+    <?php endif; ?>
+</div>

@@ -13,7 +13,7 @@
         <h2>Profile</h2>
         <?= view('components/foto_profile_pengguna')?>
         <?= view('components/alamat_pengguna')?>
-        <?= view('components/upload_nomor_whatsapp_pengguna') ?>
+        <?= view('components/whatsapp_pengguna') ?>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,6 +1,6 @@
 <h1>Tambah Nomor WhatsApp</h1>
 
-<form action="/user-whatsapp/store" method="post">
+<form action="/user-whatsapp/tambah-whatsapp-pengguna" method="post">
     <div class="mb-3">
         <label for="whatsapp_number" class="form-label">Nomor WhatsApp</label>
         <input type="text" name="whatsapp_number" class="form-control" required>
