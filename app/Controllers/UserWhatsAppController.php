@@ -64,6 +64,6 @@ class UserWhatsAppController extends BaseController
         $userId = session()->get('user_id'); // Ambil user_id dari session
         $this->userModel->update($userId, ['whatsapp_number' => null, 'is_main_whatsapp' => 0]);
 
-        return redirect()->to('/whatsapp');
+        return redirect()->to('/whatsapp')->with('success', 'Nomor WhatsApp berhasil dihapus.');
     }
 }

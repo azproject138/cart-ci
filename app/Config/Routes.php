@@ -26,7 +26,7 @@ $routes->get('profile/delete-alamat-pengguna/(:num)', 'AlamatPenggunaController:
 $routes->get('/whatsapp', 'UserWhatsappController::index');
 $routes->post('/whatsapp/tambah-whatsapp-pengguna', 'UserWhatsappController::tambahWhatsAppPengguna');
 $routes->post('/whatsapp/edit-whatsapp-pengguna', 'UserWhatsappController::editWhatsAppPengguna');
-$routes->get('/whatsapp/hapus-whatsapp-pengguna', 'UserWhatsappController::hapusWhatsAppPengguna');
+$routes->get('/whatsapp/hapus-whatsapp-pengguna', 'UserWhatsappController::hapuseWhatsAppPengguna');
 
 $routes->get('/settings', 'SettingController::index', ['filter' => 'auth']);
 $routes->post('settings/update-username-pengguna', 'SettingController::updateUsernamePengguna');
