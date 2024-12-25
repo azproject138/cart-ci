@@ -21,11 +21,6 @@ class ProfilePenggunaController extends BaseController
         $builder = $db->table('users');
         $user = $builder->where('id', $userId)->get()->getRowArray();
 
-        // Jika data pengguna tidak ditemukan, arahkan ke login
-        if (!$user) {
-            return redirect()->to('/login')->with('error', 'Pengguna tidak ditemukan.');
-        }
-
         // Kirim variabel $user ke view
         return view('profile/index', ['user' => $user]);
     }

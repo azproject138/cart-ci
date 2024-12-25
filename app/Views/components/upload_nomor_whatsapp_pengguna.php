@@ -9,17 +9,23 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($whatsapp_numbers as $key => $whatsapp): ?>
+        <?php if (!empty($whatsapp_numbers)): ?>
+            <?php foreach ($whatsapp_numbers as $key => $whatsapp): ?>
+                <tr>
+                    <td><?= $key + 1 ?></td>
+                    <td><?= $whatsapp['whatsapp_number'] ?></td>
+                    <td><?= $whatsapp['is_primary'] ? 'Ya' : 'Tidak' ?></td>
+                    <td>
+                        <a href="/user-whatsapp/edit/<?= $whatsapp['id'] ?>" class="btn btn-warning">Edit</a>
+                        <a href="/user-whatsapp/delete/<?= $whatsapp['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
             <tr>
-                <td><?= $key + 1 ?></td>
-                <td><?= $whatsapp['whatsapp_number'] ?></td>
-                <td><?= $whatsapp['is_primary'] ? 'Ya' : 'Tidak' ?></td>
-                <td>
-                    <a href="/user-whatsapp/edit/<?= $whatsapp['id'] ?>" class="btn btn-warning">Edit</a>
-                    <a href="/user-whatsapp/delete/<?= $whatsapp['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
-                </td>
+                <td colspan="4" class="text-center">Tidak ada nomor WhatsApp</td>
             </tr>
-        <?php endforeach; ?>
+        <?php endif; ?>
     </tbody>
 </table>
 <!-- Button trigger modal -->
@@ -36,7 +42,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/pengguna-whatsapp/tambah-whatsapp-pengguna" method="post">
+                <form action="/whatsapp/tambah-whatsapp-pengguna" method="post">
                     <div class="mb-3">
                         <label for="whatsapp_number" class="form-label">Nomor WhatsApp</label>
                         <input type="text" name="whatsapp_number" class="form-control" required>

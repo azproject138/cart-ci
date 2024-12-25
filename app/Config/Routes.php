@@ -12,7 +12,7 @@ $routes->post('/login', 'Auth::processLogin');
 $routes->get('/dashboard', 'Dashboard::main', ['filter' => 'auth']);
 $routes->get('/logout', 'Auth::logout');
 
-$routes->get('/profile', 'ProfilePenggunaController::index');
+$routes->get('/profile', 'ProfilePenggunaController::index', ['filter' => 'auth']);
 $routes->post('profile/upload-profile-pengguna', 'ProfilePenggunaController::uploadProfilePengguna');
 $routes->get('profile/delete-profile-pengguna/(:num)', 'ProfilePenggunaController::deleteProfilePengguna/$1');
 
@@ -23,13 +23,14 @@ $routes->post('profile/edit-alamat-pengguna/(:num)', 'AlamatPenggunaController::
 $routes->post('profile/update-alamat-pengguna', 'AlamatPenggunaController::update');
 $routes->get('profile/delete-alamat-pengguna/(:num)', 'AlamatPenggunaController::delete/$1');
 
-$routes->group('pengguna-whatsapp', ['filter' => 'auth'], function ($routes) {
-    $routes->get('/whatsapp-pengguna', 'UserWhatsAppController::index');
-    $routes->post('tambah-whatsapp-pengguna', 'UserWhatsAppController::tambahWhatsappPengguna');
-    $routes->get('edit-whatsapp-pengguna/(:num)', 'UserWhatsAppController::editWhatsappPengguna/$1');
-    $routes->post('update-whatsapp-pengguna/(:num)', 'UserWhatsAppController::updateWhatsappPengguna/$1');
-    $routes->get('delete-whatsapp-pengguna/(:num)', 'UserWhatsAppController::deleteWhatsappPengguna/$1');
-});
+//$routes->group('/pengguna-whatsapp', ['filter' => 'auth'], function ($routes) {
+//});
+
+$routes->get('/whatsapp', 'UserWhatsAppController::index', ['filter' => 'auth']);
+$routes->post('/whatsapp/tambah-whatsapp-pengguna', 'UserWhatsAppController::tambahWhatsappPengguna');
+$routes->get('/whatsapp/edit-whatsapp-pengguna/(:num)', 'UserWhatsAppController::editWhatsappPengguna/$1');
+$routes->post('/whatsapp/update-whatsapp-pengguna/(:num)', 'UserWhatsAppController::updateWhatsappPengguna/$1');
+$routes->get('/whatsapp/delete-whatsapp-pengguna/(:num)', 'UserWhatsAppController::deleteWhatsappPengguna/$1');
 
 $routes->get('/settings', 'SettingController::index', ['filter' => 'auth']);
 $routes->post('settings/update-username-pengguna', 'SettingController::updateUsernamePengguna');

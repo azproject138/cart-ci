@@ -17,7 +17,7 @@ class UserWhatsAppController extends BaseController
     public function index()
     {
         $data['whatsapp_numbers'] = $this->userWhatsAppModel->where('user_id', session('user_id'))->findAll();
-        return view('user_whatsapp/index', $data);
+        return view('profile/index', $data);
     }
 
     public function tambahWhatsappPengguna()
@@ -28,7 +28,7 @@ class UserWhatsAppController extends BaseController
             'is_primary' => $this->request->getPost('is_primary') ?? false,
         ]);
 
-        return redirect()->to('/user-whatsapp')->with('success', 'Nomor WhatsApp berhasil ditambahkan');
+        return redirect()->to('/whatsapp')->with('success', 'Nomor WhatsApp berhasil ditambahkan');
     }
 
     public function editWhatsappPengguna($id)
