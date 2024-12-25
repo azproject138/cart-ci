@@ -11,7 +11,6 @@ class ProfilePenggunaController extends Controller
     {
         $model = new UserModel();
         $data = $model->find(session()->get('user_id'));  // Ambil data pengguna berdasarkan ID sesi
-
         return view('profile/index', ['user' => $data]);
     }
 
@@ -36,7 +35,6 @@ class ProfilePenggunaController extends Controller
         }
 
         $file = $this->request->getFile('profile_picture');
-        // Menggunakan ID pengguna sebagai nama file, atau menggunakan timestamp
         $userId = session()->get('user_id');
         $newName = $userId . '_' . $file->getRandomName(); // Nama file menggunakan ID pengguna + nama acak
         $file->move(WRITEPATH . 'uploads/profiles', $newName);
@@ -45,6 +43,7 @@ class ProfilePenggunaController extends Controller
         $model = new UserModel();
         $data = [
             'profile_picture' => $newName,
+            'updated_at' => date('Y-m-d H:i:s'),
         ];
 
         $model->update($userId, $data);
