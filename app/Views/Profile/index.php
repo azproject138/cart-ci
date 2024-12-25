@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h2>Profile</h2>
         <?= $this->include('components/alerts')?>
+        <h2>Profile</h2>
         <?= view('components/foto_profile_pengguna')?>
         <?= view('components/alamat_pengguna')?>
         <?= view('components/upload_nomor_whatsapp_pengguna') ?>
