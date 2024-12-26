@@ -8,12 +8,14 @@
     <title>Profile</title>
 </head>
 <body>
-    <div class="container mt-4">
-        <?= $this->include('components/alerts')?>
+    <div class="container">
         <h2>Profile</h2>
-        <?= view('components/foto_profile_pengguna')?>
-        <?= view('components/alamat_pengguna')?>
-        <?= view('components/whatsapp_pengguna') ?>
+        <div class="row mt-4">
+            <?= $this->include('components/alerts')?>
+            <?= view('components/foto_profile_pengguna')?>
+            <?= view('components/alamat_pengguna')?>
+            <?= view('components/whatsapp_pengguna') ?>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
