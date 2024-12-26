@@ -16,14 +16,12 @@ $routes->get('/profile', 'ProfilePenggunaController::index');
 $routes->post('profile/upload-profile-pengguna', 'ProfilePenggunaController::uploadProfilePengguna');
 $routes->get('profile/delete-profile-pengguna', 'ProfilePenggunaController::deleteProfilePengguna/$1');
 
-$routes->group('alamat-pengguna', ['filter' => 'auth'], function($routes) {
-    $routes->get('/', 'AddressController::index');
-    $routes->get('create', 'AddressController::createAlamatPengguna');
-    $routes->post('store', 'AddressController::tambahAlamatPengguna');
-    $routes->get('edit/(:num)', 'AddressController::editAlamatPengguna/$1');
-    $routes->post('update/(:num)', 'AddressController::updateAlamatPengguna/$1');
-    $routes->get('delete/(:num)', 'AddressController::hapusAlamatPengguna/$1');
-});
+$routes->get('alamat-pengguna', 'AlamatPenggunaController::index');
+$routes->get('profile/create-alamat-pengguna', 'AlamatPenggunaController::create');
+$routes->post('profile/store-alamat-pengguna', 'AlamatPenggunaController::tambahAlamatPengguna');
+$routes->post('profile/edit-alamat-pengguna/(:num)', 'AlamatPenggunaController::editAlamatPengguna/$1');
+$routes->post('profile/update-alamat-pengguna', 'AlamatPenggunaController::updateAlamatPengguna');
+$routes->get('profile/delete-alamat-pengguna/(:num)', 'AlamatPenggunaController::hapusAlamatPengguna/$1');
 
 $routes->get('/whatsapp', 'UserWhatsappController::index');
 $routes->post('/whatsapp/tambah-whatsapp-pengguna', 'UserWhatsappController::tambahWhatsAppPengguna');
