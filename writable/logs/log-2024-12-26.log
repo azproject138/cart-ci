@@ -23,3 +23,227 @@ Stack trace:
 #11 C:\xampp\htdocs\cart-ci\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
 #12 C:\xampp\htdocs\cart-ci\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
 #13 {main}
+INFO - 2024-12-26 03:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-26 03:29:17 --> ErrorException: Undefined variable $addresses
+[Method: GET, Route: whatsapp]
+in APPPATH\Views\components\alamat_pengguna.php on line 14.
+ 1 APPPATH\Views\components\alamat_pengguna.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $addresses', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\alamat_pengguna.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\alamat_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/alamat_pengguna', [], true)
+ 5 APPPATH\Views\profile\index.php(16): view('components/alamat_pengguna')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\UserWhatsAppController.php(23): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserWhatsAppController->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserWhatsAppController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-26 03:31:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-26 03:31:51 --> ErrorException: Undefined variable $addresses
+[Method: GET, Route: whatsapp]
+in APPPATH\Views\components\alamat_pengguna.php on line 14.
+ 1 APPPATH\Views\components\alamat_pengguna.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $addresses', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\alamat_pengguna.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\alamat_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/alamat_pengguna', [], true)
+ 5 APPPATH\Views\profile\index.php(16): view('components/alamat_pengguna')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\UserWhatsAppController.php(23): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserWhatsAppController->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserWhatsAppController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-26 03:31:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-26 03:31:51 --> ErrorException: Undefined variable $addresses
+[Method: GET, Route: whatsapp]
+in APPPATH\Views\components\alamat_pengguna.php on line 14.
+ 1 APPPATH\Views\components\alamat_pengguna.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $addresses', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\alamat_pengguna.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\alamat_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/alamat_pengguna', [], true)
+ 5 APPPATH\Views\profile\index.php(16): view('components/alamat_pengguna')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\UserWhatsAppController.php(23): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserWhatsAppController->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserWhatsAppController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-26 03:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:36:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:36:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:36:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:36:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-26 03:36:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "componets/upload_alamat_pengguna.php"
+[Method: GET, Route: alamat-pengguna/create]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('componets/upload_alamat_pengguna.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('componets/upload_alamat_pengguna', [], true)
+ 3 APPPATH\Controllers\AddressController.php(28): view('componets/upload_alamat_pengguna')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AddressController->createAlamatPengguna()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddressController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-26 03:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:40:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:41:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:41:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:42:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-26 03:42:30 --> ErrorException: Undefined variable $addresses
+[Method: GET, Route: whatsapp]
+in APPPATH\Views\components\alamat_pengguna.php on line 14.
+ 1 APPPATH\Views\components\alamat_pengguna.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $addresses', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\alamat_pengguna.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\alamat_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/alamat_pengguna', [], true)
+ 5 APPPATH\Views\profile\index.php(16): view('components/alamat_pengguna')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\UserWhatsAppController.php(23): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserWhatsAppController->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserWhatsAppController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-26 03:42:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-26 03:42:37 --> ErrorException: Undefined variable $addresses
+[Method: GET, Route: whatsapp]
+in APPPATH\Views\components\alamat_pengguna.php on line 14.
+ 1 APPPATH\Views\components\alamat_pengguna.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $addresses', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\alamat_pengguna.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\alamat_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/alamat_pengguna', [], true)
+ 5 APPPATH\Views\profile\index.php(16): view('components/alamat_pengguna')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\UserWhatsAppController.php(23): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserWhatsAppController->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserWhatsAppController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-26 03:43:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:43:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:43:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:44:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:44:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:44:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:44:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:44:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-26 03:44:49 --> ErrorException: Undefined array key "is_primary"
+[Method: POST, Route: alamat-pengguna/store]
+in APPPATH\Controllers\AddressController.php on line 36.
+ 1 APPPATH\Controllers\AddressController.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_primary"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Controllers\\AddressController.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AddressController->tambahAlamatPengguna()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddressController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-26 03:49:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-26 03:49:34 --> ErrorException: Undefined array key "is_primary"
+[Method: POST, Route: alamat-pengguna/store]
+in APPPATH\Controllers\AddressController.php on line 41.
+ 1 APPPATH\Controllers\AddressController.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_primary"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Controllers\\AddressController.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AddressController->tambahAlamatPengguna()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddressController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-26 03:53:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-26 03:53:24 --> ErrorException: Undefined array key "is_primary"
+[Method: POST, Route: alamat-pengguna/store]
+in APPPATH\Controllers\AddressController.php on line 36.
+ 1 APPPATH\Controllers\AddressController.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_primary"', 'C:\\xampp\\htdocs\\cart-ci\\app\\Controllers\\AddressController.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AddressController->tambahAlamatPengguna()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddressController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-26 03:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-26 03:56:00 --> ErrorException: Undefined variable $user
+[Method: GET, Route: alamat-pengguna]
+in APPPATH\Views\components\foto_profile_pengguna.php on line 7.
+ 1 APPPATH\Views\components\foto_profile_pengguna.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile_pengguna.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/foto_profile_pengguna', [], true)
+ 5 APPPATH\Views\profile\index.php(15): view('components/foto_profile_pengguna')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\AddressController.php(23): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AddressController->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddressController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2024-12-26 03:56:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:56:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:56:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:56:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:56:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-26 03:56:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-26 03:56:39 --> ErrorException: Undefined variable $user
+[Method: GET, Route: alamat-pengguna]
+in APPPATH\Views\components\foto_profile_pengguna.php on line 7.
+ 1 APPPATH\Views\components\foto_profile_pengguna.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile_pengguna.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\foto_profile_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/foto_profile_pengguna', [], true)
+ 5 APPPATH\Views\profile\index.php(15): view('components/foto_profile_pengguna')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\profile\\index.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/index', [], true)
+ 9 APPPATH\Controllers\AddressController.php(23): view('profile/index', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AddressController->index()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AddressController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')

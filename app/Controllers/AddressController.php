@@ -20,20 +20,21 @@ class AddressController extends BaseController
         $userId = session()->get('user_id');
         $addresses = $this->addressModel->where('user_id', $userId)->findAll();
 
-        return view('addresses/index', ['addresses' => $addresses]);
+        return view('profile/index', ['addresses' => $addresses]);
     }
 
-    public function create()
+    public function createAlamatPengguna()
     {
-        return view('addresses/create');
+        return view('components/upload_alamat_pengguna');
     }
 
-    public function store()
+    public function tambahAlamatPengguna()
     {
         $userId = session()->get('user_id');
         $data = $this->request->getPost();
 
-        if ($data['is_primary']) {
+        $isPrimary = isset($data['is_primary']) ? 1 : 0;
+        if ($isPrimary) {
             $this->addressModel->where('user_id', $userId)->set(['is_primary' => 0])->update();
         }
 
@@ -41,24 +42,25 @@ class AddressController extends BaseController
             'user_id'   => $userId,
             'address'   => $data['address'],
             'type'      => $data['type'],
-            'is_primary' => $data['is_primary'] ?? 0,
+            'is_primary' => $isPrimary,
         ]);
 
-        return redirect()->to('/addresses')->with('success', 'Alamat berhasil ditambahkan');
+        return redirect()->to('/alamat-pengguna')->with('success', 'Alamat berhasil ditambahkan');
     }
 
-    public function edit($id)
+    public function editAlamatPengguna($id)
     {
         $address = $this->addressModel->find($id);
 
-        return view('addresses/edit', ['address' => $address]);
+        return view('components/edit-alamat-pengguna', ['address' => $address]);
     }
 
-    public function update($id)
+    public function updateAlamatPengguna($id)
     {
         $data = $this->request->getPost();
 
-        if ($data['is_primary']) {
+        $isPrimary = isset($data['is_primary']) ? 1 : 0;
+        if ($isPrimary) {
             $userId = session()->get('user_id');
             $this->addressModel->where('user_id', $userId)->set(['is_primary' => 0])->update();
         }
@@ -66,16 +68,16 @@ class AddressController extends BaseController
         $this->addressModel->update($id, [
             'address'    => $data['address'],
             'type'       => $data['type'],
-            'is_primary' => $data['is_primary'] ?? 0,
+            'is_primary' => $isPrimary,
         ]);
 
-        return redirect()->to('/addresses')->with('success', 'Alamat berhasil diperbarui');
+        return redirect()->to('/alamat-pengguna')->with('success', 'Alamat berhasil diperbarui');
     }
 
-    public function delete($id)
+    public function hapusAlamatPengguna($id)
     {
         $this->addressModel->delete($id);
 
-        return redirect()->to('/addresses')->with('success', 'Alamat berhasil dihapus');
+        return redirect()->to('/alamat-pengguna')->with('success', 'Alamat berhasil dihapus');
     }
 }
