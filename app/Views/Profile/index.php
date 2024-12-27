@@ -13,7 +13,7 @@
         <div class="row mt-4">
             <?= $this->include('components/alerts')?>
             <?= view('components/foto_profile_pengguna')?>
-            <?= view('components/alamat_pengguna')?>
+            <!-- alamat pengguna -->
             <?= view('components/whatsapp_pengguna') ?>
         </div>
     </div>
