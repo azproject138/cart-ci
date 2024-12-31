@@ -17,10 +17,12 @@ class UserWhatsAppController extends BaseController
     // Menampilkan halaman daftar nomor WhatsApp
     public function index()
     {
-        $userId = session()->get('user_id'); // Ambil user_id dari session
-        $user = $this->userModel->find($userId);
-
-        return view('profile/index', ['user' => $user]);
+        $users = $this->userModel->findAll();
+        
+        echo '<pre>';
+        print_r($users);
+        echo '</pre>';
+        exit;
     }
 
     // Menambahkan nomor WhatsApp

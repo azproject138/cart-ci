@@ -17,6 +17,10 @@ $routes->post('profile/upload-profile-pengguna', 'ProfilePenggunaController::upl
 $routes->get('profile/delete-profile-pengguna', 'ProfilePenggunaController::deleteProfilePengguna/$1');
 
 //alamat pengguna
+$routes->get('/alamat', 'AlamatPenggunaController::index');
+$routes->post('/alamat/tambah-alamat-pengguna', 'AlamatPenggunaController::tambahAlamatPengguna');
+$routes->post('/alamat/update-alamat-pengguna/(:num)', 'AlamatPenggunaController::updateAlamatPengguna/$1');
+$routes->get('/alamat/hapus-alamat-pengguna/(:num)', 'AlamatPenggunaController::hapusAlamatPengguna/$1');
 
 $routes->get('/whatsapp', 'UserWhatsappController::index');
 $routes->post('/whatsapp/tambah-whatsapp-pengguna', 'UserWhatsappController::tambahWhatsAppPengguna');

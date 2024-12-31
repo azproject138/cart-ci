@@ -2,69 +2,58 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
-use App\Models\AlamatPenggunaModel;
-use CodeIgniter\HTTP\ResponseInterface;
+use App\Models\UserModel;
 
 class AlamatPenggunaController extends BaseController
 {
-    protected $addressModel;
+    protected $userModel;
 
     public function __construct()
     {
-        $this->addressModel = new AlamatPenggunaModel();
+        $this->userModel = new UserModel();
     }
 
-    // Menampilkan halaman alamat
     public function index()
     {
-        $data['addresses'] = $this->addressModel->where('user_id', session()->get('user_id'))->findAll();
+        $data['users'] = $this->userModel->findAll();
         return view('profile/index', $data);
     }
 
-    // Menambah alamat
-    public function createAlamatPengguna()
+    public function tambahAlamatPengguna()
     {
-        if ($this->request->getMethod() === 'post') {
-            $data = [
-                'user_id'   => session()->get('user_id'),
-                'address'   => $this->request->getPost('address'),
-                'type'      => $this->request->getPost('type'),
-                'is_primary'=> $this->request->getPost('is_primary') ? 1 : 0,
-            ];
-            $this->addressModel->save($data);
-            return redirect()->to('/alamat-pengguna')->with('message', 'Alamat berhasil ditambahkan');
-        }
+        $data = [
+            'alamat' => $this->request->getPost('alamat'),
+            'tipe_alamat' => $this->request->getPost('tipe_alamat'),
+            'alamat_utama' => $this->request->getPost('alamat_utama') ? 1 : 0,
+        ];
 
-        return view('components/upload_alamat_pengguna');
+        $this->userModel->update(session('user_id'), $data);
+        return redirect()->to('/profile')->with('success', 'Address added successfully.');
     }
 
-    // Edit alamat
-    public function editAlamatPengguna($id)
+    public function updateAlamatPengguna($id)
     {
-        $address = $this->addressModel->find($id);
-        if (!$address) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('Alamat tidak ditemukan');
+        $data = [
+            'alamat' => $this->request->getPost('alamat'),
+            'tipe_alamat' => $this->request->getPost('tipe_alamat'),
+            'alamat_utama' => $this->request->getPost('alamat_utama') ? 1 : 0,
+        ];
+    
+        if ($this->userModel->update($id, $data)) {
+            return redirect()->to('/profile')->with('success', 'Alamat berhasil diperbarui.');
+        } else {
+            return redirect()->back()->with('error', 'Alamat gagal diperbarui.');
         }
-
-        if ($this->request->getMethod() === 'post') {
-            $data = [
-                'address'   => $this->request->getPost('address'),
-                'type'      => $this->request->getPost('type'),
-                'is_primary'=> $this->request->getPost('is_primary') ? 1 : 0,
-            ];
-            $this->addressModel->update($id, $data);
-            return redirect()->to('/alamat-pengguna')->with('message', 'Alamat berhasil diperbarui');
-        }
-
-        $data['address'] = $address;
-        return view('profile/edit-alamat-pengguna', $data);
     }
 
-    // Hapus alamat
     public function hapusAlamatPengguna($id)
     {
-        $this->addressModel->delete($id);
-        return redirect()->to('/alamat-pengguna')->with('message', 'Alamat berhasil dihapus');
+        $this->userModel->update($id, [
+            'alamat' => null,
+            'tipe_alamat' => null,
+            'alamat_utama' => 0,
+        ]);
+
+        return redirect()->to('/profile')->with('success', 'Address deleted successfully.');
     }
 }

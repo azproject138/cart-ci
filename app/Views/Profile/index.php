@@ -14,6 +14,7 @@
             <?= $this->include('components/alerts')?>
             <?= view('components/foto_profile_pengguna')?>
             <!-- alamat pengguna -->
+            <?= view('components/alamat_pengguna')?>
             <?= view('components/whatsapp_pengguna') ?>
         </div>
     </div>

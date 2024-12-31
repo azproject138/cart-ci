@@ -12,7 +12,7 @@ class UserModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['username', 'email', 'password', 'profile_picture', 'whatsapp_number', 'is_main_whatsapp'];
+    protected $allowedFields    = ['username', 'email', 'password', 'profile_picture', 'whatsapp_number', 'is_main_whatsapp', 'alamat', 'tipe_alamat', 'alamat_utama'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
