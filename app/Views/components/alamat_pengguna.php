@@ -1,7 +1,7 @@
 <div class="mt-5">
     <h4>Daftar Alamat</h4>
     <hr>
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>Alamat</th>

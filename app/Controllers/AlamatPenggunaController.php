@@ -28,7 +28,7 @@ class AlamatPenggunaController extends BaseController
         ];
 
         $this->userModel->update(session('user_id'), $data);
-        return redirect()->to('/profile')->with('success', 'Address added successfully.');
+        return redirect()->to('/alamat')->with('success', 'Address added successfully.');
     }
 
     public function updateAlamatPengguna($id)
@@ -40,7 +40,7 @@ class AlamatPenggunaController extends BaseController
         ];
     
         if ($this->userModel->update($id, $data)) {
-            return redirect()->to('/profile')->with('success', 'Alamat berhasil diperbarui.');
+            return redirect()->to('/alamat')->with('success', 'Alamat berhasil diperbarui.');
         } else {
             return redirect()->back()->with('error', 'Alamat gagal diperbarui.');
         }
@@ -54,6 +54,6 @@ class AlamatPenggunaController extends BaseController
             'alamat_utama' => 0,
         ]);
 
-        return redirect()->to('/profile')->with('success', 'Address deleted successfully.');
+        return redirect()->to('/alamat')->with('success', 'Address deleted successfully.');
     }
 }
