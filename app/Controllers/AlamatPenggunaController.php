@@ -16,7 +16,7 @@ class AlamatPenggunaController extends BaseController
     public function index()
     {
         $data['users'] = $this->userModel->findAll();
-        return view('address/index', $data);
+        return view('profile/index', $data);
     }
 
     public function tambahAlamatPengguna()
@@ -34,7 +34,7 @@ class AlamatPenggunaController extends BaseController
 
         $this->userModel->update(session('id'), $data);
 
-        return redirect()->to('/address')->with('success', 'Alamat berhasil ditambahkan');
+        return redirect()->to('/alamat')->with('success', 'Alamat berhasil ditambahkan');
     }
 
     public function updateAlamatPengguna($id)
@@ -52,12 +52,12 @@ class AlamatPenggunaController extends BaseController
 
         $this->userModel->update($id, $data);
 
-        return redirect()->to('/address')->with('success', 'Alamat berhasil diperbarui');
+        return redirect()->to('/alamat')->with('success', 'Alamat berhasil diperbarui');
     }
 
     public function hapusAlamatPengguna($id)
     {
         $this->userModel->update($id, ['alamat' => null, 'tipe_alamat' => null, 'alamat_utama' => 0]);
-        return redirect()->to('/address')->with('success', 'Alamat berhasil dihapus');
+        return redirect()->to('/alamat')->with('success', 'Alamat berhasil dihapus');
     }
 }

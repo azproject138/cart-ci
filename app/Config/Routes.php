@@ -18,10 +18,10 @@ $routes->get('profile/delete-profile-pengguna', 'ProfilePenggunaController::dele
 
 //alamat pengguna
 $routes->group('alamat', ['filter' => 'auth'], function ($routes) {
-    $routes->get('/', 'AddressController::index');
-    $routes->post('tambah-alamat-pengguna', 'AddressController::tambahAlamatPengguna');
-    $routes->post('update-alamat-pengguna/(:num)', 'AddressController::updateAlamatPengguna/$1');
-    $routes->get('hapus-alamat-pengguna/(:num)', 'AddressController::hapusAlamatPengguna/$1');
+    $routes->get('/', 'AlamatPenggunaController::index');
+    $routes->post('tambah-alamat-pengguna', 'AlamatPenggunaController::tambahAlamatPengguna');
+    $routes->post('update-alamat-pengguna/(:num)', 'AlamatPenggunaController::updateAlamatPengguna/$1');
+    $routes->get('hapus-alamat-pengguna/(:num)', 'AlamatPenggunaController::hapusAlamatPengguna/$1');
 });
 
 $routes->get('/whatsapp', 'UserWhatsappController::index');
