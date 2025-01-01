@@ -28,24 +28,24 @@ class AlamatPenggunaController extends BaseController
 
         // Kirim data pengguna ke view
         $data['users'] = [$user];
-        return view('address/index', $data);
+        return view('profile/index', $data);
     }
 
 
     public function tambahAlamatPengguna()
     {
+        $userId = session('id'); // ID pengguna dari session
         $data = [
             'alamat' => $this->request->getPost('alamat'),
             'tipe_alamat' => $this->request->getPost('tipe_alamat'),
             'alamat_utama' => $this->request->getPost('alamat_utama') ? 1 : 0,
         ];
 
-        // Jika alamat utama, reset alamat utama lainnya
         if ($data['alamat_utama']) {
-            $this->userModel->where('id', session('id'))->set(['is_main_address' => 0])->update();
+            $this->userModel->where('id !=', $userId)->set(['alamat_utama' => 0])->update();
         }
 
-        $this->userModel->update(session('id'), $data);
+        $this->userModel->update($userId, $data);
 
         return redirect()->to('/alamat')->with('success', 'Alamat berhasil ditambahkan');
     }
@@ -58,9 +58,8 @@ class AlamatPenggunaController extends BaseController
             'alamat_utama' => $this->request->getPost('alamat_utama') ? 1 : 0,
         ];
 
-        // Jika alamat utama, reset alamat utama lainnya
         if ($data['alamat_utama']) {
-            $this->userModel->where('id', session('id'))->set(['is_main_address' => 0])->update();
+            $this->userModel->where('id !=', $id)->set(['alamat_utama' => 0])->update();
         }
 
         $this->userModel->update($id, $data);
