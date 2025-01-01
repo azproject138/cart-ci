@@ -18,8 +18,12 @@
                         <td><?= esc($user['tipe_alamat']) ?></td>
                         <td><?= $user['alamat_utama'] ? 'Yes' : 'No' ?></td>
                         <td>
-                            <a href="/alamat/edit/<?= $user['id'] ?>">Edit</a>
-                            <a href="/alamat/hapus-alamat-pengguna/<?= $user['id'] ?>">Delete</a>
+                            <a href="/alamat/edit/<?= $user['id'] ?>">
+                                <i class="bi bi-pencil"></i> Edit
+                            </a>
+                            <a href="/alamat/hapus-alamat-pengguna/<?= $user['id'] ?>">
+                                <i class="bi bi-trash-fill"></i> Delete
+                            </a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -31,7 +35,7 @@
         </tbody>
     </table>
     <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#tambahAlamatPengguna">
-        <i class="bi bi-plus-lg"></i> Tambah
+        <i class="bi bi-plus-lg"></i> Add
     </button>
 
     <!-- Modal -->
