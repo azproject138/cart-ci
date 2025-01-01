@@ -12,18 +12,24 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($users as $user): ?>
+            <?php if (!empty($users)): ?>
+                <?php foreach ($users as $user): ?>
+                    <tr>
+                        <td><?= $user['id'] ?></td>
+                        <td><?= $user['address'] ?></td>
+                        <td><?= $user['address_type'] ?></td>
+                        <td><?= $user['is_main_address'] ? 'Ya' : 'Tidak' ?></td>
+                        <td>
+                            <a href="/address/edit/<?= $user['id'] ?>" class="btn btn-warning">Edit</a>
+                            <a href="/address/delete/<?= $user['id'] ?>" class="btn btn-danger" onclick="return confirm('Hapus alamat?')">Hapus</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
                 <tr>
-                    <td><?= $user['id'] ?></td>
-                    <td><?= $user['alamat'] ?></td>
-                    <td><?= $user['tipe_alamat'] ?></td>
-                    <td><?= $user['alamat_utama'] ? 'Ya' : 'Tidak' ?></td>
-                    <td>
-                        <a href="/alamat/edit/<?= $user['id'] ?>" class="btn btn-warning">Edit</a>
-                        <a href="/alamat/hapus-alamat-pengguna/<?= $user['id'] ?>" class="btn btn-danger" onclick="return confirm('Hapus alamat?')">Hapus</a>
-                    </td>
+                    <td colspan="5">Belum ada alamat yang ditambahkan.</td>
                 </tr>
-            <?php endforeach; ?>
+            <?php endif; ?>
         </tbody>
     </table>
     <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#tambahAlamatPengguna">

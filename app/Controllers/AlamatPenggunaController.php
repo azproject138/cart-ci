@@ -15,10 +15,22 @@ class AlamatPenggunaController extends BaseController
 
     public function index()
     {
-        $userId = session('id');
-        $data['users'] = $this->userModel->where('id', $userId)->findAll();
-        return view('profile/index', $data);
+        // Ambil ID pengguna dari session
+        $userId = session('id'); // Pastikan session ID pengguna disetel saat login
+
+        // Ambil data pengguna dari database berdasarkan ID
+        $user = $this->userModel->find($userId);
+
+        // Jika pengguna tidak ditemukan
+        if (!$user) {
+            return redirect()->to('/login')->with('error', 'Pengguna tidak ditemukan.');
+        }
+
+        // Kirim data pengguna ke view
+        $data['users'] = [$user]; // Bungkus dalam array agar foreach dapat digunakan
+        return view('address/index', $data);
     }
+
 
     public function tambahAlamatPengguna()
     {
