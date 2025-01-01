@@ -16,7 +16,7 @@ class AlamatPenggunaController extends BaseController
     public function index()
     {
         // Ambil ID pengguna dari session
-        $userId = session('id'); // Pastikan session ID pengguna disetel saat login
+        $userId = session('id');
 
         // Ambil data pengguna dari database berdasarkan ID
         $user = $this->userModel->find($userId);
@@ -27,7 +27,7 @@ class AlamatPenggunaController extends BaseController
         }
 
         // Kirim data pengguna ke view
-        $data['users'] = [$user]; // Bungkus dalam array agar foreach dapat digunakan
+        $data['users'] = [$user];
         return view('address/index', $data);
     }
 
@@ -42,7 +42,7 @@ class AlamatPenggunaController extends BaseController
 
         // Jika alamat utama, reset alamat utama lainnya
         if ($data['alamat_utama']) {
-            $this->userModel->update(null, ['alamat_utama' => 0]);
+            $this->userModel->where('id', session('id'))->set(['is_main_address' => 0])->update();
         }
 
         $this->userModel->update(session('id'), $data);
@@ -60,7 +60,7 @@ class AlamatPenggunaController extends BaseController
 
         // Jika alamat utama, reset alamat utama lainnya
         if ($data['alamat_utama']) {
-            $this->userModel->update(null, ['alamat_utama' => 0]);
+            $this->userModel->where('id', session('id'))->set(['is_main_address' => 0])->update();
         }
 
         $this->userModel->update($id, $data);
