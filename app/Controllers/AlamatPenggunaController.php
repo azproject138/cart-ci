@@ -15,7 +15,8 @@ class AlamatPenggunaController extends BaseController
 
     public function index()
     {
-        $data['users'] = $this->userModel->findAll();
+        $userId = session('id');
+        $data['users'] = $this->userModel->where('id', $userId)->findAll();
         return view('profile/index', $data);
     }
 
