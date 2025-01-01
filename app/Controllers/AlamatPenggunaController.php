@@ -16,7 +16,7 @@ class AlamatPenggunaController extends BaseController
     public function index()
     {
         $data['users'] = $this->userModel->findAll();
-        return view('profile/index', $data);
+        return view('address/index', $data);
     }
 
     public function tambahAlamatPengguna()
@@ -27,8 +27,14 @@ class AlamatPenggunaController extends BaseController
             'alamat_utama' => $this->request->getPost('alamat_utama') ? 1 : 0,
         ];
 
-        $this->userModel->update(session('user_id'), $data);
-        return redirect()->to('/alamat')->with('success', 'Address added successfully.');
+        // Jika alamat utama, reset alamat utama lainnya
+        if ($data['alamat_utama']) {
+            $this->userModel->update(null, ['alamat_utama' => 0]);
+        }
+
+        $this->userModel->update(session('id'), $data);
+
+        return redirect()->to('/address')->with('success', 'Alamat berhasil ditambahkan');
     }
 
     public function updateAlamatPengguna($id)
@@ -38,22 +44,20 @@ class AlamatPenggunaController extends BaseController
             'tipe_alamat' => $this->request->getPost('tipe_alamat'),
             'alamat_utama' => $this->request->getPost('alamat_utama') ? 1 : 0,
         ];
-    
-        if ($this->userModel->update($id, $data)) {
-            return redirect()->to('/alamat')->with('success', 'Alamat berhasil diperbarui.');
-        } else {
-            return redirect()->back()->with('error', 'Alamat gagal diperbarui.');
+
+        // Jika alamat utama, reset alamat utama lainnya
+        if ($data['alamat_utama']) {
+            $this->userModel->update(null, ['alamat_utama' => 0]);
         }
+
+        $this->userModel->update($id, $data);
+
+        return redirect()->to('/address')->with('success', 'Alamat berhasil diperbarui');
     }
 
     public function hapusAlamatPengguna($id)
     {
-        $this->userModel->update($id, [
-            'alamat' => null,
-            'tipe_alamat' => null,
-            'alamat_utama' => 0,
-        ]);
-
-        return redirect()->to('/alamat')->with('success', 'Address deleted successfully.');
+        $this->userModel->update($id, ['alamat' => null, 'tipe_alamat' => null, 'alamat_utama' => 0]);
+        return redirect()->to('/address')->with('success', 'Alamat berhasil dihapus');
     }
 }
