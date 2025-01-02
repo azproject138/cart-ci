@@ -46,7 +46,7 @@
                 </div>
                 <div class="modal-body">
                     <h5><?= isset($user) ? 'Edit Alamat' : 'Tambah Alamat' ?></h5>
-                    <form action="/alamat/tambah-alamat-pengguna" method="post">
+                    <form action="/alamat/tambah-alamat-pengguna" method="POST">
                         <?= csrf_field() ?>
                         <div class="form-group">
                             <label for="alamat">Alamat</label>

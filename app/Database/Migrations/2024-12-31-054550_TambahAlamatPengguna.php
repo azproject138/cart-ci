@@ -8,23 +8,21 @@ class TambahAlamatPengguna extends Migration
 {
     public function up()
     {
-        $fields = [
+        $this->forge->addColumn('users', [
             'alamat' => [
                 'type' => 'TEXT',
                 'null' => true,
             ],
             'tipe_alamat' => [
                 'type' => 'ENUM',
-                'constraint' => ['home', 'office'],
+                'constraint' => ['rumah', 'kantor'],
                 'null' => true,
             ],
             'alamat_utama' => [
                 'type' => 'BOOLEAN',
                 'default' => false,
             ],
-        ];
-
-        $this->forge->addColumn('users', $fields);
+        ]);
     }
 
     public function down()

@@ -18,7 +18,7 @@ $routes->get('profile/delete-profile-pengguna', 'ProfilePenggunaController::dele
 
 //alamat pengguna
 $routes->group('alamat', ['filter' => 'auth'], function ($routes) {
-    $routes->get('/', 'AlamatPenggunaController::index');   
+    $routes->get('/', 'AlamatPenggunaController::index');
     $routes->post('tambah-alamat-pengguna', 'AlamatPenggunaController::tambahAlamatPengguna');
     $routes->post('update-alamat-pengguna/(:num)', 'AlamatPenggunaController::updateAlamatPengguna/$1');
     $routes->get('hapus-alamat-pengguna/(:num)', 'AlamatPenggunaController::hapusAlamatPengguna/$1');
