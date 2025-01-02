@@ -3,9 +3,9 @@
     <hr>
     <?php if (!empty($user['whatsapp_number'])): ?>
         <div class="alert alert-info">
-            No.WhatsApp Anda: <?= esc($user['whatsapp_number']) ?>
+            <strong>No.WhatsApp:</strong> <?= esc($user['whatsapp_number']) ?>
             <br>
-            <strong>Status:</strong> <?= $user['is_main_whatsapp'] ? 'Nomor Utama' : 'Nomor Cadangan' ?>
+            <strong>Status:</strong> <?= $user['is_main_whatsapp'] ? 'Utama' : 'Cadangan' ?>
         </div>
     <?php endif; ?>
 

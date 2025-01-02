@@ -5,10 +5,10 @@
         <div class="alert alert-info">
             <strong>Alamat:</strong> <?= esc($user['alamat']) ?><br>
             <strong>Jenis:</strong> <?= esc($user['tipe_alamat']) == 'rumah' ? 'Rumah' : 'Kantor' ?><br>
-            <strong>Status:</strong> <?= $user['alamat_utama'] ? 'Alamat Utama' : 'Alamat Cadangan' ?>
+            <strong>Status:</strong> <?= $user['alamat_utama'] ? 'Utama' : 'Cadangan' ?>
         </div>
     <?php endif; ?>
-    <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#tambahAlamatPengguna">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahAlamatPengguna">
         <i class="bi bi-plus-lg"></i> Add
     </button>
 
@@ -47,8 +47,10 @@
         </div>
     </div>
     <?php if (!empty($user['alamat'])): ?>
-        <form action="<?= site_url('/alamat/hapus-alamat-pengguna') ?>" method="get" class="mt-3">
-            <button type="submit" class="btn btn-danger">Hapus Alamat</button>
+        <form action="<?= site_url('/alamat/hapus-alamat-pengguna') ?>" method="get" class="mt-2">
+            <button type="submit" class="btn btn-danger">
+                <i class="bi bi-trash-fill"></i> Delete
+            </button>
         </form>
     <?php endif; ?>
 </div>
