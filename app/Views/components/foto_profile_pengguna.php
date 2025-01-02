@@ -7,11 +7,9 @@
             <img src="<?= base_url('/uploads/profiles/' . $user['profile_picture']) ?>" alt="Foto Profil" class="img-thumbnail" width="200">
         </div>
         <div class="col-md-8">
-            <h3><?= $user['username'] ?></h3>
             <form action="<?= site_url('profile/upload-profile-pengguna') ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field() ?>
                 <div class="mb-3">
-                    <label for="profile_picture" class="form-label">Upload Foto Profil</label>
                     <input type="file" class="form-control" id="profile_picture" name="profile_picture">
                 </div>
                 <button type="submit" class="btn btn-primary">

@@ -1,13 +1,20 @@
 <div class="mt-5">
     <h4>Daftar Alamat</h4>
     <hr>
-    <?php if (!empty($user['alamat'])): ?>
+
+    <?php if (empty($user['alamat'])): ?>
+        <div class="alert alert-warning">
+            <strong>Alamat belum ditambahkan.</strong>
+            <a href="<?= site_url('/alamat') ?>" class="alert-link">Tambahkan sekarang</a>.
+        </div>
+    <?php else: ?>
         <div class="alert alert-info">
             <strong>Alamat:</strong> <?= esc($user['alamat']) ?><br>
             <strong>Jenis:</strong> <?= esc($user['tipe_alamat']) == 'rumah' ? 'Rumah' : 'Kantor' ?><br>
             <strong>Status:</strong> <?= $user['alamat_utama'] ? 'Utama' : 'Cadangan' ?>
         </div>
     <?php endif; ?>
+
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahAlamatPengguna">
         <i class="bi bi-plus-lg"></i> Add
     </button>

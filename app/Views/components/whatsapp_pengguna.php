@@ -1,9 +1,15 @@
 <div class="mt-5">
     <h4>Daftar Nomor WhatsApp</h4>
     <hr>
-    <?php if (!empty($user['whatsapp_number'])): ?>
+
+    <?php if (empty($user['whatsapp_number'])): ?>
+        <div class="alert alert-warning">
+            <strong>Nomor WhatsApp belum ditambahkan.</strong>
+            <a href="<?= site_url('/user/whatsapp') ?>" class="alert-link">Tambahkan sekarang</a>.
+        </div>
+    <?php else: ?>
         <div class="alert alert-info">
-            <strong>No.WhatsApp:</strong> <?= esc($user['whatsapp_number']) ?>
+            <strong>No WhatsApp:</strong> <?= esc($user['whatsapp_number']) ?>
             <br>
             <strong>Status:</strong> <?= $user['is_main_whatsapp'] ? 'Utama' : 'Cadangan' ?>
         </div>
