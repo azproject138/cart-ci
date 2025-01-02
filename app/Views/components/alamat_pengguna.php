@@ -1,37 +1,13 @@
 <div class="mt-5">
     <h4>Daftar Alamat</h4>
     <hr>
-    <table class="table mt-3">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Alamat</th>
-                <th>Jenis</th>
-                <th>Utama</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if (!empty($users)): ?>
-                <?php foreach ($users as $user): ?>
-                    <tr>
-                        <td><?= $user['id'] ?></td>
-                        <td><?= $user['alamat'] ?></td>
-                        <td><?= $user['tipe_alamat'] ?></td>
-                        <td><?= $user['alamat_utama'] ? 'Ya' : 'Tidak' ?></td>
-                        <td>
-                            <a href="/address/edit/<?= $user['id'] ?>" class="btn btn-warning">Edit</a>
-                            <a href="/address/delete/<?= $user['id'] ?>" class="btn btn-danger" onclick="return confirm('Hapus alamat?')">Hapus</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="5">Belum ada alamat yang ditambahkan.</td>
-                </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
+    <?php if (!empty($user['alamat'])): ?>
+        <div class="alert alert-info">
+            <strong>Alamat:</strong> <?= esc($user['alamat']) ?><br>
+            <strong>Jenis:</strong> <?= esc($user['tipe_alamat']) == 'rumah' ? 'Rumah' : 'Kantor' ?><br>
+            <strong>Status:</strong> <?= $user['alamat_utama'] ? 'Alamat Utama' : 'Alamat Cadangan' ?>
+        </div>
+    <?php endif; ?>
     <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#tambahAlamatPengguna">
         <i class="bi bi-plus-lg"></i> Add
     </button>
@@ -45,28 +21,34 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h5><?= isset($user) ? 'Edit Alamat' : 'Tambah Alamat' ?></h5>
-                    <form action="/alamat/tambah-alamat-pengguna" method="POST">
-                        <?= csrf_field() ?>
+                    <form action="<?= site_url('/alamat/tambah-alamat-pengguna') ?>" method="post">
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
-                            <textarea name="alamat" id="alamat" class="form-control" required></textarea>
+                            <textarea class="form-control" name="alamat" id="alamat" rows="3" required><?= esc($user['alamat']) ?></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="tipe_alamat">Jenis Alamat</label>
-                            <select name="tipe_alamat" id="tipe_alamat" class="form-control" required>
-                                <option value="rumah">Rumah</option>
-                                <option value="kantor">Kantor</option>
-                            </select>
+                            <label>Jenis Alamat</label><br>
+                            <label>
+                                <input type="radio" name="tipe_alamat" value="rumah" <?= esc($user['tipe_alamat']) == 'rumah' ? 'checked' : '' ?>> Rumah
+                            </label>
+                            <label class="ml-3">
+                                <input type="radio" name="tipe_alamat" value="kantor" <?= esc($user['tipe_alamat']) == 'kantor' ? 'checked' : '' ?>> Kantor
+                            </label>
                         </div>
                         <div class="form-group">
-                            <input type="checkbox" name="alamat_utama" id="alamat_utama" value="1">
-                            <label for="alamat_utama">Jadikan alamat utama</label>
+                            <label>
+                                <input type="checkbox" name="utama" <?= $user['alamat_utama'] ? 'checked' : '' ?>> Jadikan Alamat Utama
+                            </label>
                         </div>
-                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Simpan Alamat</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <?php if (!empty($user['alamat'])): ?>
+        <form action="<?= site_url('/alamat/hapus-alamat-pengguna') ?>" method="get" class="mt-3">
+            <button type="submit" class="btn btn-danger">Hapus Alamat</button>
+        </form>
+    <?php endif; ?>
 </div>

@@ -13,76 +13,42 @@ class AlamatPenggunaController extends BaseController
         $this->userModel = new UserModel();
     }
 
+    // Menampilkan daftar alamat pengguna
     public function index()
     {
-        $userId = session('id');
-
+        $userId = session()->get('user_id'); // Ambil user_id dari session
         $user = $this->userModel->find($userId);
 
-        if (!$user) {
-            return redirect()->to('/login')->with('error', 'Pengguna tidak ditemukan.');
-        }
-
-        $data['users'] = [$user];
-        return view('components/alamat_pengguna', $data);
+        return view('profile/index', ['user' => $user]);
     }
 
-
+    // Menambahkan atau mengedit alamat
     public function tambahAlamatPengguna()
     {
-        $userId = session('id');
+        $userId = session()->get('user_id');
         $data = [
             'alamat' => $this->request->getPost('alamat'),
             'tipe_alamat' => $this->request->getPost('tipe_alamat'),
-            'alamat_utama' => $this->request->getPost('alamat_utama') ? 1 : 0,
+            'alamat_utama' => $this->request->getPost('utama') ? 1 : 0
         ];
 
-        // Validasi data kosong
-        if (empty($data['alamat']) || empty($data['tipe_alamat'])) {
-            return redirect()->back()->with('error', 'Alamat atau jenis alamat tidak boleh kosong.');
-        }
-
-        // Reset alamat utama jika diperlukan
-        if ($data['alamat_utama']) {
-            $this->userModel->where('id !=', $userId)->set(['alamat_utama' => 0])->update();
-        }
-
-        // Tambahkan atau perbarui alamat pengguna
+        // Update data pengguna
         $this->userModel->update($userId, $data);
 
-        return redirect()->to('/alamat')->with('success', 'Alamat berhasil ditambahkan.');
+        return redirect()->to('/alamat')->with('success', 'Alamat berhasil disimpan.');
     }
 
-    public function updateAlamatPengguna($id)
+    // Menghapus alamat
+    public function hapusAlamatPengguna()
     {
-        $userId = session('id');
-        $data = [
-            'alamat' => $this->request->getPost('alamat'),
-            'tipe_alamat' => $this->request->getPost('tipe_alamat'),
-            'alamat_utama' => $this->request->getPost('alamat_utama') ? 1 : 0,
-        ];
+        $userId = session()->get('user_id');
+        $this->userModel->update($userId, [
+            'alamat' => null,
+            'tipe_alamat' => null,
+            'alamat_utama' => 0
+        ]);
 
-        if (empty($data['alamat']) || empty($data['tipe_alamat'])) {
-            return redirect()->back()->with('error', 'Alamat atau jenis alamat tidak boleh kosong.');
-        }
-
-        $exists = $this->userModel->where('id', $id)->first();
-        if (!$exists) {
-            return redirect()->to('/alamat')->with('error', 'Data tidak ditemukan.');
-        }
-
-        if ($data['alamat_utama']) {
-            $this->userModel->where('alamat_utama', 1)->set(['alamat_utama' => 0])->update();
-        }
-
-        $this->userModel->update($id, $data);
-
-        return redirect()->to('/alamat')->with('success', 'Alamat berhasil diperbarui.');
+        return redirect()->to('/alamat')->with('success', 'Alamat berhasil dihapus.');
     }
 
-    public function hapusAlamatPengguna($id)
-    {
-        $this->userModel->update($id, ['alamat' => null, 'tipe_alamat' => null, 'alamat_utama' => 0]);
-        return redirect()->to('/alamat')->with('success', 'Alamat berhasil dihapus');
-    }
 }

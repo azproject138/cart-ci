@@ -16,7 +16,7 @@ class TambahAlamatPengguna extends Migration
             'tipe_alamat' => [
                 'type' => 'ENUM',
                 'constraint' => ['rumah', 'kantor'],
-                'null' => true,
+                'default' => 'rumah',
             ],
             'alamat_utama' => [
                 'type' => 'BOOLEAN',
