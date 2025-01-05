@@ -267,13 +267,12 @@ form h2 {
 }
 
 .sidebar ul li {
-    padding: 15px;
+    padding: 5px;
 }
 
 .sidebar ul li a {
     color: rgb(134, 134, 134);
     text-decoration: none;
-    width: 215px;
     font-size: 15px;
     display: block;
     transition: color 0.3s ease;
