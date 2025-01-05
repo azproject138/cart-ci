@@ -8,7 +8,7 @@ class AddTabelAlamatDanWhatsappPengguna extends Migration
 {
     public function up()
     {
-        $this->forge->addColumn('orders', [
+        $this->forge->addColumn('pesanan_pengguna', [
             'user_id' => [
                 'type'       => 'INT',
                 'constraint' => 11,
