@@ -48,7 +48,7 @@ class PesananPenggunaController extends BaseController
     // Tampilkan form edit pesanan
     public function editPesananPengguna($id)
     {
-        $data['order'] = $this->PesananPenggunaModel->find($id);
+        $data['pesananpenggunas'] = $this->PesananPenggunaModel->find($id);
         return view('components/edit_pesanan_pengguna', $data);
     }
 
