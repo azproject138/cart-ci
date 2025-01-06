@@ -9,7 +9,7 @@
     }
 </style>
 <button id="tambah-pesanan" class="tambah-pesanan btn btn-bd-primary">
-    <i class="bi bi-cart-plus-fill"></i> <a href="#">Tambah Pesanan</a>
+    <i class="bi bi-cart-plus-fill"></i> <a href="/pesanan">Tambah Pesanan</a>
 </button>
 
 <div class="container mt-3">

@@ -38,3 +38,6 @@ $routes->post('settings/update-email-pengguna', 'SettingController::updateEmailP
 $routes->get('/settings/verify-email-pengguna', 'SettingController::verifyEmailPengguna');
 $routes->post('settings/update-email-pengguna', 'SettingController::updateEmailPengguna');
 $routes->post('settings/update-password-pengguna', 'SettingController::updatePasswordPengguna');
+
+//pesanan pengguna
+$routes->get('/pesanan', 'PesananPenggunaController::index');
