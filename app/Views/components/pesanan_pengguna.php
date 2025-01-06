@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <h1 class="text-center">Tambah Pesanan</h1>
-    <form action="#" method="#">
-
+    <form action="<?= base_url('orders/store'); ?>" method="post">
+        <?= csrf_field(); ?>
         <!-- Jenis Pesanan -->
         <div class="mb-3">
             <label for="jenisPesanan" class="form-label">Jenis Pesanan</label>
