@@ -18,10 +18,12 @@
         <?= $this->include('components/navbar') ?>
         <?= $this->include('components/sidebar') ?>
     </header>
-    <main>
+
+    <div id="main-content">
+        <button id="open-btn" class="open-btn mt-1"><i class="bi bi-list"></i></button>
         <?= $this->include('components/alerts') ?>
         <?= $this->renderSection('content') ?>
-    </main>
+    </div>
 
     <script src="/assets/sidebar.js"></script>
     <script src="/assets/toggleDropdown.js"></script>
