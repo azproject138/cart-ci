@@ -2,6 +2,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <span class="navbar-brand" href="#"><?= session('user')['username'] ?></span>
+        <div id="main-content">
+            <button id="open-btn" class="open-btn mt-1"><i class="bi bi-list"></i></button>
+        </div>
         <div class="dropdown">
             <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
                 <img src="<?= base_url('uploads/profiles/' . (session()->get('profile_picture') ?: 'default-profile.jpg')) ?>" alt="Foto Profil" class="rounded-circle" width="30" height="30">

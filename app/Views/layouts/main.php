@@ -12,18 +12,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="stylesheet" href="/assets/style.css">
 
+    <style>
+        main {
+            width: 100%;
+            padding: 20px;
+            margin-left: 250px;
+            transition: margin-left 0.3s ease;
+        }
+    </style>
 </head>
 <body>
-    <?= $this->include('components/navbar') ?>
-    <?= $this->include('components/sidebar') ?>
-
-    <div id="main-content">
-        <button id="open-btn" class="open-btn"><i class="bi bi-list"></i></button>
-    </div>
-
-    <!--main content-->
+    <header>
+        <?= $this->include('components/navbar') ?>
+        <?= $this->include('components/sidebar') ?>
+    </header>
+    <!--alert--> 
+    <?= $this->include('components/alerts') ?>
     <main>
-        <?= $this->include('components/alerts') ?>
         <?= $this->renderSection('content') ?>
     </main>
 
