@@ -84,7 +84,7 @@ class PesananPenggunaController extends BaseController
             'whatsapp_number'   => $this->request->getPost('whatsapp_number'),
             'ketentuan_servis'  => $this->request->getPost('ketentuan_servis'),
         ]);
-        return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil disimpan.');
+        return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil diperbarui.');
     }
 
     public function hapusPesananPengguna($id)
