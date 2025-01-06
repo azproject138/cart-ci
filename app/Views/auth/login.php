@@ -29,19 +29,10 @@
             height: 100vh;
         }
 
-        .alerts {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            transform: translateX(-50%);
-        }
-
     </style>
 </head>
 <body>
-    <div class="alerts">
-        <?= $this->include('components/alerts') ?>
-    </div>
+    <?= $this->include('components/alerts') ?>
     <main>
         <div class="row">
             <form class="form-login" action="/login" method="post">
