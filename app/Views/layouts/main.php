@@ -18,9 +18,9 @@
         <?= $this->include('components/navbar') ?>
         <?= $this->include('components/sidebar') ?>
     </header>
-    <!--alert--> 
-    <?= $this->include('components/alerts') ?>
     <main>
+        <!--alert--> 
+        <?= $this->include('components/alerts') ?>
         <?= $this->renderSection('content') ?>
     </main>
 

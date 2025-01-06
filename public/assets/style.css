@@ -20,7 +20,7 @@ body {
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;  
+    -moz-osx-font-smoothing: grayscale;
 }
 
 @media (max-width: 600px) {
@@ -89,9 +89,8 @@ form {
 }
 
 .alert-danger {
-    margin: 0 0 0;
+    margin-top: 5px;
     font-size: 15px;
-    width: 280px;
     background-color: #b62b2b;
     height: 50%;
     color: #ffffff;
@@ -108,14 +107,13 @@ form {
 }
 
 .alert-success {
-    margin: 0 0 0;
     font-size: 15px;
     background-color: #4a9e4a;
     color: #ffffff;
     border: none;
     margin-bottom: 0;
-    margin-top: -50px;
-    margin-left: 0;
+    margin-top: 10px;
+    margin-left: 10px;
     margin-right: 0;
     display: absolute;
     flex-direction: column;
