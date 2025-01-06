@@ -28,20 +28,22 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($orders as $key => $order): ?>
+                <?php if (!empty($pesananpenggunas)): ?>
+                    <?php foreach ($pesananpenggunas as $key => $pesananpengguna): ?>
+                        <tr>
+                            <td><?= $key + 1; ?></td>
+                            <td><?= $pesananpengguna['jenis_pesanan']; ?></td>
+                            <td><?= $pesananpengguna['merek_pesanan']; ?></td>
+                            <td><?= $pesananpengguna['kategori_pesanan']; ?></td>
+                            <td><?= $pesananpengguna['jumlah_pesanan']; ?></td>
+                            <td><?= $pesananpengguna['deskripsi_pesanan']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
                     <tr>
-                        <td><?= $key + 1; ?></td>
-                        <td><?= $order['jenis_pesanan']; ?></td>
-                        <td><?= $order['merek_pesanan']; ?></td>
-                        <td><?= $order['kategori_pesanan']; ?></td>
-                        <td><?= $order['jumlah_pesanan']; ?></td>
-                        <td><?= $order['deskripsi_pesanan']; ?></td>
-                        <td>
-                            <a href="<?= base_url('orders/edit/' . $order['id']); ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="<?= base_url('orders/delete/' . $order['id']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
-                        </td>
+                        <td colspan="6" class="text-center">Tidak ada pesanan.</td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endif; ?>
             </tbody>
         </table>
     </div>
