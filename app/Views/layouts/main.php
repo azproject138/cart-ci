@@ -19,7 +19,6 @@
         <?= $this->include('components/sidebar') ?>
     </header>
     <main>
-        <!--alert--> 
         <?= $this->include('components/alerts') ?>
         <?= $this->renderSection('content') ?>
     </main>
