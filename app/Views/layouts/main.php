@@ -12,14 +12,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="stylesheet" href="/assets/style.css">
 
-    <style>
-        main {
-            width: 100%;
-            padding: 20px;
-            margin-left: 250px;
-            transition: margin-left 0.3s ease;
-        }
-    </style>
 </head>
 <body>
     <header>
