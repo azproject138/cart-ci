@@ -1031,3 +1031,406 @@ INFO - 2025-01-06 18:00:11 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2025-01-06 18:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-01-06 18:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-01-06 18:03:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-06 18:09:29 --> mysqli_sql_exception: Duplicate column name 'whatsapp_number' in C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php(312): mysqli->query('ALTER TABLE `us...', 0)
+#1 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `us...')
+#2 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `us...')
+#3 C:\xampp\htdocs\cart-ci\system\Database\Forge.php(772): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `us...')
+#4 C:\xampp\htdocs\cart-ci\app\Database\Migrations\2024-12-25-034354_AddProfilePictureToUsers.php(11): CodeIgniter\Database\Forge->addColumn('users', Array)
+#5 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(867): App\Database\Migrations\AddWhatsappNumberToUsers->up()
+#6 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\cart-ci\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\cart-ci\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\cart-ci\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\cart-ci\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\cart-ci\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\cart-ci\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-01-06 18:09:34 --> mysqli_sql_exception: Duplicate column name 'whatsapp_number' in C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php(312): mysqli->query('ALTER TABLE `us...', 0)
+#1 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `us...')
+#2 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `us...')
+#3 C:\xampp\htdocs\cart-ci\system\Database\Forge.php(772): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `us...')
+#4 C:\xampp\htdocs\cart-ci\app\Database\Migrations\2024-12-25-034354_AddProfilePictureToUsers.php(11): CodeIgniter\Database\Forge->addColumn('users', Array)
+#5 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(867): App\Database\Migrations\AddWhatsappNumberToUsers->up()
+#6 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\cart-ci\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\cart-ci\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\cart-ci\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\cart-ci\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\cart-ci\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\cart-ci\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-01-06 18:09:44 --> mysqli_sql_exception: Table 'fp_cart_ci4_db.pesanan_pengguna' doesn't exist in C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php(312): mysqli->query('ALTER TABLE `pe...', 0)
+#1 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `pe...')
+#2 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `pe...')
+#3 C:\xampp\htdocs\cart-ci\system\Database\Forge.php(772): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `pe...')
+#4 C:\xampp\htdocs\cart-ci\app\Database\Migrations\2025-01-05-055429_AddTabelAlamatDanWhatsappPengguna.php(11): CodeIgniter\Database\Forge->addColumn('pesanan_penggun...', Array)
+#5 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(867): App\Database\Migrations\AddTabelAlamatDanWhatsappPengguna->up()
+#6 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\cart-ci\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\cart-ci\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\cart-ci\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\cart-ci\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\cart-ci\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\cart-ci\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-01-06 18:10:53 --> mysqli_sql_exception: Table 'fp_cart_ci4_db.pesanan_pengguna' doesn't exist in C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php(312): mysqli->query('ALTER TABLE `pe...', 0)
+#1 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `pe...')
+#2 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `pe...')
+#3 C:\xampp\htdocs\cart-ci\system\Database\Forge.php(772): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `pe...')
+#4 C:\xampp\htdocs\cart-ci\app\Database\Migrations\2025-01-05-055429_AddTabelAlamatDanWhatsappPengguna.php(11): CodeIgniter\Database\Forge->addColumn('pesanan_penggun...', Array)
+#5 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(867): App\Database\Migrations\AddTabelAlamatDanWhatsappPengguna->up()
+#6 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\cart-ci\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\cart-ci\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\cart-ci\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\cart-ci\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\cart-ci\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\cart-ci\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-01-06 18:12:27 --> mysqli_sql_exception: Table 'fp_cart_ci4_db.pesanan_pengguna' doesn't exist in C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php(312): mysqli->query('ALTER TABLE `pe...', 0)
+#1 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `pe...')
+#2 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `pe...')
+#3 C:\xampp\htdocs\cart-ci\system\Database\Forge.php(772): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `pe...')
+#4 C:\xampp\htdocs\cart-ci\app\Database\Migrations\2025-01-05-055429_AddTabelAlamatDanWhatsappPengguna.php(11): CodeIgniter\Database\Forge->addColumn('pesanan_penggun...', Array)
+#5 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(867): App\Database\Migrations\AddTabelAlamatDanWhatsappPengguna->up()
+#6 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\cart-ci\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\cart-ci\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\cart-ci\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\cart-ci\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\cart-ci\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\cart-ci\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-01-06 18:15:25 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'fp_db_cart_ci4' in C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'fp_db_cart_ci4', 3306, '', 0)
+#1 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(1485): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(1505): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\cart-ci\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\cart-ci\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\cart-ci\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\cart-ci\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\cart-ci\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\cart-ci\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'fp_db_cart_ci4' in C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(1485): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(1505): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(759): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(163): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\xampp\htdocs\cart-ci\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\xampp\htdocs\cart-ci\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 C:\xampp\htdocs\cart-ci\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 C:\xampp\htdocs\cart-ci\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\cart-ci\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\cart-ci\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-01-06 18:15:48 --> mysqli_sql_exception: Table 'fp_db_cart_ci4.pesanan_pengguna' doesn't exist in C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php(312): mysqli->query('ALTER TABLE `pe...', 0)
+#1 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `pe...')
+#2 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `pe...')
+#3 C:\xampp\htdocs\cart-ci\system\Database\Forge.php(772): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `pe...')
+#4 C:\xampp\htdocs\cart-ci\app\Database\Migrations\2025-01-05-055429_AddTabelAlamatDanWhatsappPengguna.php(11): CodeIgniter\Database\Forge->addColumn('pesanan_penggun...', Array)
+#5 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(867): App\Database\Migrations\AddTabelAlamatDanWhatsappPengguna->up()
+#6 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\cart-ci\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\cart-ci\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\cart-ci\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\cart-ci\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\cart-ci\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\cart-ci\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-01-06 18:16:34 --> mysqli_sql_exception: Duplicate column name 'whatsapp_number' in C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php(312): mysqli->query('ALTER TABLE `us...', 0)
+#1 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `us...')
+#2 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `us...')
+#3 C:\xampp\htdocs\cart-ci\system\Database\Forge.php(772): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `us...')
+#4 C:\xampp\htdocs\cart-ci\app\Database\Migrations\2024-12-25-034354_AddProfilePictureToUsers.php(11): CodeIgniter\Database\Forge->addColumn('users', Array)
+#5 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(867): App\Database\Migrations\AddWhatsappNumberToUsers->up()
+#6 C:\xampp\htdocs\cart-ci\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\cart-ci\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\cart-ci\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\cart-ci\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\cart-ci\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\cart-ci\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\cart-ci\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-01-06 18:24:10 --> ErrorException: Undefined variable $orders
+[Method: GET, Route: /]
+in APPPATH\Views\pages\home.php on line 29.
+ 1 APPPATH\Views\pages\home.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $orders', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\pages\\home.php', 29)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\pages\\home.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pages/home', [], true)
+ 5 APPPATH\Controllers\Home.php(9): view('pages/home')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2025-01-06 18:24:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:24:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:24:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:24:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-06 18:26:20 --> mysqli_sql_exception: Table 'fp_cart_ci4_db.pesananpenggunas' doesn't exist in C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\cart-ci\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\cart-ci\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\cart-ci\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\cart-ci\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\cart-ci\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\cart-ci\app\Controllers\PesananPenggunaController.php(35): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\cart-ci\system\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+#10 C:\xampp\htdocs\cart-ci\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+#11 C:\xampp\htdocs\cart-ci\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\cart-ci\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\cart-ci\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\cart-ci\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\cart-ci\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-01-06 18:26:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'fp_cart_ci4_db.pesananpenggunas' doesn't exist
+[Method: POST, Route: pesanan/tambah-pesanan-pengguna]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pesananpenggunas` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (:user_id:, :jenis_pesanan:, :merek_pesanan:, :kategori_pesanan:, :jumlah_pesanan:, :deskripsi_pesanan:, :alamat:, :whatsapp_number:, :ketentuan_servis:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\PesananPenggunaController.php(35): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+CRITICAL - 2025-01-06 18:26:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'fp_cart_ci4_db.pesananpenggunas' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pesananpenggunas` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (NULL, \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:26:20\', \'2025-01-06 18:26:20\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pesananpenggunas` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (NULL, \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:26:20\', \'2025-01-06 18:26:20\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pesananpenggunas` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (:user_id:, :jenis_pesanan:, :merek_pesanan:, :kategori_pesanan:, :jumlah_pesanan:, :deskripsi_pesanan:, :alamat:, :whatsapp_number:, :ketentuan_servis:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\PesananPenggunaController.php(35): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+CRITICAL - 2025-01-06 18:26:20 --> [Caused by] mysqli_sql_exception: Table 'fp_cart_ci4_db.pesananpenggunas' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pesananpenggunas` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (NULL, \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:26:20\', \'2025-01-06 18:26:20\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pesananpenggunas` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (NULL, \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:26:20\', \'2025-01-06 18:26:20\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pesananpenggunas` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (NULL, \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:26:20\', \'2025-01-06 18:26:20\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pesananpenggunas` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (:user_id:, :jenis_pesanan:, :merek_pesanan:, :kategori_pesanan:, :jumlah_pesanan:, :deskripsi_pesanan:, :alamat:, :whatsapp_number:, :ketentuan_servis:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\PesananPenggunaController.php(35): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+ERROR - 2025-01-06 18:27:27 --> mysqli_sql_exception: Column 'user_id' cannot be null in C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\cart-ci\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\cart-ci\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\cart-ci\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\cart-ci\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\cart-ci\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\cart-ci\app\Controllers\PesananPenggunaController.php(35): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\cart-ci\system\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+#10 C:\xampp\htdocs\cart-ci\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+#11 C:\xampp\htdocs\cart-ci\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\cart-ci\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\cart-ci\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\cart-ci\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\cart-ci\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-01-06 18:27:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'user_id' cannot be null
+[Method: POST, Route: pesanan/tambah-pesanan-pengguna]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (:user_id:, :jenis_pesanan:, :merek_pesanan:, :kategori_pesanan:, :jumlah_pesanan:, :deskripsi_pesanan:, :alamat:, :whatsapp_number:, :ketentuan_servis:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\PesananPenggunaController.php(35): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+CRITICAL - 2025-01-06 18:27:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'user_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (NULL, \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:27:27\', \'2025-01-06 18:27:27\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (NULL, \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:27:27\', \'2025-01-06 18:27:27\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (:user_id:, :jenis_pesanan:, :merek_pesanan:, :kategori_pesanan:, :jumlah_pesanan:, :deskripsi_pesanan:, :alamat:, :whatsapp_number:, :ketentuan_servis:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\PesananPenggunaController.php(35): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+CRITICAL - 2025-01-06 18:27:27 --> [Caused by] mysqli_sql_exception: Column 'user_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (NULL, \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:27:27\', \'2025-01-06 18:27:27\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (NULL, \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:27:27\', \'2025-01-06 18:27:27\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (NULL, \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:27:27\', \'2025-01-06 18:27:27\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (:user_id:, :jenis_pesanan:, :merek_pesanan:, :kategori_pesanan:, :jumlah_pesanan:, :deskripsi_pesanan:, :alamat:, :whatsapp_number:, :ketentuan_servis:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\PesananPenggunaController.php(35): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2025-01-06 18:32:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-06 18:32:13 --> mysqli_sql_exception: Column 'alamat' cannot be null in C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\cart-ci\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\cart-ci\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\cart-ci\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\cart-ci\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\cart-ci\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\cart-ci\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\cart-ci\system\BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\cart-ci\app\Controllers\PesananPenggunaController.php(40): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\cart-ci\system\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+#10 C:\xampp\htdocs\cart-ci\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+#11 C:\xampp\htdocs\cart-ci\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\cart-ci\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\cart-ci\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\cart-ci\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\cart-ci\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-01-06 18:32:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'alamat' cannot be null
+[Method: POST, Route: pesanan/tambah-pesanan-pengguna]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (:user_id:, :jenis_pesanan:, :merek_pesanan:, :kategori_pesanan:, :jumlah_pesanan:, :deskripsi_pesanan:, :alamat:, :whatsapp_number:, :ketentuan_servis:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\PesananPenggunaController.php(40): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+CRITICAL - 2025-01-06 18:32:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'alamat' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (\'1\', \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:32:13\', \'2025-01-06 18:32:13\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (\'1\', \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:32:13\', \'2025-01-06 18:32:13\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (:user_id:, :jenis_pesanan:, :merek_pesanan:, :kategori_pesanan:, :jumlah_pesanan:, :deskripsi_pesanan:, :alamat:, :whatsapp_number:, :ketentuan_servis:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\PesananPenggunaController.php(40): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+CRITICAL - 2025-01-06 18:32:13 --> [Caused by] mysqli_sql_exception: Column 'alamat' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (\'1\', \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:32:13\', \'2025-01-06 18:32:13\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (\'1\', \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:32:13\', \'2025-01-06 18:32:13\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (\'1\', \'Servis Laptop\', \'HP\', \'mati total\', \'1\', \'aasasas\', NULL, NULL, \'Antar\', \'2025-01-06 18:32:13\', \'2025-01-06 18:32:13\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pesananpengguna` (`user_id`, `jenis_pesanan`, `merek_pesanan`, `kategori_pesanan`, `jumlah_pesanan`, `deskripsi_pesanan`, `alamat`, `whatsapp_number`, `ketentuan_servis`, `created_at`, `updated_at`) VALUES (:user_id:, :jenis_pesanan:, :merek_pesanan:, :kategori_pesanan:, :jumlah_pesanan:, :deskripsi_pesanan:, :alamat:, :whatsapp_number:, :ketentuan_servis:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\PesananPenggunaController.php(40): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2025-01-06 18:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:38:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:38:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:38:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:39:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:39:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:40:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:40:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 18:41:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

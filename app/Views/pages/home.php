@@ -13,14 +13,15 @@
     <i class="bi bi-cart-plus-fill"></i> <a href="/pesanan/create-pesanan-pengguna">Tambah Pesanan</a>
 </button>
 
-<h1>Data Pesanan Pengguna</h1>
+<h4>Daftar Pesanan Pengguna</h4>
 <table border="1">
     <tr>
         <th>No</th>
         <th>Jenis Pesanan</th>
-        <th>Merek</th>
-        <th>Kategori</th>
-        <th>Jumlah</th>
+        <th>Merek Pesanan</th>
+        <th>Kategori Pesanan</th>
+        <th>Ketentuan Servis</th>
+        <th>Jumlah Pesanan</th>
         <th>Alamat</th>
         <th>WhatsApp</th>
         <th>Aksi</th>
@@ -32,12 +33,13 @@
             <td><?= $order['jenis_pesanan'] ?></td>
             <td><?= $order['merek_pesanan'] ?></td>
             <td><?= $order['kategori_pesanan'] ?></td>
+            <td><?= $order['ketentuan_servis'] ?></td>
             <td><?= $order['jumlah_pesanan'] ?></td>
             <td><?= $order['alamat'] ?></td>
             <td><?= $order['whatsapp_number'] ?></td>
             <td>
                 <a href="/pesanan/edit/<?= $order['id'] ?>">Edit</a>
-                <a href="/pesanan/delete/<?= $order['id'] ?>">Hapus</a>
+                <a href="/pesanan/hapus-pesanan-pengguna/<?= $order['id'] ?>">Hapus</a>
             </td>
         </tr>
         <?php endforeach; ?>

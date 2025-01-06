@@ -1,7 +1,16 @@
 <div class="container mt-5">
     <h1 class="text-center">Tambah Pesanan</h1>
+
     <form action="<?= base_url('pesanan/tambah-pesanan-pengguna'); ?>" method="post">
         <?= csrf_field(); ?>
+
+        <label for="whatsapp_number">No Whatsapp:</label>
+        <input type="text" name="whatsapp_number" id="whatsapp_number" value="<?= old('whatsapp_number') ?>" required>
+
+        <!-- Alamat -->
+        <label for="alamat">Alamat:</label>
+        <input type="text" name="alamat" id="alamat" value="<?= old('alamat') ?>" required>
+
         <!-- Jenis Pesanan -->
         <div class="mb-3">
             <label for="jenisPesanan" class="form-label">Jenis Pesanan</label>
@@ -30,6 +39,13 @@
             </select>
         </div>
 
+        <label for="ketentuan_servis">Ketentuan Servis:</label>
+        <select name="ketentuan_servis" id="ketentuan_servis">
+            <option value="Pilih Ketentuan">Pilih Ketentuan</option>
+            <option value="Antar">Antar</option>
+            <option value="Ambil">Ambil</option>
+        </select>
+
         <!-- Jumlah Pesanan -->
         <div class="mb-3">
             <label for="jumlahPesanan" class="form-label">Jumlah Pesanan</label>
@@ -47,6 +63,7 @@
             <button type="submit" class="btn btn-primary">Tambah Pesanan</button>
         </div>
     </form>
+
 </div>
 <script src="/assets/pesananPengguna.js"></script>
 <script src="<?= base_url('js/bootstrap.bundle.min.js'); ?>"></script>

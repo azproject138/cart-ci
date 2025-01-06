@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class PesananPenggunaModel extends Model
 {
-    protected $table            = 'pesananpenggunas';
+    protected $table            = 'pesananpengguna';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -20,7 +20,8 @@ class PesananPenggunaModel extends Model
         'jumlah_pesanan', 
         'deskripsi_pesanan', 
         'alamat', 
-        'whatsapp_number',
+        'whatsapp_number', 
+        'ketentuan_servis'
     ];
 
     protected bool $allowEmptyInserts = false;
@@ -37,7 +38,17 @@ class PesananPenggunaModel extends Model
     protected $deletedField  = 'deleted_at';
 
     // Validation
-    protected $validationRules      = [];
+    protected $validationRules      = [
+        'user_id' => 'required',
+        'jenis_pesanan' => 'required',
+        'merek_pesanan' => 'required',
+        'kategori_pesanan' => 'required',
+        'jumlah_pesanan' => 'required|integer',
+        'deskripsi_pesanan' => 'required',
+        'alamat' => 'required',
+        'whatsapp_number' => 'required',
+        'ketentuan_servis' => 'required',
+    ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;

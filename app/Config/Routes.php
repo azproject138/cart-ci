@@ -45,4 +45,4 @@ $routes->get('/pesanan/create-pesanan-pengguna', 'PesananPenggunaController::cre
 $routes->post('/pesanan/tambah-pesanan-pengguna', 'PesananPenggunaController::tambahPesananPengguna'); // Simpan data pesanan baru
 $routes->get('/pesanan/edit-pesanan-pengguna/(:num)', 'PesananPenggunaController::editPesananPengguna/$1'); // Tampilkan form edit
 $routes->post('/pesanan/update-pesanan-pengguna/(:num)', 'PesananPenggunaController::updatePesananPengguna/$1'); // Update pesanan
-$routes->get('/pesanan/delete-pesanan-pengguna/(:num)', 'PesananPenggunaController::hapusPesananPengguna/$1'); // Hapus pesanan
+$routes->get('/pesanan/hapus-pesanan-pengguna/(:num)', 'PesananPenggunaController::hapusPesananPengguna/$1'); // Hapus pesanan
