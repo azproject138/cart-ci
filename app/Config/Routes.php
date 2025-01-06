@@ -40,9 +40,9 @@ $routes->post('settings/update-email-pengguna', 'SettingController::updateEmailP
 $routes->post('settings/update-password-pengguna', 'SettingController::updatePasswordPengguna');
 
 //pesanan pengguna
-$routes->get('/pesanan', 'PesananPenggunaController::index'); // Tampilkan daftar pesanan
+$routes->get('/pesanan', 'PesananPenggunaController::index');
 $routes->get('/pesanan/create-pesanan-pengguna', 'PesananPenggunaController::createPesananPengguna'); // Tampilkan form tambah
-$routes->post('/pesanan/tambah--pesanan-pengguna', 'PesananPenggunaController::tambahPesananPengguna'); // Simpan data pesanan baru
+$routes->post('/pesanan/tambah-pesanan-pengguna', 'PesananPenggunaController::tambahPesananPengguna'); // Simpan data pesanan baru
 $routes->get('/pesanan/edit-pesanan-pengguna/(:num)', 'PesananPenggunaController::editPesananPengguna/$1'); // Tampilkan form edit
 $routes->post('/pesanan/update-pesanan-pengguna/(:num)', 'PesananPenggunaController::updatePesananPengguna/$1'); // Update pesanan
 $routes->get('/pesanan/delete-pesanan-pengguna/(:num)', 'PesananPenggunaController::hapusPesananPengguna/$1'); // Hapus pesanan

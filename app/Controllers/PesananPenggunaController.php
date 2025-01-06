@@ -9,75 +9,67 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class PesananPenggunaController extends BaseController
 {
-    protected $PesananPenggunaModel;
+    protected $pesananModel;
+    protected $userModel;
 
     public function __construct()
     {
-        $this->PesananPenggunaModel = new PesananPenggunaModel();
+        $this->pesananModel = new PesananPenggunaModel();
+        $this->userModel = new \App\Models\UserModel();
     }
 
-    // Tampilkan daftar pesanan
     public function index()
     {
-        $data['pesananpenggunas'] = $this->PesananPenggunaModel->findAll();
+        $data['orders'] = $this->pesananModel->findAll();
         return view('pages/home', $data);
     }
 
-    // Tampilkan form tambah pesanan
     public function createPesananPengguna()
     {
-        return view('components/pesanan_pengguna');
+        $data['users'] = $this->userModel->findAll();
+        return view('components/pesanan_pengguna', $data);
     }
 
-    // Simpan data pesanan baru
     public function tambahPesananPengguna()
     {
-        $data = [
-            'jenis_pesanan'     => $this->request->getPost('jenis_pesanan'),
-            'merek_pesanan'     => $this->request->getPost('merek_pesanan'),
-            'kategori_pesanan'  => $this->request->getPost('kategori_pesanan'),
-            'ketentuan_servis'  => $this->request->getPost('ketentuan_servis'),
-            'jumlah_pesanan'    => $this->request->getPost('jumlah_pesanan'),
+        $this->pesananModel->save([
+            'user_id' => $this->request->getPost('user_id'),
+            'jenis_pesanan' => $this->request->getPost('jenis_pesanan'),
+            'merek_pesanan' => $this->request->getPost('merek_pesanan'),
+            'kategori_pesanan' => $this->request->getPost('kategori_pesanan'),
+            'jumlah_pesanan' => $this->request->getPost('jumlah_pesanan'),
             'deskripsi_pesanan' => $this->request->getPost('deskripsi_pesanan'),
-            'alamat'            => $this->request->getPost('alamat'),
-            'number_whatsapp'   => $this->request->getPost('number_whatsapp'),
-        ];
-
-        $this->PesananPenggunaModel->insert($data);
-
-        return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil ditambahkan!');
+            'alamat' => $this->request->getPost('alamat'),
+            'whatsapp_number' => $this->request->getPost('whatsapp_number'),
+        ]);
+        return redirect()->to('/pesanan');
     }
 
-    // Tampilkan form edit pesanan
     public function editPesananPengguna($id)
     {
-        $data['pesananpengguna'] = $this->PesananPenggunaModel->find($id);
-        return view('components/edit_pesanan_pengguna', $data);
+        $data['order'] = $this->pesananModel->find($id);
+        $data['users'] = $this->userModel->findAll();
+        return view('pesanan_pengguna/edit', $data);
     }
 
-    // Update data pesanan
     public function updatePesananPengguna($id)
     {
-        $data = [
-            'jenis_pesanan'     => $this->request->getPost('jenis_pesanan'),
-            'merek_pesanan'     => $this->request->getPost('merek_pesanan'),
-            'kategori_pesanan'  => $this->request->getPost('kategori_pesanan'),
-            'ketentuan_servis'  => $this->request->getPost('ketentuan_servis'),
-            'jumlah_pesanan'    => $this->request->getPost('jumlah_pesanan'),
+        $this->pesananModel->update($id, [
+            'user_id' => $this->request->getPost('user_id'),
+            'jenis_pesanan' => $this->request->getPost('jenis_pesanan'),
+            'merek_pesanan' => $this->request->getPost('merek_pesanan'),
+            'kategori_pesanan' => $this->request->getPost('kategori_pesanan'),
+            'jumlah_pesanan' => $this->request->getPost('jumlah_pesanan'),
             'deskripsi_pesanan' => $this->request->getPost('deskripsi_pesanan'),
-            'alamat'            => $this->request->getPost('alamat'),
-            'number_whatsapp'   => $this->request->getPost('number_whatsapp'),
-        ];
-
-        $this->PesananPenggunaModel->update($id, $data);
-
-        return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil diupdate!');
+            'alamat' => $this->request->getPost('alamat'),
+            'whatsapp_number' => $this->request->getPost('whatsapp_number'),
+        ]);
+        return redirect()->to('/pesanan');
     }
 
-    // Hapus pesanan
     public function hapusPesananPengguna($id)
     {
-        $this->PesananPenggunaModel->delete($id);
-        return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil dihapus!');
+        $this->pesananModel->delete($id);
+        return redirect()->to('/pesanan');
     }
 }

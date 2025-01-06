@@ -48,6 +48,11 @@ class Auth extends BaseController
                 'user_id' => $userModel->getInsertID(),
                 'username' => $data['username']
             ]);
+            $session->set('user', [
+                'id' => $user['id'],
+                'username' => $user['username'],
+                'email' => $user['email']
+            ]);
 
             return redirect()->to('/login')->with('success', 'Registrasi berhasil');
         } else {
@@ -103,6 +108,11 @@ class Auth extends BaseController
                 'user_id' => $user['id'], // Pastikan ID pengguna valid
                 'logged_in' => true,
             ]);
+            $session->set('user', [
+                'id' => $user['id'],
+                'username' => $user['username'],
+                'email' => $user['email']
+            ]);
 
             $userModel = new UserModel();
             $user = $userModel->find($session->get('user_id'));
@@ -110,7 +120,7 @@ class Auth extends BaseController
             $session->set('profile_picture', $user['profile_picture'] ?? 'default.png');
 
             session()->setFlashdata('success', 'Login berhasil! Selamat datang di dashboard.');
-            return redirect()->to('/dashboard');
+            return redirect()->to('/');
         }
 
         session()->setFlashdata('error', 'Email atau password salah.');
@@ -130,7 +140,7 @@ class Auth extends BaseController
             return redirect()->back()->with('error', 'Email atau Password tidak valid.')->withInput();
         }
 
-        session()->set('user', [
+        $session->set('user', [
             'id'       => $user['id'],
             'username' => $user['username'],
             'email'    => $user['email'],
@@ -142,7 +152,7 @@ class Auth extends BaseController
         ]);
         $session->set('user_id', $user['id']);
 
-        return redirect()->to('/dashboard')->with('success', 'Selamat, Login berhasil, ' . $user['username']);
+        return redirect()->to('/')->with('success', 'Selamat, Login berhasil, ' . $user['username']);
     }
 
     public function logout()

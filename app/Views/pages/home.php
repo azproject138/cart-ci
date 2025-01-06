@@ -13,40 +13,39 @@
     <i class="bi bi-cart-plus-fill"></i> <a href="/pesanan/create-pesanan-pengguna">Tambah Pesanan</a>
 </button>
 
-<div class="container mt-3">
-    <div class="row">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Jenis Pesanan</th>
-                    <th>Merek</th>
-                    <th>Kategori</th>
-                    <th>Jumlah</th>
-                    <th>Deskripsi</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if (!empty($pesananpenggunas)): ?>
-                    <?php foreach ($pesananpenggunas as $key => $pesananpengguna): ?>
-                        <tr>
-                            <td><?= $key + 1; ?></td>
-                            <td><?= $pesananpengguna['jenis_pesanan']; ?></td>
-                            <td><?= $pesananpengguna['merek_pesanan']; ?></td>
-                            <td><?= $pesananpengguna['kategori_pesanan']; ?></td>
-                            <td><?= $pesananpengguna['jumlah_pesanan']; ?></td>
-                            <td><?= $pesananpengguna['deskripsi_pesanan']; ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <tr>
-                        <td colspan="6" class="text-center">Tidak ada pesanan.</td>
-                    </tr>
-                <?php endif; ?>
-            </tbody>
-        </table>
-    </div>
-</div>
+<h1>Data Pesanan Pengguna</h1>
+<table border="1">
+    <tr>
+        <th>No</th>
+        <th>Jenis Pesanan</th>
+        <th>Merek</th>
+        <th>Kategori</th>
+        <th>Jumlah</th>
+        <th>Alamat</th>
+        <th>WhatsApp</th>
+        <th>Aksi</th>
+    </tr>
+    <?php if (!empty($orders)): // Pastikan data ada ?>
+        <?php foreach ($orders as $key => $order): ?>
+        <tr>
+            <td><?= $key + 1 ?></td>
+            <td><?= $order['jenis_pesanan'] ?></td>
+            <td><?= $order['merek_pesanan'] ?></td>
+            <td><?= $order['kategori_pesanan'] ?></td>
+            <td><?= $order['jumlah_pesanan'] ?></td>
+            <td><?= $order['alamat'] ?></td>
+            <td><?= $order['whatsapp_number'] ?></td>
+            <td>
+                <a href="/pesanan/edit/<?= $order['id'] ?>">Edit</a>
+                <a href="/pesanan/delete/<?= $order['id'] ?>">Hapus</a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <tr>
+            <td colspan="8">Belum ada data pesanan.</td>
+        </tr>
+    <?php endif; ?>
+</table>
 
 <?= $this->endSection() ?>

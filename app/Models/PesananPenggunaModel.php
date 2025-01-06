@@ -13,13 +13,14 @@ class PesananPenggunaModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'jenis_pesanan',
-        'merek_pesanan',
-        'kategori_pesanan',
-        'jumlah_pesanan',
-        'deskripsi_pesanan',
-        'created_at',
-        'updated_at',
+        'user_id', 
+        'jenis_pesanan', 
+        'merek_pesanan', 
+        'kategori_pesanan', 
+        'jumlah_pesanan', 
+        'deskripsi_pesanan', 
+        'alamat', 
+        'whatsapp_number',
     ];
 
     protected bool $allowEmptyInserts = false;

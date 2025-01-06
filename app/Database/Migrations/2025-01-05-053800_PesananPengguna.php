@@ -11,54 +11,61 @@ class PesananPengguna extends Migration
         $this->forge->addField([
             'id' => [
                 'type'           => 'INT',
-                'constraint'     => 11,
-                'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'user_id' => [
+                'type' => 'INT',
+                'unsigned'   => true,
+                'null' => false,
+            ],
             'jenis_pesanan' => [
-                'type'       => 'ENUM',
-                'constraint' => ['jenis pesanan', 'Servis Laptop', 'Servis Printer', 'Pasang WiFi', 'Pasang CCTV'],
-                'default'    => 'jenis pesanan',
+                'type' => 'ENUM',
+                'constraint' => ['Servis Laptop', 'Servis Printer', 'Pasang WiFi', 'Pasang CCTV'],
+                'null' => false,
             ],
             'merek_pesanan' => [
-                'type'       => 'ENUM',
-                'constraint' => ['merek pesanan', 'HP', 'Asus', 'Epson', 'Canon', 'TP-Link', 'Hikvision'],
-                'default'    => 'merek pesanan',
+                'type' => 'ENUM',
+                'constraint' => ['HP', 'Asus', 'Epson', 'Canon', 'TP-Link', 'Hikvision'],
+                'null' => false,
             ],
             'kategori_pesanan' => [
-                'type'       => 'ENUM',
-                'constraint' => ['kategori pesanan','install ulang', 'mati total', 'revil toner', 'ganti tinta', 'order wifi', 'order cctv'],
-                'default'    => 'kategori pesanan',
-            ],
-            'ketentuan_servis' => [
-                'type'       => 'ENUM',
-                'constraint' => ['ketentuan servis', 'ambil', 'antar'],
-                'default'    => 'ketentuan servis',
+                'type' => 'ENUM',
+                'constraint' => ['Install Ulang', 'Mati Total', 'Revil Toner', 'Ganti Tinta', 'Order WiFi', 'Order CCTV'],
+                'null' => false,
             ],
             'jumlah_pesanan' => [
-                'type'       => 'INT',
-                'constraint' => 11,
+                'type' => 'INT',
+                'null' => false,
             ],
             'deskripsi_pesanan' => [
                 'type' => 'TEXT',
                 'null' => true,
             ],
+            'alamat' => [
+                'type' => 'TEXT',
+                'null' => false,
+            ],
+            'whatsapp_number' => [
+                'type' => 'VARCHAR',
+                'constraint' => 20,
+                'null' => false,
+            ],
             'created_at' => [
-                'type'    => 'DATETIME',
-                'null'    => true,
+                'type' => 'DATETIME',
+                'null' => true,
             ],
             'updated_at' => [
-                'type'    => 'DATETIME',
-                'null'    => true,
+                'type' => 'DATETIME',
+                'null' => true,
             ],
         ]);
-
-        $this->forge->addKey('id', true);
-        $this->forge->createTable('pesanan_pengguna');
+        $this->forge->addPrimaryKey('id');
+        $this->forge->addForeignKey('user_id', 'users', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('PesananPengguna');
     }
 
     public function down()
     {
-        $this->forge->dropTable('pesanan_pengguna');
+        $this->forge->dropTable('PesananPengguna');
     }
 }
