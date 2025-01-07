@@ -28,6 +28,7 @@
         <th>Alamat</th>
         <th>WhatsApp</th>
         <th>Aksi</th>
+        <th>Status</th>
     </tr>
     <?php if (!empty($orders)): // Pastikan data ada ?>
         <?php foreach ($orders as $key => $order): ?>
@@ -40,6 +41,7 @@
             <td><?= $order['jumlah_pesanan'] ?></td>
             <td><?= $order['alamat'] ?></td>
             <td><?= $order['whatsapp_number'] ?></td>
+            <td><?= $pesanan['status'] ?></td>
             <td>
                 <a href="/pesanan/edit-pesanan-pengguna/<?= $order['id'] ?>">Edit</a>
                 <a href="/pesanan/hapus-pesanan-pengguna/<?= $order['id'] ?>">Hapus</a>
