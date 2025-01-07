@@ -2,10 +2,11 @@
 
 namespace App\Controllers;
 
+use App\Models\UserModel;
 use App\Controllers\BaseController;
 use App\Models\PesananPenggunaModel;
-use CodeIgniter\Debug\Toolbar\Collectors\Views;
 use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\Debug\Toolbar\Collectors\Views;
 
 class PesananPenggunaController extends BaseController
 {
@@ -32,36 +33,34 @@ class PesananPenggunaController extends BaseController
 
     public function tambahPesananPengguna()
     {
-        if (!$this->validate([
-            'jenis_pesanan' => 'required',
-            'merek_pesanan' => 'required',
-            'kategori_pesanan' => 'required',
-            'jumlah_pesanan' => 'required|integer',
-            'deskripsi_pesanan' => 'required',
-            'alamat' => 'required',
-            'whatsapp_number' => 'required',
-            'ketentuan_servis' => 'required',
-        ])) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        if ($this->request->getMethod() === 'post') {
+            $userId = $this->request->getPost('user_id');
+
+            // Ambil data user dari tabel users
+            $userModel = new UserModel();
+            $user = $userModel->find($userId);
+
+            if ($user) {
+                $data = [
+                    'user_id' => $userId,
+                    'jenis_pesanan' => $this->request->getPost('jenis_pesanan'),
+                    'merek_pesanan' => $this->request->getPost('merek_pesanan'),
+                    'kategori_pesanan' => $this->request->getPost('kategori_pesanan'),
+                    'alamat' => $user['alamat'],
+                    'whatsapp_number' => $user['whatsapp_number'],
+                    'ketentuan_servis' => $this->request->getPost('ketentuan_servis'),
+                    'estimasi_waktu' => date('Y-m-d H:i:s', strtotime('+7 days')),
+                    'status' => 'Pending',
+                ];
+
+                $this->pesananModel->save($data);
+                return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil ditambahkan.');
+            } else {
+                return redirect()->back()->with('error', 'User tidak ditemukan.');
+            }
         }
 
-        $userId = session()->get('user_id');
-        if (!$userId) {
-            return redirect()->back()->with('error', 'Anda harus login terlebih dahulu.');
-        }
-
-        $this->pesananModel->save([
-            'user_id' => $userId,
-            'jenis_pesanan'     => $this->request->getPost('jenis_pesanan'),
-            'merek_pesanan'     => $this->request->getPost('merek_pesanan'),
-            'kategori_pesanan'  => $this->request->getPost('kategori_pesanan'),
-            'jumlah_pesanan'    => $this->request->getPost('jumlah_pesanan'),
-            'deskripsi_pesanan' => $this->request->getPost('deskripsi_pesanan'),
-            'alamat'            => $this->request->getPost('alamat'),
-            'whatsapp_number'   => $this->request->getPost('whatsapp_number'),
-            'ketentuan_servis'  => $this->request->getPost('ketentuan_servis'),
-        ]);
-        return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil disimpan.');
+        return view('pesanan/tambah');
     }
 
     public function editPesananPengguna($id)

@@ -27,8 +27,8 @@
         <th>Jumlah</th>
         <th>Alamat</th>
         <th>WhatsApp</th>
-        <th>Aksi</th>
         <th>Status</th>
+        <th>Aksi</th>
     </tr>
     <?php if (!empty($orders)): // Pastikan data ada ?>
         <?php foreach ($orders as $key => $order): ?>

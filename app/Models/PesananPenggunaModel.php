@@ -63,4 +63,11 @@ class PesananPenggunaModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getPesananWithUserData()
+    {
+        return $this->select('PesananPengguna.*, users.alamat as user_alamat, users.whatsapp_number as user_whatsapp')
+                    ->join('users', 'users.id = PesananPengguna.user_id')
+                    ->findAll();
+    }
 }
