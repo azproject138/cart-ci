@@ -10,18 +10,21 @@
 </style>
 
 <button id="tambah-pesanan" class="tambah-pesanan btn btn-bd-primary">
-    <i class="bi bi-cart-plus-fill"></i> <a href="/pesanan/create-pesanan-pengguna">Tambah Pesanan</a>
+    <a href="/pesanan/create-pesanan-pengguna">
+        <i class="bi bi-cart-plus-fill"></i> Tambah Pesanan
+    </a>
 </button>
 
 <h4>Daftar Pesanan Pengguna</h4>
+<hr>
 <table border="1">
     <tr>
         <th>No</th>
-        <th>Jenis Pesanan</th>
-        <th>Merek Pesanan</th>
-        <th>Kategori Pesanan</th>
-        <th>Ketentuan Servis</th>
-        <th>Jumlah Pesanan</th>
+        <th>Jenis</th>
+        <th>Merek</th>
+        <th>Kategori</th>
+        <th>Ketentuan</th>
+        <th>Jumlah</th>
         <th>Alamat</th>
         <th>WhatsApp</th>
         <th>Aksi</th>
@@ -38,7 +41,7 @@
             <td><?= $order['alamat'] ?></td>
             <td><?= $order['whatsapp_number'] ?></td>
             <td>
-                <a href="/pesanan/edit/<?= $order['id'] ?>">Edit</a>
+                <a href="/pesanan/edit-pesanan-pengguna/<?= $order['id'] ?>">Edit</a>
                 <a href="/pesanan/hapus-pesanan-pengguna/<?= $order['id'] ?>">Hapus</a>
             </td>
         </tr>

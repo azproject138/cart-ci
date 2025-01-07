@@ -1,0 +1,152 @@
+.tambah-pesanan {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #000;
+}
+
+.tambah-pesanan:hover {
+    color: #45a049;
+}
+
+.tambah-pesanan a {
+    text-decoration: none;
+    color: #000;
+}
+
+.tambah-pesanan a:hover {
+    color: #45a049;
+}
+
+.table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    font-size: 13px;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+
+tr:nth-child(even) {
+    background-color: #fff;
+}
+
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #4CAF50;
+    padding: 8px 16px;
+    text-decoration: none;
+    
+    margin: 0 5px;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.pagination .active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+.action-buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.action-buttons a {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.action-buttons a:hover {
+    background-color: #0056b3;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
