@@ -15,9 +15,13 @@
 
 </head>
 <body>
+
+    <div id="sidebar" class="sidebar">
+        <?= $this->include('components/sidebar') ?>
+    </div>
+
     <header>
         <?= $this->include('components/navbar') ?>
-        <?= $this->include('components/sidebar') ?>
     </header>
 
     <?= $this->include('components/alerts') ?>

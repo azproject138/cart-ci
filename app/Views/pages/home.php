@@ -15,7 +15,7 @@
     </a>
 </button>
 
-<h4>Daftar Pesanan Pengguna</h4>
+<h4>Daftar Pesanan</h4>
 <hr>
 <table border="1">
     <tr>

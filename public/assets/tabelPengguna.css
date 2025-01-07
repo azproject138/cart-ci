@@ -31,8 +31,8 @@ table {
     border-collapse: collapse;
     margin: 20px 0;
     font-family: Arial, sans-serif;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -41,13 +41,13 @@ th {
     color: white;
     padding: 12px 15px;
     text-align: left;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 td {
     padding: 12px 15px;
     text-align: left;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 tr:hover {
@@ -65,24 +65,8 @@ tr:nth-child(even) {
 }
 
 
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
+table, td {
     border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
 }
 
 .pagination {
@@ -95,7 +79,6 @@ button:hover {
     color: #4CAF50;
     padding: 8px 16px;
     text-decoration: none;
-    
     margin: 0 5px;
 }
 
