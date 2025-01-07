@@ -301,3 +301,52 @@ INFO - 2025-01-07 13:26:05 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2025-01-07 13:26:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-01-07 13:26:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-01-07 13:26:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:31:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:31:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:31:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-07 13:32:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pesanan/tambah.php"
+[Method: POST, Route: pesanan/tambah-pesanan-pengguna]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pesanan/tambah.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pesanan/tambah', [], true)
+ 3 APPPATH\Controllers\PesananPenggunaController.php(63): view('pesanan/tambah')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->tambahPesananPengguna()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2025-01-07 13:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-07 13:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-07 13:37:18 --> ErrorException: Undefined variable $user
+[Method: GET, Route: pesanan/create-pesanan-pengguna]
+in APPPATH\Views\components\pesanan_pengguna.php on line 22.
+ 1 APPPATH\Views\components\pesanan_pengguna.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\pesanan_pengguna.php', 22)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\pesanan_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/pesanan_pengguna', [], true)
+ 5 APPPATH\Controllers\PesananPenggunaController.php(31): view('components/pesanan_pengguna', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->createPesananPengguna()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+CRITICAL - 2025-01-07 13:37:18 --> ErrorException: Undefined variable $user
+[Method: GET, Route: pesanan/create-pesanan-pengguna]
+in APPPATH\Views\components\pesanan_pengguna.php on line 22.
+ 1 APPPATH\Views\components\pesanan_pengguna.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\pesanan_pengguna.php', 22)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\pesanan_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/pesanan_pengguna', [], true)
+ 5 APPPATH\Controllers\PesananPenggunaController.php(31): view('components/pesanan_pengguna', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->createPesananPengguna()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')

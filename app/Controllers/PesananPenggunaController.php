@@ -101,30 +101,4 @@ class PesananPenggunaController extends BaseController
     
         return view('pesanan/daftar_selesai', ['pesananSelesai' => $pesananSelesai]);
     }
-
-    public function dataPengguna()
-    {
-        if ($this->request->isAJAX()) {
-            $userId = $this->request->getPost('user_id');
-            $userModel = new \App\Models\UserModel();
-
-            $user = $userModel->find($userId);
-            if ($user) {
-                return $this->response->setJSON([
-                    'status' => 'success',
-                    'data' => [
-                        'alamat' => $user['alamat'],
-                        'whatsapp_number' => $user['whatsapp_number']
-                    ]
-                ]);
-            }
-
-            return $this->response->setJSON([
-                'status' => 'error',
-                'message' => 'User tidak ditemukan.'
-            ]);
-        }
-
-        return $this->response->setStatusCode(403)->setJSON(['message' => 'Invalid request.']);
-    }
 }

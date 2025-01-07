@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tambahkan Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Tambahkan Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <title>Order Pesanan Pengguna</title>
 </head>
 <body>
-
     <div class="container mt-5">
         <h1 class="text-center">Tambah Pesanan</h1>
 
         <form action="<?= base_url('pesanan/tambah-pesanan-pengguna'); ?>" method="post">
             <?= csrf_field(); ?>
 
-            <label for="user_id">User ID:</label>
-            <input type="number" name="user_id" id="user_id" required><br>
+            <label for="whatsapp_number">No Whatsapp:</label>
+            <input type="text" name="whatsapp_number" id="whatsapp_number" value="<?= esc($user['whatsapp_number']) ?>" required>
 
+            <!-- Alamat -->
             <label for="alamat">Alamat:</label>
-            <input type="text" name="alamat" id="alamat" readonly><br>
-
-            <label for="whatsapp_number">WhatsApp Number:</label>
-            <input type="text" name="whatsapp_number" id="whatsapp_number" readonly><br>
+            <input type="text" name="alamat" id="alamat" value="<?= esc($user['alamat']) ?>" required>
 
             <!-- Jenis Pesanan -->
             <div class="mb-3">
@@ -74,42 +77,10 @@
                 <button type="submit" class="btn btn-primary">Tambah Pesanan</button>
             </div>
         </form>
+
     </div>
-
     <script src="/assets/pesananPengguna.js"></script>
-    <script src="/assets/data_pengguna.js"></script>
     <script src="<?= base_url('js/bootstrap.bundle.min.js'); ?>"></script>
-
-    <script>
-        document.getElementById('user_id').addEventListener('input', function () {
-            const userId = this.value;
-
-            if (userId) {
-                fetch('/pesanan/data-pengguna', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Requested-With': 'XMLHttpRequest',
-                        'X-CSRF-TOKEN': '<?= csrf_hash() ?>'
-                    },
-                    body: JSON.stringify({ user_id: userId })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        document.getElementById('alamat').value = data.data.alamat || '';
-                        document.getElementById('whatsapp_number').value = data.data.whatsapp_number || '';
-                    } else {
-                        document.getElementById('alamat').value = '';
-                        document.getElementById('whatsapp_number').value = '';
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-            } else {
-                document.getElementById('alamat').value = '';
-                document.getElementById('whatsapp_number').value = '';
-            }
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
