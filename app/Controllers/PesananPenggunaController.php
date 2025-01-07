@@ -97,8 +97,9 @@ class PesananPenggunaController extends BaseController
 
     public function pesananSelesai()
     {
-        $pesananSelesai = $this->pesananModel->where('status', 'selesai')->findAll();
-
-        return view('daftar_pesanan_selesai', ['pesananSelesai' => $pesananSelesai]);
+        $pesananModel = new PesananPenggunaModel();
+        $pesananSelesai = $pesananModel->where('status', 'Selesai')->findAll();
+    
+        return view('pesanan/daftar_selesai', ['pesananSelesai' => $pesananSelesai]);
     }
 }

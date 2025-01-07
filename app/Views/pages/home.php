@@ -70,19 +70,23 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($pesananSelesai as $key => $pesanan): ?>
-        <tr>
-            <td><?= $key + 1 ?></td>
-            <td><?= $pesanan['jenis_pesanan'] ?></td>
-            <td><?= $pesanan['merek_pesanan'] ?></td>
-            <td><?= $pesanan['kategori_pesanan'] ?></td>
-            <td><?= $pesanan['jumlah_pesanan'] ?></td>
-            <td><?= $pesanan['deskripsi_pesanan'] ?></td>
-            <td><?= $pesanan['alamat'] ?></td>
-            <td><?= $pesanan['whatsapp_number'] ?></td>
-            <td><?= $pesanan['ketentuan_servis'] ?></td>
-        </tr>
-        <?php endforeach; ?>
+        <?php if (!empty($pesananSelesai)): ?>
+            <?php foreach ($pesananSelesai as $pesanan): ?>
+                <tr>
+                    <td><?= $pesanan['id'] ?></td>
+                    <td><?= $pesanan['jenis_pesanan'] ?></td>
+                    <td><?= $pesanan['merek_pesanan'] ?></td>
+                    <td><?= $pesanan['kategori_pesanan'] ?></td>
+                    <td><?= $pesanan['alamat'] ?></td>
+                    <td><?= $pesanan['whatsapp_number'] ?></td>
+                    <td><?= $pesanan['status'] ?></td>
+                </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tr>
+                <td colspan="7">Tidak ada pesanan selesai.</td>
+            </tr>
+        <?php endif; ?>
     </tbody>
 </table>
 
