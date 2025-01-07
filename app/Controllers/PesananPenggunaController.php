@@ -83,6 +83,8 @@ class PesananPenggunaController extends BaseController
             'alamat'            => $this->request->getPost('alamat'),
             'whatsapp_number'   => $this->request->getPost('whatsapp_number'),
             'ketentuan_servis'  => $this->request->getPost('ketentuan_servis'),
+            'estimasi_waktu' => date('Y-m-d H:i:s', strtotime('+7 days')),
+            'status' => 'pending'
         ]);
         return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil diperbarui.');
     }
@@ -91,5 +93,12 @@ class PesananPenggunaController extends BaseController
     {
         $this->pesananModel->delete($id);
         return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil dihapus.');
+    }
+
+    public function pesananSelesai()
+    {
+        $pesananSelesai = $this->pesananModel->where('status', 'selesai')->findAll();
+
+        return view('daftar_pesanan_selesai', ['pesananSelesai' => $pesananSelesai]);
     }
 }

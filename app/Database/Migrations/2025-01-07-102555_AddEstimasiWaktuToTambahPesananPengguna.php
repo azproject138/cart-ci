@@ -12,7 +12,7 @@ class AddEstimasiWaktuToTambahPesananPengguna extends Migration
         $this->forge->addColumn('PesananPengguna', [
             'estimasi_waktu' => [
                 'type' => 'DATETIME',
-                'null' => true,
+                'null' => false,
                 'after' => 'ketentuan_servis'
             ],
             'status' => [

@@ -53,4 +53,37 @@
     <?php endif; ?>
 </table>
 
+<h4>Daftar Pesanan Selesai</h4>
+<hr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Jenis Pesanan</th>
+            <th>Merek Pesanan</th>
+            <th>Kategori Pesanan</th>
+            <th>Jumlah Pesanan</th>
+            <th>Deskripsi</th>
+            <th>Alamat</th>
+            <th>Nomor WhatsApp</th>
+            <th>Ketentuan Servis</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($pesananSelesai as $key => $pesanan): ?>
+        <tr>
+            <td><?= $key + 1 ?></td>
+            <td><?= $pesanan['jenis_pesanan'] ?></td>
+            <td><?= $pesanan['merek_pesanan'] ?></td>
+            <td><?= $pesanan['kategori_pesanan'] ?></td>
+            <td><?= $pesanan['jumlah_pesanan'] ?></td>
+            <td><?= $pesanan['deskripsi_pesanan'] ?></td>
+            <td><?= $pesanan['alamat'] ?></td>
+            <td><?= $pesanan['whatsapp_number'] ?></td>
+            <td><?= $pesanan['ketentuan_servis'] ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
 <?= $this->endSection() ?>

@@ -1,6 +1,6 @@
 <h2>Edit Pesanan</h2>
 
-<form action="/pesanan/update/<?= $pesanan['id'] ?>" method="post">
+<form action="/pesanan/update-pesanan-pengguna/<?= $pesanan['id'] ?>" method="post">
     <?= csrf_field() ?>
     <input type="hidden" name="_method" value="PUT">
     
