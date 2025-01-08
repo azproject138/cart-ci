@@ -72,3 +72,38 @@ in APPPATH\Views\components\pesanan_pengguna.php on line 23.
 10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2025-01-08 05:55:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-08 05:55:11 --> ErrorException: Undefined variable $whatsapp_number
+[Method: GET, Route: pesanan/create-pesanan-pengguna]
+in APPPATH\Views\components\pesanan_pengguna.php on line 22.
+ 1 APPPATH\Views\components\pesanan_pengguna.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $whatsapp_number', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\pesanan_pengguna.php', 22)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\pesanan_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/pesanan_pengguna', [...], true)
+ 5 APPPATH\Controllers\PesananPenggunaController.php(34): view('components/pesanan_pengguna', [...], [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->createPesananPengguna()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2025-01-08 05:55:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-01-08 05:55:48 --> ErrorException: Undefined variable $alamat
+[Method: GET, Route: pesanan/create-pesanan-pengguna]
+in APPPATH\Views\components\pesanan_pengguna.php on line 23.
+ 1 APPPATH\Views\components\pesanan_pengguna.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $alamat', 'C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\pesanan_pengguna.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\cart-ci\\app\\Views\\components\\pesanan_pengguna.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('components/pesanan_pengguna', [...], true)
+ 5 APPPATH\Controllers\PesananPenggunaController.php(34): view('components/pesanan_pengguna', [...], [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PesananPenggunaController->createPesananPengguna()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PesananPenggunaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cart-ci\\public\\index.php')
+INFO - 2025-01-08 05:58:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-08 05:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-08 05:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -27,16 +27,34 @@ class PesananPenggunaController extends BaseController
 
     public function createPesananPengguna()
     {
+        $userId = session()->get('id'); 
+        $userData = $this->userModel->find($userId);
         $data['users'] = $this->userModel->findAll();
-        return view('components/pesanan_pengguna', $data);
+
+        return view('components/pesanan_pengguna', $data, [
+            'alamat' => $userData['alamat'] ?? '',
+            'tipe_alamat' => $userData['tipe_alamat'] ?? '',
+            'whatsapp_number' => $userData['whatsapp_number'] ?? '',
+        ]);
     }
 
     public function tambahPesananPengguna()
     {
+
+        $validation = $this->validate([
+            'alamat' => 'required',
+            'tipe_alamat' => 'required',
+            'whatsapp_number' => 'required',
+            // Tambahkan validasi lainnya sesuai kebutuhan
+        ]);
+    
+        if (!$validation) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
         if ($this->request->getMethod() === 'post') {
             $userId = $this->request->getPost('user_id');
 
-            // Ambil data user dari tabel users
             $userModel = new UserModel();
             $user = $userModel->find($userId);
 
@@ -53,7 +71,12 @@ class PesananPenggunaController extends BaseController
                     'status' => 'Pending',
                 ];
 
-                $this->pesananModel->save($data);
+                $this->pesananModel->save($data,[
+                    'user_id' => session()->get('id'),
+                    'alamat' => $this->request->getPost('alamat'),
+                    'tipe_alamat' => $this->request->getPost('tipe_alamat'),
+                    'whatsapp_number' => $this->request->getPost('whatsapp_number'),
+                ]);
                 return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil ditambahkan.');
             } else {
                 return redirect()->back()->with('error', 'User tidak ditemukan.');
