@@ -20,28 +20,26 @@
 <table border="1">
     <tr>
         <th>No</th>
+        <th>Alamat</th>
+        <th>WhatsApp</th>
         <th>Jenis</th>
         <th>Merek</th>
         <th>Kategori</th>
         <th>Ketentuan</th>
         <th>Jumlah</th>
-        <th>Alamat</th>
-        <th>WhatsApp</th>
-        <th>Status</th>
         <th>Aksi</th>
     </tr>
     <?php if (!empty($orders)): // Pastikan data ada ?>
         <?php foreach ($orders as $key => $order): ?>
         <tr>
             <td><?= $key + 1 ?></td>
+            <td><?= $order['alamat'] ?></td>
+            <td><?= $order['whatsapp_number'] ?></td>
             <td><?= $order['jenis_pesanan'] ?></td>
             <td><?= $order['merek_pesanan'] ?></td>
             <td><?= $order['kategori_pesanan'] ?></td>
             <td><?= $order['ketentuan_servis'] ?></td>
             <td><?= $order['jumlah_pesanan'] ?></td>
-            <td><?= $order['alamat'] ?></td>
-            <td><?= $order['whatsapp_number'] ?></td>
-            <td><?= $pesanan['status'] ?></td>
             <td>
                 <a href="/pesanan/edit-pesanan-pengguna/<?= $order['id'] ?>">Edit</a>
                 <a href="/pesanan/hapus-pesanan-pengguna/<?= $order['id'] ?>">Hapus</a>

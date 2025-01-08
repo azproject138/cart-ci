@@ -27,84 +27,48 @@ class PesananPenggunaController extends BaseController
 
     public function createPesananPengguna()
     {
-        $userId = session()->get('user_id'); // Ambil user ID dari session
-        $user = $this->userModel->find($userId);
+        $userId = session()->get('user_id'); // Ambil ID pengguna dari sesi
+        $userModel = new \App\Models\UserModel(); // Pastikan model UserModel sudah ada
+        $user = $userModel->find($userId); // Cari pengguna berdasarkan ID
 
-        $data = [
-            'alamat' => $user['alamat'] ?? '',
-            'whatsapp_number' => $user['whatsapp_number'] ?? ''
-        ];
-
-        return view('components/pesanan_pengguna', $data);
+        // Kirim data pengguna ke view
+        return view('components/pesanan_pengguna', ['user' => $user]);
     }
 
     public function tambahPesananPengguna()
     {
 
-        $validation = $this->validate([
-            'alamat' => 'required',
-            'whatsapp_number' => 'required',
+        $this->pesananModel->save([
+            'user_id' => $this->request->getPost('user_id'),
+            'jenis_pesanan' => $this->request->getPost('jenis_pesanan'),
+            'merek_pesanan' => $this->request->getPost('merek_pesanan'),
+            'kategori_pesanan' => $this->request->getPost('kategori_pesanan'),
+            'jumlah_pesanan' => $this->request->getPost('jumlah_pesanan'),
+            'deskripsi_pesanan' => $this->request->getPost('deskripsi_pesanan'),
+            'alamat' => $this->request->getPost('alamat'),
+            'whatsapp_number' => $this->request->getPost('whatsapp_number'),
         ]);
-    
-        if (!$validation) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-        }
-
-        if ($this->request->getMethod() === 'post') {
-            $userId = $this->request->getPost('user_id');
-
-            $userModel = new UserModel();
-            $user = $userModel->find($userId);
-
-            if ($user) {
-                $data = [
-                    'user_id' => $userId,
-                    'jenis_pesanan' => $this->request->getPost('jenis_pesanan'),
-                    'merek_pesanan' => $this->request->getPost('merek_pesanan'),
-                    'kategori_pesanan' => $this->request->getPost('kategori_pesanan'),
-                    'jumlah_pesanan' => $this->request->getPost('jumlah_pesanan'),
-                    'alamat' => $user['alamat'],
-                    'whatsapp_number' => $user['whatsapp_number'],
-                    'ketentuan_servis' => $this->request->getPost('ketentuan_servis'),
-                    'estimasi_waktu' => date('Y-m-d H:i:s', strtotime('+7 days')),
-                    'status' => 'Pending',
-                ];
-
-                $this->pesananModel->save($data,[
-                    'user_id' => session()->get('id'),
-                    'alamat' => $this->request->getPost('alamat'),
-                    'whatsapp_number' => $this->request->getPost('whatsapp_number'),
-                ]);
-                return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil ditambahkan.');
-            } else {
-                return redirect()->back()->with('error', 'User tidak ditemukan.');
-            }
-        }
-
-        return view('components/pesanan_pengguna');
+        return redirect()->to('/pesanan');
     }
 
     public function editPesananPengguna($id)
     {
         $data['order'] = $this->pesananModel->find($id);
         $data['users'] = $this->userModel->findAll();
-        return view('pesanan_pengguna/edit', $data);
+        return view('components/edit_pesanan_pengguna', $data);
     }
 
     public function updatePesananPengguna($id)
     {
         $this->pesananModel->update($id, [
-            'user_id'           => $this->request->getPost('user_id'),
-            'jenis_pesanan'     => $this->request->getPost('jenis_pesanan'),
-            'merek_pesanan'     => $this->request->getPost('merek_pesanan'),
-            'kategori_pesanan'  => $this->request->getPost('kategori_pesanan'),
-            'jumlah_pesanan'    => $this->request->getPost('jumlah_pesanan'),
+            'user_id' => $this->request->getPost('user_id'),
+            'jenis_pesanan' => $this->request->getPost('jenis_pesanan'),
+            'merek_pesanan' => $this->request->getPost('merek_pesanan'),
+            'kategori_pesanan' => $this->request->getPost('kategori_pesanan'),
+            'jumlah_pesanan' => $this->request->getPost('jumlah_pesanan'),
             'deskripsi_pesanan' => $this->request->getPost('deskripsi_pesanan'),
-            'alamat'            => $this->request->getPost('alamat'),
-            'whatsapp_number'   => $this->request->getPost('whatsapp_number'),
-            'ketentuan_servis'  => $this->request->getPost('ketentuan_servis'),
-            'estimasi_waktu' => date('Y-m-d H:i:s', strtotime('+7 days')),
-            'status' => 'pending'
+            'alamat' => $this->request->getPost('alamat'),
+            'whatsapp_number' => $this->request->getPost('whatsapp_number'),
         ]);
         return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil diperbarui.');
     }

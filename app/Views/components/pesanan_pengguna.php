@@ -18,14 +18,13 @@
         <form action="<?= base_url('pesanan/tambah-pesanan-pengguna'); ?>" method="post">
             <?= csrf_field(); ?>
 
-            <div class="form-group">
+            <div>
                 <label for="alamat">Alamat:</label>
-                <input type="text" name="alamat" id="alamat" class="form-control" value="<?= $alamat ?>" readonly>
+                <input type="text" name="alamat" id="alamat" value="<?= esc($user['alamat'] ?? '') ?>" readonly>
             </div>
-
-            <div class="form-group mt-2">
-                <label for="whatsapp_number">Nomor WhatsApp:</label>
-                <input type="text" name="whatsapp_number" id="whatsapp_number" class="form-control" value="<?= $whatsapp_number ?>" readonly>
+            <div>
+                <label for="whatsapp_number">WhatsApp:</label>
+                <input type="text" name="whatsapp_number" id="whatsapp_number" value="<?= esc($user['whatsapp_number'] ?? '') ?>" readonly>
             </div>
 
             <!-- Jenis Pesanan -->
