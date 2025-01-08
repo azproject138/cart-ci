@@ -23,13 +23,13 @@
                 <input type="text" name="alamat" id="alamat" class="form-control" value="<?= $alamat ?>" readonly>
             </div>
 
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <label for="whatsapp_number">Nomor WhatsApp:</label>
                 <input type="text" name="whatsapp_number" id="whatsapp_number" class="form-control" value="<?= $whatsapp_number ?>" readonly>
             </div>
 
             <!-- Jenis Pesanan -->
-            <div class="mb-3">
+            <div class="mb-3 mt-2">
                 <label for="jenisPesanan" class="form-label">Jenis Pesanan</label>
                 <select id="jenisPesanan" name="jenis_pesanan" class="form-control" required>
                     <option value="">Pilih Jenis Pesanan</option>

@@ -43,9 +43,7 @@ class PesananPenggunaController extends BaseController
 
         $validation = $this->validate([
             'alamat' => 'required',
-            'tipe_alamat' => 'required',
             'whatsapp_number' => 'required',
-            // Tambahkan validasi lainnya sesuai kebutuhan
         ]);
     
         if (!$validation) {
@@ -64,6 +62,7 @@ class PesananPenggunaController extends BaseController
                     'jenis_pesanan' => $this->request->getPost('jenis_pesanan'),
                     'merek_pesanan' => $this->request->getPost('merek_pesanan'),
                     'kategori_pesanan' => $this->request->getPost('kategori_pesanan'),
+                    'jumlah_pesanan' => $this->request->getPost('jumlah_pesanan'),
                     'alamat' => $user['alamat'],
                     'whatsapp_number' => $user['whatsapp_number'],
                     'ketentuan_servis' => $this->request->getPost('ketentuan_servis'),
@@ -74,7 +73,6 @@ class PesananPenggunaController extends BaseController
                 $this->pesananModel->save($data,[
                     'user_id' => session()->get('id'),
                     'alamat' => $this->request->getPost('alamat'),
-                    'tipe_alamat' => $this->request->getPost('tipe_alamat'),
                     'whatsapp_number' => $this->request->getPost('whatsapp_number'),
                 ]);
                 return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil ditambahkan.');
@@ -83,7 +81,7 @@ class PesananPenggunaController extends BaseController
             }
         }
 
-        return view('pesanan/tambah');
+        return view('components/pesanan_pengguna');
     }
 
     public function editPesananPengguna($id)
