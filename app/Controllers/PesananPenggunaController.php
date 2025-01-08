@@ -27,9 +27,9 @@ class PesananPenggunaController extends BaseController
 
     public function createPesananPengguna()
     {
-        $userId = session()->get('user_id'); // Ambil ID pengguna dari sesi
-        $userModel = new \App\Models\UserModel(); // Pastikan model UserModel sudah ada
-        $user = $userModel->find($userId); // Cari pengguna berdasarkan ID
+        $userId = session()->get('user_id');
+        $userModel = new \App\Models\UserModel();
+        $user = $userModel->find($userId);
 
         // Kirim data pengguna ke view
         return view('components/pesanan_pengguna', ['user' => $user]);
@@ -38,17 +38,44 @@ class PesananPenggunaController extends BaseController
     public function tambahPesananPengguna()
     {
 
-        $this->pesananModel->save([
-            'user_id' => $this->request->getPost('user_id'),
-            'jenis_pesanan' => $this->request->getPost('jenis_pesanan'),
-            'merek_pesanan' => $this->request->getPost('merek_pesanan'),
-            'kategori_pesanan' => $this->request->getPost('kategori_pesanan'),
-            'jumlah_pesanan' => $this->request->getPost('jumlah_pesanan'),
-            'deskripsi_pesanan' => $this->request->getPost('deskripsi_pesanan'),
-            'alamat' => $this->request->getPost('alamat'),
-            'whatsapp_number' => $this->request->getPost('whatsapp_number'),
+        $pesananPenggunaModel = new \App\Models\PesananPenggunaModel();
+
+        // Validasi input
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'jenis_pesanan' => 'required',
+            'merek_pesanan' => 'required',
+            'kategori_pesanan' => 'required',
+            'ketentuan_servis' => 'required',
+            'jumlah_pesanan' => 'required|integer',
+            'deskripsi_pesanan' => 'permit_empty',
+            'alamat' => 'required',
+            'whatsapp_number' => 'required',
         ]);
-        return redirect()->to('/pesanan');
+
+        if (!$this->validate($validation->getRules())) {
+            return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+        }
+
+        // Data yang akan disimpan
+        $data = [
+            'jenis_pesanan'    => $this->request->getPost('jenis_pesanan'),
+            'merek_pesanan'    => $this->request->getPost('merek_pesanan'),
+            'kategori_pesanan' => $this->request->getPost('kategori_pesanan'),
+            'ketentuan_servis' => $this->request->getPost('ketentuan_servis'),
+            'jumlah_pesanan'   => $this->request->getPost('jumlah_pesanan'),
+            'deskripsi_pesanan'=> $this->request->getPost('deskripsi_pesanan'),
+            'alamat'           => $this->request->getPost('alamat'),
+            'whatsapp_number'  => $this->request->getPost('whatsapp_number'),
+            'user_id'          => session()->get('user_id'), // Pastikan sesi ID pengguna tersedia
+        ];
+
+        // Simpan data ke database
+        if ($pesananPenggunaModel->save($data)) {
+            return redirect()->to('/')->with('success', 'Pesanan berhasil ditambahkan.');
+        } else {
+            return redirect()->back()->withInput()->with('error', 'Gagal menyimpan data.');
+        }
     }
 
     public function editPesananPengguna($id)
@@ -65,18 +92,19 @@ class PesananPenggunaController extends BaseController
             'jenis_pesanan' => $this->request->getPost('jenis_pesanan'),
             'merek_pesanan' => $this->request->getPost('merek_pesanan'),
             'kategori_pesanan' => $this->request->getPost('kategori_pesanan'),
+            'ketentuan_servis' => $this->request->getPost('ketentuan_servis'),
             'jumlah_pesanan' => $this->request->getPost('jumlah_pesanan'),
             'deskripsi_pesanan' => $this->request->getPost('deskripsi_pesanan'),
             'alamat' => $this->request->getPost('alamat'),
             'whatsapp_number' => $this->request->getPost('whatsapp_number'),
         ]);
-        return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil diperbarui.');
+        return redirect()->to('/')->with('success', 'Pesanan berhasil diperbarui.');
     }
 
     public function hapusPesananPengguna($id)
     {
         $this->pesananModel->delete($id);
-        return redirect()->to('/pesanan')->with('success', 'Pesanan berhasil dihapus.');
+        return redirect()->to('/')->with('success', 'Pesanan berhasil dihapus.');
     }
 
     public function pesananSelesai()

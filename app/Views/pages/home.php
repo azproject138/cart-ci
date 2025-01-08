@@ -27,6 +27,7 @@
         <th>Kategori</th>
         <th>Ketentuan</th>
         <th>Jumlah</th>
+        <th>Deskripsi</th>
         <th>Aksi</th>
     </tr>
     <?php if (!empty($orders)): // Pastikan data ada ?>
@@ -40,6 +41,7 @@
             <td><?= $order['kategori_pesanan'] ?></td>
             <td><?= $order['ketentuan_servis'] ?></td>
             <td><?= $order['jumlah_pesanan'] ?></td>
+            <td><?= $order['deskripsi_pesanan'] ?></td>
             <td>
                 <a href="/pesanan/edit-pesanan-pengguna/<?= $order['id'] ?>">Edit</a>
                 <a href="/pesanan/hapus-pesanan-pengguna/<?= $order['id'] ?>">Hapus</a>

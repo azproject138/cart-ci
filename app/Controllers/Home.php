@@ -2,10 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Controllers\BaseController;
+use App\Models\PesananPenggunaModel;
+
 class Home extends BaseController
 {
     public function index(): string
     {
-        return view('pages/home');
+        $pesananModel = new PesananPenggunaModel();
+
+        $orders = $pesananModel->findAll();
+
+        return view('pages/home', ['orders' => $orders]);
     }
 }
