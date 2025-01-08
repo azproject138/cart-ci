@@ -6,6 +6,13 @@ use App\Models\UserModel;
 
 class AlamatPenggunaController extends BaseController
 {
+    public function getAlamatByUserId($userId)
+    {
+        $userModel = new UserModel();
+        $user = $userModel->find($userId);
+        return $user ? $user['alamat'] : '';
+    }
+
     protected $userModel;
 
     public function __construct()

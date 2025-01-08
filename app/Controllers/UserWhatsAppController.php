@@ -7,6 +7,14 @@ use App\Models\UserModel;
 
 class UserWhatsAppController extends BaseController
 {
+
+    public function getWhatsappByUserId($userId)
+    {
+        $userModel = new UserModel();
+        $user = $userModel->find($userId);
+        return $user ? $user['whatsapp_number'] : '';
+    }
+
     protected $userModel;
 
     public function __construct()

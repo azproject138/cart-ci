@@ -27,15 +27,15 @@ class PesananPenggunaController extends BaseController
 
     public function createPesananPengguna()
     {
-        $userId = session()->get('id'); 
-        $userData = $this->userModel->find($userId);
-        $data['users'] = $this->userModel->findAll();
+        $userId = session()->get('user_id'); // Ambil user ID dari session
+        $user = $this->userModel->find($userId);
 
-        return view('components/pesanan_pengguna', $data, [
-            'alamat' => $userData['alamat'] ?? '',
-            'tipe_alamat' => $userData['tipe_alamat'] ?? '',
-            'whatsapp_number' => $userData['whatsapp_number'] ?? '',
-        ]);
+        $data = [
+            'alamat' => $user['alamat'] ?? '',
+            'whatsapp_number' => $user['whatsapp_number'] ?? ''
+        ];
+
+        return view('components/pesanan_pengguna', $data);
     }
 
     public function tambahPesananPengguna()
