@@ -55,7 +55,7 @@ class PesananPenggunaController extends BaseController
     {
         $data['order'] = $this->pesananModel->find($id);
         $data['users'] = $this->userModel->findAll();
-        return view('components/edit_pesanan_pengguna', $data);
+        return view('pesanan_pengguna/edit', $data);
     }
 
     public function updatePesananPengguna($id)
