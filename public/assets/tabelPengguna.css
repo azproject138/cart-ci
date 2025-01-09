@@ -6,6 +6,8 @@
 }
 
 .tambah-pesanan a {
+    bottom: 20px;
+    padding: 5px;
     text-decoration: none;
     color: #757575;
 }
