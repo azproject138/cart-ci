@@ -8,15 +8,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link rel="stylesheet" href="/assets/style.css">
     <title>Edit Pesanan</title>
 </head>
 <body>
     <h4>Edit Pesanan</h4>
 
-    <form action="/pesanan/update-pesanan-pengguna/<?= $order['id'] ?>" method="post">
+    <form action="<?= site_url('pesanan/update-pesanan-pengguna/' . $order['id']) ?>" method="post">
         <?= csrf_field() ?>
-        <input type="hidden" name="_method" value="PUT">
         
+        <div class="form-group">
+            <label for="alamat">Alamat:</label>
+            <input type="text" name="alamat" id="alamat" class="form-control" value="<?= $order['alamat'] ?>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="whatsapp_number">Nomor WhatsApp:</label>
+            <input type="text" name="whatsapp_number" id="whatsapp_number" class="form-control" value="<?= $order['whatsapp_number'] ?>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tanggal_pesanan">Tanggal Pesanan</label>
+            <input type="date" class="form-control" id="tanggal_pesanan" name="tanggal_pesanan" value="<?= old('tanggal_pesanan', $order['tanggal_pesanan']) ?>">
+        </div>
+
         <div class="form-group">
             <label for="jenis_pesanan">Jenis Pesanan:</label>
             <select name="jenis_pesanan" id="jenis_pesanan" class="form-control" required>
@@ -52,6 +67,14 @@
         </div>
 
         <div class="form-group">
+            <label for="ketentuan_servis">Ketentuan Servis:</label>
+            <select name="ketentuan_servis" id="ketentuan_servis" class="form-control" required>
+                <option value="ambil" <?= ($order['ketentuan_servis'] == 'ambil') ? 'selected' : '' ?>>Ambil</option>
+                <option value="antar" <?= ($order['ketentuan_servis'] == 'antar') ? 'selected' : '' ?>>Antar</option>
+            </select>
+        </div>
+
+        <div class="form-group">
             <label for="jumlah_pesanan">Jumlah Pesanan:</label>
             <input type="number" name="jumlah_pesanan" id="jumlah_pesanan" class="form-control" value="<?= $order['jumlah_pesanan'] ?>" required>
         </div>
@@ -59,25 +82,16 @@
         <div class="form-group">
             <label for="deskripsi_pesanan">Deskripsi Pesanan:</label>
             <textarea name="deskripsi_pesanan" id="deskripsi_pesanan" class="form-control" required><?= $order['deskripsi_pesanan'] ?></textarea>
-        </div>order
-
-        <div class="form-group">
-            <label for="alamat">Alamat:</label>
-            <input type="text" name="alamat" id="alamat" class="form-control" value="<?= $order['alamat'] ?>" required>
         </div>
 
         <div class="form-group">
-            <label for="whatsapp_number">Nomor WhatsApp:</label>
-            <input type="text" name="whatsapp_number" id="whatsapp_number" class="form-control" value="<?= $order['whatsapp_number'] ?>" required>
-        </div>
-
-        <div class="form-group">
-            <label for="ketentuan_servis">Ketentuan Servis:</label>
-            <select name="ketentuan_servis" id="ketentuan_servis" class="form-control" required>
-                <option value="ambil" <?= ($order['ketentuan_servis'] == 'ambil') ? 'selected' : '' ?>>Ambil</option>
-                <option value="antar" <?= ($order['ketentuan_servis'] == 'antar') ? 'selected' : '' ?>>Antar</option>
+            <label for="status">Status</label>
+            <select class="form-control" id="status" name="status">
+                <option value="menunggu" <?= $order['status'] == 'menunggu' ? 'selected' : '' ?>>Menunggu</option>
+                <option value="selesai" <?= $order['status'] == 'selesai' ? 'selected' : '' ?>>Selesai</option>
             </select>
         </div>
+
 
         <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
     </form>

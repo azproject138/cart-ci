@@ -1,7 +1,7 @@
 <button id="close-btn" class="close-btn"><i class="bi bi-x"></i></button>
 <ul>
     <li>
-        <a href="#">
+        <a href="/">
             <img src="/assets/img/dashboard.png" alt="dashboard">Dashboard
         </a>
     </li>

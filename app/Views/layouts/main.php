@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="stylesheet" href="/assets/tabelPengguna.css">
 
+    <style>
+        
+    </style>
+
 </head>
 <body>
 
@@ -24,10 +28,14 @@
         <?= $this->include('components/navbar') ?>
     </header>
 
-    <?= $this->include('components/alerts') ?>
+    <div class="alert-container">
+        <?= $this->include('components/alerts') ?>
+    </div>
 
     <div id="main-content">
-        <button id="open-btn" class="open-btn"><i class="bi bi-list"></i></button>
+        <button id="open-btn" class="open-btn">
+            <i class="bi bi-list"></i>
+        </button>
         <?= $this->renderSection('content') ?>
     </div>
 

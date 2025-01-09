@@ -88,6 +88,14 @@ form {
     display: flex;
 }
 
+.alert-container {
+    position: fixed;
+    z-index: 1000;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+}
+
 .alert-danger {
     font-size: 15px;
     background-color: #9e4a4a;
@@ -105,7 +113,6 @@ form {
     top: 10px;
     right: 0;
     transform: translateX(-50%);
-    justify-content: lefcentert;
 }
 
 .alert-success {
@@ -123,9 +130,8 @@ form {
     text-align: center;
     position: fixed;
     top: 53px;
-    right: 0;
+    right: 30px;
     transform: translateX(-50%);
-    justify-content: lefcentert;
 }
 
 .form-register {

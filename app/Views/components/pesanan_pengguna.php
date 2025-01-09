@@ -28,7 +28,6 @@
                 <input type="text" class="form-control mt-2" name="whatsapp_number" id="whatsapp_number" value="<?= esc($user['whatsapp_number'] ?? '') ?>" readonly>
             </div>
 
-            <!-- Jenis Pesanan -->
             <div class="mb-3 mt-2">
                 <label for="jenisPesanan" class="form-label">Jenis Pesanan</label>
                 <select id="jenisPesanan" name="jenis_pesanan" class="form-control" required>
@@ -40,7 +39,6 @@
                 </select>
             </div>
 
-            <!-- Merek Pesanan -->
             <div class="mb-3">
                 <label for="merekPesanan" class="form-label">Merek Pesanan</label>
                 <select id="merekPesanan" name="merek_pesanan" class="form-control" required>
@@ -48,7 +46,6 @@
                 </select>
             </div>
 
-            <!-- Kategori Pesanan -->
             <div class="mb-3">
                 <label for="kategoriPesanan" class="form-label">Kategori Pesanan</label>
                 <select id="kategoriPesanan" name="kategori_pesanan" class="form-control" required>
@@ -68,21 +65,20 @@
                 <input type="date" class="form-control mt-2" name="tanggal_pesanan" id="tanggal_pesanan" value="<?= set_value('tanggal_pesanan') ?>" required>
             </div>
 
-            <!-- Jumlah Pesanan -->
             <div class="mb-3 mt-3">
                 <label for="jumlahPesanan" class="form-label">Jumlah Pesanan</label>
                 <input type="number" id="jumlahPesanan" name="jumlah_pesanan" class="form-control" min="1" required>
             </div>
 
-            <!-- Deskripsi Pesanan -->
             <div class="mb-3">
                 <label for="deskripsiPesanan" class="form-label">Deskripsi Pesanan</label>
                 <textarea id="deskripsiPesanan" name="deskripsi_pesanan" class="form-control" rows="3" required></textarea>
             </div>
 
-            <!-- Tombol Submit -->
             <div class="text-center">
-                <button type="submit" class="btn btn-primary">Tambah Pesanan</button>
+                <button type="submit" class="btn btn-primary">
+                    Simpan
+                </button>
             </div>
         </form>
 

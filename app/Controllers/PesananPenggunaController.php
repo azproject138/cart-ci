@@ -83,26 +83,49 @@ class PesananPenggunaController extends BaseController
 
     public function editPesananPengguna($id)
     {
-        $data['order'] = $this->pesananModel->find($id);
-        $data['users'] = $this->userModel->findAll();
-        return view('pesanan_pengguna/edit', $data);
+        $order = $this->pesananModel->find($id);
+        if (!$order) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Pesanan tidak ditemukan!');
+        }
+
+        return view('components/edit_pesanan_pengguna', ['order' => $order]);
     }
 
     public function updatePesananPengguna($id)
     {
-        $this->pesananModel->update($id, [
-            'user_id' => $this->request->getPost('user_id'),
-            'jenis_pesanan' => $this->request->getPost('jenis_pesanan'),
-            'merek_pesanan' => $this->request->getPost('merek_pesanan'),
-            'kategori_pesanan' => $this->request->getPost('kategori_pesanan'),
+        $validation = \Config\Services::validation();
+        if (!$this->validate([
+            'jenis_pesanan' => 'required',
+            'merek_pesanan' => 'required',
+            'kategori_pesanan' => 'required',
+            'ketentuan_servis' => 'required',
+            'jumlah_pesanan' => 'required|integer',
+            'deskripsi_pesanan' => 'permit_empty',
+            'alamat' => 'required',
+            'whatsapp_number' => 'required',
+            'tanggal_pesanan' => 'required|valid_date',
+        ])) {
+            return redirect()->to('/pesanan/edit-pesanan-pengguna/' . $id)->withInput()->with('errors', $validation->getErrors());
+        }
+
+        $data = [
+            'jenis_pesanan'   => $this->request->getPost('jenis_pesanan'),
+            'merek_pesanan'   => $this->request->getPost('merek_pesanan'),
+            'kategori_pesanan'=> $this->request->getPost('kategori_pesanan'),
             'ketentuan_servis' => $this->request->getPost('ketentuan_servis'),
-            'jumlah_pesanan' => $this->request->getPost('jumlah_pesanan'),
-            'deskripsi_pesanan' => $this->request->getPost('deskripsi_pesanan'),
-            'alamat' => $this->request->getPost('alamat'),
-            'whatsapp_number' => $this->request->getPost('whatsapp_number'),
+            'jumlah_pesanan'   => $this->request->getPost('jumlah_pesanan'),
+            'deskripsi_pesanan'=> $this->request->getPost('deskripsi_pesanan'),
+            'alamat'           => $this->request->getPost('alamat'),
+            'whatsapp_number'  => $this->request->getPost('whatsapp_number'),
             'tanggal_pesanan' => $this->request->getPost('tanggal_pesanan'),
-        ]);
-        return redirect()->to('/')->with('success', 'Pesanan berhasil diperbarui.');
+            'status'           => $this->request->getPost('status'),
+        ];
+
+        if ($this->pesananModel->update($id, $data)) {
+            return redirect()->to('/')->with('success', 'Pesanan berhasil diperbarui!');
+        } else {
+            return redirect()->to('/pesanan/edit-pesanan-pengguna/' . $id)->with('error', 'Gagal memperbarui pesanan!');
+        }
     }
 
     public function hapusPesananPengguna($id)
