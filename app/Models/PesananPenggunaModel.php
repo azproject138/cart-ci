@@ -21,7 +21,8 @@ class PesananPenggunaModel extends Model
         'deskripsi_pesanan', 
         'alamat', 
         'whatsapp_number', 
-        'ketentuan_servis'
+        'ketentuan_servis',
+        'tanggal_pesanan'
     ];
 
     protected bool $allowEmptyInserts = false;
