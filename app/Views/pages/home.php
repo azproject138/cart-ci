@@ -9,30 +9,13 @@
     }
 </style>
 
-<div class="row">
-    <div class="col-md-6">
-        <div class="card text-white bg-primary mb-3">
-            <div class="card-header">Total Pesanan</div>
-            <div class="card-body">
-                <h5 class="card-title"><?= $totalPesanan ?></h5>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="card text-white bg-warning mb-3">
-            <div class="card-header">Pesanan Menunggu</div>
-            <div class="card-body">
-                <h5 class="card-title"><?= $pesananMenunggu ?></h5>
-            </div>
-        </div>
-    </div>
-</div>
-
 <button id="tambah-pesanan" class="tambah-pesanan btn btn-bd-primary">
     <a href="/pesanan/create-pesanan-pengguna">
         <i class="bi bi-cart-plus-fill"></i> Tambah Pesanan
     </a>
 </button>
+
+<?= $this->include('components/status_pesanan_pengguna') ?>
 
 <h4>Daftar Pesanan</h4>
 <hr>

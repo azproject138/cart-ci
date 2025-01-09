@@ -14,17 +14,18 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Tambah Pesanan</h1>
+        <hr>
 
         <form action="<?= base_url('/pesanan/tambah-pesanan-pengguna'); ?>" method="post">
             <?= csrf_field(); ?>
 
-            <div>
+            <div class="mb-3 mt-3">
                 <label for="alamat">Alamat:</label>
-                <input type="text" name="alamat" id="alamat" value="<?= esc($user['alamat'] ?? '') ?>" readonly>
+                <input type="text" class="form-control mt-2" name="alamat" id="alamat" value="<?= esc($user['alamat'] ?? '') ?>" readonly>
             </div>
-            <div>
+            <div class="mb-3 mt-3">
                 <label for="whatsapp_number">WhatsApp:</label>
-                <input type="text" name="whatsapp_number" id="whatsapp_number" value="<?= esc($user['whatsapp_number'] ?? '') ?>" readonly>
+                <input type="text" class="form-control mt-2" name="whatsapp_number" id="whatsapp_number" value="<?= esc($user['whatsapp_number'] ?? '') ?>" readonly>
             </div>
 
             <!-- Jenis Pesanan -->
@@ -56,19 +57,19 @@
             </div>
 
             <label for="ketentuan_servis">Ketentuan Servis:</label>
-            <select name="ketentuan_servis" id="ketentuan_servis">
+            <select name="ketentuan_servis" class="form-control mt-2" id="ketentuan_servis">
                 <option value="Pilih Ketentuan">Pilih Ketentuan</option>
                 <option value="Antar">Antar</option>
                 <option value="Ambil">Ambil</option>
             </select>
 
-            <div>
+            <div class="mb-3 mt-3">
                 <label for="tanggal_pesanan">Tanggal Pesanan</label>
-                <input type="date" name="tanggal_pesanan" id="tanggal_pesanan" value="<?= set_value('tanggal_pesanan') ?>" required>
+                <input type="date" class="form-control mt-2" name="tanggal_pesanan" id="tanggal_pesanan" value="<?= set_value('tanggal_pesanan') ?>" required>
             </div>
 
             <!-- Jumlah Pesanan -->
-            <div class="mb-3">
+            <div class="mb-3 mt-3">
                 <label for="jumlahPesanan" class="form-label">Jumlah Pesanan</label>
                 <input type="number" id="jumlahPesanan" name="jumlah_pesanan" class="form-control" min="1" required>
             </div>
