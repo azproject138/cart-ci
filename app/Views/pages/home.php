@@ -21,8 +21,7 @@
     </button>
 
     <div class="table-responsive">
-        <h5>Daftar Pesanan</h5>
-        <hr>
+        <p class="p-2 text-center fw-bold fs-5 text-uppercase">Daftar Pesanan</p>
         <table border="1">
             <tr>
                 <th>No</th>

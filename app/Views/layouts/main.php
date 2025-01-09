@@ -24,7 +24,6 @@
         <?= $this->include('components/navbar') ?>
     </header>
 
-    
     <div id="main-content">
         <button id="open-btn" class="open-btn">
             <i class="bi bi-list"></i>
