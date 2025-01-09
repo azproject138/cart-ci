@@ -7,9 +7,15 @@
                 <img src="<?= base_url('uploads/profiles/' . (session()->get('profile_picture') ?: 'default-profile.jpg')) ?>" alt="Foto Profil" class="rounded-circle" width="30" height="30">
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="/profile">Profile</a></li>
-                <li><a class="dropdown-item" href="/settings">Settings</a></li>
-                <li><a class="dropdown-item text-danger" href="/logout">Logout</a></li>
+                <li><a class="dropdown-item btn-dropdown-profile" href="/profile">
+                    <i class="bi bi-person-circle"></i> Profile
+                </a></li>
+                <li><a class="dropdown-item btn-dropdown-setting" href="/settings">
+                    <i class="bi bi-gear"></i> Settings
+                </a></li>
+                <li><a class="dropdown-item btn-dropdown-logout" href="/logout">
+                    <i class="bi bi-box-arrow-left"></i> Logout
+                </a></li>
             </ul>
         </div>
     </div>
