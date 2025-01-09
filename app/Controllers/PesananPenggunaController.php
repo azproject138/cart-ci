@@ -51,6 +51,7 @@ class PesananPenggunaController extends BaseController
             'deskripsi_pesanan' => 'permit_empty',
             'alamat' => 'required',
             'whatsapp_number' => 'required',
+            'tanggal_pesanan' => 'required',
         ]);
 
         if (!$this->validate($validation->getRules())) {
@@ -67,7 +68,8 @@ class PesananPenggunaController extends BaseController
             'deskripsi_pesanan'=> $this->request->getPost('deskripsi_pesanan'),
             'alamat'           => $this->request->getPost('alamat'),
             'whatsapp_number'  => $this->request->getPost('whatsapp_number'),
-            'user_id'          => session()->get('user_id'), // Pastikan sesi ID pengguna tersedia
+            'tanggal_pesanan'  => $this->request->getPost('tanggal_pesanan'),
+            'user_id'          => session()->get('user_id'),
         ];
 
         // Simpan data ke database
@@ -97,6 +99,7 @@ class PesananPenggunaController extends BaseController
             'deskripsi_pesanan' => $this->request->getPost('deskripsi_pesanan'),
             'alamat' => $this->request->getPost('alamat'),
             'whatsapp_number' => $this->request->getPost('whatsapp_number'),
+            'tanggal_pesanan' => $this->request->getPost('tanggal_pesanan'),
         ]);
         return redirect()->to('/')->with('success', 'Pesanan berhasil diperbarui.');
     }

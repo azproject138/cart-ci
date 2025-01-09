@@ -22,6 +22,7 @@
         <th>No</th>
         <th>Alamat</th>
         <th>WhatsApp</th>
+        <th>Tanggal</th>
         <th>Jenis</th>
         <th>Merek</th>
         <th>Kategori</th>
@@ -36,6 +37,7 @@
             <td><?= $key + 1 ?></td>
             <td><?= $order['alamat'] ?></td>
             <td><?= $order['whatsapp_number'] ?></td>
+            <td><?= $order['tanggal_pesanan'] ?></td>
             <td><?= $order['jenis_pesanan'] ?></td>
             <td><?= $order['merek_pesanan'] ?></td>
             <td><?= $order['kategori_pesanan'] ?></td>

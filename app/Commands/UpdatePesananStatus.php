@@ -27,7 +27,7 @@ class UpdatePesananStatus extends BaseCommand
      *
      * @var string
      */
-    protected $description = 'Update status pesanan berdasarkan estimasi waktu';
+    protected $description = 'Memindahkan pesanan ke status selesai jika waktu selesai tercapai.';
 
     /**
      * The Command's Usage

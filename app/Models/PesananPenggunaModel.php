@@ -48,6 +48,7 @@ class PesananPenggunaModel extends Model
         'alamat' => 'required',
         'whatsapp_number' => 'required',
         'ketentuan_servis' => 'required',
+        'tanggal_pesanan' => 'required',
     ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;

@@ -62,6 +62,11 @@
                 <option value="Ambil">Ambil</option>
             </select>
 
+            <div>
+                <label for="tanggal_pesanan">Tanggal Pesanan</label>
+                <input type="date" name="tanggal_pesanan" id="tanggal_pesanan" value="<?= set_value('tanggal_pesanan') ?>" required>
+            </div>
+
             <!-- Jumlah Pesanan -->
             <div class="mb-3">
                 <label for="jumlahPesanan" class="form-label">Jumlah Pesanan</label>

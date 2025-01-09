@@ -47,4 +47,4 @@ $routes->get('/pesanan/edit-pesanan-pengguna/(:num)', 'PesananPenggunaController
 $routes->post('/pesanan/update-pesanan-pengguna/(:num)', 'PesananPenggunaController::updatePesananPengguna/$1');
 $routes->get('/pesanan/hapus-pesanan-pengguna/(:num)', 'PesananPenggunaController::hapusPesananPengguna/$1');
 $routes->get('/pesanan-selesai', 'PesananPenggunaController::pesananSelesai');
-$routes->post('/pesanan/data-pengguna', 'PesananController::dataPengguna');
+$routes->post('/pesanan/data-pengguna', 'PesananPenggunaController::dataPengguna');

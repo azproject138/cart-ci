@@ -123,7 +123,7 @@ form {
     text-align: center;
     position: fixed;
     top: 53px;
-    left: 50%;
+    right: 0;
     transform: translateX(-50%);
     justify-content: lefcentert;
 }
